@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Test!
+          This is the init for GIISchool project!
         </a>
       </header>
     </div>
