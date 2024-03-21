@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            <h1>Header</h1>
+            <h1>Genesis of Ideas International School</h1>
         </header>
     );
 }
