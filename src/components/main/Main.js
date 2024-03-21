@@ -5,9 +5,9 @@ function Main() {
     return (
         <main className="container-fluid">
             this is main
-            <Routes>
+            {/* <Routes>
                 <Route path="/" element={<Homepage />} />
-            </Routes>
+            </Routes> */}
         </main>
     );
 }
