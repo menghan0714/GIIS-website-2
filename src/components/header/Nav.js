@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../../img/logo.png';
 import { Link } from 'react-router-dom';
 
 function Nav() {
@@ -20,13 +19,12 @@ function Nav() {
         };
     }, []);
 
-    // 確保平滑滾動到指定元素
-    const scrollToElement = (selector) => {
-        const targetElement = document.querySelector(selector);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    // const scrollToElement = (selector) => {
+    //     const targetElement = document.querySelector(selector);
+    //     if (targetElement) {
+    //         targetElement.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // };
 
     return (
         <nav className={`nav bg-success-subtle ${isNavSticky ? 'sticky' : ''}`}>
