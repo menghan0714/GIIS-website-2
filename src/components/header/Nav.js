@@ -1,27 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../img/logo.png';
+import { Link } from 'react-router-dom';
+
 function Nav() {
     const [isNavSticky, setIsNavSticky] = useState(false);
-    const handleNavClick = (e) => {
-        e.preventDefault();
-        const target = e.target.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(target);
-        if (targetElement) {
-            const targetOffsetTop = targetElement.offsetTop;
-            window.scrollTo({
-                top: targetOffsetTop,
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    const handleBrandClick = (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,27 +20,34 @@ function Nav() {
         };
     }, []);
 
+    // 確保平滑滾動到指定元素
+    const scrollToElement = (selector) => {
+        const targetElement = document.querySelector(selector);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className={`nav bg-success-subtle ${isNavSticky ? 'sticky' : ''}`}>
-            <a className="navbar-brand" href="/" onClick={handleBrandClick}>
-                <img src={logo} alt='logo' width="125px" height="125px" />
-            </a>
-
 
             <ul className="nav justify-content-end">
-                <li className="nav-item">
-                    <a className="nav-link" href="#aboutus" onClick={handleNavClick}>About Us</a>
+                {/* <li className="nav-item">
+                    <Link className="nav-link" to="/#aboutus" onClick={() => scrollToElement('#aboutus')}>About Us</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#ourprograms" onClick={handleNavClick}>Our Programs</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#enrollment" onClick={handleNavClick}>Enrollment</a>
-                </li>
+                    <Link className="nav-link" to="/#enrollment" onClick={() => scrollToElement('#enrollment')}>Enrollment</Link>
+                </li> */}
+                <li><Link to="/">HomePage</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/programs">Our Programs</Link></li>
+                <li><Link to="/enrollment">Enrollment</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
+
+
 
             </ul>
         </nav>
-
     );
 }
 

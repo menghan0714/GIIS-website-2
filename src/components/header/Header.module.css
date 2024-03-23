@@ -1,0 +1,46 @@
+.header {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logoImage {
+    max-width: 100px; /* Adjusts logo width */
+    height: auto; /* Keeps aspect ratio */
+    max-height: 100px; /* Ensures the logo doesn't exceed 100px in height */
+}
+
+.contactInfo a, .navRight a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 2px; /* Adjusted for visual consistency */
+}
+
+.contactInfo a {
+    background-color: #f0f0f0; /* Light grey background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+.enrollButton,
+.loginButton {
+    background-color: #f90; /* Primary button color */
+    color: #fff; /* Text color */
+}
+
+.loginButton {
+    background-color: #333; /* Secondary button color */
+}
+
+.enrollButton:hover,
+.loginButton:hover {
+    opacity: 0.9; /* Hover effect for buttons */
+}
+
+.title {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+}

@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'; // 導入BrowserRouter
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter> {/* 使用BrowserRouter包裹App組件 */}
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
