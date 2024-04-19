@@ -3,6 +3,10 @@ import React from 'react';
 function Introduction() {
     return (
         <div className="container">
+            <h2>學校介紹</h2>
+            <div>
+                這邊可以放學校的介紹，例如學校的歷史、特色、教學理念等等
+            </div>
             <h2>Why GIIS? or 校長的話 or 創辦人的話</h2>
             <div className="row">
                 <div className="col-md-3">

@@ -3,8 +3,7 @@ import ImgSlider from './Homepage/ImgSlider.js';
 import Slogan from './Homepage/Slogan';
 import Introduction from './Homepage/Introduction';
 import CogniaAccreditation from './Homepage/CogniaAccreditation.js';
-// import Video from './Homepage/Video';
-// import Accredited from './Homepage/Accredited';
+import Testimonial from './Homepage/Testimonial.js';
 import FacultyGraduates from './Homepage/FacultyGraduates.js';
 import ContactUs from './Homepage/ContactUs';
 
@@ -15,6 +14,7 @@ function Homepage() {
             <Slogan />
             <Introduction />
             <CogniaAccreditation />
+            <Testimonial />
             <FacultyGraduates />
             <ContactUs />
 
