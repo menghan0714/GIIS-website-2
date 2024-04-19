@@ -25,7 +25,7 @@ function Nav() {
                 <li><Link to="/">HomePage</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/acreditation">Acreditation</Link></li>
-                <li><Link to="/faculty">Faculty & Students</Link></li>
+                <li><Link to="/faculty&Graduates">Faculty & Graduates</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
             </ul>
         </nav>
