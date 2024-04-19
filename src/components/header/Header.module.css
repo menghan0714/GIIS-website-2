@@ -4,11 +4,6 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.logoImage {
-    max-width: 100px; /* Adjusts logo width */
-    height: auto; /* Keeps aspect ratio */
-    max-height: 100px; /* Ensures the logo doesn't exceed 100px in height */
-}
 
 .contactInfo a, .navRight a {
     text-decoration: none;

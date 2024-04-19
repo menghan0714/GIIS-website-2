@@ -19,31 +19,14 @@ function Nav() {
         };
     }, []);
 
-    // const scrollToElement = (selector) => {
-    //     const targetElement = document.querySelector(selector);
-    //     if (targetElement) {
-    //         targetElement.scrollIntoView({ behavior: 'smooth' });
-    //     }
-    // };
-
     return (
-        <nav className={`nav bg-success-subtle ${isNavSticky ? 'sticky' : ''}`}>
-
-            <ul className="nav justify-content-end">
-                {/* <li className="nav-item">
-                    <Link className="nav-link" to="/#aboutus" onClick={() => scrollToElement('#aboutus')}>About Us</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/#enrollment" onClick={() => scrollToElement('#enrollment')}>Enrollment</Link>
-                </li> */}
+        <nav className={`nav ${isNavSticky ? 'sticky' : ''} bg-success-subtle`}>
+            <ul className="nav justify-center">
                 <li><Link to="/">HomePage</Link></li>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/programs">Our Programs</Link></li>
-                <li><Link to="/enrollment">Enrollment</Link></li>
+                <li><Link to="/acreditation">Acreditation</Link></li>
+                <li><Link to="/faculty">Faculty & Students</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
-
-
-
             </ul>
         </nav>
     );

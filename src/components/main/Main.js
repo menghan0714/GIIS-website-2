@@ -4,7 +4,6 @@ import Homepage from './Homepage';
 function Main() {
     return (
         <main className="container-fluid">
-            this is main
             <Routes>
                 <Route path="/" element={<Homepage />} />
             </Routes>

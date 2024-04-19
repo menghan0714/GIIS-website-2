@@ -1,21 +1,21 @@
 import React from 'react';
-import Slider from './Homepage/Slider';
+import ImgSlider from './Homepage/ImgSlider.js';
+import Slogan from './Homepage/Slogan';
 import Introduction from './Homepage/Introduction';
-import Programs from './Homepage/Programs.js';
+import CogniaAccreditation from './Homepage/CogniaAccreditation.js';
 // import Video from './Homepage/Video';
 // import Accredited from './Homepage/Accredited';
-import TeacherAndGraduates from './Homepage/TeacherAndGraduates';
+import Faculty_Graduates from './Homepage/Faculty_Graduates.js';
 import ContactUs from './Homepage/ContactUs';
 
 function Homepage() {
     return (
         <>
-            <Slider />
+            <ImgSlider />
+            <Slogan />
             <Introduction />
-            <Programs />
-            {/* <Video />
-            <Accredited /> */}
-            <TeacherAndGraduates />
+            <CogniaAccreditation />
+            <Faculty_Graduates />
             <ContactUs />
 
         </>
