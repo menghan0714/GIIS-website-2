@@ -19,7 +19,6 @@
 }
 
 .customScrollbar {
-    -webkit-appearance: none;
     width: 90%;  
     height: 12px;
     background: #ccc;

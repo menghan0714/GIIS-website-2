@@ -5,7 +5,7 @@ import Introduction from './Homepage/Introduction';
 import CogniaAccreditation from './Homepage/CogniaAccreditation.js';
 import Testimonial from './Homepage/Testimonial.js';
 import FacultyGraduates from './Homepage/FacultyGraduates.js';
-import ContactUs from './Homepage/ContactUs';
+import ContactForm from './Homepage/ContactForm';
 
 function Homepage() {
     return (
@@ -16,7 +16,7 @@ function Homepage() {
             <CogniaAccreditation />
             <Testimonial />
             <FacultyGraduates />
-            <ContactUs />
+            <ContactForm />
 
         </>
 
