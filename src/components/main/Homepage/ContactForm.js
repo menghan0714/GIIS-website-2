@@ -5,7 +5,7 @@ function ContactForm() {
         <div className="row">
             <h2 id="contact">Contact Me</h2>
             <div className="col-12 form-group">
-                <form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="contact" method="post" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact" />
                     <p hidden>
                         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
