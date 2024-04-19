@@ -7,32 +7,46 @@ function ContactForm() {
         message: ''
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Sending form data...', formData);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const form = new FormData();
+        for (const field in formData) {
+            form.append(field, formData[field]);
+        }
+
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+            console.log('Form successfully submitted');
+        } else {
+            console.log('Error submitting form');
+        }
     };
 
     return (
-        <form onSubmit={handleSubmit} data-netlify="true" name="contact">
+        <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
             <p>
-                <label>您的名字：<input type="text" name="name" value={formData.name} onChange={handleChange} /></label>
+                <label>Your Name: <input type="text" name="name" value={formData.name} onChange={handleChange} /></label>
             </p>
             <p>
-                <label>您的郵箱：<input type="email" name="email" value={formData.email} onChange={handleChange} /></label>
+                <label>Your Email: <input type="email" name="email" value={formData.email} onChange={handleChange} /></label>
             </p>
             <p>
-                <label>留言：<textarea name="message" value={formData.message} onChange={handleChange}></textarea></label>
+                <label>Message: <textarea name="message" value={formData.message} onChange={handleChange}></textarea></label>
             </p>
             <p>
-                <button type="submit">發送</button>
+                <button type="submit">Send</button>
             </p>
         </form>
     );
