@@ -1,54 +1,30 @@
-import React, { useState } from 'react';
+import React from "react";
 
 function ContactForm() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const form = new FormData();
-        for (const field in formData) {
-            form.append(field, formData[field]);
-        }
-
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-            console.log('Form successfully submitted');
-        } else {
-            console.log('Error submitting form');
-        }
-    };
-
     return (
-        <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-            <p>
-                <label>Your Name: <input type="text" name="name" value={formData.name} onChange={handleChange} /></label>
-            </p>
-            <p>
-                <label>Your Email: <input type="email" name="email" value={formData.email} onChange={handleChange} /></label>
-            </p>
-            <p>
-                <label>Message: <textarea name="message" value={formData.message} onChange={handleChange}></textarea></label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </form>
+        <div className="row">
+            <h2 id="contact">Contact Me</h2>
+            <div className="col-12 form-group">
+                <form name="contact" netlify="true" method="post">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p>
+                        <label htmlFor="name">Name</label> <br />
+                        <input type="text" id="name" name="name" required />
+                    </p>
+                    <p>
+                        <label htmlFor="email">Email</label> <br />
+                        <input type="email" id="email" name="email" required />
+                    </p>
+                    <p>
+                        <label htmlFor="message">Message</label> <br />
+                        <textarea id="message" name="message" required></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
     );
 }
 
