@@ -5,7 +5,7 @@ import Introduction from './Homepage/Introduction';
 import CogniaAccreditation from './Homepage/CogniaAccreditation.js';
 // import Video from './Homepage/Video';
 // import Accredited from './Homepage/Accredited';
-import Faculty_Graduates from './Homepage/Faculty_Graduates.js';
+import FacultyGraduates from './Homepage/FacultyGraduates.js';
 import ContactUs from './Homepage/ContactUs';
 
 function Homepage() {
@@ -15,7 +15,7 @@ function Homepage() {
             <Slogan />
             <Introduction />
             <CogniaAccreditation />
-            <Faculty_Graduates />
+            <FacultyGraduates />
             <ContactUs />
 
         </>
