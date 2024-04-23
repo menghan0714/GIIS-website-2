@@ -4,7 +4,7 @@ function FacultyGraduates() {
     // Automatically import all files from the logos directory
     const importAll = (r) => {
         let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        r.keys().forEach((item) => { images[item.replace('./', '')] = r(item); });
         return images;
     };
 
