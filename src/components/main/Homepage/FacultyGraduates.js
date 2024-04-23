@@ -1,40 +1,34 @@
 import React from 'react';
-import Slider from 'react-slick';
-import purdue_logo from '../../../img/Homepage/SchoolLogo/purdue_logo.png';
-import upenn_logo from '../../../img/Homepage/SchoolLogo/upenn_logo.png';
-import utaustin_logo from '../../../img/Homepage/SchoolLogo/utaustin_logo.png';
-import nthu_logo from '../../../img/Homepage/SchoolLogo/nthu_logo.png';
 
 function FacultyGraduates() {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
-        pauseOnHover: true
+    // Automatically import all files from the logos directory
+    const importAll = (r) => {
+        let images = {};
+        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        return images;
     };
 
-    const logos = [
-        { src: purdue_logo, alt: "Purdue University" },
-        { src: upenn_logo, alt: "University of Pennsylvania" },
-        { src: utaustin_logo, alt: "University of Texas at Austin" },
-        { src: nthu_logo, alt: "National Tsing Hua University" }
-    ];
+    const images = importAll(require.context('../../../img/Homepage/SchoolLogo', false, /\.(png|jpe?g|svg)$/));
+
+    // Convert object to array if needed
+    const logos = Object.entries(images).map(([key, value]) => {
+        return {
+            src: value,
+            alt: key.replace(/\..+$/, '')  // Remove file extension from alt text
+        };
+    });
 
     return (
         <section className="school-logos">
+            <h2>Faculty & Graduates</h2>
             <div className="container">
-                <Slider {...settings}>
+                <div className="row justify-content-center">
                     {logos.map((logo, index) => (
-                        <div key={index} className="logo-slide">
-                            <img src={logo.src} alt={logo.alt} className="img-fluid" />
+                        <div key={index} className="col-4 col-md-2 mb-2 d-flex justify-content-center align-items-center">
+                            <img src={logo.src} alt={logo.alt} className="img-fluid" style={{ maxHeight: "100px" }} />
                         </div>
                     ))}
-                </Slider>
+                </div>
             </div>
         </section>
     );

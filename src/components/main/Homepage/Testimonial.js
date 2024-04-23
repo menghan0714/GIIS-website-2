@@ -1,70 +1,66 @@
-
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react'; // Make sure useRef is included here
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './Testimonial.module.css';
 
+import student1 from '../../../img/Homepage/StuPhoto/student1.png';
+import student2 from '../../../img/Homepage/StuPhoto/student2.png';
+import student3 from '../../../img/Homepage/StuPhoto/student3.png';
+import student4 from '../../../img/Homepage/StuPhoto/student4.png';
+import student5 from '../../../img/Homepage/StuPhoto/student5.png';
+
 const Testimonial = () => {
-    const [sliderIndex, setSliderIndex] = useState(0);
-    const sliderRef = useRef();
+    const sliderRef = useRef();  // useRef is now correctly imported and used
 
     const testimonials = [
         {
             id: 1,
-            name: "John Doe",
-            comment: "This program has been transformative for my career!",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
+            name: "Li Wei Zhang",
+            comment: "Participating in this program has profoundly impacted my career trajectory. The hands-on projects and real-world applications taught here have enabled me to excel in my role as a data scientist at a leading tech firm.",
+            photoUrl: student1
         },
         {
             id: 2,
-            name: "Jane Smith",
-            comment: "Thanks to this school, I've gained skills that set me up for success.",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
+            name: "Suki Kim",
+            comment: "I am profoundly grateful for the comprehensive curriculum that bridged my academic knowledge with practical skills, preparing me superbly for the competitive job market. The mentorship program, in particular, has opened doors for me that I never anticipated.",
+            photoUrl: student2
         },
         {
             id: 3,
-            name: "Alice Johnson",
-            comment: "A truly wonderful experience with supportive teachers and engaging material.",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
+            name: "Ananya Rao",
+            comment: "My experience at this institution has been nothing short of transformative. The supportive faculty fostered an environment that encouraged exploration and innovation, which helped me develop a critical analytical mindset that is invaluable in my current entrepreneurial ventures.",
+            photoUrl: student3
         },
         {
             id: 4,
-            name: "Alice Johnson2",
-            comment: "The teaching staff is highly knowledgeable and always available for guidance.",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
+            name: "Chen Yu Yan",
+            comment: "The knowledge and support I received from the teaching staff were phenomenal. Their expertise in diverse fields provided a well-rounded education and they were always available to provide guidance, ensuring that I was never lost during my studies.",
+            photoUrl: student4
         },
         {
             id: 5,
-            name: "Bob Lee",
-            comment: "The practical skills I've gained have directly impacted my professional development positively.",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
+            name: "Haruto Takahashi",
+            comment: "The skills I've developed here, especially in innovative problem-solving and strategic planning, have greatly propelled my career in technology management. The learning environment is unparalleled in its commitment to student success and professional development.",
+            photoUrl: student5
         },
-        {
-            id: 6,
-            name: "Clara Belle",
-            comment: "Engaging, informative, and truly empowering! This program has it all.",
-            photoUrl: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/f/f3/1.jpg"
-        }
     ];
 
+
     const settings = {
-        dots: false,  // Turn off default dots
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        afterChange: current => setSliderIndex(current),  // Update index on slide change
-        easing: "ease-in-out",  // Add easing for smoother sliding
-    };
-
-    const handleScrollbarChange = (event) => {
-        const slideIndex = parseInt(event.target.value, 10);
-        sliderRef.current.slickGoTo(slideIndex);  // Go to selected slide
+        autoplay: true,
+        autoplaySpeed: 2000,
+        easing: "ease-in-out",
     };
 
     return (
         <div className={styles.testimonialContainer}>
+            <h2>Testimonial</h2>
             <Slider ref={sliderRef} {...settings}>
                 {testimonials.map((testimonial, index) => (
                     <div key={index} className={styles.testimonialItem}>
@@ -74,18 +70,8 @@ const Testimonial = () => {
                     </div>
                 ))}
             </Slider>
-            <input
-                type="range"
-                min={0}
-                max={testimonials.length - 1}
-                value={sliderIndex}
-                onChange={handleScrollbarChange}
-                className={styles.customScrollbar}
-            />
         </div>
     );
 };
 
 export default Testimonial;
-
-

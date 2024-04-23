@@ -1,9 +1,13 @@
+import React from 'react';
+
 function Slogan() {
     return (
-        <div className="slogan">
-            <p>這邊放slogan嗎？</p>
-            <p>Empowering the next generation of innovators and thinkers</p>
+        <div className="bg-primary text-white text-center p-4 my-4 rounded">
+            <p className="lead" style={{ fontFamily: '"Lato", sans-serif' }}>Empowering the next generation of innovators and thinkers</p>
+            {/* Replace button text and class based on the action you choose */}
+            <button className="btn btn-light mt-3">Learn More</button>
         </div>
     );
 }
+
 export default Slogan;

@@ -10,17 +10,55 @@ import ContactForm from './Homepage/ContactForm';
 function Homepage() {
     return (
         <>
-            <ImgSlider />
-            <Slogan />
-            <Introduction />
-            <CogniaAccreditation />
-            <Testimonial />
-            <FacultyGraduates />
-            <ContactForm />
+            <div className="card mb-1" id="homepage">
+                <div className="container">
+                    <ImgSlider />
+                    <div className="card-body">
+                        <Slogan />
+                    </div>
+                </div>
+            </div>
 
+            <div className="card mb-1" id="about">
+                <div className="container">
+                    <div className="card-body">
+                        <Introduction />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card mb-1" id="accreditation">
+                <div className="container">
+                    <div className="card-body">
+                        <CogniaAccreditation />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card mb-1" id="testimonials">
+                <div className="container">
+                    <div className="card-body">
+                        <Testimonial />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card mb-1" id="faculty">
+                <div className="container">
+                    <div className="card-body">
+                        <FacultyGraduates />
+                    </div>
+                </div>
+            </div>
+
+            <div className="card mb-1" id="contact">
+                <div className="container">
+                    <div className="card-body">
+                        <ContactForm />
+                    </div>
+                </div>
+            </div>
         </>
-
-
     );
 }
 
