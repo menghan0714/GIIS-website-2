@@ -18553,5 +18553,21 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     }
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanChu61/GIIS-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanChu61/GIIS-website/issues"
+  },
+  "homepage": "https://github.com/AlanChu61/GIIS-website#readme"
 }
