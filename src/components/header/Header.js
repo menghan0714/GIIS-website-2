@@ -9,7 +9,7 @@ function Header() {
         <header className={`${styles.header}`}>
             {/* First row for logo and buttons */}
             <div className="row align-items-center">
-                <div className="col-8 d-flex align-items-center">
+                <div className="col-10 d-flex align-items-center">
                     <Link to="/">
                         <img src={logo_slogan} alt='Excel High School Logo' className={`img-fluid ${styles.logoImage}`} />
                     </Link>
@@ -17,10 +17,9 @@ function Header() {
                 <div className="col-2 d-flex justify-content-center">
                     {/* You can put something here or leave it empty */}
                     <Link to="/contact" className="btn btn-link px-2">Contact Us</Link>
+                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2">Moodles</a>
                 </div>
-                <div className="col-2 d-flex justify-content-end">
-                    <Link to="/request-info" className={`btn btn-primary ${styles.requestInfoButton}`}>REQUEST INFO</Link>
-                </div>
+
             </div>
 
             {/* Second row exclusively for Nav */}
