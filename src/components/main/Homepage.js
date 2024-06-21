@@ -7,7 +7,7 @@ import Testimonial from './Homepage/Testimonial.js';
 import FacultyGraduates from './Homepage/FacultyGraduates.js';
 import ContactForm from './Homepage/ContactForm';
 
-function Homepage() {
+function Homepage({ language }) {
     return (
         <>
             <div className="card mb-1" id="homepage">
@@ -22,7 +22,7 @@ function Homepage() {
             <div className="card mb-1" id="about">
                 <div className="container">
                     <div className="card-body">
-                        <Introduction />
+                        <Introduction language={language} />
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ function Homepage() {
             <div className="card mb-1" id="accreditation">
                 <div className="container">
                     <div className="card-body">
-                        <CogniaAccreditation />
+                        <CogniaAccreditation language={language} />
                     </div>
                 </div>
             </div>

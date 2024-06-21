@@ -1,22 +1,29 @@
 import React from 'react';
 
-function Introduction() {
+function Introduction({ language }) {
     return (
         <div className="container">
             <h2>学校介绍 / School Introduction</h2>
             <div>
-                我们学校，创立于1998年，坐落在美丽的山谷中。以其创新的教学方法和对学生个人发展的重视而闻名。通过结合现代科技和综合课程，我们致力于为学生提供一流的教育体验。 / Our school, established in 1998, is nestled in a beautiful valley and is renowned for its innovative teaching methodologies and focus on individual student development. By integrating modern technology and comprehensive curricula, we are committed to providing a top-tier educational experience to our students.
+                {language === 'zh' ? (
+                    <p>
+                        我们的学校是一所全线上、全球化的现代化学府，致力于提供世界一流的教育，吸引了全球各地的精英学生。我们的教育模式打破了传统教育的地域限制，学生可以在任何时间、任何地点，接受顶尖的教育资源。
+                        我们提供双学位课程，学生可以同时获得不同学校的学位，增强他们的学术和职业竞争力。通过这种方式，学生不仅能深入理解所学专业，还能跨学科学习，培养多元化的知识体系和跨领域的思维能力。
+                        我们将人工智能和最新的前沿科技深度融合到教学中，创造沉浸式的学习体验。这些先进的技术工具不仅丰富了教学内容，还使得学习过程更加生动有趣。我们的在线平台提供了互动式的学习体验，使学生能够随时随地与教师和同学交流，获得实时反馈。
+                        我们非常注重学生的个人发展，致力于培养学生的兴趣和特长。通过个性化的教学方法和丰富多样的课程设置，我们帮助每一位学生发现自己的潜能，激发他们的学习热情。我们提供广泛的选修课和课外活动，涵盖艺术、科学、技术、经济等多个领域，让学生在全面发展的同时，找到自己的兴趣所在。
+                        此外，我们还注重学生的综合素质培养，开设领导力培训、创新创业课程等，帮助学生在未来的职业生涯中脱颖而出。我们的目标是培养具备国际视野、创新思维和社会责任感的未来领导者。
+                    </p>
+                ) : (
+                    <p>
+                        Our school is a fully online, globalized modern institution dedicated to providing world-class education, attracting elite students from around the world. Our educational model breaks the geographical constraints of traditional education, allowing students to access top-notch educational resources anytime, anywhere.
+                        We offer dual degree programs, enabling students to earn degrees from different schools simultaneously, enhancing their academic and career competitiveness. This approach allows students to gain a deep understanding of their chosen fields while also engaging in interdisciplinary studies, fostering a diverse knowledge base and cross-disciplinary thinking skills.
+                        We deeply integrate artificial intelligence and the latest cutting-edge technologies into our teaching, creating immersive learning experiences. These advanced technological tools enrich the teaching content and make the learning process more engaging and enjoyable. Our online platform provides an interactive learning experience, allowing students to communicate with teachers and classmates anytime, anywhere, and receive real-time feedback.
+                        We place great emphasis on the personal development of our students, aiming to cultivate their interests and talents. Through personalized teaching methods and a diverse range of courses, we help each student discover their potential and ignite their passion for learning. We offer a wide variety of elective courses and extracurricular activities across multiple fields such as arts, science, technology, and economics, enabling students to develop comprehensively while finding their own interests.
+                        Additionally, we focus on the holistic development of our students by offering leadership training, innovation, and entrepreneurship courses, helping them stand out in their future careers. Our goal is to nurture future leaders with a global perspective, innovative thinking, and a sense of social responsibility.
+                    </p>
+                )}
             </div>
-            <h2>为什么选择我们? / Why Choose Us?</h2>
-            <div className="row">
-                <div className="col-md-3">
-                    <img src="https://tw.portal-pokemon.com/play/resources/pokedex/img/pm/5794f0251b1180998d72d1f8568239620ff5279c.png" alt="Founder's Portrait" className="img-fluid" />
-                </div>
-                <div className="col-md-9">
-                    我们学校是基于教育不仅塑造思想还培养未来领导者的原则而建立的。我们承诺培养创新和批判性思维，致力于培养新一代的思想家和创新者。我们相信在培养创造力和好奇心的环境中，激发终身学习和探索的旅程。我们的目标是让学生掌握面对未来挑战的必要技能和知识，自信地产生世界的意义影响。 / Our school was established on the principle that education not only shapes minds but also molds future leaders. Embracing a commitment to foster innovation and critical thinking, we aim to nurture a new generation of thinkers and innovators. We believe in cultivating an environment where creativity and curiosity thrive, fueling a lifelong journey of learning and discovery. Our goal is to arm our students with the necessary skills and knowledge to face future challenges confidently and to make a meaningful impact on the world.
-                </div>
-            </div>
-        </div>
+        </div >
     );
 }
 

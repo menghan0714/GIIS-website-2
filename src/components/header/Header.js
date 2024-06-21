@@ -4,7 +4,7 @@ import logo_slogan from '../../img/logo_slogan.png';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
 
-function Header() {
+function Header({ language, toggleLanguage }) {
     return (
         <header className={`${styles.header}`}>
             {/* First row for logo and buttons */}
@@ -15,11 +15,12 @@ function Header() {
                     </Link>
                 </div>
                 <div className="col-2 d-flex justify-content-center">
-                    {/* You can put something here or leave it empty */}
                     <Link to="/contact" className="btn btn-link px-2">Contact Us</Link>
                     <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2">Moodles</a>
+                    <button className="btn btn-link px-2" onClick={toggleLanguage}>
+                        {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
+                    </button>
                 </div>
-
             </div>
 
             {/* Second row exclusively for Nav */}
