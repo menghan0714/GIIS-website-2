@@ -15,7 +15,7 @@ function Header({ language, toggleLanguage }) {
                     </Link>
                 </div>
                 <div className="col-2 d-flex justify-content-center">
-                    <Link to="/contact" className="btn btn-link px-2">Contact Us</Link>
+                    {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
                     <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2">Moodles</a>
                     <button className="btn btn-link px-2" onClick={toggleLanguage}>
                         {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
@@ -25,7 +25,7 @@ function Header({ language, toggleLanguage }) {
 
             {/* Second row exclusively for Nav */}
             <div className="row">
-                <Nav />
+                <Nav language={language} />
             </div>
         </header>
     );
