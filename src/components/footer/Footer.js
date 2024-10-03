@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="page-footer" style="background-color: #1e3a8a;">
+        <footer className="page-footer">
             Copyright&copy; {new Date().getFullYear()} Genesis of Ideas International School. All rights reserved.
         </footer>
     )
