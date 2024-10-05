@@ -1,0 +1,11 @@
+.page-footer {
+    background-color: #1e3a8a; 
+    color: #ffffff; 
+    text-align: left;
+    padding: 20px 0; 
+    height: 4.545vh;  
+    position: fixed; 
+    bottom: 0;  
+    left: 0; 
+    width: 100%; 
+}
