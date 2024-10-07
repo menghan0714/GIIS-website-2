@@ -20,10 +20,20 @@ function App() {
   return (
     <>
       <Header language={language} toggleLanguage={toggleLanguage} />
-      <Main language={language} />
+    
+      <Routes>
+        <Route path="/discovery" element={<Discovery language={language} />} />
+        <Route path="/admission" element={<Admission language={language} />} />
+        <Route path="/academics" element={<Academics language={language} />} />
+        <Route path="/support" element={<Support language={language} />} />
+        {/* 根路徑顯示主頁 Main */}
+        <Route path="/" element={<Main language={language} />} />
+      </Routes>
+
       <Footer language={language} />
     </>
   );
 }
 
 export default App;
+
