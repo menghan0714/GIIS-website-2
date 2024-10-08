@@ -1,6 +1,8 @@
+import styles from './Footer.module.css';
+
 function Footer() {
     return (
-        <footer className="page-footer">
+        <footer className={styles.pageFooter}>
             Copyright&copy; {new Date().getFullYear()} Genesis of Ideas International School. All rights reserved.
         </footer>
     )

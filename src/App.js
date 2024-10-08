@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 import Footer from './components/footer/Footer';
+import Discovery from './components/pages/Discovery/Discovery';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -20,10 +21,19 @@ function App() {
   return (
     <>
       <Header language={language} toggleLanguage={toggleLanguage} />
-      <Main language={language} />
+    
+      <Routes>
+        <Route path="/discovery" element={<Discovery language={language} />} />
+        <Route path="/admission" element={<Admission language={language} />} />
+        <Route path="/academics" element={<Academics language={language} />} />
+        <Route path="/support" element={<Support language={language} />} />
+        <Route path="/" element={<Main language={language} />} />
+      </Routes>
+
       <Footer language={language} />
     </>
   );
 }
 
 export default App;
+
