@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Discovery from './components/pages/Discovery/Discovery';
+import Admission from './components/pages/Admission/Admission';
+import Academics from './components/pages/Academics/Academics';
+import Support from './components/pages/Support/Support';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 import Footer from './components/footer/Footer';
-import Discovery from './components/pages/Discovery/Discovery';
 
 function App() {
   const [language, setLanguage] = useState('en');
