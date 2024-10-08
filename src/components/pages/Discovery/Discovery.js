@@ -1,7 +1,7 @@
 import React from 'react';
-import DiscoveryHeader from './Header'; 
-import DiscoveryMain from './Main';     
-import DiscoveryFooter from './Footer'; 
+import DiscoveryHeader from './Header/Header'; 
+import DiscoveryMain from './Main/Main';     
+import DiscoveryFooter from './Footer/Footer'; 
 
 function Discovery({ language }) {
   return (
