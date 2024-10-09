@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Discovery from './components/pages/Discovery/Discovery';
 import Admission from './components/pages/Admission/Admission';
 import Academics from './components/pages/Academics/Academics';
@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Header language={language} toggleLanguage={toggleLanguage} />
     
       <Routes>
@@ -35,7 +35,7 @@ function App() {
       </Routes>
 
       <Footer language={language} />
-    </>
+   </Router>
   );
 }
 
