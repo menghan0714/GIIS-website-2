@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/pages/Homepage/Homepage';
 import Discovery from './components/pages/Discovery/Discovery';
-import Header from './components/header/Header';
-import Main from './components/main/Main';
-import Footer from './components/footer/Footer';
+import Academics from './components/pages/Academics/Academics';
+import Footer from './components/Footer/Footer';
 
 function App() {
    const [language, setLanguage] = useState('en');
