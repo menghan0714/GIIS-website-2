@@ -4,8 +4,8 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 import Homepage from './components/pages/Homepage/HomepageMain';
-import Discovery from './components/pages/Discovery/Discovery';
-import Academics from './components/pages/Academics/Academics';
+import Discovery from './components/pages/Discovery/DiscoveryMain';
+import Academics from './components/pages/Academics/AcademicsMain';
 
 function App() {
    const [language, setLanguage] = useState('en');
