@@ -30,7 +30,6 @@ function App() {
         <Route path="/" element={<Homepage language={language} />} />
         <Route path="/discovery" element={<Discovery language={language} />} />
         <Route path="/academics" element={<Academics language={language} />} />
-        <Route path="/" element={<Academics language={language} />} />
       </Routes>
      </main>
      <Footer />
