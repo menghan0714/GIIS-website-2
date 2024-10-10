@@ -1,5 +1,5 @@
 import React from 'react';
-import cogniaImage from '../../../../src/img/Homepage/cognia_logo.jpg';
+import cogniaImage from '../../../../img/Homepage/cognia_logo.jpg';
 
 function CogniaAccreditation({ language }) {
     return (
