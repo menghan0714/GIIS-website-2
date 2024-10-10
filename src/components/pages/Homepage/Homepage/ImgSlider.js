@@ -23,7 +23,7 @@ function ImgSlider() {
     };
 
     // Automatically import all images from a directory
-    const images = importAll(require.context('../../../img/Homepage', false, /homepage.*\.(png|jpe?g|svg)$/));
+    const images = importAll(require.context('../../../../img/Homepage', false, /homepage.*\.(png|jpe?g|svg)$/));
 
     return (
         <Slider {...settings}>
