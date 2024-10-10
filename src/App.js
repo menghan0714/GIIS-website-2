@@ -22,16 +22,17 @@ function App() {
   };
 
   return (
+     <>
       <Header language={language} toggleLanguage={toggleLanguage} />
       <main className="container-fluid">
-     
-      <Routes>
-        <Route path="/" element={<Homepage language={language} />} />
-        <Route path="/discovery" element={<Discovery language={language} />} />
-        <Route path="/academics" element={<Academics language={language} />} />
-      </Routes>
+       <Routes>
+         <Route path="/" element={<Homepage language={language} />} />
+         <Route path="/discovery" element={<Discovery language={language} />} />
+         <Route path="/academics" element={<Academics language={language} />} />
+       </Routes>
       </main>
       <Footer />
+     </>
   );
 }
 
