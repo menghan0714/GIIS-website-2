@@ -8,7 +8,7 @@ import Testimonial from './Homepage/Testimonial.js';
 import FacultyGraduates from './Homepage/FacultyGraduates.js';
 import ContactForm from './Homepage/ContactForm';
 
-function Homepage({ language }) {
+function HomepageMain({ language }) {
    return (
     <>
         <div className="row">
