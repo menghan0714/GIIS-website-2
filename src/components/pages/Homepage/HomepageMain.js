@@ -64,5 +64,7 @@ function Homepage({ language }) {
             </div>
         </div>
     </>
-);
+  );
+}
+
 export default HomepageMain;
