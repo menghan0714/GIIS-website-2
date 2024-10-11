@@ -4,3 +4,7 @@
     width: 100%;
     z-index: 1000; /* Higher if needed, to stay above other elements */
 }
+
+.customBackground {
+    background-color: #1e3a8a;
+}
