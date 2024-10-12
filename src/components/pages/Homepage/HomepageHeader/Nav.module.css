@@ -1,0 +1,40 @@
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Higher if needed, to stay above other elements */
+}
+
+.customBackground {
+    background-color: rgba(30, 58, 138, 0.8);
+    height: 70px;
+}
+
+.navbar-nav {
+  gap: 60px; /* 控制項目之間的距離，根據需求調整 */
+}
+
+.nav-item {
+  flex: 1; /* 保持均勻分布 */
+  text-align: center; /* 確保文字居中 */
+} 
+
+.nav-link {
+  display: block;
+  padding: 10px 0;
+} 
+
+.first-item {
+  margin-left: 80px; /* 調整這個值來控制左側距離 */
+} 
+
+.last-item {
+  margin-right: 80px; /* 調整這個值來控制右側距離 */
+} 
+
+.navLink {
+    font-family: Arial, sans-serif; /* 設定字體 */
+    font-size: 35px; /* 字體大小 */
+    font-weight: bold; /* 字體加粗 */ 
+    font-color: #ffffff;
+}

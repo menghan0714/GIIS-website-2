@@ -4,11 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './Testimonial.module.css';
 
-import student1 from '../../../img/Homepage/StuPhoto/student1.png';
-import student2 from '../../../img/Homepage/StuPhoto/student2.png';
-import student3 from '../../../img/Homepage/StuPhoto/student3.png';
-import student4 from '../../../img/Homepage/StuPhoto/student4.png';
-import student5 from '../../../img/Homepage/StuPhoto/student5.png';
+import student1 from '../../../../img/Homepage/StuPhoto/student1.png';
+import student2 from '../../../../img/Homepage/StuPhoto/student2.png';
+import student3 from '../../../../img/Homepage/StuPhoto/student3.png';
+import student4 from '../../../../img/Homepage/StuPhoto/student4.png';
+import student5 from '../../../../img/Homepage/StuPhoto/student5.png';
 
 const Testimonial = () => {
     const sliderRef = useRef();  // useRef is now correctly imported and used

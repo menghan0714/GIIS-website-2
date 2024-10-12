@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/header/Header';
-import Main from './components/main/Main';
-import Footer from './components/footer/Footer';
-import Discovery from './components/pages/Discovery/Discovery';
+import { Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+
+import Homepage from './components/pages/Homepage/HomepageMain';
+import Discovery from './components/pages/Discovery/DiscoveryMain';
+import Academics from './components/pages/Academics/AcademicsMain';
+import Admission from './components/pages/Admission/AdmissionMain';
+import Support from './components/pages/Support/SupportMain';
 
 function App() {
-  const [language, setLanguage] = useState('en');
+   const [language, setLanguage] = useState('en');
 
   useEffect(() => {
     const browserLanguage = navigator.language || navigator.userLanguage;
@@ -19,21 +24,20 @@ function App() {
   };
 
   return (
-    <>
+     <>
       <Header language={language} toggleLanguage={toggleLanguage} />
-    
-      <Routes>
-        <Route path="/discovery" element={<Discovery language={language} />} />
-        <Route path="/admission" element={<Admission language={language} />} />
-        <Route path="/academics" element={<Academics language={language} />} />
-        <Route path="/support" element={<Support language={language} />} />
-        <Route path="/" element={<Main language={language} />} />
-      </Routes>
-
-      <Footer language={language} />
-    </>
+      <main className="container-fluid">
+       <Routes>
+         <Route path="/" element={<Homepage language={language} />} />
+         <Route path="/discovery" element={<Discovery language={language} />} />
+         <Route path="/academics" element={<Academics language={language} />} />
+         <Route path="/admission" element={<Admission language={language} />} />
+         <Route path="/support" element={<Support language={language} />} />
+       </Routes>
+      </main>
+      <Footer />
+     </>
   );
 }
 
 export default App;
-

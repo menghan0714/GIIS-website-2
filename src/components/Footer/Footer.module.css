@@ -1,0 +1,9 @@
+.pageFooter {
+    background-color: #1e3a8a; 
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%; 
+    font-size: 18px;
+}

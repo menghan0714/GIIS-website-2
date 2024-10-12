@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from './Nav';
 import logo_slogan from '../../img/logo_slogan.png';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
@@ -21,12 +20,7 @@ function Header({ language, toggleLanguage }) {
                         {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
                     </button>
                 </div>
-            </div>
-
-            {/* Second row exclusively for Nav */}
-            <div className="row">
-                <Nav language={language} />
-            </div>
+            </div> 
         </header>
     );
 }

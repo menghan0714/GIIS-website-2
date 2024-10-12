@@ -8,7 +8,7 @@ function FacultyGraduates() {
         return images;
     };
 
-    const images = importAll(require.context('../../../img/Homepage/SchoolLogo', false, /\.(png|jpe?g|svg)$/));
+    const images = importAll(require.context('../../../../img/Homepage/SchoolLogo', false, /\.(png|jpe?g|svg)$/));
 
     // Convert object to array if needed
     const logos = Object.entries(images).map(([key, value]) => {
