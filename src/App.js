@@ -7,7 +7,7 @@ import Homepage from './components/pages/Homepage/HomepageMain';
 import Discovery from './components/pages/Discovery/DiscoveryMain';
 import Academics from './components/pages/Academics/AcademicsMain';
 import Admission from './components/pages/Admission/AdmissionMain';
-import StudentSupport from './components/pages/StudentSupport/StudentSupportMain';
+import Support from './components/pages/Support/SupportMain';
 
 function App() {
    const [language, setLanguage] = useState('en');
@@ -32,7 +32,7 @@ function App() {
          <Route path="/discovery" element={<Discovery language={language} />} />
          <Route path="/academics" element={<Academics language={language} />} />
          <Route path="/admission" element={<Admission language={language} />} />
-         <Route path="/studentsupport" element={<StudentSupport language={language} />} />
+         <Route path="/support" element={<Support language={language} />} />
        </Routes>
       </main>
       <Footer />
