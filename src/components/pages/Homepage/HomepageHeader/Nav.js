@@ -31,10 +31,10 @@ function Nav({ language }) {
                 </button>
                 <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-between w-100">
-                        <li className="nav-item text-center"><Link className="nav-link" to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现'}</Link><div className="underline"></div></li>
-                        <li className="nav-item text-center"><Link className="nav-link" to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link><div className="underline"></div></li>   
-                        <li className="nav-item text-center"><Link className="nav-link" to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link><div className="underline"></div></li>
-                        <li className="nav-item text-center"><Link className="nav-link" to="/student support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link><div className="underline"></div></li>
+                        <li className="nav-item text-center"><Link className={`nav-link ${styles.navLink}`} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现'}</Link><div className="underline"></div></li>
+                        <li className="nav-item text-center"><Link className={`nav-link ${styles.navLink}`} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link><div className="underline"></div></li>   
+                        <li className="nav-item text-center"><Link className={`nav-link ${styles.navLink}`} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link><div className="underline"></div></li>
+                        <li className="nav-item text-center"><Link className={`nav-link ${styles.navLink}`} to="/student support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link><div className="underline"></div></li>
                     </ul>
                 </div>
             </div>
