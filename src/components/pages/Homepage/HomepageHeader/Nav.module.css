@@ -10,6 +10,10 @@
     height: 70px;
 }
 
+.navbar-nav {
+  gap: 60px; /* 控制項目之間的距離，根據需求調整 */
+}
+
 .nav-item {
   flex: 1; /* 保持均勻分布 */
   text-align: center; /* 確保文字居中 */
@@ -21,11 +25,11 @@
 } 
 
 .first-item {
-  margin-left: 20px; /* 調整這個值來控制左側距離 */
+  margin-left: 80px; /* 調整這個值來控制左側距離 */
 } 
 
 .last-item {
-  margin-right: 20px; /* 調整這個值來控制右側距離 */
+  margin-right: 80px; /* 調整這個值來控制右側距離 */
 } 
 
 .navLink {
