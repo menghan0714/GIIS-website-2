@@ -10,6 +10,11 @@
     height: 70px;
 }
 
+.nav-item {
+  flex: 1; /* 保持均勻分布 */
+  text-align: center; /* 確保文字居中 */
+} 
+
 .first-item {
   margin-left: 20px; /* 調整這個值來控制左側距離 */
 } 
@@ -20,8 +25,7 @@
 
 .navLink {
     font-family: Arial, sans-serif; /* 設定字體 */
-    font-size: 60px; /* 字體大小 */
+    font-size: 35px; /* 字體大小 */
     font-weight: bold; /* 字體加粗 */
     color: #ffffff; /* 字體顏色 */
-    margin-right: 50px; /* 調整之間的間距 */
 }
