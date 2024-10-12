@@ -10,6 +10,14 @@
     height: 70px;
 }
 
+.first-item {
+  margin-left: 20px; /* 調整這個值來控制左側距離 */
+} 
+
+.last-item {
+  margin-right: 20px; /* 調整這個值來控制右側距離 */
+} 
+
 .navLink {
     font-family: Arial, sans-serif; /* 設定字體 */
     font-size: 60px; /* 字體大小 */
