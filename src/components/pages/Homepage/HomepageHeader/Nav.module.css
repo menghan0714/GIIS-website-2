@@ -35,6 +35,5 @@
 .navLink {
     font-family: Arial, sans-serif; /* 設定字體 */
     font-size: 35px; /* 字體大小 */
-    font-weight: bold; /* 字體加粗 */
-    color: #ffffff; /* 字體顏色 */
+    font-weight: bold; /* 字體加粗 */ 
 }
