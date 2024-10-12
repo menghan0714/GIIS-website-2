@@ -1,7 +1,7 @@
 import React from 'react';
 
 // 一個簡單的 Student Support 組件
-const StudentSupport = () => {
+const Support = () => {
   return (
     <section>
       <h1>Student Support Page</h1>
@@ -29,4 +29,4 @@ const StudentSupport = () => {
   );
 };
 
-export default StudentSupport;
+export default Support;
