@@ -6,8 +6,8 @@ import Header from './components/Header/Header';
 import Homepage from './components/pages/Homepage/HomepageMain';
 import Discovery from './components/pages/Discovery/DiscoveryMain';
 import Academics from './components/pages/Academics/AcademicsMain';
-import Admission from './components/pages/Academics/AdmissionMain';
-import StudentSupport from './components/pages/Academics/StudentSupportMain';
+import Admission from './components/pages/Admission/AdmissionMain';
+import StudentSupport from './components/pages/StudentSupport/StudentSupportMain';
 
 function App() {
    const [language, setLanguage] = useState('en');
