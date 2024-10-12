@@ -21,5 +21,12 @@ const Admission = () => {
         <h2>Important Dates</h2>
         <ul>
           <li>Application Deadline: January 31, 2024</li>
-          <li>Interview Period: February 15 - March
+          <li>Interview Period: February 15 - March 15, 2024</li>
+          <li>Admission Decision: April 10, 2024</li>
+        </ul>
+      </div>
+    </section>
+  );
+};
 
+export default Admission;
