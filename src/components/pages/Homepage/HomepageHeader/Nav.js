@@ -30,7 +30,7 @@ function Nav({ language }) {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-between w-100 ">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <li className={`nav-item first-item text-center ${styles.navLink}`}><a className="nav-link" href="/discovery">{language === 'en' ? 'DISCOVERY' : '发现'}</a></li>
                         <li className={`nav-item text-center ${styles.navLink}`}><a className="nav-link" href="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</a></li>   
                         <li className={`nav-item text-center ${styles.navLink}`}><a className="nav-link" href="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</a></li>
