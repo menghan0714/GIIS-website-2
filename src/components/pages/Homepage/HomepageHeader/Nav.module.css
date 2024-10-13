@@ -11,7 +11,6 @@
 }
 
 .customnavbar {
-  background-color: red !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -24,7 +23,7 @@
   color: #ffffff !important; /* 白色文字 */
   text-align: center !important;
   font-family: Arial, sans-serif !important; /* 設定字體 */
-  font-size: 50px !important; /* 字體大小 */
+  font-size: 35px !important; /* 字體大小 */
   font-weight: bold !important; /* 字體加粗 */
 }
 
