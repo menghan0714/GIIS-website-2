@@ -11,20 +11,20 @@
 }
 
 .custom-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1152px; /* 1920px - 2 * 384px = 1152px */
-  margin: 0 auto;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 1152px !important; /* 1920px - 2 * 384px = 1152px */
+  margin: 0 auto !important;
 }
 
 .nav-item {
-  padding: 0 192px; /* 384px / 2 to evenly space between items */
-  color: #ffffff; /* 白色文字 */
-  text-align: center;
-  font-family: Arial, sans-serif; /* 設定字體 */
-  font-size: 35px; /* 字體大小 */
-  font-weight: bold; /* 字體加粗 */
+  padding: 0 192px !important; /* 384px / 2 to evenly space between items */
+  color: #ffffff !important; /* 白色文字 */
+  text-align: center !important;
+  font-family: Arial, sans-serif !important; /* 設定字體 */
+  font-size: 50px !important; /* 字體大小 */
+  font-weight: bold !important; /* 字體加粗 */
 }
 
 
