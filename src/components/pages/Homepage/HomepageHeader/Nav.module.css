@@ -14,12 +14,13 @@
   display: flex !important;
   justify-content: flex-start !important;
   align-items: center !important;
-  width: 800px !important; /* 1920px - 2 * 384px = 1152px */
+  width: 80% !important;
+  max-width: 1200px !important; /* 1920px - 2 * 384px = 1152px */
   margin: 0 auto !important;
 }
 
 .navitem {
-  padding: 0 50px !important; /* 384px / 2 to evenly space between items */
+  padding: 0 70px !important; /* 384px / 2 to evenly space between items */
   color: #ffffff !important; /* 白色文字 */
   text-align: center !important;
   font-family: Arial, sans-serif !important; /* 設定字體 */
