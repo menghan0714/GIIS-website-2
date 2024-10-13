@@ -19,7 +19,7 @@
 }
 
 .navitem {
-  width: 300px !important; /* 固定寬度 */
+  width: 350px !important; /* 固定寬度 */
   height: 50px !important; /* 固定高度 */
   display: flex !important;
   justify-content: center !important;
@@ -27,7 +27,7 @@
   text-align: center !important;
   color: #ffffff !important;
   font-family: Arial, sans-serif !important;
-  font-size: 20px !important;
+  font-size: 30px !important;
   font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: hidden !important; /* 隱藏超出的文字 */
