@@ -25,7 +25,6 @@
   justify-content: center !important;
   align-items: center !important;
   text-align: center !important;
-  color: #ffffff !important;
   font-family: Inter, sans-serif !important;
   font-size: 30px !important;
   font-weight: bold !important;
@@ -36,6 +35,7 @@
 
 .navLink{
     color: #ffffff !important;
+    text-decoration: none !important;
 }     
 
 
