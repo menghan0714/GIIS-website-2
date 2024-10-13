@@ -34,10 +34,10 @@
 }
 
 .navLink{
-    position: relative 
-    color: #ffffff 
-    text-decoration: none 
-    padding-bottom: 5px 
+    position: relative;
+    color: #ffffff ;
+    text-decoration: none ;
+    padding-bottom: 5px ;
 }     
 
 .navLink::after {
