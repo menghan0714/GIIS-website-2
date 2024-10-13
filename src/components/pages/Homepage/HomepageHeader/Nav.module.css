@@ -12,23 +12,26 @@
 
 .customnavbar {
   display: flex !important;
-  justify-content: flex-start !important;
+  justify-content: space between !important;
   align-items: center !important;
-  width: 90% !important;
-  max-width: 1200px !important; /* 1920px - 2 * 384px = 1152px */
+  width: 90% !important; 
   margin: 0 auto !important;
 }
 
 .navitem {
-  padding: 0 6% !important; /* 384px / 2 to evenly space between items */
-  color: #ffffff !important; /* 白色文字 */
+  width: 150px !important; /* 固定寬度 */
+  height: 50px !important; /* 固定高度 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   text-align: center !important;
-  font-family: Arial, sans-serif !important; /* 設定字體 */
-  font-size: 30px !important; /* 字體大小 */
-  font-weight: bold !important; /* 字體加粗 */
-  white-space: nowrap;
-}
-
+  color: #ffffff !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 30px !important;
+  font-weight: bold !important;
+  white-space: nowrap; /* 防止換行 */
+  overflow: hidden !important; /* 隱藏超出的文字 */
+  text-overflow: ellipsis;
 
 
 
