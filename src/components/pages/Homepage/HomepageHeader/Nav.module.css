@@ -43,10 +43,11 @@
 .navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
   position: absolute;
-  left: 0;
+  left: 50%;             /* 左邊對齊中心點 */
+  transform: translateX(-50%);  /* 將元素水平居中 */
   bottom: 0;
-  width: 60%;
-  height: 4px; /* 底槓的高度 */
+  width: 60%;            /* 設置底槓的寬度為 80% */
+  height: 4px;
   background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
   transition: width 0.3s ease; /* 增加動畫效果 */
 }
