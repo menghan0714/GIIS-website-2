@@ -33,10 +33,6 @@
   text-overflow: ellipsis;
 }
 
-.navitem:hover {
-    color:rgba(30, 58, 138, 0.7); 
-}
-
 .navLink{
     color: #ffffff !important;
     text-decoration: none !important;
