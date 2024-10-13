@@ -10,7 +10,7 @@
     height: 70px;
 }
 
-.custom-navbar {
+.customnavbar {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -18,7 +18,7 @@
   margin: 0 auto !important;
 }
 
-.nav-item {
+.navitem {
   padding: 0 192px !important; /* 384px / 2 to evenly space between items */
   color: #ffffff !important; /* 白色文字 */
   text-align: center !important;
