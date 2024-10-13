@@ -33,8 +33,8 @@ function Nav({ language }) {
                     <ul className="navbar-nav custom-navbar">
                         <li className="nav-item"><Link className="nav-link" to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>   
-                        <li className="nav-item"}><Link className="nav-link" to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
-                        <li className="nav-item"}><Link className="nav-link" to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
                     </ul>
                 </div>
             </div>
