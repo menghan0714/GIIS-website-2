@@ -20,7 +20,7 @@
 }
 
 .navitem {
-  padding: 0 2% !important; /* 384px / 2 to evenly space between items */
+  padding: 0 10% !important; /* 384px / 2 to evenly space between items */
   color: #ffffff !important; /* 白色文字 */
   text-align: center !important;
   font-family: Arial, sans-serif !important; /* 設定字體 */
