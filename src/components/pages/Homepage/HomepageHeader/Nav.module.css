@@ -45,7 +45,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 60%;
   height: 4px; /* 底槓的高度 */
   background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
   transition: width 0.3s ease; /* 增加動畫效果 */
