@@ -33,28 +33,28 @@ function Nav({ language }) {
                  <ul className={`navbar-nav ${styles.customnavbar}`}>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className={`${styles.dropdownMenu}`}>
                     <li>Option 1</li>
                     <li>Option 2</li>
                    </ul>
                   </li>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className={`${styles.dropdownMenu}`}>
                     <li>Option 3</li>
                     <li>Option 4</li>
                    </ul>
                   </li>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/academics">{language === 'en' ? 'Admission' : '入学'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className={`${styles.dropdownMenu}`}>
                     <li>Option 5</li>
                     <li>Option 6</li>
                    </ul>
                   </li>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/academics">{language === 'en' ? 'Student Support' : '学生支持'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className={`${styles.dropdownMenu}`}>
                     <li>Option 5</li>
                     <li>Option 6</li>
                    </ul>
