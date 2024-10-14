@@ -44,7 +44,6 @@
     padding-bottom: 6px ;
 }     
 
-
 .navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
   position: absolute;
@@ -61,4 +60,37 @@
   width: 100%; /* 使底槓在懸停時保持全寬 */
 }
 
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* 下拉菜單顯示在導航項目下方 */
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 58, 138, 0.9); /* 下拉菜單背景顏色 */
+    padding: 10px 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+    transition: opacity 0.3s ease-out; /* 動畫效果 */
+    opacity: 0; /* 初始透明度 */
+    visibility: hidden; /* 初始隱藏 */
+}
 
+.dropdown li {
+    list-style: none; /* 移除預設的項目符號（點或數字） */
+    padding: 10px 20px; /* 控制內邊距，讓內容有間距 */
+    text-align: left; /* 項目文字靠左對齊 */
+    width: 199%; /* 設置項目的寬度為100% */
+    background-color: #1e3a8a; 
+}
+
+.dropdown li a {
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+}
+
+.navitem:hover .dropdown {
+    display: block; /* 顯示下拉菜單 */
+    opacity: 1; /* 變成不透明 */
+    visibility: visible; /* 可見 */
+}
