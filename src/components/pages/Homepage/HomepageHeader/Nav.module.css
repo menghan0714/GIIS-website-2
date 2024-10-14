@@ -20,7 +20,7 @@
 
 .navitem {
   position: relative;
-  width: 350px !important; /* 固定寬度 */
+  width: 230px !important; /* 固定寬度 */
   height: 70px !important; /* 固定高度 */
   display: flex !important;
   justify-content: center !important;
@@ -64,10 +64,10 @@
 .dropdownMenu {
     z-index: 10px;
     position: absolute;
-    top: 100%;
+    top: 65px;
     left: 0;
-    min-width: 200px; /* 設置最小寬度 */
-    background-color: #1e3a8a;
+    min-width: 260px; /* 設置最小寬度 */
+    background-color: rgba(30, 58, 138, 0.7);
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     opacity: 0; 
