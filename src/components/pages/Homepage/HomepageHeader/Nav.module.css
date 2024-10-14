@@ -71,6 +71,7 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
     border-left: 6px solid rgba(213, 168, 54, 1);
     list-style: none;
+    color: #FFFFFF;
 }
 
 .navitem:hover .dropdownMenu { 
