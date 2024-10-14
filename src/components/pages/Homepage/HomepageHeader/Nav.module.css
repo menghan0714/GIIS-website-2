@@ -90,7 +90,7 @@
     pointer-events: none;
 }
 
-.navitem:hover .dropdownMenu {
+.navLink:hover .dropdownMenu {
     opacity: 1; /* 懸停時變成不透明 */
     visibility: visible; /* 懸停時顯示 */
 }
