@@ -19,6 +19,7 @@
 }
 
 .navitem {
+  position: relative;
   width: 350px !important; /* 固定寬度 */
   height: 70px !important; /* 固定高度 */
   display: flex !important;
@@ -66,7 +67,7 @@
     top: 100%; /* 下拉菜單顯示在導航項目下方 */
     left: 0;
     width: 100%;
-    background-color: rgba(30, 58, 138, 0.9); /* 下拉菜單背景顏色 */
+    background-color: #1e3a8a; /* 下拉菜單背景顏色 */
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 添加陰影 */
     transition: opacity 0.3s ease-out; /* 動畫效果 */
@@ -78,8 +79,7 @@
     list-style: none; /* 移除預設的項目符號（點或數字） */
     padding: 10px 20px; /* 控制內邊距，讓內容有間距 */
     text-align: left; /* 項目文字靠左對齊 */
-    width: 199%; /* 設置項目的寬度為100% */
-    background-color: #1e3a8a; 
+    width: 100%; /* 設置項目的寬度為100% */
 }
 
 .dropdown li a {
