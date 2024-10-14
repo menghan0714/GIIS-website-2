@@ -35,7 +35,7 @@
 }
 
 .navitem:hover{
-    background-color: rgba(30, 58, 138, 0.7);
+    background-color: rgba(43, 61, 109, 0.7);
 }
 
 .navLink{
@@ -64,7 +64,7 @@
 .dropdownMenu {
     z-index: 10px;
     position: absolute;
-    top: 65px;
+    top: 75px;
     left: 0;
     min-width: 260px; /* 設置最小寬度 */
     background-color: rgba(30, 58, 138, 0.7);
