@@ -61,7 +61,7 @@
   width: 100%; /* 使底槓在懸停時保持全寬 */
 }
 
-.dropdown {
+.dropdownMenu {
     z-index: 10;
     position: absolute;
     top: 100%;
@@ -75,14 +75,14 @@
     transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-.dropdown li {
+.dropdownMenu li {
     list-style: none; /* 移除預設的項目符號（點或數字） */
     padding: 10px 20px; /* 控制內邊距，讓內容有間距 */
     text-align: left; /* 項目文字靠左對齊 */
     white-space: nowrap; /* 防止換行 */
 }
 
-.dropdown li a {
+.dropdownMenu li a {
     padding: 10px 20px;
     color: #ffffff;
     text-decoration: none;
@@ -90,7 +90,7 @@
     width: 100%; /* 滿寬 */
 }
 
-.navitem:hover .dropdown {
+.navitem:hover .dropdownMenu {
     opacity: 1; /* 懸停時變成不透明 */
     visibility: visible; /* 懸停時顯示 */
 }
