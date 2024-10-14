@@ -90,7 +90,7 @@
     width: 100%; /* 滿寬 */
 }
 
-.navitem:hover .dropdownMenu {
+.navitem:hover.dropdownMenu {
     opacity: 1; /* 懸停時變成不透明 */
     visibility: visible; /* 懸停時顯示 */
 }
