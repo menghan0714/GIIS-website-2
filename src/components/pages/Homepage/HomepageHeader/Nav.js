@@ -42,14 +42,14 @@ function Nav({ language }) {
                    </ul>
                   </li>
                   <li className={styles.navitem}>
-                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'Admission' : '入学'}</Link>
+                   <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
                    <ul className={styles.dropdownMenu}>
                     <li>Option 5</li>
                     <li>Option 6</li>
                    </ul>
                   </li>
                   <li className={styles.navitem}>
-                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'Student Support' : '学生支持'}</Link>
+                   <Link className={styles.navLink} to="/studentsupport">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
                     <li>Option 5</li>
                     <li>Option 6</li>
