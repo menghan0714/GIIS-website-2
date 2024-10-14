@@ -33,12 +33,17 @@
   text-overflow: ellipsis;
 }
 
+.navitem:hover{
+    background-color: rgba(30, 58, 138, 0.7);
+}
+
 .navLink{
     position: relative;
     color: #ffffff ;
     text-decoration: none ;
     padding-bottom: 6px ;
 }     
+
 
 .navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
