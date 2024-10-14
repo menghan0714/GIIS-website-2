@@ -12,7 +12,7 @@
 
 .customnavbar {
   display: flex !important;
-  justify-content: space between !important;
+  justify-content: space-between !important;
   align-items: center !important;
   width: 90% !important; 
   margin: 0 auto !important;
@@ -62,17 +62,17 @@
 }
 
 .dropdown {
-    display: none;
+    z-index: 10;
     position: absolute;
-    top: 100%; /* 下拉菜單顯示在導航項目下方 */
+    top: 100%;
     left: 0;
     width: 100%;
-    background-color: #1e3a8a; /* 下拉菜單背景顏色 */
+    background-color: #1e3a8a;
     padding: 10px 0;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-    transition: opacity 0.3s ease-out; /* 動畫效果 */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     opacity: 0; /* 初始透明度 */
     visibility: hidden; /* 初始隱藏 */
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 .dropdown li {
@@ -90,7 +90,6 @@
 }
 
 .navitem:hover .dropdown {
-    display: block; /* 顯示下拉菜單 */
-    opacity: 1; /* 變成不透明 */
-    visibility: visible; /* 可見 */
+    opacity: 1; /* 懸停時變成不透明 */
+    visibility: visible; /* 懸停時顯示 */
 }
