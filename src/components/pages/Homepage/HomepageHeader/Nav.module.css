@@ -62,7 +62,6 @@
 }
 
 .dropdownMenu {
-    z-index: 10;
     position: absolute;
     top: 100%;
     left: 0;
@@ -90,7 +89,7 @@
     pointer-events: none;
 }
 
-.navLink:hover .dropdownMenu {
+.navitem:hover .dropdownMenu { 
     opacity: 1; /* 懸停時變成不透明 */
     visibility: visible; /* 懸停時顯示 */
 }
