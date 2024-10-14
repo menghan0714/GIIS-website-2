@@ -62,7 +62,7 @@
 }
 
 .dropdownMenu {
-    z-index: 20px;
+    z-index: 10px;
     position: absolute;
     top: 100%;
     left: 0;
