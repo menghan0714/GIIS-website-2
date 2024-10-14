@@ -62,12 +62,12 @@
 }
 
 .dropdownMenu {
-    z-index: 200px;
+    z-index: 200;
     position: absolute;
     top: 75px;
     left: 0;
     min-width: 260px; /* 設置最小寬度 */
-    background-color: rgba(30, 58, 138, 0.7);
+    background-color: rgba(30, 58, 138, 1);
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     opacity: 0; 
