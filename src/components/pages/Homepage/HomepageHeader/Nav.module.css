@@ -34,10 +34,6 @@
   text-overflow: ellipsis;
 }
 
-#menu1 {
-    min-width: 320px; /* 設置第一個選單的最小寬度 */
-    min-height: 140px; /* 設置第一個選單的最小高度 */
-}
 
 .navLink{
     position: relative;
