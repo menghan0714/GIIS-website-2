@@ -48,7 +48,7 @@ function Nav({ language }) {
                    <ul className={styles.dropdownMenu}>
                     <li>Apply Now</li>
                     <li>Tuition & Fee</li>
-                    <li>Frequently Asked Question</li>
+                    <li>FAQ</li>
                    </ul>
                   </li>
                   <li className={styles.navitem}>
