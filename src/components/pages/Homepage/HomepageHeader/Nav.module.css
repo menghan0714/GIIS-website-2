@@ -30,7 +30,7 @@
   font-size: 30px !important;
   font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
-  overflow: hidden !important; /* 隱藏超出的文字 */
+  overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
 
