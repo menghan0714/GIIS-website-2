@@ -66,7 +66,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    min-width: 200px; /* 設置最小寬度 */
     background-color: #1e3a8a;
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -79,14 +79,15 @@
     list-style: none; /* 移除預設的項目符號（點或數字） */
     padding: 10px 20px; /* 控制內邊距，讓內容有間距 */
     text-align: left; /* 項目文字靠左對齊 */
-    width: 100%; /* 設置項目的寬度為100% */
+    white-space: nowrap; /* 防止換行 */
 }
 
 .dropdown li a {
     padding: 10px 20px;
     color: #ffffff;
     text-decoration: none;
-    text-align: left;
+    display: block; /* 確保鏈結填滿整個 li */
+    width: 100%; /* 滿寬 */
 }
 
 .navitem:hover .dropdown {
