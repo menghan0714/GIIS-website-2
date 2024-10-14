@@ -72,6 +72,9 @@
     border-left: 6px solid rgba(213, 168, 54, 1);
     list-style: none;
     color: #FFFFFF;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 10px;
 }
 
 .navitem:hover .dropdownMenu { 
