@@ -69,12 +69,9 @@
     background-color: #1e3a8a;
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    opacity: 0; /* 初始透明度 */
-    visibility: hidden; /* 初始隱藏 */
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    display: none;
 }
 
 .navitem:hover .dropdownMenu { 
-    opacity: 1; /* 懸停時變成不透明 */
-    visibility: visible; /* 懸停時顯示 */
+    display: block;
 }
