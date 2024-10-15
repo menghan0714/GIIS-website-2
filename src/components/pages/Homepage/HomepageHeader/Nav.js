@@ -29,10 +29,22 @@ function Nav({ language }) {
              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded={!isCollapsed} aria-label="Toggle navigation" onClick={toggleNavbar}>
               <span className="navbar-toggler-icon"></span>
              </button>
-             <div className={`collapse navbar-collapse ${isCollapsed ? styles.collapsedNavbar : styles.expandedNavbar} ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
+
+             {/* 折疊導航欄 */}
+             <div className={`${isCollapsed ? '' : styles.leftSlideMenu}`} id="navbarLeftMenu">
+                    <ul className={styles.leftMenuItems}>
+                        <li><Link to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
+                        <li><Link to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
+                        <li><Link to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
+                        <li><Link to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
+                    </ul>
+             </div>
+
+             {/* 展開的導航欄 */}
+             <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
-                <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
+                  <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
                   <ul className={styles.dropdownMenu}>
                     <li>Meet Our School</li>
                     <li>Our Mission</li>
@@ -40,7 +52,7 @@ function Nav({ language }) {
                   </ul>
                 </li>
                 <li className={styles.navitem}>
-                <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
+                  <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
                   <ul className={styles.dropdownMenu}>
                     <li>Learning Style</li>
                     <li>Subjects</li>
@@ -48,19 +60,19 @@ function Nav({ language }) {
                   </ul>
                  </li>
                  <li className={styles.navitem}>
-                 <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
-                  <ul className={styles.dropdownMenu}>
+                   <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
+                   <ul className={styles.dropdownMenu}>
                     <li>Apply Now</li>
                     <li>Tuition & Fee</li>
                     <li>FAQ</li>
-                  </ul>
+                   </ul>
                  </li>
                  <li className={styles.navitem}>
-                 <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
-                  <ul className={styles.dropdownMenu}>
+                   <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
+                   <ul className={styles.dropdownMenu}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
-                  </ul>
+                   </ul>
                  </li>
                 </ul>
              </div>
