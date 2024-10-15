@@ -33,8 +33,6 @@
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
-
-
 .navLink{
     position: relative;
     color: #ffffff ;
@@ -82,4 +80,9 @@
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
+}
+
+#menu1 {
+    min-width: 315px; /* 設置第一個選單的最小寬度 */
+    min-height: 140px; /* 設置第一個選單的最小高度 */
 }
