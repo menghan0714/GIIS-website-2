@@ -41,7 +41,7 @@ function Nav({ language }) {
              </div>
 
              {/* 展開的導航欄 */}
-             <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
+             <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
