@@ -23,6 +23,50 @@ function Nav({ language }) {
         setIsCollapsed(!isCollapsed);
     };
 
+    const Navbar = () => {
+  // 定義狀態來管理下拉菜單是否顯示
+     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  // 當滑鼠進入和離開時更改狀態
+     const handleMouseEnter = () => {
+      setIsDropdownVisible(true);
+     };
+
+     const handleMouseLeave = () => {
+      setIsDropdownVisible(false);
+     };
+
+     return (
+    <div className="navitem" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <a href="#" className="navLink">STUDENT SUPPORT</a>
+      {/* 下拉式菜單 */}
+      <ul
+        className="customDropdownMenuStudentSupport"
+        style={{
+          position: 'absolute',
+          top: '75px',
+          left: '0',
+          minWidth: '315px',
+          minHeight: '125px',
+          backgroundColor: 'rgba(43, 61, 109, 1)',
+          padding: '10px 0',
+          boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)',
+          opacity: isDropdownVisible ? 1 : 0, // 使用狀態控制顯示/隱藏
+          visibility: isDropdownVisible ? 'visible' : 'hidden',
+          transition: 'opacity 0.3s ease, visibility 0.3s ease',
+          borderLeft: '6px solid rgba(213, 168, 54, 1)',
+          listStyle: 'none',
+          color: '#FFFFFF',
+          textAlign: 'left',
+          fontSize: '25px',
+          paddingLeft: '10px'
+        }}
+      >
+        <li>Academic Advising</li>
+        <li>Life Counseling</li>
+      </ul>
+    </div>
+  );
     return (
         <nav className={`navbar navbar-expand-lg ${isNavSticky ? 'fixed-top' : ''} ${styles.customBackground}`}>
             <div className={`container-fluid ${styles.navContainer}`}>
@@ -49,35 +93,6 @@ function Nav({ language }) {
                     <li>Apply Now</li>
                     <li>Tuition & Fee</li>
                     <li>FAQ</li>
-                   </ul>
-                  </li>
-                  <li className={styles.navitem}>
-                   <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
-                   <ul className="customDropdownMenuStudentSupport" style={{ 
-                     position: 'absolute', 
-                     top: '75px', 
-                     left: '0', 
-                     minWidth: '315px',  // 這裡可以定義自定義的寬度
-                     minHeight: '125px',  // 這裡可以定義自定義的高度
-                     backgroundColor: 'rgba(43, 61, 109, 1)', 
-                     padding: '10px 0', 
-                     boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)', 
-                     opacity: '0', 
-                     visibility: 'hidden', 
-                     transition: 'opacity 0.3s ease, visibility 0.3s ease', 
-                     borderLeft: '6px solid rgba(213, 168, 54, 1)',
-                     listStyle: 'none', 
-                     color: '#FFFFFF', 
-                     textAlign: 'left', 
-                     fontSize: '25px', 
-                     paddingLeft: '10px',
-                     display: 'flex',
-                     flexDirection: 'column',  
-                     justifyContent: 'space-between', 
-                     height: '100%'
-                     }}>
-                    <li>Academic Advising</li>
-                    <li>Life Counseling</li>
                    </ul>
                   </li>
                  </ul>
