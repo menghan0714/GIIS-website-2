@@ -53,7 +53,29 @@ function Nav({ language }) {
                   </li>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className="customDropdownMenuStudentSupport" style={{ 
+                     position: 'absolute', 
+                     top: '75px', 
+                     left: '0', 
+                     minWidth: '315px',  // 這裡可以定義自定義的寬度
+                     minHeight: '150px',  // 這裡可以定義自定義的高度
+                     backgroundColor: 'rgba(43, 61, 109, 1)', 
+                     padding: '10px 0', 
+                     boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)', 
+                     opacity: '0', 
+                     visibility: 'hidden', 
+                     transition: 'opacity 0.3s ease, visibility 0.3s ease', 
+                     borderLeft: '6px solid rgba(213, 168, 54, 1)',
+                     listStyle: 'none', 
+                     color: '#FFFFFF', 
+                     textAlign: 'left', 
+                     fontSize: '25px', 
+                     paddingLeft: '10px'
+                     display: flex;
+                     flex-direction: column;  
+                     justify-content: space-between; 
+                     height: 100%; 
+                     }}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
                    </ul>
