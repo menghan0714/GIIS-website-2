@@ -74,7 +74,7 @@ function Nav({ language }) {
                      display: 'flex',
                      flexDirection: 'column',  
                      justifyContent: 'space-between', 
-                     height: '100%'; 
+                     height: '100%'
                      }}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
