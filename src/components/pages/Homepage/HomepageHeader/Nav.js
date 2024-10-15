@@ -70,11 +70,11 @@ function Nav({ language }) {
                      color: '#FFFFFF', 
                      textAlign: 'left', 
                      fontSize: '25px', 
-                     paddingLeft: '10px'
-                     display: flex;
-                     flex-direction: column;  
-                     justify-content: space-between; 
-                     height: 100%; 
+                     paddingLeft: '10px',
+                     display: 'flex',
+                     flexDirection: 'column',  
+                     justifyContent: 'space-between', 
+                     height: '100%'; 
                      }}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
