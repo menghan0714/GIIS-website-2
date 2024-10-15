@@ -77,11 +77,6 @@
     padding-left: 10px;
 }
 
-.dropdownMenu#menu1 {
-    min-width: 315px !important;
-    min-height: 150px !important;
-}
-
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
