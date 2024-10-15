@@ -58,7 +58,7 @@ function Nav({ language }) {
                      top: '75px', 
                      left: '0', 
                      minWidth: '315px',  // 這裡可以定義自定義的寬度
-                     minHeight: '150px',  // 這裡可以定義自定義的高度
+                     minHeight: '125px',  // 這裡可以定義自定義的高度
                      backgroundColor: 'rgba(43, 61, 109, 1)', 
                      padding: '10px 0', 
                      boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)', 
