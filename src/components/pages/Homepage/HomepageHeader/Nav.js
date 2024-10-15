@@ -49,6 +49,7 @@ function Nav({ language }) {
                     <li>Apply Now</li>
                     <li>Tuition & Fee</li>
                     <li>FAQ</li>
+                  </li>
                   <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
