@@ -29,18 +29,6 @@ function Nav({ language }) {
              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded={!isCollapsed} aria-label="Toggle navigation" onClick={toggleNavbar}>
               <span className="navbar-toggler-icon"></span>
              </button>
-
-             {/* 折疊導航欄 */}
-             <div className={`${isCollapsed ? '' : styles.leftSlideMenu}`} id="navbarLeftMenu">
-                    <ul className={styles.leftMenuItems}>
-                        <li><Link to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
-                        <li><Link to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
-                        <li><Link to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
-                        <li><Link to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
-                    </ul>
-             </div>
-
-             {/* 展開的導航欄 */}
              <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
