@@ -10,41 +10,6 @@
     height: 70px;
 }
 
-/* 左拉式選單的樣式 */
-.leftSlideMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 600px;
-    width: 500px;
-    background-color: rgba(43, 61, 109, 0.8); /* 左拉選單背景顏色 */
-    color: #fff;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 200;
-}
-
-.leftSlideMenu.show {
-    transform: translateX(0); /* 顯示左拉式選單 */
-}
-
-.leftMenuItems {
-    font-size: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.leftMenuItems li {
-    padding: 15px;
-    border-bottom: 1px solid #555; /* 分隔線樣式 */
-}
-
-.leftMenuItems li a {
-    color: ＃FFFF00;
-    text-decoration: none;
-}
-
 .customnavbar {
   display: flex !important;
   justify-content: space-between !important;
