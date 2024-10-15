@@ -78,8 +78,8 @@
 }
 
 #menu1 {
-    min-width: 315px; !important;
-    min-height: 150px; !important;
+    min-width: 315px !important;
+    min-height: 150px !important;
 }
 
 .navitem:hover .dropdownMenu { 
