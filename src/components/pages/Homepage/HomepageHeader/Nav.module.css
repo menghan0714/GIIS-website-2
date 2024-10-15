@@ -77,9 +77,9 @@
     padding-left: 10px;
 }
 
-#dropdownMenu1 {
-    min-width: 315px; /* 設置項目1的最小寬度 */
-    min-height: 150px; /* 設置項目1的最小高度 */
+#menu1 {
+    min-width: 315px; !important;
+    min-height: 150px; !important;
 }
 
 .navitem:hover .dropdownMenu { 
