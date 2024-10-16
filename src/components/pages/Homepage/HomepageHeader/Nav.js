@@ -31,7 +31,7 @@ function Nav({ language }) {
              </button>
 
              <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
-              <ul className={styles.leftSlideMenu}>
+              <ul className={`navbar-nav ${styles.leftSlideMenu}`}>
                 <li><Link className to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
                 <li><Link className to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
                 <li><Link className to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
