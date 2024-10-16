@@ -39,7 +39,10 @@
 }
 
 .leftSlideItems li a {
-    font-size: 30px;
+    font-size: 25px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
     color: #000000;
     text-decoration: none;
 } 
