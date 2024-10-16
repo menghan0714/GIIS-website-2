@@ -11,7 +11,7 @@
 }
 
 .leftSlideMenu {
-    position: relative;
+    position: absolute;
     top: 22px;
     left: 0;
     height: 700px;
