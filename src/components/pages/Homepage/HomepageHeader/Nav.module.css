@@ -17,7 +17,7 @@
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(0);
+    transform: translateX(-1000%);
     transition: transform 0.3s ease;
     z-index: 1050;
     list-style: none;
