@@ -29,7 +29,7 @@ function Nav({ language }) {
              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded={!isCollapsed} aria-label="Toggle navigation" onClick={toggleNavbar}>
               <span className="navbar-toggler-icon"></span>
              </button>
-             <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
+             <div className={`collapse navbar-collapse ${isCollapsed ? 'collapsed' : 'noncollapsed'}`} id="navbarSupportedContents">
                <ul className={styles.leftSlideMenu}>
                 <li><Link to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
                 <li><Link to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
