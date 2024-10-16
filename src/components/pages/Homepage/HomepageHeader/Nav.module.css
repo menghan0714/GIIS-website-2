@@ -17,14 +17,24 @@
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-1000%);
+    transform: translateX(-100％);
     transition: transform 0.3s ease;
     z-index: 1050;
     list-style: none;
 }
 
 .leftSlideMenu.show {
-    transform: translateX(0); /* 顯示左拉式選單 */
+    transform: translateX(0); 
+
+
+}.leftSlideMenu.d-done {
+    opacity: 0.9; /* 可視化控制 */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.leftSlideMenu.d-done.show {
+    transform: translateX(0); /* 保持顯示 */
+    opacity: 1;
 }
 
 .leftSlideMenu li a {
