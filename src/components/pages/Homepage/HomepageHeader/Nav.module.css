@@ -11,16 +11,16 @@
 }
 
 .leftSlideMenu {
-    position: fixed;
-    top: 0;
+    position: relative;
+    top: 22px;
     left: 0;
-    height: 100%;
-    width: 250px;
+    height: 700px
+    width: 300px;
     background-color: rgba(43, 61, 109, 0.8); /* 左拉選單背景顏色 */
-    color: #fff;
-    transform: translateX(-100%);
+    transform: translateX(-1000%);
     transition: transform 0.3s ease;
     z-index: 1050;
+    list-style: none;
 }
 
 .leftSlideMenu.show {
