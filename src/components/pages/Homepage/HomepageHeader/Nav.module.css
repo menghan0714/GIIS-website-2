@@ -12,11 +12,11 @@
 
 .leftSlideMenu {
     position: absolute;
-    top: 22px;
+    top: 70px;
     left: 0;
     height: 700px;
     width: 300px;
-    background-color: rgba(43, 61, 109, 0.8); /* 左拉選單背景顏色 */
+    background-color: #ffffff /* 左拉選單背景顏色 */
     transform: translateX(0);
     transition: transform 0.3s ease;
     z-index: 1050;
