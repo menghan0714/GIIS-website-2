@@ -32,7 +32,7 @@
     text-decoration: none;
 }
 
-.customnavbar.collapsed {
+.customnavbar {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -40,7 +40,7 @@
   margin: 0 auto !important;
 }
 
-.navitem.collapsed {
+.navitem {
   position: relative;
   width: 295.02px !important; /* 固定寬度 */
   height: 70px !important; /* 固定高度 */
@@ -55,14 +55,14 @@
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
-.navLink.collapsed{
+.navLink{
     position: relative;
     color: #ffffff ;
     text-decoration: none ;
     padding-bottom: 6px ;
 }     
 
-.navLink::after.collapsed {
+.navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
   position: absolute;
   left: 50%;             /* 左邊對齊中心點 */
@@ -74,7 +74,7 @@
   transition: width 0.3s ease; /* 增加動畫效果 */
 }
 
-.navLink:hover::after.collapsed {
+.navLink:hover::after {
   width: 100%; /* 使底槓在懸停時保持全寬 */
 }
 
@@ -112,7 +112,7 @@
     height: 100%; 
 }
 
-.navitem:hover .dropdownMenu.collapsed { 
+.navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
 }
