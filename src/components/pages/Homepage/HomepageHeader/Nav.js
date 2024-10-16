@@ -9,7 +9,7 @@ function Nav({ language }) {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
-            setIsNavSticky(currentScrollPosition > 70);
+            setIsNavSticky(currentScrollPosition > 150);
         };
 
         window.addEventListener('scroll', handleScroll);
