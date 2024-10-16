@@ -29,14 +29,18 @@ function Nav({ language }) {
              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded={!isCollapsed} aria-label="Toggle navigation" onClick={toggleNavbar}>
               <span className="navbar-toggler-icon"></span>
              </button>
-             <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContents">
-               <ul className={styles.leftSlideMenu}>
+
+             <div className={`${!isCollapsed ? styles.leftSlideMenu : 'd-none'}`} id="navbarLeftMenu">
+               <ul className={styles.leftMenuItems}>
                 <li><Link to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
                 <li><Link to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
                 <li><Link to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
                 <li><Link to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
                </ul>
+             </div>
+                  
     
+             <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : 'd-none'}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
