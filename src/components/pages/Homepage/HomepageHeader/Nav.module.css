@@ -17,10 +17,9 @@
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-100％);
+    transform: translateX(-1000％);
     transition: transform 0.3s ease;
     z-index: 1050;
-    list-style: none;
 }
 
 .leftSlideMenu.show {
@@ -28,10 +27,18 @@
     opacity: 1;
 }
 
+.leftMenuItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+.leftMenuItems li {
+    padding: 15px;
+    border-bottom: 1px solid #555; /* 分隔線樣式 */
+}
 
-
-.leftSlideMenu li a {
+.leftMenuItems li a {
     color: #000000;
     text-decoration: none;
 }
