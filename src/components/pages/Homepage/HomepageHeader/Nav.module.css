@@ -25,6 +25,7 @@
 
 .leftSlideMenu.show {
     transform: translateX(0); 
+    opacity: 1;
 }
 
 
