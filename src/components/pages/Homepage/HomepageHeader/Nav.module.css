@@ -28,7 +28,7 @@
 }
 
 .leftSlideMenu li a {
-    color: #ffff00;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -78,14 +78,6 @@
   width: 100%; /* 使底槓在懸停時保持全寬 */
 }
 
-.collapsed .dropdownMenu {
-    display: block; /* 摺疊狀態顯示 */
-}
-
-/* 未摺疊狀態下的下拉式選單隱藏 */
-.nonCollapsed .dropdownMenu {
-    display: none; /* 未摺疊狀態隱藏 */
-}
 
 .dropdownMenu{
     z-index: 200;
