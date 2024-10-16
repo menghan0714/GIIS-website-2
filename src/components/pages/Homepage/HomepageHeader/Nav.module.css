@@ -33,12 +33,9 @@
     margin: 0;
 }
 
-.leftMenuItems li {
+.menulink {
     padding: 15px;
     border-bottom: 1px solid #555; /* 分隔線樣式 */
-}
-
-.leftMenuItems li a {
     color: #000000;
     text-decoration: none;
 }
