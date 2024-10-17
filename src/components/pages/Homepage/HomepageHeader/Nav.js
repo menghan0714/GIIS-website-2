@@ -46,6 +46,11 @@ function Nav({ language }) {
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
+                  <ul className={styles.dropdownMenu}>
+                    <li>Meet Our School</li>
+                    <li>Our Mission</li>
+                    <li>About Our Faculty</li>
+                  </ul>
                 </li>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
