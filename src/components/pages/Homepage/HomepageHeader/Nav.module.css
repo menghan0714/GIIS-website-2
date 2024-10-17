@@ -36,7 +36,6 @@
 .leftSlideItems li  {
     position: relative;
     padding: 30px;
-    border-bottom: 1px solid #555; /* 分隔線樣式 */
 }
 
 .leftSlideItems li::after {
