@@ -32,12 +32,10 @@ function Nav({ language }) {
 
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-               <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}
-</li>
-                <li><Link to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link></li>
-                <li><Link to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link></li>
-                <li><Link to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link></li>
-                <li><Link to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link></li>
+               <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
+               <li onClick={() => window.location.href = "/academics"}>{language === 'en' ? 'ACADEMICS' : '学术'}</li>
+               <li onClick={() => window.location.href = "/admission"}>{language === 'en' ? 'ADMISSION' : '入学'}</li>
+               <li onClick={() => window.location.href = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
                </ul>
               </div>
                 
