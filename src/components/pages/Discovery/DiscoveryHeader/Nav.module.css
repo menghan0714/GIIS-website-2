@@ -105,16 +105,12 @@
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
+  color: #ffffff ;
+  text-decoration: none ;
 }
+    
 
-.navLink{
-    position: relative;
-    color: #ffffff ;
-    text-decoration: none ;
-    padding-bottom: 6px ;
-}     
-
-.navLink::after {
+.navitem::after {
   content: ''; /* 生成底槓的虛擬元素 */
   position: absolute;
   left: 50%;             /* 左邊對齊中心點 */
