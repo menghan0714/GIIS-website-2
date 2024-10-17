@@ -48,7 +48,7 @@
     height: 2px; /* 底線的高度 */
     background-color: #aaa; /* 底線的顏色 */
     opacity: 0.7; /* 底線的透明度 */
-
+}
 .leftSlideItems li a {
     font-size: 30px;
     font-family: Inter, sans-serif;
