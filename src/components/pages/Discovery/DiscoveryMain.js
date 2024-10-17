@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './HomepageHeader/Nav.js';
+import Nav from './DiscoveryHeader/Nav.js';
 import ImgSlider from './Homepage/ImgSlider.js';
 
 function DiscoveryMain({ language }) {
