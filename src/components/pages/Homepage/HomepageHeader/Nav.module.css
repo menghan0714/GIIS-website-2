@@ -22,13 +22,11 @@ li {
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-100%);
-    opacity: 0;
     transition:  transform 1s ease, opacity 1s ease;
     z-index: 200;
 }
 
 .leftSlideMenu.show {
-    opacity: 1; /* 完全不透明 */
     transform: translateX(0);
 }
 
