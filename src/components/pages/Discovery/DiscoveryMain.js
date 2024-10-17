@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './DiscoveryHeader/Nav.js';
-import ImgSlider from './DIscovery/ImgSlider.js';
+import ImgSlider from './Discovery/ImgSlider.js';
 
 function DiscoveryMain({ language }) {
    return (
