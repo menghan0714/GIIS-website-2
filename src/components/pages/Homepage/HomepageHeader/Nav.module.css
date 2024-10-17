@@ -44,7 +44,7 @@
     left: 20%;
     transform: translateX(-50%);
     bottom: 10px; /* 與文字的間距，可自行調整 */
-    width: 20%; /* 底線的寬度，可根據需求調整 */
+    width: 50%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
     background-color: #aaa; /* 底線的顏色 */
     opacity: 0.7; /* 底線的透明度 */
