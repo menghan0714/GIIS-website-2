@@ -12,9 +12,6 @@ function DiscoveryMain({ language }) {
         <div className="card mb-1" id="homepage">
             <div className="container">
                 <ImgSlider />
-                <div className="card-body">
-                    <Slogan />
-                </div>
             </div>
         </div>
 
