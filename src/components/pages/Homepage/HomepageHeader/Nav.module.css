@@ -21,7 +21,7 @@
 .navbar-toggler-icon::after,
 .navbar-toggler-icon div {
   content: '';
-  background-color: #你的顏色代碼; /* 替换为你希望的颜色 */
+  background-color: #ffffff; /* 替换为你希望的颜色 */
   display: block;
   height: 4px; /* 调整横杠的高度 */
   width: 100%; /* 横杠的宽度 */
