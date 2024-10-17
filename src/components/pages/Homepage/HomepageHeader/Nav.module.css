@@ -36,6 +36,7 @@
 .leftSlideItems li  {
     position: relative;
     padding: 30px;
+    top: 50%;
 }
 
 .leftSlideItems li::before {
