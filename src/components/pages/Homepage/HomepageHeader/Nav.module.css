@@ -38,11 +38,19 @@
     padding: 30px;
 }
 
+.leftSlideItems li::before {
+    content: '>';
+    position: absolute;
+    left: 150px; /* 控制箭頭距離右邊的距離 */
+    font-size: 35px;
+    color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
+    transform: translateY(-50%);
+} 
+
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
     position: absolute;
     left: 25%;
-    transform: translateX(-50%);
     bottom: 10px; /* 與文字的間距，可自行調整 */
     width: 30%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
@@ -58,14 +66,6 @@
     color: rgba(43, 61, 109, 1);
     text-decoration: none;
 } 
-
-.leftSlideItems li a::after {
-    content: '>';
-    position: absolute;
-    right: 50px; /* 控制箭頭距離右邊的距離 */
-    font-size: 40px;
-    color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
-}
 
 .customnavbar {
   display: flex !important;
