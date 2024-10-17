@@ -21,15 +21,13 @@ li {
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-100%); /* 初始位置在屏幕外 */
     opacity: 0; /* 初始透明度 */
     visibility: hidden; /* 初始不可见 */
-    transition:  transform 1s ease, opacity 1s ease, visibility 1s ease;
+    transition:  opacity 1s ease, visibility 1s ease;
     z-index: 200;
 }
 
 .leftSlideMenu.show {
-    transform: translateX(0); /* 移入视口 */
     opacity: 1; /* 完全不透明 */
     visibility: visible; /* 可见 */
 }
