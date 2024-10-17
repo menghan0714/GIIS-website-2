@@ -21,7 +21,7 @@ li {
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-1000%); /* 初始位置在屏幕外 */
+    transform: translateX(-100%); /* 初始位置在屏幕外 */
     opacity: 0; /* 初始透明度 */
     visibility: hidden; /* 初始不可见 */
     transition:  transform 1s ease, opacity 1s ease, visibility 1s ease;
