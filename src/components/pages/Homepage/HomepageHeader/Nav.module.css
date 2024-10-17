@@ -6,7 +6,8 @@
 }
 
 .navbar-toggler-icon {
-  background-image: none !important; /* 移除默认的汉堡菜单图标 */
+  background-image: none !important; /* 强制移除默认图标 */
+  background-color: transparent; /* 确保背景透明 */
 }
 
 .customBackground {
