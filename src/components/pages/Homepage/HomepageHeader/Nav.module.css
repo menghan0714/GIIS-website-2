@@ -22,7 +22,7 @@ li {
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-1000％);
-    transition: opacity 1s ease, visibility 1s ease;
+    transition: opacity 1s ease;
     z-index: 200;
 }
 
