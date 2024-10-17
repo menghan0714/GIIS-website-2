@@ -49,6 +49,7 @@
     background-color: #aaa; /* 底線的顏色 */
     opacity: 0.7; /* 底線的透明度 */
 }
+
 .leftSlideItems li a {
     position: relative;
     font-size: 30px;
@@ -64,6 +65,7 @@
     left: 40px; /* 控制箭頭距離右邊的距離 */
     font-size: 15px;
     color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
+}
 
 .customnavbar {
   display: flex !important;
