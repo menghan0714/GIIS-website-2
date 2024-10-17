@@ -5,9 +5,9 @@
     z-index: 1000; /* Higher if needed, to stay above other elements */
 }
 
-.navbar-toggler-icon {
-  background-image: none !important; /* 强制移除默认图标 */
-  background-color: transparent; /* 确保背景透明 */
+.navbar-toggler .navbar-toggler-icon {
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
 .customBackground {
