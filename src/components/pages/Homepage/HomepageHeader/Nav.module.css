@@ -34,15 +34,14 @@
 }
 
 .leftSlideItems li  {
-    padding: 15px;
+    padding: 30px;
     border-bottom: 1px solid #555; /* 分隔線樣式 */
 }
 
 .leftSlideItems li a {
-    font-size: 25px;
+    font-size: 30px;
     font-family: Inter, sans-serif;
     font-weight: bold;
-    white-space: nowrap;
     color: #000000;
     text-decoration: none;
 } 
