@@ -38,13 +38,13 @@
     padding: 30px;
 }
 
-.leftSlideItems li::after {
+.leftSlideItems li::before {
     content: '>';
     position: absolute;
-    right: 0;
+    right: 20px; /* 控制箭頭距離右邊的距離 */
     font-size: 15px;
-    color: rgba(43, 61, 109, 1);
-} 
+    color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
+}
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
