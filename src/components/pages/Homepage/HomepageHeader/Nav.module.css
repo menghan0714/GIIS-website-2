@@ -29,6 +29,7 @@ li {
 .leftSlideMenu.show {
     transform: translateX(0); 
     opacity: 1;
+}
 
 .leftSlideItems {
     list-style: none;
