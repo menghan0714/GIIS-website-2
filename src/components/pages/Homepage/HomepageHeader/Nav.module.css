@@ -42,7 +42,7 @@
     content: '>';
     position: absolute;
     top: 50%;
-    left: 200px; /* 控制箭頭距離右邊的距離 */
+    left: 250px; /* 控制箭頭距離右邊的距離 */
     font-size: 35px;
     font-weight: bold;
     color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
