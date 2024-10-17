@@ -50,9 +50,6 @@ li {
     text-decoration: none;
 }
 
-.leftSlideItems li:hover  {
-    color: rgba(0, 0, 0, 0.8);
-}
 
 
 .leftSlideItems li::before {
@@ -62,13 +59,10 @@ li {
     left: 250px; /* 控制箭頭距離右邊的距離 */
     font-size: 30px;
     font-weight: bold;
-    color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
+    color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
-.leftSlideItems li::before:hover  {
-    color: rgba(0, 0, 0, 0.8);
-}
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
@@ -80,6 +74,14 @@ li {
     height: 2px; /* 底線的高度 */
     background-color: #aaa; /* 底線的顏色 */
     opacity: 0.7; /* 底線的透明度 */
+}
+
+.leftSlideItems li:hover {
+    color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
+}
+
+.leftSlideItems li:hover::before {
+    color: rgba(0, 0, 0, 0.6); /* 改变箭头颜色 */
 }
 
 .customnavbar {
