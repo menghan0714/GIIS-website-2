@@ -125,9 +125,35 @@ li {
   width: 60%;            /* 設置底槓的寬度為 80% */
   height: 4px;
   background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
-  transition: width 0.3s ease; /* 增加動畫效果 */
 }
 
-.navLink:hover::after {
-  width: 100%; /* 使底槓在懸停時保持全寬 */
+
+.dropdownMenu{
+    z-index: 300;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    min-width: 250px; /* 設置最小寬度 */
+    min-height: 120px;
+    background-color: rgba(43, 61, 109, 1);
+    padding: 10px 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-left: 6px solid rgba(213, 168, 54, 1);
+    list-style: none;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between; 
+    height: 100%; 
+}
+
+.navitem:hover .dropdownMenu { 
+    opacity: 1; 
+    visibility: visible; 
 }
