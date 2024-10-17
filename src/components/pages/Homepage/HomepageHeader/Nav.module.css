@@ -5,45 +5,9 @@
     z-index: 1000; /* Higher if needed, to stay above other elements */
 }
 
-
-
-
-
 .navbar-toggler-icon {
   background-image: none; /* 移除默认的汉堡菜单图标 */
-  display: inline-block;
-  width: 30px; /* 调整图标的宽度 */
-  height: 24px; /* 调整图标的高度 */
-  position: relative;
 }
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
-.navbar-toggler-icon div {
-  content: '';
-  background-color: #ffffff; /* 替换为你希望的颜色 */
-  display: block;
-  height: 4px; /* 调整横杠的高度 */
-  width: 100%; /* 横杠的宽度 */
-  position: absolute;
-  left: 0;
-}
-
-.navbar-toggler-icon::before {
-  top: 0;
-}
-
-.navbar-toggler-icon div {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.navbar-toggler-icon::after {
-  bottom: 0;
-}
-
-
-
 
 .customBackground {
     background-color: rgba(43, 61, 109, 0.8);
