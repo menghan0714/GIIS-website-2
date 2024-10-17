@@ -18,12 +18,13 @@ li {
     position: absolute;
     top: 70px;
     left: 0;
-    height: 700px;
+    height: 100%;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-1000％);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 200;
+    border-bottom: 300px solid #aaa;
 }
 
 .leftSlideMenu.show {
