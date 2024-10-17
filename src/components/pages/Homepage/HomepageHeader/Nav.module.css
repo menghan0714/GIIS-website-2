@@ -50,6 +50,10 @@ li {
     text-decoration: none;
 }
 
+.leftSlideItems li:hover  {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 
 .leftSlideItems li::before {
     content: '>';
