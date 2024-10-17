@@ -5,11 +5,6 @@
     z-index: 1000; /* Higher if needed, to stay above other elements */
 }
 
-.navbar-toggler .navbar-toggler-icon {
-  background-color: #ffffff;
-  border-radius: 50%;
-}
-
 .customBackground {
     background-color: rgba(43, 61, 109, 0.8);
     height: 70px;
@@ -49,7 +44,7 @@
     position: absolute;
     top: 50%;
     left: 250px; /* 控制箭頭距離右邊的距離 */
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
