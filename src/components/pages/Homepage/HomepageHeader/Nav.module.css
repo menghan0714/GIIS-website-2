@@ -63,7 +63,7 @@
     content: '>';
     position: absolute;
     right: 50px; /* 控制箭頭距離右邊的距離 */
-    font-size: 15px;
+    font-size: 40px;
     color: rgba(43, 61, 109, 1); /* 箭頭顏色 */
 }
 
