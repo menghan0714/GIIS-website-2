@@ -24,6 +24,7 @@ li {
     transform: translateX(-1000％);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 200;
+    border-bottom: 10px solid rgba(213, 168, 54, 1);
 }
 
 .leftSlideMenu.show {
