@@ -32,8 +32,9 @@ function Nav({ language }) {
 
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-               <Link to="/discovery">
-                <li className={styles.leftSlideItems}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
+                <Link to="/discovery">
+                 <li className={styles.leftSlideItemssmall}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
+                </Link> 
                 <Link className to="/academics">
                  <li>{language === 'en' ? 'ACADEMICS' : '学术'}</li>
                 </Link>
