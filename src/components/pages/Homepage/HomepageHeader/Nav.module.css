@@ -33,13 +33,13 @@
     margin: 0;
 }
 
-.leftSlideItems Link  {
+.leftSlideItems li  {
     position: relative;
     padding: 30px;
     top: 50%;
 }
 
-.leftSlideItems Link::before {
+.leftSlideItems li::before {
     content: '>';
     position: absolute;
     top: 50%;
@@ -50,7 +50,7 @@
     transform: translateY(-50%);
 } 
 
-.leftSlideItems Link::after {
+.leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
     position: absolute;
     transform: translateX(-50%);
@@ -62,7 +62,7 @@
     opacity: 0.7; /* 底線的透明度 */
 }
 
-.leftSlideItems Link a {
+.leftSlideItems li a {
     position: relative;
     font-size: 30px;
     font-family: Inter, sans-serif;
