@@ -73,7 +73,7 @@ li {
     width: 30%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
     background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
-    opacity: 0.9; /* 底線的透明度 */
+    opacity: 0.6; /* 底線的透明度 */
 }
 
 .leftSlideItems li:hover {
