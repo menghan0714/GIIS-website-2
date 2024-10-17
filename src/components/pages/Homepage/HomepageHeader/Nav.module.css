@@ -10,6 +10,10 @@
     height: 70px;
 }
 
+li {
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
 .leftSlideMenu {
     position: absolute;
     top: 70px;
