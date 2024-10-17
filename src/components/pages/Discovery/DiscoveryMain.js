@@ -1,23 +1,26 @@
 import React from 'react';
+import Nav from './HomepageHeader/Nav.js';
+import ImgSlider from './Homepage/ImgSlider.js';
 
-// 一個簡單的 Discovery 組件
-const Discovery = () => {
-  return (
-    <section>
-      <h1>Discovery Page</h1>
-      <p>Welcome to the Discovery section! Here we explore new topics and ideas.</p>
+function DiscoveryMain({ language }) {
+   return (
+    <>
+        <div className="row">
+            <Nav language={language} />
+        </div>
 
-      <div>
-        <h2>Highlights</h2>
-        <ul>
-          <li>Topic 1: Exploring the future of technology</li>
-          <li>Topic 2: Innovations in science and engineering</li>
-          <li>Topic 3: Discoveries in healthcare and medicine</li>
-        </ul>
-      </div>
-    </section>
+        <div className="card mb-1" id="homepage">
+            <div className="container">
+                <ImgSlider />
+                <div className="card-body">
+                    <Slogan />
+                </div>
+            </div>
+        </div>
+
+    </>
   );
-};
+}
 
-export default Discovery;
+export default DiscoveryMain;
 
