@@ -6,6 +6,9 @@ function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
 
+
+
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
