@@ -41,7 +41,7 @@
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
     position: absolute;
-    left: 30%;
+    left: 15%;
     transform: translateX(-50%);
     bottom: 10px; /* 與文字的間距，可自行調整 */
     width: 50px; /* 底線的寬度，可根據需求調整 */
