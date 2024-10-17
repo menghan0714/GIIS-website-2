@@ -21,15 +21,15 @@ li {
     height: 700px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    opacity: 0; /* 初始透明度 */
-    visibility: hidden; /* 初始不可见 */
-    transition:  opacity 1s ease, visibility 1s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition:  transform 1s ease, opacity 1s ease;
     z-index: 200;
 }
 
 .leftSlideMenu.show {
     opacity: 1; /* 完全不透明 */
-    visibility: visible; /* 可见 */
+    transform: translateX(0);
 }
 
 .leftSlideItems {
