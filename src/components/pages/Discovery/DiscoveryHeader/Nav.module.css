@@ -48,6 +48,19 @@
     cursor: pointer;
 }
 
+.leftSlideItems p {
+    position: relative;
+    padding: 30px;
+    top: 50%;
+    position: relative;
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+
 
 
 .leftSlideItems li::before {
@@ -61,8 +74,32 @@
     transform: translateY(-50%);
 } 
 
+.leftSlideItems p::before {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    left: 250px; /* 控制箭頭距離右邊的距離 */
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
+    transform: translateY(-50%);
+} 
+
+
 
 .leftSlideItems li::after {
+    content: ""; /* 用空白內容來生成底線 */
+    position: absolute;
+    transform: translateX(-50%);
+    left: 25%;
+    bottom: 10px; /* 與文字的間距，可自行調整 */
+    width: 25%; /* 底線的寬度，可根據需求調整 */
+    height: 2px; /* 底線的高度 */
+    background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
+    opacity: 0.6; /* 底線的透明度 */
+}
+
+.leftSlideItems p::after {
     content: ""; /* 用空白內容來生成底線 */
     position: absolute;
     transform: translateX(-50%);
