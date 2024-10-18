@@ -122,6 +122,13 @@
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
+
+.navText{
+    position: relative;
+    color: #ffffff ;
+    text-decoration: none ;
+    padding-bottom: 6px ;
+} 
     
 .navLink{
     position: relative;
@@ -130,7 +137,7 @@
     padding-bottom: 6px ;
 } 
 
-.naviLink::after {
+.navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
   position: absolute;
   left: 50%;             /* 左邊對齊中心點 */
@@ -140,6 +147,18 @@
   height: 4px;
   background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
 }
+
+.navText::after {
+  content: ''; /* 生成底槓的虛擬元素 */
+  position: absolute;
+  left: 50%;             /* 左邊對齊中心點 */
+  transform: translateX(-50%);  /* 將元素水平居中 */
+  bottom: 0;
+  width: 60%;            /* 設置底槓的寬度為 80% */
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
+}
+
 
 
 .dropdownMenu{
