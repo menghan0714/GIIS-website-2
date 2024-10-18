@@ -7,8 +7,6 @@ function Nav({ language }) {
     const [isCollapsed, setIsCollapsed] = useState(true); 
 
 
-https://drive.google.com/drive/u/0/home
-
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
