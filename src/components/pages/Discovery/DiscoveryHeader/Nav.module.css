@@ -158,6 +158,7 @@
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
+  top: 50px;
 }
 
 .navText{
