@@ -7,8 +7,6 @@ function Nav({ language }) {
     const [isCollapsed, setIsCollapsed] = useState(true); 
 
 
-
-
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
@@ -35,23 +33,17 @@ function Nav({ language }) {
 
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-               <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
+               <p>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
                <li onClick={() => window.location.href = "/academics"}>{language === 'en' ? 'ACADEMICS' : '学术'}</li>
                <li onClick={() => window.location.href = "/admission"}>{language === 'en' ? 'ADMISSION' : '入学'}</li>
                <li onClick={() => window.location.href = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
                </ul>
               </div>
                 
-             <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
+              <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
-                <li className={styles.navitem}>
-                  <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
-                  <ul className={styles.dropdownMenu}>
-                    <li>Meet Our School</li>
-                    <li>Our Mission</li>
-                    <li>About Our Faculty</li>
-                  </ul>
-                </li>
+                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
+    
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
                   <ul className={styles.dropdownMenu}>
@@ -60,7 +52,7 @@ function Nav({ language }) {
                     <li>Curriculum Options</li>
                   </ul>
                  </li>
-                 <li className={styles.navitem}>
+                <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
                    <ul className={styles.dropdownMenu}>
                     <li>Apply Now</li>
@@ -68,15 +60,15 @@ function Nav({ language }) {
                     <li>FAQ</li>
                    </ul>
                  </li>
-                 <li className={styles.navitem}>
+                <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
                    </ul>
                  </li>
-                </ul>
-             </div>
+               </ul>
+              </div>
            </div>
          </nav>
     );
