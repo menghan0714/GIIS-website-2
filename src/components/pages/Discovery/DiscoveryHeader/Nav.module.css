@@ -195,7 +195,7 @@
   position: absolute;
   left: 50%;             /* 左邊對齊中心點 */
   transform: translateX(-50%);  /* 將元素水平居中 */
-  bottom: 0;
+  bottom: 10px;
   width: 60%;            /* 設置底槓的寬度為 80% */
   height: 4px;
   background-color: #ffffff;
