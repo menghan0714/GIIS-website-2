@@ -44,8 +44,9 @@ https://drive.google.com/drive/u/0/home
                 
               <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
-                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
-    
+                <li className={styles.navitem2}>
+                 <p classname={styles.navText}>{language === 'en' ? 'DISCOVERY' : '发现我们'}
+                </li>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
                   <ul className={styles.dropdownMenu}>
