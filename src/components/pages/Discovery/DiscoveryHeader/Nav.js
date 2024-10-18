@@ -44,7 +44,7 @@ function Nav({ language }) {
                 
               <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
-                <li className={`${styles.navitem} ${styles.navLink}`}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
+                <li className={`${styles.navitem2} ${styles.navLink}`}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
     
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</Link>
