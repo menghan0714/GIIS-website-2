@@ -199,14 +199,7 @@
   width: 60%;            /* 設置底槓的寬度為 80% */
   height: 4px;
   background-color: #ffffff;
-  transition: width 0.3s ease;
 }
-
-.navText:hover::after {
-  width: 80%; /* 使底槓在懸停時保持全寬 */
-}
-
-
 
 .dropdownMenu{
     z-index: 300;
