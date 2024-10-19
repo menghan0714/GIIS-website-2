@@ -5,6 +5,7 @@ import styles from './Nav.module.css';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
 
 
@@ -21,6 +22,17 @@ function Nav({ language }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+       const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []);
 
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
