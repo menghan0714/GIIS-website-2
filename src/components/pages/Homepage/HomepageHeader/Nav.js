@@ -5,7 +5,6 @@ import styles from './Nav.module.css';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -13,16 +12,13 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
-        const handleResize = () => {
-         setIsMobile(window.innerWidth <= 768);
-       };
+       
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
+   
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
