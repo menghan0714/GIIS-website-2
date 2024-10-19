@@ -5,7 +5,7 @@ import styles from './Nav.module.css';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
-
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -13,10 +13,16 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+       };
 
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
+        
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -26,11 +32,12 @@ function Nav({ language }) {
 
     return (
         <nav className={`navbar navbar-expand-lg ${isNavSticky ? 'fixed-top' : ''} ${styles.customBackground}`}>
-            <div className={`container-fluid ${styles.navContainer}`}>
+           <div className={`container-fluid ${styles.navContainer}`}>
              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded={!isCollapsed} aria-label="Toggle navigation" onClick={toggleNavbar}>
               <span className="navbar-toggler-icon"></span>
              </button>
 
+           {isMobile && (
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
                <p>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
@@ -39,6 +46,7 @@ function Nav({ language }) {
                <li onClick={() => window.location.href = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
                </ul>
               </div>
+            )}
                 
               <div className={`collapse navbar-collapse ${isCollapsed ? 'show' : ''}`} id="navbarSupportedContents">
                <ul className={`navbar-nav ${styles.customnavbar}`}>
