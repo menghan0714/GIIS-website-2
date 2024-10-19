@@ -35,7 +35,6 @@ function Nav({ language }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-        {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
                 <ul className={styles.leftSlideItems}>
                     <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
