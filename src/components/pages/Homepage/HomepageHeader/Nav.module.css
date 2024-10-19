@@ -1,3 +1,15 @@
+@media only screen and (max-width: 768px) {
+  .leftSlideMenu {
+    display: block; /* 在螢幕寬度小於 768px 時顯示側邊欄 */
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .leftSlideMenu {
+    display: block; /* 在螢幕寬度大於等於 769px 時隱藏側邊欄 */
+  }
+}
+
 .sticky {
     position: fixed;
     top: 0;
