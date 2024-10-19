@@ -16,24 +16,20 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-       const handleResize = () => {
+        const handleResize = () => {
         setIsMobile(window.innerWidth <= 768);
        };
 
-       window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
 
-       return () => {
-         window.removeEventListener('resize', handleResize);
-       };
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
+    
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
     };
