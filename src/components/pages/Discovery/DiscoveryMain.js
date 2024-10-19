@@ -11,7 +11,7 @@ function DiscoveryMain({ language }) {
     };
 
     const imageStyle = {
-        width: '80%',
+        width: '100%',
         height: 'auto'
     };
    
