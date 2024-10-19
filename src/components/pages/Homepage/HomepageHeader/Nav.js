@@ -79,5 +79,5 @@ function Nav({ language }) {
             </div>
         </div>
     </nav>
-);
+  );
 export default Nav; 
