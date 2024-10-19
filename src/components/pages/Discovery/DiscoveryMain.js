@@ -21,7 +21,7 @@ function DiscoveryMain({ language }) {
             <Nav language={language} />
         </div>
       
-        <div className={`card-mb1 ${styles.containerStyle}`}>
+        <div style={containerStyle}>
           <img src={img} alt="Discovery" style={imageStyle} />
         </div>
     </>
