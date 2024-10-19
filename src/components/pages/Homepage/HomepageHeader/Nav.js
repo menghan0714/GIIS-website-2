@@ -80,4 +80,5 @@ function Nav({ language }) {
         </div>
     </nav>
   );
+}
 export default Nav; 
