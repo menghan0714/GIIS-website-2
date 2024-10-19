@@ -6,7 +6,7 @@
 
 @media only screen and (min-width: 769px) {
   .leftSlideMenu {
-    display: block; /* 在螢幕寬度大於等於 769px 時隱藏側邊欄 */
+    display: none; /* 在螢幕寬度大於等於 769px 時隱藏側邊欄 */
   }
 }
 
