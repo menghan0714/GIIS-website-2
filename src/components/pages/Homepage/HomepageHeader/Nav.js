@@ -5,9 +5,7 @@ import styles from './Nav.module.css';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
-
-
-
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,11 +13,16 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
+        const handleResize = () => {
+         setIsMobile(window.innerWidth <= 768);
+       };
 
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -35,6 +38,7 @@ function Nav({ language }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
+        {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
                 <ul className={styles.leftSlideItems}>
                     <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
