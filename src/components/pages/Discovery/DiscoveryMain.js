@@ -7,7 +7,7 @@ function DiscoveryMain({ language }) {
     const containerStyle = {
         display: 'flex',
         justifyContent: 'center', // 水平居中
-        marginTop: '10px' // 與導航欄保持距離
+        marginTop: '0' // 與導航欄保持距離
     };
 
     const imageStyle = {
