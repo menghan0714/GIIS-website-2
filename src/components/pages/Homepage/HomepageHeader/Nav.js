@@ -25,14 +25,14 @@ function Nav({ language }) {
 
        const handleResize = () => {
         setIsMobile(window.innerWidth <= 768);
-    };
+       };
 
-    window.addEventListener('resize', handleResize);
+       window.addEventListener('resize', handleResize);
 
-    return () => {
-        window.removeEventListener('resize', handleResize);
-    };
-}, []);
+       return () => {
+         window.removeEventListener('resize', handleResize);
+       };
+    }, []);
 
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
