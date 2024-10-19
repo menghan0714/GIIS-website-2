@@ -4,12 +4,15 @@ import img from '../../../img/Homepage/homepage3.png';
 
 function DiscoveryMain({ language }) {
 
-   const imageStyle = {
-      width: '80%',
-      height: 'auto',
-      margin: '10px auto',
-      display: 'block';
-      justify-content: center;
+    const containerStyle = {
+        display: 'flex',
+        justifyContent: 'center', // 水平居中
+        marginTop: '10px' // 與導航欄保持距離
+    };
+
+    const imageStyle = {
+        width: '80%',
+        height: 'auto'
     };
    
    return (
@@ -18,7 +21,7 @@ function DiscoveryMain({ language }) {
             <Nav language={language} />
         </div>
       
-        <div className="card mb-1" id="discovery">
+        <div className=`card-mb1 ${styles.containerStyle}`>
           <img src={img} alt="Discovery" style={imageStyle} />
         </div>
     </>
