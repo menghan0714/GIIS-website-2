@@ -41,8 +41,7 @@ function Nav({ language }) {
                <li onClick={() => window.location.href = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
                </ul>
               </div>
-                
-             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`} id="navbarSupportedContents">
+            
                <ul className={`navbar-nav ${styles.customnavbar}`}>
                 <li className={styles.navitem}>
                   <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
