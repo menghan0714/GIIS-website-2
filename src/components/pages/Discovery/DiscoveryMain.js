@@ -28,6 +28,7 @@ function DiscoveryMain({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
+        font-size: '25px',
     };
 
         const cardStyle = {
@@ -43,10 +44,10 @@ function DiscoveryMain({ language }) {
         </div>
       
         <div style={containerStyle}>
-          <img src={img} alt="DISCOVERY" style={imageStyle} />
+          <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
-            <h3>Discovery</h3>
-            <p>Genesis of Ideas International School is dedicated to providing students a dynamic learning environment and empowering them with the critical thinking and problem-solving skills.</p>
+            <h3>DISCOVERY</h3>
+            <p>Have an oppuotunity to frrely learn new knowledge and explore your potential.</p>
           </div>
         </div>
 
