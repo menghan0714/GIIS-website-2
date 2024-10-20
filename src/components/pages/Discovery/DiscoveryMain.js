@@ -43,7 +43,7 @@ function DiscoveryMain({ language }) {
         </div>
       
         <div style={containerStyle}>
-          <img src={img} alt="Discovery" style={imageStyle} />
+          <img src={img} alt="DISCOVERY" style={imageStyle} />
           <div style={textOverlayStyle}>
             <h3>Discovery</h3>
             <p>Genesis of Ideas International School is dedicated to providing students a dynamic learning environment and empowering them with the critical thinking and problem-solving skills.</p>
