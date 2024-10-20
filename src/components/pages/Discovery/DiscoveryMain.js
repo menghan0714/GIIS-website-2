@@ -9,9 +9,6 @@ function DiscoveryMain({ language }) {
         display: 'flex',
         justifyContent: 'center', // 水平居中
         marginTop: '0', // 與導航欄保持距離
-        margin: '0',  // 移除外邊距
-        padding: '0', // 移除內邊距
-        width: '100%'
     };
 
     const imageStyle = {
