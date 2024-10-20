@@ -26,7 +26,7 @@ function DiscoveryMain({ language }) {
         padding: '10px',
         textAlign: 'center',
         zIndex: '20', 
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: 'Inter',
         fontWeight: 'bold',
     };
 
@@ -45,7 +45,7 @@ function DiscoveryMain({ language }) {
         <div style={containerStyle}>
           <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
-            <h1>DISCOVERY</h1>
+            <h2>DISCOVERY</h2>
             <p>Have an oppuotunity to frrely learn new knowledge and explore your potential.</p>
           </div>
         </div>
