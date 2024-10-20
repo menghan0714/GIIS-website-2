@@ -34,6 +34,9 @@ function DiscoveryMain({ language }) {
         position: 'relative', // 需要設置 position 來使 z-index 生效
         zIndex: '10', // 調整層級
         marginTop: '0', // 保持一些間距
+        margin: '0',  // 移除外邊距
+        padding: '0', // 移除內邊距
+        width: '100%'
     };
    
    return (
@@ -51,7 +54,7 @@ function DiscoveryMain({ language }) {
         </div>
 
        <div className="card mt-0" id="introduction" style={cardStyle}>
-         <div className="container">
+         <div className="container-fluid p-0">
             <div className="card-body">
              <h3>Discovery</h3>
             </div>
