@@ -28,7 +28,7 @@ function DiscoveryMain({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        font-size: '25px',
+        fontSize: '25px',
     };
 
         const cardStyle = {
