@@ -28,7 +28,6 @@ function DiscoveryMain({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '25px',
     };
 
         const cardStyle = {
@@ -46,7 +45,7 @@ function DiscoveryMain({ language }) {
         <div style={containerStyle}>
           <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
-            <h3>DISCOVERY</h3>
+            <h1>DISCOVERY</h1>
             <p>Have an oppuotunity to frrely learn new knowledge and explore your potential.</p>
           </div>
         </div>
