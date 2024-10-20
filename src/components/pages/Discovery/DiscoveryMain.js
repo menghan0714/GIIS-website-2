@@ -11,8 +11,8 @@ function DiscoveryMain({ language }) {
     };
 
     const imageStyle = {
-        width: '80%',
-        height: '400px'
+        width: '100%%',
+        height: '500px'
     };
    
    return (
