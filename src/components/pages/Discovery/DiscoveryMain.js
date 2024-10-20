@@ -25,9 +25,15 @@ function DiscoveryMain({ language }) {
         width: '35%',
         padding: '10px',
         textAlign: 'center'
-        zIndex: '10'
+        z-index: 20;
         font-family: Inter, sans-serif;
         font-weight: bold;
+    };
+
+        const cardStyle = {
+        position: 'relative', // 需要設置 position 來使 z-index 生效
+        zIndex: '10', // 調整層級
+        marginTop: '0', // 保持一些間距
     };
    
    return (
