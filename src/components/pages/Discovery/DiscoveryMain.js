@@ -26,7 +26,7 @@ function DiscoveryMain({ language }) {
         padding: '10px',
         textAlign: 'center',
         zIndex: '20',
-        font-weight: 'bold',
+        fontWeight: 'bold',
     };
 
         const cardStyle = {
