@@ -46,7 +46,7 @@ function DiscoveryMain({ language }) {
           <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
             <h2>DISCOVERY</h2>
-            <p>Have an oppuotunity to frrely learn new knowledge and explore your potential.</p>
+            <p>Take the opportunity to freely explore new knowledge and discover your potential.Continuous learning fuels personal growth and innovation.The freedom to learn unlocks doors to new possibilities, helping you realize your unique talents and reach new heights.</p>
           </div>
         </div>
 
