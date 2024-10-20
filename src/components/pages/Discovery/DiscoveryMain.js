@@ -25,6 +25,9 @@ function DiscoveryMain({ language }) {
         width: '35%',
         padding: '10px',
         textAlign: 'center'
+        zIndex: '10'
+        font-family: Inter, sans-serif;
+        font-weight: bold;
     };
    
    return (
@@ -41,7 +44,7 @@ function DiscoveryMain({ language }) {
           </div>
         </div>
 
-       <div className="card mt-0" id="introduction">
+       <div className="card mt-0" id="introduction" style={cardStyle}>
          <div className="container">
             <div className="card-body">
              <h3>Discovery</h3>
