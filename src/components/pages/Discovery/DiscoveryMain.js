@@ -19,7 +19,7 @@ function DiscoveryMain({ language }) {
 
         const textOverlayStyle = {
         position: 'absolute',
-        bottom: '0', // 固定在圖片底部
+        bottom: '-30px', // 固定在圖片底部
         backgroundColor: 'rgba(0, 0, 0, 0.7)', // 半透明黑色背景
         color: 'white',
         width: '35%',
