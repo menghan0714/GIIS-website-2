@@ -26,6 +26,8 @@ function DiscoveryMain({ language }) {
         padding: '10px',
         textAlign: 'center',
         zIndex: '20', 
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 'bold',
     };
 
         const cardStyle = {
