@@ -24,10 +24,9 @@ function DiscoveryMain({ language }) {
         color: 'white',
         width: '35%',
         padding: '10px',
-        textAlign: 'center'
-        z-index: 20;
-        font-family: Inter, sans-serif;
-        font-weight: bold;
+        textAlign: 'center',
+        zIndex: '20',
+        font-weight: 'bold',
     };
 
         const cardStyle = {
