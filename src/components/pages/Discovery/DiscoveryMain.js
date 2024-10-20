@@ -46,7 +46,7 @@ function DiscoveryMain({ language }) {
           <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
             <h2>{language === 'en' ? 'DISCOVERY' : '发现我们'}</h2>
-            <p>Take the opportunity to freely explore new knowledge and discover your potential.Continuous learning fuels personal growth and innovation.</p>
+            <p>{language === 'en' ? 'Take the opportunity to freely explore new knowledge and discover your potential.Continuous learning fuels personal growth and innovation.' : '抓住机会，自由探索新知识，发现你的潜力。持续学习推动个人成长和创新。'}</p>
           </div>
         </div>
 
