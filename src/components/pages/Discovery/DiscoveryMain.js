@@ -19,8 +19,8 @@ function DiscoveryMain({ language }) {
 
         const textOverlayStyle = {
         position: 'absolute',
-        bottom: '-80px', // 固定在圖片底部
-        backgroundColor: 'rgba(0, 0, 0, 0.7)', // 半透明黑色背景
+        bottom: '-70px', // 固定在圖片底部
+        backgroundColor: 'rgba(0, 0, 0, 0.8)', // 半透明黑色背景
         color: 'white',
         width: '35%',
         padding: '10px',
