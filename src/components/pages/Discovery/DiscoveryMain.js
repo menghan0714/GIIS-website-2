@@ -19,7 +19,7 @@ function DiscoveryMain({ language }) {
 
         const textOverlayStyle = {
         position: 'absolute',
-        bottom: '-30px', // 固定在圖片底部
+        bottom: '-80px', // 固定在圖片底部
         backgroundColor: 'rgba(0, 0, 0, 0.7)', // 半透明黑色背景
         color: 'white',
         width: '35%',
@@ -40,6 +40,14 @@ function DiscoveryMain({ language }) {
             <p>Genesis of Ideas International School is dedicated to providing students a dynamic learning environment and empowering them with the critical thinking and problem-solving skills.</p>
           </div>
         </div>
+
+       <div className="card mt-0" id="introduction">
+         <div className="container">
+            <div className="card-body">
+             <h3>Discovery</h3>
+            </div>
+         </div>
+       </div>
     </>
   );
 }
