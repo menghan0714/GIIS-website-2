@@ -11,8 +11,9 @@ function DiscoveryMain({ language }) {
     };
 
     const imageStyle = {
-        width: '100%',
-        height: '600px'
+        width: '100%', // 保持容器的寬度
+        height: '400px', // 固定高度
+        objectFit: 'cover'
     };
    
    return (
