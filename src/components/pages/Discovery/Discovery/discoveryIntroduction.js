@@ -1,10 +1,13 @@
 import React from 'react';
+import styles from './discoveryIntroduction.js';
 
 
 function discoveryIntroduction({ language }) {
     return (
-        <div className="container">
-            <h2>学校介绍 / School Introduction</h2>
+        <div className={styles.headline}>
+            <p classname={styles.headline}>GENESIS OF IDEAS INTERNATIONAL SCHOOL</p>
+        </div>
+        
             <div>
                 {language === 'zh' ? (
                     <p>
