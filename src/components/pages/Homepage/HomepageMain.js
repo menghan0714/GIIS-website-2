@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './HomepageHeader/Nav.js';
-import'./HomepageMain.css';
 import ImgSlider from './Homepage/ImgSlider.js';
 import Slogan from './Homepage/Slogan';
 import Introduction from './Homepage/Introduction';
