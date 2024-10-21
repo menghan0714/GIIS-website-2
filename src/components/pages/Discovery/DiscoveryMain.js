@@ -53,7 +53,7 @@ function DiscoveryMain({ language }) {
           </div>
         </div>
 
-       <div className="card mt-0" id="discoveryintroduction" style={cardStyle}>
+       <div className="card mt-0" id="introduction" style={cardStyle}>
          <div className="container">
             <div className="card-body">
                <discoveryIntroduction language={language} />
