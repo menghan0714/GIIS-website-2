@@ -10,6 +10,7 @@ function DiscoveryMain({ language }) {
         display: 'flex',
         justifyContent: 'center', // 水平居中
         marginTop: '0', // 與導航欄保持距離
+        width: '100%,
     };
 
     const imageStyle = {
