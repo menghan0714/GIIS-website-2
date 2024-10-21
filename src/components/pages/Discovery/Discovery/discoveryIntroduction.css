@@ -1,0 +1,6 @@
+.headline {
+    font-size: 40px; /* 設定字體大小 */
+    text-align: center; /* 水平置中 */
+    font-weight: bold; /* 加粗字體 */
+    margin-top: 20px;
+}
