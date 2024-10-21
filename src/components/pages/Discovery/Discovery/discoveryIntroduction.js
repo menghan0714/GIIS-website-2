@@ -33,10 +33,10 @@ function discoveryIntroduction({ language }) {
     return (
       <>
         <div style={headlineStyle}>
-         <div>
+     
           <p>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
-         </div>
+     
         </div>
 
         <div style={introductionStyle}>
