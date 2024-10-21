@@ -25,7 +25,6 @@ function DiscoveryMain({ language }) {
         backgroundColor: 'rgba(0, 0, 0, 0.8)', // 半透明黑色背景
         color: 'white',
         width: '35%',
-        padding: '10px',
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
