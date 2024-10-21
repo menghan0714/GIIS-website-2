@@ -8,8 +8,7 @@ function discoveryIntroduction({ language }) {
         marginTop: '80px',
         color: 'white',
         width: '100%',
-        textAlign: 'left'
-        zIndex: '20', 
+        textAlign: 'left',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '50px',
