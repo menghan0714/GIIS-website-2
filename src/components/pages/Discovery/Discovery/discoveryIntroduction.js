@@ -8,11 +8,12 @@ function discoveryIntroduction({ language }) {
         marginTop: '80px',
         color: 'white',
         width: '100%',
-        textAlign: 'center',
+        textAlign: 'left'
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '50px',
+        lineHeight: '1',
     };
  
     return (
