@@ -4,11 +4,12 @@ import styles from './discoveryIntroduction.js';
 
 function discoveryIntroduction({ language }) {
     return (
+     <>
         <div className={styles.headline}>
            GENESIS OF IDEAS INTERNATIONAL SCHOOL
         </div>
         
-            <div>
+        <div>
                 {language === 'zh' ? (
                     <p>
                         我们的学校是一所全线上、全球化的现代化学府，致力于提供世界一流的教育，吸引了全球各地的精英学生。我们的教育模式打破了传统教育的地域限制，学生可以在任何时间、任何地点，接受顶尖的教育资源。
@@ -26,9 +27,9 @@ function discoveryIntroduction({ language }) {
                         Additionally, we focus on the holistic development of our students by offering leadership training, innovation, and entrepreneurship courses, helping them stand out in their future careers. Our goal is to nurture future leaders with a global perspective, innovative thinking, and a sense of social responsibility.
                     </p>
                 )}
-            </div>
-        </div >
-    );
+        </div>
+     </>
+   );
 }
 
 export default discoveryIntroduction;
