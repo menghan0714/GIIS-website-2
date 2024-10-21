@@ -15,10 +15,11 @@ function discoveryIntroduction({ language }) {
 
     
     return (
+     <>
         <div className={discoveryintriductionStyle}>
           <h2>GENESIS OF IDEAS INTERNATIONAL SCHOOL</h2>  
         </div>
-        
+     </>
    );
 }
 
