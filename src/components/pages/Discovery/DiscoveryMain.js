@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './DiscoveryHeader/Nav.js';
 import img from '../../../img/Homepage/homepage3.png';
+import discoveryIntroduction from'../Discovery/fiscoveryIntroduction.js';
 
 function DiscoveryMain({ language }) {
 
@@ -52,8 +53,8 @@ function DiscoveryMain({ language }) {
 
        <div className="card mt-0" id="introduction" style={cardStyle}>
          <div className="container">
-            <div className="card-body">
-             <h3>Discovery</h3>
+            <div className="card-body>
+             <discoveryIntroduction language={language} />
             </div>
          </div>
        </div>
