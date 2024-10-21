@@ -28,6 +28,7 @@ function DiscoveryMain({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
+        padding: '5px',
     };
 
         const headline = {
