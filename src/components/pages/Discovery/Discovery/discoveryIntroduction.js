@@ -5,7 +5,7 @@ import styles from './discoveryIntroduction.css';
 function discoveryIntroduction({ language }) {
 
     const discoveryintriductionStyle = {
-        marginTop: '100px',
+        marginTop: '80px',
         color: 'white',
         width: '100%',
         textAlign: 'center',
