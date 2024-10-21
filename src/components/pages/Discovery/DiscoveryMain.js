@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './DiscoveryHeader/Nav.js';
 import img from '../../../img/Homepage/homepage3.png';
-import discoveryIntroduction from'../Discovery/fiscoveryIntroduction.js';
+import discoveryIntroduction from'../Discovery/discoveryIntroduction.js';
 
 function DiscoveryMain({ language }) {
 
