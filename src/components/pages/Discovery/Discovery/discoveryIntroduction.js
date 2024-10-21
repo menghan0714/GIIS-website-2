@@ -1,5 +1,4 @@
 import React from 'react';
-import './discoveryIntroduction.css';
 
 function Introduction({ language }) {
     return (
