@@ -39,7 +39,7 @@ function discoveryIntroduction({ language }) {
           <p>INTERNATIONAL SCHOOL</p>
         </div>
 
-        <div style={introductionStyle>
+        <div style={introductionStyle}>
           <p>9-12 Online School</p>     
         </div>
       </>
