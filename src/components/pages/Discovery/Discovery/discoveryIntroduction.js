@@ -9,9 +9,10 @@ function discoveryIntroduction({ language }) {
         color: 'white',
         width: '100%',
         display: 'flex',         // 使用flexbox
-        flexDirection: 'row', // 垂直方向排列
+        flexDirection: 'column', // 垂直方向排列
         alignItems: 'flex-start', // 元素內部文字靠左對齊
         justifyContent: 'center',
+        textAlign: 'center',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '60px',
