@@ -5,7 +5,7 @@ import styles from './discoveryIntroduction.css';
 function discoveryIntroduction({ language }) {
 
     const discoveryintriductionStyle = {
-        marginTop: '105px',
+        marginTop: '115px',
         color: 'white',
         width: '100%',
         display: 'flex',         // 使用flexbox
