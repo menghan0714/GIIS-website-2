@@ -28,11 +28,11 @@ function DiscoveryMain({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        padding: '5px',
+        padding: '10px',
     };
 
         const headline = {
-        fontSize:'40px', 
+        fontSize:'35px', 
         textAlign: 'center',
         paddingTop: '20px',
     };
