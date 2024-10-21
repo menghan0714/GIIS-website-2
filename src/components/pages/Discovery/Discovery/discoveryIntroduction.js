@@ -11,7 +11,7 @@ function discoveryIntroduction({ language }) {
         display: 'flex',         // 使用flexbox
         flexDirection: 'column', // 垂直方向排列
         alignItems: 'flex-start', // 元素內部文字靠左對齊
-        paddingLeft: '300px', 
+        paddingLeft: '260px', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '50px',
