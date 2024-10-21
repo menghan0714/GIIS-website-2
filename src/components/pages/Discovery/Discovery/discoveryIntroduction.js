@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Introduction({ language }) {
+function discoveryIntroduction({ language }) {
     return (
         <div className="container">
             <h2>学校介绍 / School Introduction</h2>
@@ -28,4 +28,4 @@ function Introduction({ language }) {
     );
 }
 
-export default Introduction;
+export default discoveryIntroduction;
