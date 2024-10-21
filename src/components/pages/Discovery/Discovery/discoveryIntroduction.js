@@ -42,7 +42,7 @@ function discoveryIntroduction({ language }) {
                         Additionally, we focus on the holistic development of our students by offering leadership training, innovation, and entrepreneurship courses, helping them stand out in their future careers. Our goal is to nurture future leaders with a global perspective, innovative thinking, and a sense of social responsibility.
                     </p>
                 )}
-            </div>
+        </div>
    );
 }
 
