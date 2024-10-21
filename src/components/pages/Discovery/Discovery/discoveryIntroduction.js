@@ -19,6 +19,7 @@ function discoveryIntroduction({ language }) {
     };
  
     return (
+      <>
         <div style={discoveryintriductionStyle}>
           <p>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
@@ -43,6 +44,7 @@ function discoveryIntroduction({ language }) {
                     </p>
                 )}
         </div>
+      </>
    );
 }
 
