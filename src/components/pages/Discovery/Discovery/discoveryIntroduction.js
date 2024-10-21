@@ -6,7 +6,7 @@ function discoveryIntroduction({ language }) {
     return (
      <>
         <div className="container">
-          <p classname={styles.headline}>GENESIS OF IDEAS INTERNATIONAL SCHOOL</p>
+         <div classname={styles.headline}>GENESIS OF IDEAS INTERNATIONAL SCHOOL</div>
         </div>
         
         <div>
