@@ -7,7 +7,7 @@ function discoveryIntroduction({ language }) {
     const headlineStyle = {
         marginTop: '115px',
         color: 'white',
-        width: '100%',
+        width: '50%',
         textAlign: 'left',
         justifyContent: 'center',
         fontFamily: 'Inter, sans-serif',
