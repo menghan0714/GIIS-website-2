@@ -36,6 +36,7 @@ function DiscoveryMain({ language }) {
         position: 'relative', // 需要設置 position 來使 z-index 生效
         zIndex: '10', // 調整層級
         marginTop: '0', // 保持一些間距
+        backgroundColor: 'rgba(43, 61, 109, 1)',
     };
    
    return (
