@@ -35,7 +35,7 @@ function DiscoveryMain({ language }) {
         fontSize:'40px', 
         textAlign: 'center',
     };
-        const paragrapg = {
+        const paragraph = {
         fontSize:'35px', 
         textAlign: 'center',
         display: 'flex',         // 使用flexbox
