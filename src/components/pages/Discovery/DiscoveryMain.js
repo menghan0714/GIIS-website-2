@@ -32,12 +32,13 @@ function DiscoveryMain({ language }) {
     };
 
         const headline = {
-        fontSize:'30px', 
+        fontSize:'40px', 
         textAlign: 'center',
     };
         const paragraph = {
         fontSize:'20px', 
-        textAlign: 'center',
+        textAlign: 'left',
+        paddingLeft: '50px',
         display: 'flex',         // 使用flexbox
         flexDirection: 'column', // 垂直方向排列
         alignItems: 'flex-start', // 元素內部文字靠左對齊
