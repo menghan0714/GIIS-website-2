@@ -7,7 +7,7 @@ function discoveryIntroduction({ language }) {
     const headlineStyle = {
         marginTop: '115px',
         color: 'white',
-        width: '50%',
+        width: '100%',
         textAlign: 'left',
         justifyContent: 'center',
         fontFamily: 'Inter, sans-serif',
@@ -33,8 +33,10 @@ function discoveryIntroduction({ language }) {
     return (
       <>
         <div style={headlineStyle}>
+         <div>
           <p>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
+         </div>
         </div>
 
         <div style={introductionStyle}>
