@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './discoveryIntroduction.js';
+import styles from './discoveryIntroduction.css';
 
 
 function discoveryIntroduction({ language }) {
