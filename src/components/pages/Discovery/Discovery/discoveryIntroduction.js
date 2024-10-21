@@ -17,7 +17,8 @@ function discoveryIntroduction({ language }) {
  
     return (
         <div style={discoveryintriductionStyle}>
-          <h2>GENESIS OF IDEAS INTERNATIONAL SCHOOL</h2>  
+          <h2>GENESIS OF IDEAS</h2>
+          <h2>INTERNATIONAL SCHOOL</h2>
         </div>
    );
 }
