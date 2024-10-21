@@ -11,15 +11,12 @@ function discoveryIntroduction({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-
-
-    
+    };
+ 
     return (
-     <>
         <div className={discoveryintriductionStyle}>
           <h2>GENESIS OF IDEAS INTERNATIONAL SCHOOL</h2>  
         </div>
-     </>
    );
 }
 
