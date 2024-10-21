@@ -4,9 +4,23 @@ import styles from './discoveryIntroduction.css';
 
 function discoveryIntroduction({ language }) {
 
-    const discoveryintriductionStyle = {
+    const headlineStyle = {
         marginTop: '115px',
         color: 'white',
+        width: '60%',
+        display: 'flex',         // 使用flexbox
+        flexDirection: 'column', // 垂直方向排列
+        alignItems: 'flex-start', // 元素內部文字靠左對齊
+        paddingLeft: '0', 
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '60px',
+        lineHeight: '1',
+    };
+
+    const introductionStyle = {
+        marginTop: '130px',
+        color: 'rgba(255, 255, 255, 0.8)',
         width: '100%',
         display: 'flex',         // 使用flexbox
         flexDirection: 'column', // 垂直方向排列
@@ -20,12 +34,13 @@ function discoveryIntroduction({ language }) {
  
     return (
       <>
-        <div style={discoveryintriductionStyle}>
+        <div style={headlineStyle}>
           <p>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
         </div>
 
-        <div>
+        <div style={introductionStyle>
+          <p>9-12 Online School</p>
                 {language === 'zh' ? (
                     <p>
                         我们的学校是一所全线上、全球化的现代化学府，致力于提供世界一流的教育，吸引了全球各地的精英学生。我们的教育模式打破了传统教育的地域限制，学生可以在任何时间、任何地点，接受顶尖的教育资源。
