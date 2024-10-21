@@ -26,10 +26,21 @@ function DiscoveryMain({ language }) {
         color: 'white',
         width: '35%',
         padding: '10px',
-        textAlign: 'center',
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
+    };
+
+        const headline = {
+        fontSize:'40px', 
+        textAlign: 'center',
+    };
+        const paragrapg = {
+        fontSize:'35px', 
+        textAlign: 'center',
+        display: 'flex',         // 使用flexbox
+        flexDirection: 'column', // 垂直方向排列
+        alignItems: 'flex-start', // 元素內部文字靠左對齊
     };
 
         const cardStyle = {
@@ -48,8 +59,8 @@ function DiscoveryMain({ language }) {
         <div style={containerStyle}>
           <img src={img} alt="Discovery" style={imageStyle} />
           <div style={textOverlayStyle}>
-            <h2>{language === 'en' ? 'DISCOVERY' : '发现我们'}</h2>
-            <p>{language === 'en' ? 'Take the opportunity to freely explore new knowledge and discover your potential.Continuous learning fuels personal growth and innovation.' : '抓住机会，自由探索新知识，发现你的潜力。持续学习推动个人成长和创新。'}</p>
+            <p style={headline}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
+            <p style={paragraph}>{language === 'en' ? 'Take the opportunity to freely explore new knowledge and discover your potential.Continuous learning fuels personal growth and innovation.' : '抓住机会，自由探索新知识，发现你的潜力。持续学习推动个人成长和创新。'}</p>
           </div>
         </div>
 
