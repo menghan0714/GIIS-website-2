@@ -32,12 +32,12 @@ function DiscoveryMain({ language }) {
     };
 
         const headline = {
-        fontSize:'35px', 
+        fontSize:'30px', 
         textAlign: 'center',
         paddingTop: '20px',
     };
         const paragraph = {
-        fontSize:'20px', 
+        fontSize:'15px', 
         textAlign: 'center',
     };
 
