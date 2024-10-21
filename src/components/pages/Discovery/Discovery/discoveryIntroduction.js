@@ -8,7 +8,9 @@ function discoveryIntroduction({ language }) {
         marginTop: '115px',
         color: 'white',
         width: '100%',
-        textAlign: 'left',
+        display: 'flex',         // 使用flexbox
+        flexDirection: 'column', // 垂直方向排列
+        alignItems: 'flex-start', // 元素內部文字靠左對齊
         justifyContent: 'center',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
