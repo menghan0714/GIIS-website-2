@@ -12,7 +12,7 @@ function discoveryIntroduction({ language }) {
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '80px',
+        fontSize: '10px',
     };
  
     return (
