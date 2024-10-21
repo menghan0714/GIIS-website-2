@@ -34,6 +34,7 @@ function DiscoveryMain({ language }) {
         const headline = {
         fontSize:'35px', 
         textAlign: 'center',
+        top: '20px',
     };
         const paragraph = {
         fontSize:'20px', 
