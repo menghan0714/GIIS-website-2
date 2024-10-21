@@ -5,7 +5,7 @@ import styles from './discoveryIntroduction.js';
 function discoveryIntroduction({ language }) {
     return (
         <div className={styles.headline}>
-            <p classname={styles.headline}>GENESIS OF IDEAS INTERNATIONAL SCHOOL</p>
+           GENESIS OF IDEAS INTERNATIONAL SCHOOL
         </div>
         
             <div>
