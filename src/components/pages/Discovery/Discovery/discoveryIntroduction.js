@@ -29,11 +29,11 @@ function discoveryIntroduction({ language }) {
     const container = {
       paddingLeft: '20%',
       height: '300px',          // 父元素高度
-      width: '800px', 
     };
     
     const text1 = {
-        marginTop: '80px',
+        marginTop: '70px',
+        width: '800px', 
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
         color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
         fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
