@@ -47,7 +47,8 @@ function discoveryIntroduction({ language }) {
     };
 
    const container2 = {
-      marginTop: '0',
+      position: 'relative',
+      marginTop: '65px',
       width: '80%',
       paddingLeft: '15%',
       height: '400px',  
