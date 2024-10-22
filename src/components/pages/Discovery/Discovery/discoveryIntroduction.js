@@ -73,10 +73,10 @@ function discoveryIntroduction({ language }) {
                         GIIS is a fully online, globalized modern institution dedicated to providing world-class education, attracting elite students from around the world. Our educational model breaks the geographical constraints of traditional education, allowing students to access top-notch educational resources anytime, anywhere.
                     </p>
                 )}
+         <div style={lineStyle}></div>
          </div>
         </div>
 
-        <div style={lineStyle}></div>
       </>
    );
 }
