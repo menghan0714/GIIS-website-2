@@ -41,8 +41,7 @@ function discoveryIntroduction({ language }) {
         marginTop: '300px',
         width: '30%', // Adjust width according to your needs
         height: '2px',
-        backgroundColor: 'rgba(255, 255, 255, 0.85)',
-        margin: '30px 0', // Adds space around the line
+        backgroundColor: 'rgba(255, 255, 255, 0.85)', 
         paddingLeft: '15%',
     };
 
