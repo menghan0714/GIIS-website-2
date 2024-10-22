@@ -34,7 +34,6 @@ function discoveryIntroduction({ language }) {
     };
     
     const text1 = {
-        marginTop: '100px',
         width: '800px',  /* 設置固定寬度 */
         padding: '10px',
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
