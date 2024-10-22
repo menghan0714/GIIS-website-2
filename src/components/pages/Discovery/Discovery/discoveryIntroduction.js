@@ -42,6 +42,7 @@ function discoveryIntroduction({ language }) {
         height: '2px',
         backgroundColor: 'rgba(255, 255, 255, 0.85)', 
         paddingLeft: '15%',
+        marginTop: '65px',
     };
 
    const container2 = {
