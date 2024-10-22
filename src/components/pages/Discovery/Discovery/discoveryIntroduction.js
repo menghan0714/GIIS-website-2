@@ -38,12 +38,10 @@ function discoveryIntroduction({ language }) {
 
     const lineStyle = {
         position: 'absolute',
-        marginTop: '300px',
         width: '30%', // Adjust width according to your needs
         height: '2px',
         backgroundColor: 'rgba(255, 255, 255, 0.85)', 
         paddingLeft: '15%',
-        padding: '30px ,0',
     };
 
    const container2 = {
