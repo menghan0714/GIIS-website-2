@@ -1,4 +1,5 @@
 import React from 'react';
+import img from '../../../../../img/cognia.png';
 
 function discoveryIntroduction({ language }) {
 
@@ -68,6 +69,14 @@ function discoveryIntroduction({ language }) {
       fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
       fontSize: '25px',
     };
+
+    const imageStyle = {
+        width: '10%', // 保持容器的寬度
+        height: '10%', // 固定高度
+        objectFit: 'cover'
+        justifyContent: 'center',
+    };
+    };
     
     return (
       <>
@@ -117,6 +126,10 @@ function discoveryIntroduction({ language }) {
                     </p>
                 )}
          </div>
+
+        <div style={imageStyle}>
+          <img src={img} alt="Cognia" />
+        <div>
       </>
    );
 }
