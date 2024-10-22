@@ -31,8 +31,6 @@ function discoveryIntroduction({ language }) {
      width: '400px',  /* 設置固定寬度 */
      height: '300px', /* 設置固定高度 */
      padding: '10px',
-     border: '1px solid #ccc',
-     overflowY: 'auto', /* 當文字超出範圍時顯示滾動條 */
      wordWrap: 'break-word', /* 自動換行過長的字詞 */
      color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
      fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
