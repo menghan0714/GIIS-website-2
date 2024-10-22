@@ -29,7 +29,7 @@ function discoveryIntroduction({ language }) {
       marginTop: '65px',
       width: '80%',
       paddingLeft: '15%',
-      height: '400px',  
+      height: '20%',  
       wordWrap: 'break-word',
       color: 'rgba(255, 255, 255, 0.8)',
       fontFamily: 'Arial, sans-serif', 
@@ -52,6 +52,7 @@ function discoveryIntroduction({ language }) {
       width: '80%',
       paddingLeft: '15%',
       height: '400px',  
+      height: '20%',
       wordWrap: 'break-word',// 父元素高度
       color: 'rgba(255, 255, 255, 0.8)',
       fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
