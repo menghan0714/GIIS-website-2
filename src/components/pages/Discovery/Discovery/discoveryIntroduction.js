@@ -29,7 +29,7 @@ function discoveryIntroduction({ language }) {
     const text1 = {
         marginTop: '100px',
         paddingLeft: '40%',
-        width: '100%',  /* 設置固定寬度 */
+        width: '600px',  /* 設置固定寬度 */
         padding: '10px',
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
         color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
