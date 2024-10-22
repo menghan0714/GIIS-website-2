@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from './discoveryIntroduction.css';
-
 
 function discoveryIntroduction({ language }) {
 
@@ -27,8 +25,10 @@ function discoveryIntroduction({ language }) {
     };
 
     const container = {
+      position: 'relative',
       paddingLeft: '15%',
-      height: '300px',          // 父元素高度
+      height: '400px',  
+      wordWrap: 'break-word',// 父元素高度
     };
     
     const text1 = {
@@ -40,9 +40,15 @@ function discoveryIntroduction({ language }) {
         fontSize: '25px',
       };
 
-
-    
- 
+    const lineStyle = {
+        position: 'absolute',
+        top: '50px',
+        width: '30%', // Adjust width according to your needs
+        height: '2px',
+        backgroundColor: 'rgba(255, 255, 255, 0.85)',
+        margin: '30px 0', // Adds space around the line
+        paddingLeft: '15%',
+    };
     return (
       <>
         <div style={headlineStyle}>
@@ -69,6 +75,8 @@ function discoveryIntroduction({ language }) {
                 )}
          </div>
         </div>
+
+        <div style={lineStyle}></div>
       </>
    );
 }
