@@ -26,21 +26,14 @@ function discoveryIntroduction({ language }) {
 
     const container = {
       position: 'relative',
-      width: '100%',
+      width: '80%',
       paddingLeft: '15%',
       height: '400px',  
       wordWrap: 'break-word',// 父元素高度
+      color: 'rgba(255, 255, 255, 0.8)',
+      fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
+      fontSize: '25px',
     };
-    
-    const text1 = {
-        position: 'absolute',
-        marginTop: '70px',
-        width: '100%', 
-        wordWrap: 'break-word', /* 自動換行過長的字詞 */
-        color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
-        fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
-        fontSize: '25px',
-      };
 
     const lineStyle = {
         position: 'absolute',
@@ -54,10 +47,8 @@ function discoveryIntroduction({ language }) {
     return (
       <>
         <div style={headlineStyle}>
-     
           <p>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
-     
         </div>
 
         <div style={introductionStyle}>
@@ -65,7 +56,6 @@ function discoveryIntroduction({ language }) {
         </div>
 
         <div style={container}>
-         <div style={text1}> 
             {language === 'zh' ? (
                     <p>
                         GIIS 是一所完全線上的全球化現代教育機構，致力於提供世界一流的教育，吸引來自世界各地的優秀學生。我們的教育模式打破了傳統教育的地理限制，讓學生能夠隨時隨地獲取頂尖的教育資源。
