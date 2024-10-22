@@ -22,7 +22,7 @@ function discoveryIntroduction({ language }) {
         paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '30px',
+        fontSize: '35px',
         lineHeight: '1',
     };
 
@@ -37,7 +37,7 @@ function discoveryIntroduction({ language }) {
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
         color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
         fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
-        fontSize: '25px',
+        fontSize: '30px',
       };
 
 
