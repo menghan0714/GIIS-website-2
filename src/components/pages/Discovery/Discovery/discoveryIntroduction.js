@@ -22,7 +22,7 @@ function discoveryIntroduction({ language }) {
         paddingLeft: '20%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '35px',
+        fontSize: '30px',
         lineHeight: '1',
     };
 
