@@ -29,7 +29,7 @@ function discoveryIntroduction({ language }) {
       marginTop: '65px',
       width: '80%',
       paddingLeft: '15%',
-      height: '350px',  
+      height: '400px',  
       wordWrap: 'break-word',
       color: 'rgba(255, 255, 255, 0.8)',
       fontFamily: 'Arial, sans-serif', 
