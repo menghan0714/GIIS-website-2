@@ -11,7 +11,7 @@ function discoveryIntroduction({ language }) {
         paddingLeft: '20%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '60px',
+        fontSize: '70px',
         lineHeight: '1',
     };
 
