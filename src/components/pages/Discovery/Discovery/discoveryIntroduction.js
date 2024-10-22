@@ -48,7 +48,7 @@ function discoveryIntroduction({ language }) {
 
    const container2 = {
       position: 'relative',
-      marginTop: '65px',
+      marginTop: '70px',
       width: '80%',
       paddingLeft: '15%',
       height: '400px',  
