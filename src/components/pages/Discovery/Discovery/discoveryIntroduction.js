@@ -38,7 +38,7 @@ function discoveryIntroduction({ language }) {
 
     const lineStyle = {
         position: 'absolute',
-        top: '250px',
+        marginTop: '250px',
         width: '30%', // Adjust width according to your needs
         height: '2px',
         backgroundColor: 'rgba(255, 255, 255, 0.85)',
