@@ -70,12 +70,16 @@ function discoveryIntroduction({ language }) {
       fontSize: '25px',
     };
 
+
+  const containerStyle = {
+        display: 'flex',
+        justifyContent: 'center', // 水平居中
+        width: '100%',
+    };
+
     const imageStyle = {
         width: '10%', // 保持容器的寬度
         height: '10%', // 固定高度
-        objectFit: 'cover'
-        justifyContent: 'center',
-    };
     };
     
     return (
@@ -127,9 +131,9 @@ function discoveryIntroduction({ language }) {
                 )}
          </div>
 
-        <div style={imageStyle}>
-          <img src={img} alt="Cognia" />
-        <div>
+        <div style={containerStyle}>
+          <img src={img} alt="Cognia" style={imageStyle} />
+        </div>
       </>
    );
 }
