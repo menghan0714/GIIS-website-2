@@ -29,10 +29,10 @@ function discoveryIntroduction({ language }) {
       marginTop: '65px',
       width: '80%',
       paddingLeft: '15%',
-      height: '400px',  
-      wordWrap: 'break-word',// 父元素高度
+      height: '300px',  
+      wordWrap: 'break-word',
       color: 'rgba(255, 255, 255, 0.8)',
-      fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
+      fontFamily: 'Arial, sans-serif', 
       fontSize: '25px',
     };
 
@@ -45,6 +45,19 @@ function discoveryIntroduction({ language }) {
         margin: '30px 0', // Adds space around the line
         paddingLeft: '15%',
     };
+
+   const container2 = {
+      marginTop: '655px',
+      width: '80%',
+      paddingLeft: '15%',
+      height: '400px',  
+      wordWrap: 'break-word',// 父元素高度
+      color: 'rgba(255, 255, 255, 0.8)',
+      fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
+      fontSize: '25px',
+    };
+
+    
     return (
       <>
         <div style={headlineStyle}>
@@ -68,6 +81,17 @@ function discoveryIntroduction({ language }) {
                 )}
 
            <div style={lineStyle}></div>
+        <div style={container2}>
+           {language === 'zh' ? (
+                    <p>
+                        我們的學校目前正在申請 Cognia 認證，Cognia 是一個全球知名的非營利組織，致力於通過嚴格的標準提升教育品質。這項認證工作反映了我們對實現教育卓越的不懈承諾。
+                    </p>
+                ) : (
+                    <p>
+                        Our school is currently in the process of applying for accreditation from Cognia, a globally recognized nonprofit organization dedicated to enhancing educational quality through rigorous standards. This accreditation effort reflects our unwavering commitment to achieving educational excellence.
+
+                    </p>
+                )}
          </div>
       </>
    );
