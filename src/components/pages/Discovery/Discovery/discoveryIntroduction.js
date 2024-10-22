@@ -19,7 +19,7 @@ function discoveryIntroduction({ language }) {
         marginTop: '70px',
         color: 'rgba(255, 255, 255, 0.8)',
         width: '100%',
-        paddingLeft: '20%',
+        paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '30px',
@@ -27,7 +27,7 @@ function discoveryIntroduction({ language }) {
     };
 
     const container = {
-      paddingLeft: '20%',
+      paddingLeft: '15%',
       height: '300px',          // 父元素高度
     };
     
