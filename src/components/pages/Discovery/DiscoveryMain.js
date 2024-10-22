@@ -46,7 +46,7 @@ function DiscoveryMain({ language }) {
         zIndex: '10', // 調整層級
         marginTop: '0', // 保持一些間距
         backgroundColor: 'rgba(43, 61, 109, 1)',
-        borderBottom: '12px solid rgba(213, 168, 54, 1)',
+        borderBottom: '20px solid rgba(213, 168, 54, 1)',
     };
    
    return (
