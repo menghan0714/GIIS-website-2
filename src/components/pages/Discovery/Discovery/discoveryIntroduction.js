@@ -33,8 +33,9 @@ function discoveryIntroduction({ language }) {
     };
     
     const text1 = {
+        position: 'absolute',
         marginTop: '70px',
-        width: '800px', 
+        width: '100%', 
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
         color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
         fontFamily: 'Arial, sans-serif', /* 可選：字體樣式 */
@@ -43,7 +44,7 @@ function discoveryIntroduction({ language }) {
 
     const lineStyle = {
         position: 'absolute',
-        top: '300px',
+        top: '250px',
         width: '30%', // Adjust width according to your needs
         height: '2px',
         backgroundColor: 'rgba(255, 255, 255, 0.85)',
