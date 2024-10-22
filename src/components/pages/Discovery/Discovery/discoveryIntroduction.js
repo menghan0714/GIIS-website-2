@@ -29,7 +29,7 @@ function discoveryIntroduction({ language }) {
     const textBox = {
      marginTop: '100px',
      paddingLeft: '20%',
-     width: '700px',  /* 設置固定寬度 */
+     width: '100%',  /* 設置固定寬度 */
      height: '300px', /* 設置固定高度 */
      padding: '10px',
      wordWrap: 'break-word', /* 自動換行過長的字詞 */
