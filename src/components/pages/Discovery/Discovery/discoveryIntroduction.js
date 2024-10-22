@@ -27,10 +27,8 @@ function discoveryIntroduction({ language }) {
     };
 
     const container = {
-      display: 'flex',
-      justifyContent: 'center', // 水平置中
-      alignItems: 'center',     // 垂直置中（如果需要）
-      height: '100vh',          // 父元素高度
+      paddingLeft: '20%',
+      height: '200px',          // 父元素高度
     };
     
     const text1 = {
