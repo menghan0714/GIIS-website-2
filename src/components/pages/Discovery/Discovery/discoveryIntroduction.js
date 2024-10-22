@@ -26,6 +26,7 @@ function discoveryIntroduction({ language }) {
 
     const container = {
       position: 'relative',
+      marginTop: '65px',
       width: '80%',
       paddingLeft: '15%',
       height: '400px',  
