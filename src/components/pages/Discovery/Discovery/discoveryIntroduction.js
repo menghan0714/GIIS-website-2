@@ -32,7 +32,7 @@ function discoveryIntroduction({ language }) {
     };
     
     const text1 = {
-        marginTop: '70px',
+        marginTop: '100px',
         width: '800px', 
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
         color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
