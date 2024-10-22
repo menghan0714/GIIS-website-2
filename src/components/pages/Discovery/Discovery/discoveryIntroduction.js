@@ -28,7 +28,7 @@ function discoveryIntroduction({ language }) {
 
     const container = {
       paddingLeft: '20%',
-      height: '200px',          // 父元素高度
+      height: '300px',          // 父元素高度
     };
     
     const text1 = {
