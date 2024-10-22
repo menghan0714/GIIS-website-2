@@ -26,9 +26,15 @@ function discoveryIntroduction({ language }) {
         lineHeight: '1',
     };
 
+    const container = {
+      display: 'flex',
+      justifyContent: 'center', // 水平置中
+      alignItems: 'center',     // 垂直置中（如果需要）
+      height: '100vh',          // 父元素高度
+    };
+    
     const text1 = {
         marginTop: '100px',
-        justifyContent: 'center',
         width: '800px',  /* 設置固定寬度 */
         padding: '10px',
         wordWrap: 'break-word', /* 自動換行過長的字詞 */
@@ -52,8 +58,9 @@ function discoveryIntroduction({ language }) {
         <div style={introductionStyle}>
           <p>9-12 Online School</p>     
         </div>
-        
-        <div style={text1}> 
+
+        <div style={container}>
+         <div style={text1}> 
             {language === 'zh' ? (
                     <p>
                         GIIS 是一所完全線上的全球化現代教育機構，致力於提供世界一流的教育，吸引來自世界各地的優秀學生。我們的教育模式打破了傳統教育的地理限制，讓學生能夠隨時隨地獲取頂尖的教育資源。
@@ -63,6 +70,7 @@ function discoveryIntroduction({ language }) {
                         GIIS is a fully online, globalized modern institution dedicated to providing world-class education, attracting elite students from around the world. Our educational model breaks the geographical constraints of traditional education, allowing students to access top-notch educational resources anytime, anywhere.
                     </p>
                 )}
+         </div>
         </div>
       </>
    );
