@@ -28,7 +28,7 @@ function discoveryIntroduction({ language }) {
 
     const textBox = {
      marginTop: '100px',
-     paddingLeft: '50%',
+     paddingLeft: '300px',
      width: '600px',  /* 設置固定寬度 */
      height: '300px', /* 設置固定高度 */
      padding: '10px',
