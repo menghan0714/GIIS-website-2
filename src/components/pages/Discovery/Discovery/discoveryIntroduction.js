@@ -16,13 +16,10 @@ function discoveryIntroduction({ language }) {
     };
 
     const introductionStyle = {
-        marginTop: '130px',
+        marginTop: '125px',
         color: 'rgba(255, 255, 255, 0.8)',
-        width: '60%',
-        display: 'flex',         // 使用flexbox
-        flexDirection: 'column', // 垂直方向排列
-        alignItems: 'flex-start', // 元素內部文字靠左對齊
-        paddingLeft: '0', 
+        width: '100%',
+        paddingLeft: '20%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '35px',
