@@ -16,7 +16,7 @@ function discoveryIntroduction({ language }) {
     };
 
     const introductionStyle = {
-        marginTop: '90px',
+        marginTop: '50px',
         color: 'rgba(255, 255, 255, 0.8)',
         width: '100%',
         paddingLeft: '20%',
