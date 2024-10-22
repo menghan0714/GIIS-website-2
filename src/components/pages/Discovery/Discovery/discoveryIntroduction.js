@@ -30,7 +30,6 @@ function discoveryIntroduction({ language }) {
      marginTop: '100px',
      paddingLeft: '40%',
      width: '100%',  /* 設置固定寬度 */
-     height: '300px', /* 設置固定高度 */
      padding: '10px',
      wordWrap: 'break-word', /* 自動換行過長的字詞 */
      color: 'rgba(255, 255, 255, 0.8)', /* 可選：文字顏色 */
