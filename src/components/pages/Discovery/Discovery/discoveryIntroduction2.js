@@ -4,7 +4,7 @@ import img from '../../../../img/cognia.png';
 function discoveryIntroduction2({ language }) {
 
     const headlineStyle = {
-        marginTop: '53px',
+        marginTop: '0px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
         paddingLeft: '12%',
