@@ -56,7 +56,7 @@ function discoveryIntroduction2({ language }) {
     };
 
     const container3 = {
-        marginTop: '30px',
+        marginTop: '50px',
         color: 'rgba(0, 0, 0, 0.8)',
         width: '90%',
         height: '50%',
