@@ -76,6 +76,7 @@ function discoveryIntroduction2({ language }) {
         fontFamily: 'Inter, sans-serif',
         fontSize: '25px',
         wordWrap: 'break-word',
+        marginBottom: '20px',
     };
 
     
