@@ -25,13 +25,13 @@ function discoveryIntroduction2({ language }) {
 
 
     const headlineStyle3 = {
-        marginTop: 'px',
+        marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
-        paddingLeft: '10%',
+        paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '40px',
+        fontSize: '55px',
     };
 
     const container = {
@@ -109,7 +109,7 @@ function discoveryIntroduction2({ language }) {
         </div>
 
         <div style={headlineStyle3}>
-          <p> </p>
+          <p>Faculty&Graduates</p>
         </div>
 
         <div style={container3}>
