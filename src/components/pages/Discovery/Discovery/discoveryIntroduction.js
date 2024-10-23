@@ -75,7 +75,7 @@ function discoveryIntroduction({ language }) {
         display: 'flex',
         justifyContent: 'center', // 水平居中
         width: '100%',
-        marginBottom: '30px',
+        marginBottom: '20px',
     };
 
     const imageStyle = {
