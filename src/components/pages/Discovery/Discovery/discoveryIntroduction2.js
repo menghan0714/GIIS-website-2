@@ -39,9 +39,8 @@ function discoveryIntroduction2({ language }) {
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
         height: '50%',
-        paddingLeft: '10%',
+        paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
-        fontWeight: 'bold',
         fontSize: '30px',
         wordWrap: 'break-word',
     };
