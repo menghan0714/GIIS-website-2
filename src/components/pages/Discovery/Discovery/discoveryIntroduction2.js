@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../../../../img/cognia.png';
+import FacultyGraduates from './FacultyGraduates.js';
 
 function discoveryIntroduction2({ language }) {
 
@@ -110,6 +111,12 @@ function discoveryIntroduction2({ language }) {
 
         <div style={headlineStyle3}>
           <p>Faculty&Graduates</p>
+        </div>
+                    
+        <div className="container-fluid">
+          <div className="card-body">
+             <FacultyGraduates />
+          </div>
         </div>
 
         <div style={container3}>
