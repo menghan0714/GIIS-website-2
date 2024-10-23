@@ -67,6 +67,17 @@ function discoveryIntroduction2({ language }) {
         wordWrap: 'break-word',
     };
 
+    const container4 = {
+        marginTop: '40px',
+        color: 'rgba(0, 0, 0, 0.8)',
+        width: '85%',
+        height: '50%',
+        paddingLeft: '12%',
+        fontFamily: 'Inter, sans-serif',
+        fontSize: '25px',
+        wordWrap: 'break-word',
+    };
+
     
     return (
       <>
@@ -119,11 +130,17 @@ function discoveryIntroduction2({ language }) {
           </div>
         </div>
 
-        <div style={container3}>
-          <p> </p>
-        </div>
-
-        
+        <div style={container4}>
+           {language === 'zh' ? (
+                    <p>
+                        透過密切的師生互動，學生們獲得個性化的指導與支持。我們也強調領導力、全球視野和創業精神的培養，以裝備學生應對未來的挑戰。我們相信，在這樣一個充滿關懷的環境中，學生們將成為具備強烈社會責任感的全球公民。
+                    </p>
+                ) : (
+                    <p>
+                        Our faculty and graduates come from leading institutions around the world. This connection to world-class universities not only highlights the excellence of our faculty but also reflects the remarkable achievements of our graduates. We are committed to bringing together experts and scholars from these prestigious institutions to provide our students with the highest-quality educational experience.
+                    </p>
+                )}
+        </div>   
       </>
    );
 }
