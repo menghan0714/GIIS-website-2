@@ -10,7 +10,7 @@ function discoveryIntroduction2({ language }) {
         paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '60px',
+        fontSize: '55px',
     };
 
     const headlineStyle2 = {
