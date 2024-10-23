@@ -4,7 +4,7 @@ import img from '../../../../img/cognia.png';
 function discoveryIntroduction2({ language }) {
 
     const headlineStyle = {
-        marginTop: '55px',
+        marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
         paddingLeft: '12%',
@@ -13,8 +13,21 @@ function discoveryIntroduction2({ language }) {
         fontSize: '55px',
     };
 
+    const container = {
+        position: 'relative',
+        color: 'rgba(0, 0, 0, 1)',
+        width: '100%',
+        height: '50%',
+        paddingLeft: '12%',
+        fontFamily: 'Inter, sans-serif',
+        fontSize: '30px',
+        wordWrap: 'break-word',
+        lineHeight: '1.25',
+    };
+    
     const headlineStyle2 = {
-        marginTop: '100px',
+        position: 'absolute',
+        marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
         paddingLeft: '12%',
@@ -34,16 +47,7 @@ function discoveryIntroduction2({ language }) {
         fontSize: '40px',
     };
 
-    const container = {
-        color: 'rgba(0, 0, 0, 1)',
-        width: '100%',
-        height: '50%',
-        paddingLeft: '12%',
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '30px',
-        wordWrap: 'break-word',
-        lineHeight: '1.25',
-    };
+   
 
     const container2 = {
         marginTop: 'px',
