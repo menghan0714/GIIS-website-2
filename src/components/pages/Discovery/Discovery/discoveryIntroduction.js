@@ -79,8 +79,8 @@ function discoveryIntroduction({ language }) {
     };
 
     const imageStyle = {
-        width: '15%', // 保持容器的寬度
-        height: '15%', // 固定高度
+        width: '13%', // 保持容器的寬度
+        height: '13%', // 固定高度
     };
     
     return (
