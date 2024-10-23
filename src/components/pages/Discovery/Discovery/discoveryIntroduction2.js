@@ -43,7 +43,7 @@ function discoveryIntroduction2({ language }) {
         fontFamily: 'Inter, sans-serif',
         fontSize: '30px',
         wordWrap: 'break-word',
-        lineHeight: '1',
+        lineHeight: '1.25',
     };
 
     const container2 = {
