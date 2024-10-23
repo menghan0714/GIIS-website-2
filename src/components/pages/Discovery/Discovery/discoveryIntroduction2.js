@@ -42,7 +42,7 @@ function discoveryIntroduction2({ language }) {
         paddingLeft: '10%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '35px',
+        fontSize: '30px',
         wordWrap: 'break-word',
     };
 
