@@ -71,6 +71,15 @@ function DiscoveryMain({ language }) {
             </div>
          </div>
        </div>
+
+       <div className="card mt-0" id="introduction2">
+         <div className="container">
+            <div className="card-body">
+               <DiscoveryIntroduction2 language={language} />
+            </div>
+         </div>
+       </div>
+       
     </>
   );
 }
