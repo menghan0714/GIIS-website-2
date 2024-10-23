@@ -14,13 +14,13 @@ function discoveryIntroduction2({ language }) {
     };
 
     const headlineStyle2 = {
-        marginTop: 'px',
+        marginTop: '100px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
-        paddingLeft: '10%',
+        paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: '40px',
+        fontSize: '55px',
     };
 
 
@@ -84,7 +84,7 @@ function discoveryIntroduction2({ language }) {
         </div>
 
         <div style={headlineStyle2}>
-          <p> </p>
+          <p>Misiion</p>
         </div>
 
         <div style={container2}>
