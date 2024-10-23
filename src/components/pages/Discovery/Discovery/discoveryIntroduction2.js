@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../../../img/cognia.png';
 import FacultyGraduates from './FacultyGraduates.js';
 
 function discoveryIntroduction2({ language }) {
