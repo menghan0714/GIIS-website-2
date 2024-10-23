@@ -47,7 +47,7 @@ function discoveryIntroduction2({ language }) {
 
     const container2 = {
         color: 'rgba(0, 0, 0, 0.8)',
-        width: '90%',
+        width: '85%',
         height: '50%',
         paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
@@ -58,7 +58,7 @@ function discoveryIntroduction2({ language }) {
     const container3 = {
         marginTop: '50px',
         color: 'rgba(0, 0, 0, 0.8)',
-        width: '90%',
+        width: '85%',
         height: '50%',
         paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
