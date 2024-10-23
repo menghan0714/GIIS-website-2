@@ -71,7 +71,7 @@ function discoveryIntroduction2({ language }) {
         marginTop: '40px',
         color: 'rgba(0, 0, 0, 0.8)',
         width: '85%',
-        height: '60%',
+        height: '70%',
         paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
         fontSize: '25px',
