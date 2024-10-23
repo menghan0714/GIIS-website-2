@@ -75,12 +75,12 @@ function discoveryIntroduction({ language }) {
         display: 'flex',
         justifyContent: 'center', // 水平居中
         width: '100%',
-        marginBottom: '20px',
+        marginBottom: '30px',
     };
 
     const imageStyle = {
-        width: '10%', // 保持容器的寬度
-        height: '10%', // 固定高度
+        width: '15%', // 保持容器的寬度
+        height: '15%', // 固定高度
     };
     
     return (
