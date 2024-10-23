@@ -46,7 +46,6 @@ function discoveryIntroduction2({ language }) {
     };
 
     const container2 = {
-        marginTop: 'px',
         color: 'rgba(0, 0, 0, 0.8)',
         width: '90%',
         height: '50%',
@@ -57,14 +56,12 @@ function discoveryIntroduction2({ language }) {
     };
 
     const container3 = {
-        marginTop: 'px',
-        color: 'rgba(0, 0, 0, 1)',
-        width: '%',
-        height: '%',
-        paddingLeft: '10%',
+        color: 'rgba(0, 0, 0, 0.8)',
+        width: '90%',
+        height: '50%',
+        paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
-        fontWeight: 'bold',
-        fontSize: '35px',
+        fontSize: '25px',
         wordWrap: 'break-word',
     };
 
@@ -93,6 +90,19 @@ function discoveryIntroduction2({ language }) {
                 ) : (
                     <p>
                         GIIS's educational philosophy is to inspire potential and cultivate leaders. We prioritize individual student development and overall growth, offering a diverse range of learning opportunities. By providing abundant resources and encouraging active exploration, we foster a learning environment where students can thrive.
+                    </p>
+                )}
+        </div>
+
+        <div style={container3}>
+          {language === 'zh' ? (
+                    <p>
+                        透過密切的師生互動，學生們獲得個性化的指導與支持。我們也強調領導力、全球視野和創業精神的培養，以裝備學生應對未來的挑戰。我們相信，在這樣一個充滿關懷的環境中，學生們將成為具備強烈社會責任感的全球公民。
+                    </p>
+                ) : (
+                    <p>
+                        Through close teacher-student interactions, students receive personalized guidance and support. We also emphasize the development of leadership, global vision, and entrepreneurial spirit to equip our students for the challenges of the future. We believe that in this nurturing environment, our students will become global citizens with a strong sense of social responsibility.
+
                     </p>
                 )}
         </div>
