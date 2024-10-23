@@ -48,7 +48,7 @@ function HomepageMain({ language }) {
             </div>
         </div>
 
-        0<div className="card mb-0" id="faculty">
+        <div className="card mb-0" id="faculty">
             <div className="container-fluid">
                 <div className="card-body">
                     <FacultyGraduates />
