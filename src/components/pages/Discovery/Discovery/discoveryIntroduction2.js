@@ -14,7 +14,7 @@ function discoveryIntroduction2({ language }) {
     };
  
     const headlineStyle2 = {
-        marginTop: '100px',
+        marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '60%',
         paddingLeft: '12%',
