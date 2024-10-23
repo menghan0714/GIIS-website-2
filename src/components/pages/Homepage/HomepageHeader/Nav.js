@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
