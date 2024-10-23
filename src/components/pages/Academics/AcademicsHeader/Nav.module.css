@@ -10,9 +10,6 @@
     height: 70px;
 }
 
-li {
-  cursor: pointer; /* 鼠标悬停时显示手型 */
-}
 
 .leftSlideMenu {
     position: absolute;
@@ -21,13 +18,16 @@ li {
     height: 500px;
     width: 300px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-100％);
-    opacity: 1;
+    transform: translateX(-1000％);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 200;
     border-bottom: 10px solid rgba(43, 61, 109, 1);
 }
 
+.leftSlideMenu.show {
+    transform: translateX(0); 
+    opacity: 1;
+}
 
 .leftSlideItems {
     list-style: none;
@@ -45,7 +45,21 @@ li {
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
+    cursor: pointer;
 }
+
+.leftSlideItems p {
+    position: relative;
+    padding: 30px;
+    top: 50%;
+    position: relative;
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
 
 
 
@@ -60,8 +74,32 @@ li {
     transform: translateY(-50%);
 } 
 
+.leftSlideItems p::before {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    left: 250px; /* 控制箭頭距離右邊的距離 */
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
+    transform: translateY(-50%);
+} 
+
+
 
 .leftSlideItems li::after {
+    content: ""; /* 用空白內容來生成底線 */
+    position: absolute;
+    transform: translateX(-50%);
+    left: 25%;
+    bottom: 10px; /* 與文字的間距，可自行調整 */
+    width: 25%; /* 底線的寬度，可根據需求調整 */
+    height: 2px; /* 底線的高度 */
+    background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
+    opacity: 0.6; /* 底線的透明度 */
+}
+
+.leftSlideItems p::after {
     content: ""; /* 用空白內容來生成底線 */
     position: absolute;
     transform: translateX(-50%);
@@ -85,8 +123,9 @@ li {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  width: 90% !important; 
-  margin: 0 auto !important;
+  width: 55% !important;
+  left: 40%;
+  margin: 0 20px 0 auto;
 }
 
 .navitem {
@@ -98,19 +137,43 @@ li {
   align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif !important;
-  font-size: 30px !important;
+  font-size: 22px !important;
   font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
 
+.navitem2 {
+  position: relative;
+  width: 295.02px !important; /* 固定寬度 */
+  height: 70px !important; /* 固定高度 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  white-space: nowrap; /* 防止換行 */
+  overflow: visible !important; /* 隱藏超出的文字 */
+  text-overflow: ellipsis;
+  top: 10px;
+}
+
+.navText{
+    position: relative;
+    color: #ffffff ;
+    text-decoration: none ;
+    padding-bottom: 10px ;
+} 
+    
 .navLink{
     position: relative;
     color: #ffffff ;
     text-decoration: none ;
     padding-bottom: 6px ;
-}     
+} 
 
 .navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
@@ -121,11 +184,22 @@ li {
   width: 60%;            /* 設置底槓的寬度為 80% */
   height: 4px;
   background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
-  transition: width 0.3s ease; /* 增加動畫效果 */
+  transition: width 0.3s ease;
 }
 
 .navLink:hover::after {
   width: 100%; /* 使底槓在懸停時保持全寬 */
+}
+
+.navText::after {
+  content: ''; /* 生成底槓的虛擬元素 */
+  position: absolute;
+  left: 50%;             /* 左邊對齊中心點 */
+  transform: translateX(-50%);  /* 將元素水平居中 */
+  bottom: 10px;
+  width: 60%;            /* 設置底槓的寬度為 80% */
+  height: 4px;
+  background-color: #ffffff;
 }
 
 .dropdownMenu{
@@ -133,8 +207,8 @@ li {
     position: absolute;
     top: 75px;
     left: 0;
-    min-width: 300px; /* 設置最小寬度 */
-    min-height: 160px;
+    min-width: 250px; /* 設置最小寬度 */
+    min-height: 135px;
     background-color: rgba(43, 61, 109, 1);
     padding: 10px 0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -145,12 +219,17 @@ li {
     list-style: none;
     color: #FFFFFF;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;  
     justify-content: space-between; 
     height: 100%; 
+}
+
+.navitem:hover .dropdownMenu { 
+    opacity: 1; 
+    visibility: visible; 
 }
 
 .navitem:hover .dropdownMenu { 
