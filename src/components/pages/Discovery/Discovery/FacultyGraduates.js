@@ -20,7 +20,6 @@ function FacultyGraduates() {
 
     return (
         <section className="school-logos">
-            <h2>Faculty & Graduates</h2>
             <div className="container">
                 <div className="row justify-content-center  g-0">
                     {logos.map((logo, index) => (

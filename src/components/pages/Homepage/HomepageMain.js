@@ -15,8 +15,8 @@ function HomepageMain({ language }) {
             <Nav language={language} />
         </div>
 
-        <div className="card mb-1" id="homepage">
-            <div className="container">
+        <div className="card mb-0" id="homepage">
+            <div className="container-fluid">
                 <ImgSlider />
                 <div className="card-body">
                     <Slogan />
@@ -24,40 +24,40 @@ function HomepageMain({ language }) {
             </div>
         </div>
 
-        <div className="card mb-1" id="about">
-            <div className="container">
+        <div className="card mb-0" id="about">
+            <div className="container-fluid">
                 <div className="card-body">
                     <Introduction language={language} />
                 </div>
             </div>
         </div>
 
-        <div className="card mb-1" id="accreditation">
-            <div className="container">
+        <div className="card mb-0" id="accreditation">
+            <div className="container-fluid">
                 <div className="card-body">
                     <CogniaAccreditation language={language} />
                 </div>
             </div>
         </div>
 
-        <div className="card mb-1" id="testimonials">
-            <div className="container">
+        <div className="card mb-0" id="testimonials">
+            <div className="container-fluid">
                 <div className="card-body">
                     <Testimonial />
                 </div>
             </div>
         </div>
 
-        <div className="card mb-1" id="faculty">
-            <div className="container">
+        <div className="card mb-0" id="faculty">
+            <div className="container-fluid">
                 <div className="card-body">
                     <FacultyGraduates />
                 </div>
             </div>
         </div>
 
-        <div className="card mb-1" id="contact">
-            <div className="container">
+        <div className="card mb-0" id="contact">
+            <div className="container-fluid">
                 <div className="card-body">
                     <ContactForm />
                 </div>

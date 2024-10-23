@@ -39,8 +39,8 @@ function Nav({ language }) {
            {isMobile && (
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-                <p>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
-                <li onClick={() => window.location.to = "/academics"}>{language === 'en' ? 'ACADEMICS' : '学术'}</li>
+                <li onClick={() => window.location.to = "/discovery"}>{language === 'en' ? 'Discovery' : '发现我们'}</li>
+                <p>{language === 'en' ? 'ACADEMICS' : '学术'}</p>
                 <li onClick={() => window.location.to = "/admission"}>{language === 'en' ? 'ADMISSION' : '入学'}</li>
                 <li onClick={() => window.location.to = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
                </ul>
