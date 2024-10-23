@@ -36,7 +36,7 @@ function discoveryIntroduction2({ language }) {
 
     const container = {
         color: 'rgba(0, 0, 0, 1)',
-        width: 90%',
+        width: '90%',
         height: '50%',
         paddingLeft: '12%',
         fontFamily: 'Inter, sans-serif',
