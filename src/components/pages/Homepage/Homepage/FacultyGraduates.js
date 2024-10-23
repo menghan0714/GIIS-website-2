@@ -20,11 +20,12 @@ function FacultyGraduates() {
 
     return (
         <section className="school-logos">
+            <h2>Faculty&Graduates</h2>
             <div className="container">
                 <div className="row justify-content-center">
                     {logos.map((logo, index) => (
-                        <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-flex justify-content-center align-items-center">
-                            <img src={logo.src} alt={logo.alt} className="img-fluid" style={{ maxHeight: "100px" , padding: "10px"  }} />
+                        <div key={index} className="col-4 col-md-2 mb-2 d-flex justify-content-center align-items-center">
+                            <img src={logo.src} alt={logo.alt} className="img-fluid" style={{ maxHeight: "100px"}} />
                         </div>
                     ))}
                 </div>
