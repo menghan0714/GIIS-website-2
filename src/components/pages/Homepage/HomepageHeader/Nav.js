@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,16 +12,11 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
-        const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-       };
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
         
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
 
         };
     }, []);
@@ -38,13 +33,28 @@ function Nav({ language }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-        {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
                 <ul className={styles.leftSlideItems}>
-                    <li onClick={() => window.location.href = "/discovery"}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</li>
-                    <li onClick={() => window.location.href = "/academics"}>{language === 'en' ? 'ACADEMICS' : '学术'}</li>
-                    <li onClick={() => window.location.href = "/admission"}>{language === 'en' ? 'ADMISSION' : '入学'}</li>
-                    <li onClick={() => window.location.href = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
+                  <li onClick={() => navigate("/discovery")}>
+                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'DISCOVERY' : '发现我们'}
+                    </Link>
+                  </li>
+                  <li onClick={() => navigate("/academics")}>
+                    <Link to="/academics" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'ACADEMICS' : '学术'}
+                    </Link>
+                  </li>
+                  <li onClick={() => navigate("/admission")}>
+                    <Link to="/admission" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'ADMISSION' : '入学'}
+                    </Link>
+                  </li>
+                  <li onClick={() => navigate("/support")}>
+                    <Link to="/support" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}
+                    </Link>
+                  </li>
                 </ul>
             </div>
          )}
