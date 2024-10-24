@@ -38,7 +38,7 @@ function Nav({ language }) {
               <span className="navbar-toggler-icon"></span>
              </button>
 
-           {isMobile && (
+             {isMobile && (
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
                 <li onClick={() => navigate("/discovery")}>
@@ -74,16 +74,16 @@ function Nav({ language }) {
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
                    <ul className={styles.dropdownMenu}>
-                    <li>Apply Now</li>
-                    <li>Tuition & Fee</li>
-                    <li>FAQ</li>
+                     <li>Apply Now</li>
+                     <li>Tuition & Fee</li>
+                     <li>FAQ</li>
                    </ul>
                 </li>
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
-                    <li>Academic Advising</li>
-                    <li>Life Counseling</li>
+                     <li>Academic Advising</li>
+                     <li>Life Counseling</li>
                    </ul>
                 </li>
                </ul>
