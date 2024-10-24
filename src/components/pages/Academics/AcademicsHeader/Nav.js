@@ -68,7 +68,7 @@ function Nav({ language }) {
                     <li>About Our Faculty</li>
                   </ul>
                 </li>
-                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'ACADEMICS' : '学术}</p>
+                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'ACADEMICS' : '学术'}</p>
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
                    <ul className={styles.dropdownMenu}>
