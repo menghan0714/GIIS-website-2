@@ -39,7 +39,7 @@ function Nav({ language }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-           {isMobile && (
+            {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
                 <ul className={styles.leftSlideItems}>
                   <li onClick={() => navigate("/discovery")}>
