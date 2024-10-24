@@ -48,6 +48,13 @@
     cursor: pointer;
 }
 
+.leftSlideItems li a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 保持与 li 一致的颜色 */
+    display: block;
+    width: 100%;
+}
+
 .leftSlideItems p {
     position: relative;
     padding: 30px;
