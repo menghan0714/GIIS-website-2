@@ -97,7 +97,7 @@ function discoveryIntroduction({ language }) {
         <div style={container}>
             {language === 'zh' ? (
                     <p>
-                        GIIS 是一所完全線上的全球化現代教育機構，致力於提供世界一流的教育，吸引來自世界各地的優秀學生。我們的教育模式打破了傳統教育的地理限制，讓學生能夠隨時隨地獲取頂尖的教育資源。
+                        GIIS 是一所完全线上的全球化现代教育机构，致力于提供世界一流的教育，吸引来自世界各地的优秀学生。我们的教育模式打破了传统教育的地理限制，让学生能够随时随地获取顶尖的教育资源。
                     </p>
                 ) : (
                     <p>
@@ -110,7 +110,7 @@ function discoveryIntroduction({ language }) {
         <div style={container2}>
            {language === 'zh' ? (
                     <p>
-                        我們的學校目前正在申請 Cognia 認證，Cognia 是一個全球知名的非營利組織，致力於通過嚴格的標準提升教育品質。這項認證工作反映了我們對實現教育卓越的不懈承諾。
+                        我们的学校目前正在申请 Cognia 认证，Cognia 是一个全球知名的非营利组织，致力于通过严格的标准提升教育品质。这项认证工作反映了我们对实现教育卓越的不懈承诺。
                     </p>
                 ) : (
                     <p>
@@ -122,7 +122,7 @@ function discoveryIntroduction({ language }) {
         <div style={container3}>
            {language === 'zh' ? (
                     <p>
-                        通過參與 Cognia 全面的評估過程，我們旨在不斷改進並確保我們的教育實踐符合國際標準，從而提升學生的學習環境和成果。
+                        通过参与 Cognia 全面的评估过程，我们旨在不断改进并确保我们的教育实践符合国际标准，从而提升学生的学习环境和成果。
                     </p>
                 ) : (
                     <p>
