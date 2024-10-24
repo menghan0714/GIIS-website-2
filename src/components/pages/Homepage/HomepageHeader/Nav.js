@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
@@ -13,10 +14,17 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
+         const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+       };
+
+
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
         
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.addEventListener('resize', handleResize);
         };
     }, []);
 
@@ -32,7 +40,7 @@ function Nav({ language }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-           
+            {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
                 <ul className={styles.leftSlideItems}>
                   <li onClick={() => navigate("/discovery")}>
@@ -57,7 +65,7 @@ function Nav({ language }) {
                   </li>
                 </ul>
             </div>
-         
+         )}
 
             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
                 <ul className={`navbar-nav ${styles.customnavbar}`}>
