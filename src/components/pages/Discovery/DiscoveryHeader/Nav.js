@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
