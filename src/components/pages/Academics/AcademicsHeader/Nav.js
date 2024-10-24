@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,44 +38,54 @@ function Nav({ language }) {
               <span className="navbar-toggler-icon"></span>
              </button>
 
-           {isMobile && (
+             {isMobile && (
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-                <li onClick={() => window.location.to = "/discovery"}>{language === 'en' ? 'Discovery' : '发现我们'}</li>
+                <li onClick={() => navigate("/discovery")}>
+                   <Link to="/discovery" onClick={(e) => e.preventDefault()}>
+                    {language === 'en' ? 'DISCOVERY' : '发现我们'}
+                   </Link>
+                </li>
                 <p>{language === 'en' ? 'ACADEMICS' : '学术'}</p>
-                <li onClick={() => window.location.to = "/admission"}>{language === 'en' ? 'ADMISSION' : '入学'}</li>
-                <li onClick={() => window.location.to = "/support"}>{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</li>
+                <li onClick={() => navigate("/admission")}>
+                    <Link to="/admission" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'ADMISSION' : '入学'}
+                    </Link>
+                </li>
+                <li onClick={() => navigate("/support")}>
+                    <Link to="/support" onClick={(e) => e.preventDefault()}>
+                        {language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}
+                    </Link>
+                </li>
                </ul>
               </div>
-            )}
-                
+            )} 
               <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
                <ul className={`navbar-nav ${styles.customnavbar}`}>
-                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
-    
                 <li className={styles.navitem}>
-                  <a className={styles.navLink} href="/academics">{language === 'en' ? 'ACADEMICS' : '学术'}</a>
+                  <Link className={styles.navLink} to="/discovery">{language === 'en' ? 'DISCOVERY' : '发现我们'}</Link>
                   <ul className={styles.dropdownMenu}>
-                    <li>Learning Style</li>
-                    <li>Subjects</li>
-                    <li>Curriculum Options</li>
+                    <li>Meet Our School</li>
+                    <li>Our Mission</li>
+                    <li>About Our Faculty</li>
                   </ul>
-                 </li>
+                </li>
+                <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'ACADEMICS' : '学术'}</p>
                 <li className={styles.navitem}>
-                   <a className={styles.navLink} href="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</a>
+                   <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
                    <ul className={styles.dropdownMenu}>
-                    <li>Apply Now</li>
-                    <li>Tuition & Fee</li>
-                    <li>FAQ</li>
+                     <li>Apply Now</li>
+                     <li>Tuition & Fee</li>
+                     <li>FAQ</li>
                    </ul>
-                 </li>
+                </li>
                 <li className={styles.navitem}>
-                   <a className={styles.navLink} href="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</a>
+                   <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
-                    <li>Academic Advising</li>
-                    <li>Life Counseling</li>
+                     <li>Academic Advising</li>
+                     <li>Life Counseling</li>
                    </ul>
-                 </li>
+                </li>
                </ul>
               </div>
            </div>

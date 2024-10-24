@@ -25,7 +25,7 @@ li {
     opacity: 1;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 200;
-    border-bottom: 10px solid rgba(43, 61, 109, 1);
+    border-bottom: 20px solid rgba(43, 61, 109, 1);
 }
 
 
@@ -47,7 +47,12 @@ li {
     text-decoration: none;
 }
 
-
+.leftSlideItems li a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 保持与 li 一致的颜色 */
+    display: block;
+    width: 100%;
+}
 
 .leftSlideItems li::before {
     content: '>';
