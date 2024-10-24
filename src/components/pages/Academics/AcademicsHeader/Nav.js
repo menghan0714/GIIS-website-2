@@ -67,7 +67,7 @@ function Nav({ language }) {
                     <li>Our Mission</li>
                     <li>About Our Faculty</li>
                   </ul>
-                 </li>
+                </li>
                 <p className={`${styles.navitem2} ${styles.navText}`}>{language === 'en' ? 'ACADEMICS' : '学术}</p>
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</Link>
@@ -76,14 +76,14 @@ function Nav({ language }) {
                     <li>Tuition & Fee</li>
                     <li>FAQ</li>
                    </ul>
-                 </li>
+                </li>
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
                    <ul className={styles.dropdownMenu}>
                     <li>Academic Advising</li>
                     <li>Life Counseling</li>
                    </ul>
-                 </li>
+                </li>
                </ul>
               </div>
            </div>
