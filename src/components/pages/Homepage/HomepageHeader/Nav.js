@@ -85,7 +85,7 @@ function Nav({ language }) {
                         </ul>
                     </li>
                     <li className={styles.navitem}>
-                        a className={styles.navLink} href="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</a>
+                      <Link className={styles.navLink} to="/admission">{language === 'en' ? 'ADMISSION' : '入学'}</a>
                         <ul className={styles.dropdownMenu}>
                             <li>Apply Now</li>
                             <li>Tuition & Fee</li>
@@ -93,7 +93,7 @@ function Nav({ language }) {
                         </ul>
                     </li>
                     <li className={styles.navitem}>
-                        <a className={styles.navLink} href="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</a>
+                        <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</a>
                         <ul className={styles.dropdownMenu}>
                             <li>Academic Advising</li>
                             <li>Life Counseling</li>
