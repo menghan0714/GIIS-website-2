@@ -57,7 +57,7 @@ function Nav({ language }) {
                   </li>
                 </ul>
             </div>
-         )}
+         
 
             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
                 <ul className={`navbar-nav ${styles.customnavbar}`}>
