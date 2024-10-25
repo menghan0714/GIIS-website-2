@@ -86,9 +86,9 @@ function discoveryIntroduction2({ language }) {
         </div>
 
         <div style={container}>
-          <p>PERSONALIZED LEARNING</p>  
-          <p>COMPREHENSIVE DEVELOPMENT</p>
-          <p>INTERNATIONAL PERSPECTIVE</p>
+          <p>{language === 'en' ? 'PERSONALIZED LEARNING' : '个人化学习'}</p>  
+          <p>{language === 'en' ? 'COMPREHENSIVE DEVELOPMENT' : '全面性发展'}</p>
+          <p>{language === 'en' ? 'INTERNATIONAL PERSPECTIVE' : '国际视野'}</p>
         </div>
 
         <div style={headlineStyle2}>
