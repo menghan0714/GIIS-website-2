@@ -1,9 +1,7 @@
 import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
 import img from '../../../img/Homepage/homepage3.png';
-import AcademicsIntroduction from'./Discovery/introduction.js';
-import AcademicsIntroduction2 from'./Discovery/discoveryintroduction2.js';
-
+import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
 
 function AcademicsMain({ language }) {
 
@@ -72,6 +70,8 @@ function AcademicsMain({ language }) {
             </div>
          </div>
        </div>
-
+    </>
+ );
+}   
    
 export default AcademicsMain;
