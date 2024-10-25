@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
-import img from '../../../img/Homepage/homepage3.png';
+import img from '../../../img/Homepage/homepage8.png';
 import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
 
 function AcademicsMain({ language }) {
