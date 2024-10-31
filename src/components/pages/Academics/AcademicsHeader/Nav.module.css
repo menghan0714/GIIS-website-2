@@ -122,13 +122,6 @@
     background-color: rgba(43, 61, 109, 0.6); /* 底線的顏色 */
 }
 
-.leftSlideItems li:hover {
-    color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
-}
-
-.leftSlideItems li:hover::before {
-    color: rgba(0, 0, 0, 0.6); /* 改变箭头颜色 */
-}
 
 .customnavbar {
   display: flex !important;
