@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
 import img from '../../../img/Homepage/homepage8.png';
-import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
 
 function AcademicsMain({ language }) {
 
@@ -63,13 +62,6 @@ function AcademicsMain({ language }) {
           </div>
         </div>
 
-       <div className="card mt-0" id="introduction" style={cardStyle}>
-         <div className="container">
-            <div className="card-body">
-               <AcademicsIntroduction language={language} />
-            </div>
-         </div>
-       </div>
     </>
  );
 }   
