@@ -23,7 +23,7 @@ function AcademicsMain({ language }) {
         bottom: '-70px', // 固定在圖片底部
         backgroundColor: 'rgba(0, 0, 0, 0.8)', // 半透明黑色背景
         color: 'white',
-        width: '35%',
+        width: '45%',
         zIndex: '20', 
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
