@@ -78,6 +78,13 @@ li {
     opacity: 0.6; /* 底線的透明度 */
 }
 
+.leftSlideItems li:hover {
+    color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
+}
+
+.leftSlideItems li:hover::before {
+    color: rgba(0, 0, 0, 0.6); /* 改变箭头颜色 */
+}
 
 .customnavbar {
   display: flex !important;
