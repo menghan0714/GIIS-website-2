@@ -48,6 +48,13 @@
     cursor: pointer;
 }
 
+.leftSlideItems li a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 保持与 li 一致的颜色 */
+    display: block;
+    width: 100%;
+}
+
 .leftSlideItems p {
     position: relative;
     padding: 30px;
@@ -56,10 +63,16 @@
     font-size: 30px;
     font-family: Inter, sans-serif;
     font-weight: bold;
-    color: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
 }
 
+.leftSlideItems p a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 保持与 li 一致的颜色 */
+    display: block;
+    width: 100%;
+}
 
 
 
@@ -81,7 +94,7 @@
     left: 250px; /* 控制箭頭距離右邊的距離 */
     font-size: 30px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
+    color: rgba(0, 0, 0, 0.6); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
@@ -96,7 +109,6 @@
     width: 25%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
     background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
-    opacity: 0.6; /* 底線的透明度 */
 }
 
 .leftSlideItems p::after {
@@ -107,17 +119,9 @@
     bottom: 10px; /* 與文字的間距，可自行調整 */
     width: 25%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
-    background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
-    opacity: 0.6; /* 底線的透明度 */
+    background-color: rgba(43, 61, 109, 0.6); /* 底線的顏色 */
 }
 
-.leftSlideItems li:hover {
-    color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
-}
-
-.leftSlideItems li:hover::before {
-    color: rgba(0, 0, 0, 0.6); /* 改变箭头颜色 */
-}
 
 .customnavbar {
   display: flex !important;

@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,12 +18,13 @@ function Nav({ language }) {
         setIsMobile(window.innerWidth <= 768);
        };
 
+
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
         
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
+            window.addEventListener('resize', handleResize);
         };
     }, []);
 
@@ -59,7 +60,7 @@ function Nav({ language }) {
                 </li>
                </ul>
               </div>
-            )}
+              )}
                 
               <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
                <ul className={`navbar-nav ${styles.customnavbar}`}>
