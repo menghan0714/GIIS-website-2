@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
 import img from '../../../img/Homepage/homepage8.png';
+import AcademicsIntroduction from'./Academics/academicsIntroduction.js';
 
 function AcademicsMain({ language }) {
 
@@ -54,6 +55,12 @@ function AcademicsMain({ language }) {
             <p style={paragraph}>{language === 'en' ? 'Genesis of Ideas International School is dedicated to providing students a dynamic learning environment and empowering them with the critical thinking and problem-solving skills.' : 'Genesis of Ideas International School 致力于为学生提供充满活力的学习环境，并赋予他们批判性思维和解决问题的能力。'}</p>
           </div>
         </div>
+
+        <div className="card mt-0" id="introduction2">
+         <div className="container">
+            <AcademicsIntroduction language={language} />
+         </div>
+       </div>
 
     </>
  );
