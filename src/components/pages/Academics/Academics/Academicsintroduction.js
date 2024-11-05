@@ -42,7 +42,7 @@ function Academicsintroduction({ language }) {
     };
 
     const container = {
-      marginTop: '65px',
+      marginTop: '50px',
       width: '80%',
       paddingLeft: '15%',
       height: '30%',  
