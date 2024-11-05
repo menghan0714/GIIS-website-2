@@ -27,7 +27,7 @@ function Academicsintroduction({ language }) {
 
     const textStyle = {
     position: 'relative',
-    paddingLeft: '15px',  // 調整小點點和文字的間距
+    paddingLeft: '25px',  // 調整小點點和文字的間距
     };
     
      const containerheading = {
@@ -36,7 +36,7 @@ function Academicsintroduction({ language }) {
         width: '100%',
         paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
-        fontWeight: 'bold',
+        fontWeight: 'regular',
         fontSize: '35px',
         lineHeight: '1',
     };
