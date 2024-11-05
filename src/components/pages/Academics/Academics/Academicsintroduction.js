@@ -42,9 +42,9 @@ function Academicsintroduction({ language }) {
     };
 
     const container = {
-      marginTop: '40px',
+      marginTop: '30px',
       width: '80%',
-      paddingLeft: '17%',
+      paddingLeft: '16%',
       height: '30%',  
       wordWrap: 'break-word',
       color: 'rgba(255, 255, 255, 0.7)',
