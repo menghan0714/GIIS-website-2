@@ -41,6 +41,16 @@ function Academicsintroduction({ language }) {
         lineHeight: '1',
     };
 
+    const container = {
+      marginTop: '65px',
+      width: '80%',
+      paddingLeft: '15%',
+      height: '30%',  
+      wordWrap: 'break-word',
+      color: 'rgba(255, 255, 255, 0.7)',
+      fontFamily: 'Arial, sans-serif', 
+      fontSize: '25px',
+    };
 
     return (
       <>
@@ -64,6 +74,17 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
         </div>
+
+         <div style={container}>
+             {language === 'zh' ? (
+                    <p>
+                        我们提供双学位课程，让学生可以从不同的学院获得学位，提升他们的学术和职业竞争力。跨领域学习同时有助于学生建立广泛的知识基础和跨学科的思维能力
+                    </p>
+                ) : (
+                    <p>
+                        We offer dual degree programs, allowing students to earn degrees from different institutions, enhancing their academic and career competitiveness. Interdisciplinary learning also helps students develop a broad knowledge base and cross-disciplinary thinking.
+                    </p>
+                )}
       </>
    );
 }
