@@ -24,6 +24,24 @@ function Academicsintroduction({ language }) {
         lineHeight: '1',
     };
 
+
+    const textStyle = {
+    position: 'relative',
+    paddingLeft: '15px',  // 調整小點點和文字的間距
+    };
+    
+     const containerheading = {
+        marginTop: '70px',
+        color: 'rgba(255, 255, 255, 0.8)',
+        width: '100%',
+        paddingLeft: '15%',
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '35px',
+        lineHeight: '1',
+    };
+
+
     return (
       <>
         <div style={headlineStyle}>
@@ -33,6 +51,23 @@ function Academicsintroduction({ language }) {
 
         <div style={introductionStyle}>
           <p>The GIIS Differnce</p>     
+        </div>
+
+        <div style={containerheading}>
+            {language === 'zh' ? (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> 双学位与跨领域学习
+                    </p>
+                ) : (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> Dual Degrees and Interdisciplinary Learning
+                    </p>
+                )}
+        </div>
+        
+        <div style={container>
+        
+          <div style={lineStyle}></div>
         </div>
       </>
    );
