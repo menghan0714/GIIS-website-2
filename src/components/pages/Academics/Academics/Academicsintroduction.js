@@ -98,6 +98,18 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
         </div>
+                    
+        <div style={container}>
+             {language === 'zh' ? (
+                    <p>
+                        透过将 AI 和尖端科技整合到教学中，我们打造了身临其境的学习体验，让课程变得更具吸引力与互动性
+                    </p>
+                ) : (
+                    <p>
+                        By integrating AI and cutting-edge technologies into teaching, we create immersive learning experiences, making the curriculum more engaging and interactive.
+                    </p>
+                )}
+         </div>
       </>
    );
 }
