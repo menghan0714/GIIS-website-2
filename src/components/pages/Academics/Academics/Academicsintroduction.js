@@ -54,7 +54,7 @@ function Academicsintroduction({ language }) {
 
      const container2 = {
       marginTop: '30px',
-      marrginBottom:'20px',
+      marginBottom:'20px',
       width: '80%',
       paddingLeft: '16%',
       height: '30%',  
