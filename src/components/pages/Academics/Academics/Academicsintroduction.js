@@ -63,6 +63,7 @@ function Academicsintroduction({ language }) {
       fontFamily: 'Arial, sans-serif', 
       fontSize: '25px',
     };
+    
     return (
       <>
         <div style={headlineStyle}>
