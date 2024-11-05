@@ -122,6 +122,18 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
         </div>
+
+        <div style={container}>
+             {language === 'zh' ? (
+                    <p>
+                        我们强调因材施教，提供多元课程与课外活动，并进行领导力与创新培训，以培养具有全球视野的未来领袖
+                    </p>
+                ) : (
+                    <p>
+                        We emphasize personalized instruction with diverse courses and extracurricular activities, offering leadership and innovation training to foster globally-minded future leaders.
+                    </p>
+                )}
+         </div>
       </>
    );
 }
