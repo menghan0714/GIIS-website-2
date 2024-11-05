@@ -110,6 +110,18 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
          </div>
+
+         <div style={containerheading}>
+            {language === 'zh' ? (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> 个人化学习与全人发展
+                    </p>
+                ) : (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> Personalized Learning and Holistic Development
+                    </p>
+                )}
+        </div>
       </>
    );
 }
