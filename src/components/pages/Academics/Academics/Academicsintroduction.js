@@ -52,6 +52,17 @@ function Academicsintroduction({ language }) {
       fontSize: '25px',
     };
 
+     const container2 = {
+      marginTop: '30px',
+      marrginBottom:'20px',
+      width: '80%',
+      paddingLeft: '16%',
+      height: '30%',  
+      wordWrap: 'break-word',
+      color: 'rgba(255, 255, 255, 0.6)',
+      fontFamily: 'Arial, sans-serif', 
+      fontSize: '25px',
+    };
     return (
       <>
         <div style={headlineStyle}>
@@ -123,7 +134,7 @@ function Academicsintroduction({ language }) {
                 )}
         </div>
 
-        <div style={container}>
+        <div style={container2}>
              {language === 'zh' ? (
                     <p>
                         我们强调因材施教，提供多元课程与课外活动，并进行领导力与创新培训，以培养具有全球视野的未来领袖
