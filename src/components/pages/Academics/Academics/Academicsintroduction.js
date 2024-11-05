@@ -64,11 +64,6 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
         </div>
-        
-        <div style={container>
-        
-          <div style={lineStyle}></div>
-        </div>
       </>
    );
 }
