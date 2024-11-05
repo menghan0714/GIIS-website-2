@@ -86,6 +86,18 @@ function Academicsintroduction({ language }) {
                     </p>
                 )}
          </div>
+
+        <div style={containerheading}>
+            {language === 'zh' ? (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> 人工智慧与先进技术的沉浸式学习
+                    </p>
+                ) : (
+                    <p style={textStyle}>
+                        <span style={{ position: 'absolute', left: '0' }}>•</span> Immersive Learning with AI and Advanced Technologies
+                    </p>
+                )}
+        </div>
       </>
    );
 }
