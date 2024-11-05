@@ -36,7 +36,7 @@ function Academicsintroduction({ language }) {
         width: '100%',
         paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
-        fontWeight: 'regular',
+        fontWeight: 'normal',
         fontSize: '30px',
         lineHeight: '1',
     };
