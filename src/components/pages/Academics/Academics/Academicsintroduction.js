@@ -85,6 +85,7 @@ function Academicsintroduction({ language }) {
                         We offer dual degree programs, allowing students to earn degrees from different institutions, enhancing their academic and career competitiveness. Interdisciplinary learning also helps students develop a broad knowledge base and cross-disciplinary thinking.
                     </p>
                 )}
+         </div>
       </>
    );
 }
