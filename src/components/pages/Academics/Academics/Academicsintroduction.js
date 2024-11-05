@@ -15,7 +15,7 @@ function Academicsintroduction({ language }) {
 
     const introductionStyle = {
         marginTop: '70px',
-        color: 'rgba(255, 255, 255, 0.8)',
+        color: 'rgba(255, 255, 255, 0.7)',
         width: '100%',
         paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
