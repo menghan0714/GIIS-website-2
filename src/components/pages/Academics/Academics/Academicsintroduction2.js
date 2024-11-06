@@ -58,4 +58,4 @@ function Academicsintroduction2({ language }) {
    );
 }
 
-export default Academicsintroduction;
+export default Academicsintroduction2;
