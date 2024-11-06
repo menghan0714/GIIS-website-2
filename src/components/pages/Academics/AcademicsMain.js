@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
 import img from '../../../img/Homepage/homepage8.png';
+import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
 
 function AcademicsMain({ language }) {
 
@@ -40,6 +41,13 @@ function AcademicsMain({ language }) {
         textAlign: 'center',
     };
  
+     const cardStyle = {
+        position: 'relative', // 需要設置 position 來使 z-index 生效
+        zIndex: '10', // 調整層級
+        marginTop: '0', // 保持一些間距
+        backgroundColor: 'rgba(43, 61, 109, 1)',
+        borderBottom: '20px solid rgba(213, 168, 54, 1)',
+    };
    
    return (
     <>
@@ -54,6 +62,22 @@ function AcademicsMain({ language }) {
             <p style={paragraph}>{language === 'en' ? 'Genesis of Ideas International School is dedicated to providing students a dynamic learning environment and empowering them with the critical thinking and problem-solving skills.' : 'Genesis of Ideas International School 致力于为学生提供充满活力的学习环境，并赋予他们批判性思维和解决问题的能力。'}</p>
           </div>
         </div>
+
+        <div className="card mt-0" id="introduction2" style={cardStyle}>
+         <div className="container">
+           <div className="card-body">
+            <AcademicsIntroduction language={language} />
+           </div>
+         </div>
+       </div>
+
+      <div className="card mt-0" id="introduction2">
+         <div className="container">
+           <div className="card-body">
+            <AcademicsIntroduction2 language={language} />
+           </div>
+         </div>
+       </div>
 
     </>
  );
