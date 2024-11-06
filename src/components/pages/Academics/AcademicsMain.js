@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './AcademicsHeader/Nav.js';
 import img from '../../../img/Homepage/homepage8.png';
 import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
+import AcademicsIntroduction2 from'./Academics/Academicsintroduction2.js';
 
 function AcademicsMain({ language }) {
 
