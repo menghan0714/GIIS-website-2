@@ -43,38 +43,6 @@ function Academicsintroduction2({ language }) {
         top: '190px',     
         left: '700px', 
     };
-
-    const scrollContainerStyle = {
-        display: 'flex',
-        overflowX: 'scroll',
-        scrollSnapType: 'x mandatory', // 強制每次滑動到下一項目
-        scrollBehavior: 'smooth',
-        padding: '20px 5%',
-        gap: '20px',
-        marginTop: '50px',
-    };
-
-    const courseCardStyle = {
-     flex: '0 0 100%', // 每次顯示一個課程
-     scrollSnapAlign: 'start', // 停在每個項目的開頭
-     width: '100%',
-     padding: '50px',
-    };
-
-    const arrowStyle = {
-        position: 'absolute',
-        bottom: '20px',
-        right: '20px',
-        width: '30px',
-        height: '30px',
-        border: '2px solid white',
-        borderRadius: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '18px',
-        cursor: 'pointer',
-    };
     
     return (
       <>
