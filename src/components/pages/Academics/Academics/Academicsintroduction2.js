@@ -1,4 +1,5 @@
 import React from 'react';
+import ImgSlider from './Academicsimgslider.js';
 
 function Academicsintroduction2({ language }) {
 
@@ -95,31 +96,7 @@ function Academicsintroduction2({ language }) {
           <div style={lineStyle}></div>
           <div style={yellowSquareStyle}></div>       
         </div>
-              
-        <div style={scrollContainerStyle}>
-          <div style={courseCardStyle}>
-            <h2>IGCSE</h2>
-            <hr />
-            <p>Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.</p>
-            <p>These courses provide a comprehensive curriculum, designed to develop students' analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.</p>
-            <div style={arrowStyle}>→</div>
-          </div>
-          {/* 可以重複添加其他課程區塊 */}
-          <div style={courseCardStyle}>
-            <h2>A-Level</h2>
-            <hr />
-            <p>Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. </p>
-            <p>With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.</p>
-            <div style={arrowStyle}>→</div>
-          </div>
-          <div style={courseCardStyle}>
-            <h2>AP</h2>
-            <hr />
-            <p>Empower yourself with the globally recognized Advanced Placement  Program. </p>
-            <p>Our AP courses are designed to provide students with the opportunity to pursue college-level studies while still in high school. These courses not only prepare students for the AP exams but also foster a deeper understanding of subjects, equipping them with the skills necessary for success in university and beyond.</p>
-            <div style={arrowStyle}>→</div>
-          </div>
-        </div>
+        <ImgSlider />
       </>
    );
 }
