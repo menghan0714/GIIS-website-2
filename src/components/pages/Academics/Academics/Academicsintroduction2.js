@@ -27,8 +27,8 @@ function Academicsintroduction2({ language }) {
 
     const lineStyle = {
         position: 'absolute',
-        width: '40%', // Adjust width according to your needs
-        height: '6px',
+        width: '35%', // Adjust width according to your needs
+        height: '4px',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
         paddingLeft: '5%',
         marginTop: '35px',
