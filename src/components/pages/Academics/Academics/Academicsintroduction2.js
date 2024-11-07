@@ -32,7 +32,6 @@ function Academicsintroduction2({ language }) {
         backgroundColor: 'rgba(0, 0, 0, 1)', 
         paddingLeft: '5%',
         marginTop: '20px',
-        margin: '30px 0',
     };
     
     return (
