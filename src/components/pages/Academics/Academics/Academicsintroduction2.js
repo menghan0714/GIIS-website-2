@@ -58,7 +58,6 @@ function Academicsintroduction2({ language }) {
      scrollSnapAlign: 'start', // 停在每個項目的開頭
      width: '100%',
      padding: '50px',
-     boxSizing: 'border-box',
     };
 
     const arrowStyle = {
