@@ -33,6 +33,15 @@ function Academicsintroduction2({ language }) {
         paddingLeft: '5%',
         marginTop: '35px',
     };
+
+    const yellowSquareStyle = {
+        width: '100px',  // Adjust size as needed
+        height: '100px', // Adjust size as needed
+        backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
+        position: 'absolute',
+        paddingLeft: '50%',
+        marginLeft: '50px',
+    };
     
     return (
       <>
