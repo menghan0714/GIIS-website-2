@@ -1,5 +1,4 @@
 import React from 'react';
-import ImgSlider from './Academicsimgslider.js';
 
 function Academicsintroduction2({ language }) {
 
