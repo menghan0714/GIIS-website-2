@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function ImgSlider() {
+function Academicsimgslider() {
     const settings = {
         dots: true,
         infinite: true,
@@ -39,4 +39,4 @@ function ImgSlider() {
     );
 }
 
-export default ImgSlider;
+export default Academicsimgslider;
