@@ -17,12 +17,12 @@ function Academicsintroduction2({ language }) {
         position: 'relative',
         marginTop: '70px',
         color: 'rgba(0, 0, 0, 1)',
-        width: '100%',
+        width: '50%',
         paddingLeft: '5%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'normal',
         fontSize: '35px',
-        lineHeight: '1',
+        lineHeight: '1.5',
     };
 
     const lineStyle = {
