@@ -35,12 +35,12 @@ function Academicsintroduction2({ language }) {
     };
 
     const yellowSquareStyle = {
-        width: '200px',  // Adjust size as needed
-        height: '200px', // Adjust size as needed
+        width: '300px',  // Adjust size as needed
+        height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
         position: 'absolute',
-        top: '200px',     
-        right: '-130px', 
+        top: '300px',     
+        right: '-160px', 
     };
     
     return (
