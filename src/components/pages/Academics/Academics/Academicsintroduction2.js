@@ -46,6 +46,7 @@ function Academicsintroduction2({ language }) {
 
      const imgSliderStyle = {
         width: '300px',  // 固定寬度，以確保卡片大小一致
+        length: '500px',
         backgroundColor: 'black',
         color: 'white',
         padding: '20px',
@@ -53,8 +54,10 @@ function Academicsintroduction2({ language }) {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         fontFamily: 'Inter, sans-serif',
         fontSize: '20px',
-        position: 'relative',
-        margin: '0 15px',  // 卡片之間的間距
+        position: 'absolute',
+        top: '50px', 
+        left: '950px',
+        margin: '0 25px',  // 卡片之間的間距
     };
 
     
