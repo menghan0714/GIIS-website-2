@@ -39,7 +39,7 @@ function Academicsintroduction2({ language }) {
         height: '100px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
         position: 'absolute',
-        top: '20px',     
+        top: '100px',     
         right: '-150px', 
     };
     
