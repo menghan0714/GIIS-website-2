@@ -21,7 +21,7 @@ function Academicsintroduction2({ language }) {
         paddingLeft: '5%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'normal',
-        fontSize: '25px',
+        fontSize: '30px',
         lineHeight: '1.5',
     };
 
