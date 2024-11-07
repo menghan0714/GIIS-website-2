@@ -57,7 +57,7 @@ function Academicsintroduction2({ language }) {
      flex: '0 0 100%', // 每次顯示一個課程
      scrollSnapAlign: 'start', // 停在每個項目的開頭
      width: '100%',
-     padding: '20px',
+     padding: '50px',
      boxSizing: 'border-box',
     };
 
