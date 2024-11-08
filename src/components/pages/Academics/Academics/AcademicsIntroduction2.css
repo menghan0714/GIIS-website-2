@@ -1,34 +1,25 @@
-.course-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; /* 滾動時會自動對齊到每個課程方塊 */
-    gap: 20px; /* 課程方塊之間的間距 */
-    padding: 20px 0;
-    margin-top: 30px;
-    left: 200px;
-    top: 200px;
+.catalog-container {
+  overflow: hidden;
+  width: 100%; /* 根據需求調整 */
+  position: relative;
 }
 
 .course-box {
-    scroll-snap-align: start; /* 滾動時對齊到課程方塊的開頭 */
-    min-width: 300px; /* 每個課程方塊的寬度 */
-    height: 300px;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 20px;
-    border-radius: 10px;
+  width: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+  background-color: black; /* 背景設為黑色 */
+  color: white; /* 文字顏色設為白色 */
+  padding: 20px; /* 可以根據需求調整內距 */
+  border-radius: 8px; /* 可以讓方塊的邊角圓潤，可選 */
+  transition: transform 0.5s ease;
+  position: absolute;
 }
 
-.course-box h2 {
-    font-size: 24px;
-    font-weight: bold;
+.slide-in {
+  transform: translateX(100%); /* 從右側滑入 */
 }
 
-.course-box p {
-    font-size: 16px;
-    line-height: 1.5;
+.slide-out {
+  transform: translateX(-100%); /* 向左滑出 */
 }
