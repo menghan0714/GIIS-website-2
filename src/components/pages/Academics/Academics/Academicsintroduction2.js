@@ -13,14 +13,14 @@ function Academicsintroduction2({ language }) {
                 ? ''
                 : 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
                   'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.'
-        },
+        }
         {
             title: language === 'zh' ? 'A-Level' : 'A-Level',
             description: language === 'zh'
                 ? ''
                 : 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ',
                 : 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.'
-                 },
+        }
         {
             title: language === 'zh' ? 'AP' : 'AP',
             description: language === 'zh'
