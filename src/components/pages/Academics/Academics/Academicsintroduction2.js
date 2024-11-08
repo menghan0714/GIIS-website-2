@@ -44,24 +44,6 @@ function Academicsintroduction2({ language }) {
         left: '700px', 
     };
 
-    const courses = [
-  { title: 'IGCSE', description: '課程詳細資訊在此...' },
-  { title: 'A-Level', description: '課程詳細資訊在此...' },
-  { title: 'AP', description: '課程詳細資訊在此...' },
-  ];
-
-    const CourseCatalog = () => {
-     const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
-     const [isSliding, setIsSliding] = useState(false);
-
-     const handleNext = () => {
-      setIsSliding(true);
-      setTimeout(() => {
-       setCurrentCourseIndex((currentCourseIndex + 1) % courses.length);
-       setIsSliding(false);
-      }, 500); // 調整時間以符合動畫持續時間
-      };
-
     
     return (
       <>
@@ -82,14 +64,6 @@ function Academicsintroduction2({ language }) {
                 )}  
           <div style={lineStyle}></div>
           <div style={yellowSquareStyle}></div>  
-        </div>
-                    
-        <div className="catalog-container">
-          <div className={`course-box ${isSliding ? 'slide-out' : 'slide-in'}`}>
-           <h2>{courses[currentCourseIndex].title}</h2>
-           <p>{courses[currentCourseIndex].description}</p>
-           <button onClick={handleNext} className="arrow-button">→</button>
-          </div>
         </div>
               
         <div style={headlineStyle}>
