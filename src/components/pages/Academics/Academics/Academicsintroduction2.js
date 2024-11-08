@@ -45,18 +45,22 @@ function Academicsintroduction2({ language }) {
     };
 
     const courses = [
-        {
-            title: 'IGCSE',
-            description: language === 'zh' ? '' : 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
-            description2: language === 'zh' ? '' : 'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
-        },
-        {
-            title: 'A-Level',
-            description: language === 'zh' ? '' : 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ',
-            description2: language === 'zh' ? '' : 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations. ',    
-        },
-        
-    ];
+  { title: 'IGCSE', description: '課程詳細資訊在此...' },
+  { title: 'A-Level', description: '課程詳細資訊在此...' },
+  { title: 'AP', description: '課程詳細資訊在此...' },
+  ];
+
+    const CourseCatalog = () => {
+     const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
+     const [isSliding, setIsSliding] = useState(false);
+
+     const handleNext = () => {
+      setIsSliding(true);
+      setTimeout(() => {
+       setCurrentCourseIndex((currentCourseIndex + 1) % courses.length);
+       setIsSliding(false);
+      }, 500); // 調整時間以符合動畫持續時間
+      };
 
     
     return (
@@ -80,15 +84,13 @@ function Academicsintroduction2({ language }) {
           <div style={yellowSquareStyle}></div>  
         </div>
                     
-        <div className="course-scroll-container">
-            {courses.map((course, index) => (
-                <div key={index} className="course-box">
-                    <h2>{course.title}</h2>
-                    <p>{course.description}</p>
-                    <p>{course.description2}</p>
-                </div>
-                ))}
-            </div>
+        <div className="catalog-container">
+          <div className={`course-box ${isSliding ? 'slide-out' : 'slide-in'}`}>
+           <h2>{courses[currentCourseIndex].title}</h2>
+           <p>{courses[currentCourseIndex].description}</p>
+           <button onClick={handleNext} className="arrow-button">→</button>
+          </div>
+        </div>
               
         <div style={headlineStyle}>
           <p>SUBJECTS</p>
