@@ -1,42 +1,7 @@
 import React from 'react';
-import './AcademicsIntroduction2.css';
+
 
 function Academicsintroduction2({ language }) {
-
-    const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
-    const [isSliding, setIsSliding] = useState(false);
-
-    const courses = [
-        {
-            title: language === 'zh' ? 'IGCSE' : 'IGCSE',
-            description: language === 'zh'
-                ? ''
-                : 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
-                  'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
-        }
-        {
-            title: language === 'zh' ? 'A-Level' : 'A-Level',
-            description: language === 'zh'
-                ? ''
-                : 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ',
-                : 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.',
-        }
-        {
-            title: language === 'zh' ? 'AP' : 'AP',
-            description: language === 'zh'
-                ? ''
-                : 'Empower yourself with the globally recognized Advanced Placement  Program.',
-                : 'Our AP courses are designed to provide students with the opportunity to pursue college-level studies while still in high school. These courses not only prepare students for the AP exams but also foster a deeper understanding of subjects, equipping them with the skills necessary for success in university and beyond.',
-        }
-    ];
-
-    const handleNext = () => {
-        setIsSliding(true);
-        setTimeout(() => {
-            setCurrentCourseIndex((currentCourseIndex + 1) % courses.length);
-            setIsSliding(false);
-        }, 500); // 動畫持續時間可調整
-    };
 
     const headlineStyle = {
         marginTop: '115px',
@@ -98,17 +63,9 @@ function Academicsintroduction2({ language }) {
                     </p>
                 )}  
         </div>
-        <div style={{ position: 'relative' }}>
-                <div style={courseIntroductionStyle}>
-                    <h2>{courses[currentCourseIndex].title}</h2>
-                    <p>{courses[currentCourseIndex].description}</p>
-                    <button onClick={handleNext} style={{ color: 'white', backgroundColor: 'black', border: 'none', fontSize: '30px', cursor: 'pointer' }}>
-                        →
-                    </button>
-                </div>
-                <div style={lineStyle}></div>
-                <div style={yellowSquareStyle}></div>
-        </div>    
+
+        <div style={lineStyle}></div>
+        <div style={yellowSquareStyle}></div>   
         <div style={headlineStyle}>
           <p>SUBJECTS</p>
         </div>
