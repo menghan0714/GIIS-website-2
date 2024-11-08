@@ -48,7 +48,7 @@ function Academicsintroduction2({ language }) {
         {
             title: 'IGCSE',
             description: language === 'zh' ? '' : 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
-            description2: language === 'zh' ? '' : 'These courses provide a comprehensive curriculum, designed to develop students' analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
+            description2: language === 'zh' ? '' : 'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
         },
         {
             title: 'A-Level',
