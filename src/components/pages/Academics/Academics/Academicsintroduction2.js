@@ -1,4 +1,5 @@
 import React from 'react';
+import './AcademicsIntroduction2.css';
 
 function Academicsintroduction2({ language }) {
 
@@ -43,6 +44,20 @@ function Academicsintroduction2({ language }) {
         left: '700px', 
     };
 
+    const courses = [
+        {
+            title: 'IGCSE',
+            description: language === 'zh' ? '' : 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
+            description2: language === 'zh' ? '' : 'These courses provide a comprehensive curriculum, designed to develop students' analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
+        },
+        {
+            title: 'A-Level',
+            description: language === 'zh' ? '' : 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ',
+            description2: language === 'zh' ? '' : 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations. ',    
+        },
+        
+    ];
+
     
     return (
       <>
@@ -64,6 +79,16 @@ function Academicsintroduction2({ language }) {
           <div style={lineStyle}></div>
           <div style={yellowSquareStyle}></div>  
         </div>
+                    
+        <div className="course-scroll-container">
+            {courses.map((course, index) => (
+                <div key={index} className="course-box">
+                    <h2>{course.title}</h2>
+                    <p>{course.description}</p>
+                    <p>{course.description2}</p>
+                </div>
+                ))}
+            </div>
               
         <div style={headlineStyle}>
           <p>SUBJECTS</p>
