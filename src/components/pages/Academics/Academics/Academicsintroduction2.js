@@ -46,8 +46,8 @@ function Academicsintroduction2({ language }) {
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
-        marginTop: '50px',     
-        marginLeft: '200px', 
+        marginTop: '200px',     
+        marginLeft: '500px', 
     };
 
     
