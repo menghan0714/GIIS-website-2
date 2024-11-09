@@ -15,7 +15,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const containerStyle= {
-        marginTop: '65px',
+        marginTop: '50px',
         width: '90%',
         height: '30%',
         paddingLeft: '5%',
@@ -39,7 +39,6 @@ function Academicsintroduction2({ language }) {
     };
 
     const yellowSquareStyle = {
-        position: 'absolute',
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
