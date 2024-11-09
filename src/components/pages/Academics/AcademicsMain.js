@@ -72,14 +72,9 @@ function AcademicsMain({ language }) {
          </div>
        </div>
 
-      <div className="card mt-0" id="introduction2">
-         <div className="container">
-           <div className="card-body">
+       <div className="card mt-0" id="introduction2">
             <AcademicsIntroduction2 language={language} />
-           </div>
-         </div>
        </div>
-
     </>
  );
 }   
