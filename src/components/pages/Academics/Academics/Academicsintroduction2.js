@@ -7,7 +7,7 @@ function Academicsintroduction2({ language }) {
         marginTop: '115px',
         color: 'rgba(0, 0, 0, 1)',
         width: '100%',
-        paddingLeft: '20%',
+        paddingLeft: '10%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
         fontSize: '70px',
