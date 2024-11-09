@@ -47,6 +47,17 @@ function Academicsintroduction2({ language }) {
         left: '600px', 
     };
 
+    const headline2Style = {
+        marginTop: '100px',
+        color: 'rgba(0, 0, 0, 1)',
+        width: '100%',
+        paddingLeft: '10%',
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '70px',
+        lineHeight: '1',
+    };
+
     
     return (
       <>
@@ -71,7 +82,7 @@ function Academicsintroduction2({ language }) {
           <div style={yellowSquareStyle}></div>
           </div>
         </div>
-        <div style={headlineStyle}>
+        <div style={headline2Style}>
           <p>SUBJECTS</p>
         </div>
       </>
