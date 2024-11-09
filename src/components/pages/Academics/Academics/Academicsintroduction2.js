@@ -15,6 +15,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const containerStyle= {
+        position: 'relative',
         marginTop: '50px',
         width: '90%',
         height: '30%',
@@ -22,7 +23,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const courseintroductionStyle = {
-        position: 'relative',
+        position: 'absolute',
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
         fontFamily: 'Inter, sans-serif',
@@ -32,6 +33,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const lineStyle = {
+        position: 'absolute',
         width: '35%', // Adjust width according to your needs
         height: '4px',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
