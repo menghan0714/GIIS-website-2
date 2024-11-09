@@ -51,8 +51,6 @@ function Academicsintroduction2({ language }) {
           <p>CATALOG</p>
         </div>
 
-        <div style={yellowSquareStyle}></div>
-
         <div style={courseintroductionStyle}>
           {language === 'zh' ? (
                     <p>
@@ -65,6 +63,7 @@ function Academicsintroduction2({ language }) {
                 )}  
 
           <div style={lineStyle}></div>
+           <div style={yellowSquareStyle}></div>
     
         </div>
         <div style={headlineStyle}>
