@@ -23,7 +23,7 @@ function Academicsintroduction2({ language }) {
 
     const courseintroductionStyle = {
         position: 'relative',
-        marginTop: '30px',
+        marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
         paddingLeft: '5%',
