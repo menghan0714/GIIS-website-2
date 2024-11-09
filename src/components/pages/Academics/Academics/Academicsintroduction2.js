@@ -78,8 +78,8 @@ function Academicsintroduction2({ language }) {
                     </p>
                 )}  
 
-          <div style={lineStyle}></div>
-          <div style={yellowSquareStyle}></div>
+           <div style={lineStyle}></div>
+           <div style={yellowSquareStyle}></div>
           </div>
         </div>
         <div style={headline2Style}>
