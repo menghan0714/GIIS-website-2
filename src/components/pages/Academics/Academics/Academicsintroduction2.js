@@ -14,7 +14,7 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1',
     };
 
-    const {containerStyle}= {
+    const containerStyle= {
         marginTop: '150px',
         width: '80%',
         height: '30%',
