@@ -39,10 +39,11 @@ function Academicsintroduction2({ language }) {
     };
 
     const yellowSquareStyle = {
+        position: 'absolute',
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
-        top: '500px',     
+        top: '200px',     
         left: '700px', 
     };
 
@@ -55,7 +56,6 @@ function Academicsintroduction2({ language }) {
         </div>
 
         <div style={containerStyle}>
-          <div style={yellowSquareStyle}></div>
           <div style={courseintroductionStyle}>
            {language === 'zh' ? (
                     <p>
@@ -68,6 +68,7 @@ function Academicsintroduction2({ language }) {
                 )}  
 
           <div style={lineStyle}></div>
+          <div style={yellowSquareStyle}></div>
           </div>
         </div>
         <div style={headlineStyle}>
