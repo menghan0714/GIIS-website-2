@@ -14,9 +14,16 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1',
     };
 
+    const {containerStyle}= {
+        marginTop: '150px',
+        width: '80%',
+        height: '30%',
+        paddingLeft: '5%',
+    };
+
     const courseintroductionStyle = {
         position: 'relative',
-        marginTop: '70px',
+        marginTop: '0px',
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
         paddingLeft: '5%',
@@ -39,8 +46,8 @@ function Academicsintroduction2({ language }) {
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color
-        top: '150px',     
-        left: '1200px', 
+        marginTop: '50px',     
+        marginLeft: '200px', 
     };
 
     
@@ -51,8 +58,9 @@ function Academicsintroduction2({ language }) {
           <p>CATALOG</p>
         </div>
 
-        <div style={courseintroductionStyle}>
-          {language === 'zh' ? (
+        <div style={containerStyle}>
+          <div style={courseintroductionStyle}>
+           {language === 'zh' ? (
                     <p>
                        我们的学校提供多元化的国际课程，包括英国IGCSE、A-Level和美国AP课程，满足学生的学术需求。这些课程为提升学生进入世界顶尖大学的机会奠定了坚实基础。通过深化知识和培养批判性思维能力，我们的学生为在全球学术舞台上取得优异成绩做好了充分准备。
                     </p>
@@ -63,8 +71,8 @@ function Academicsintroduction2({ language }) {
                 )}  
 
           <div style={lineStyle}></div>
-           <div style={yellowSquareStyle}></div>
-    
+          <div style={yellowSquareStyle}></div>
+          </div>
         </div>
         <div style={headlineStyle}>
           <p>SUBJECTS</p>
