@@ -16,7 +16,7 @@ function Academicsintroduction2({ language }) {
 
     const containerStyle= {
         marginTop: '150px',
-        width: '80%',
+        width: '90%',
         height: '30%',
         paddingLeft: '5%',
     };
@@ -26,7 +26,6 @@ function Academicsintroduction2({ language }) {
         marginTop: '60px',
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
-        paddingLeft: '5%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'normal',
         fontSize: '30px',
@@ -37,7 +36,6 @@ function Academicsintroduction2({ language }) {
         width: '35%', // Adjust width according to your needs
         height: '4px',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
-        paddingLeft: '5%',
         marginTop: '35px',
     };
 
