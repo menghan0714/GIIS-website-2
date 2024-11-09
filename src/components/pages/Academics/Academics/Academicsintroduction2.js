@@ -15,7 +15,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const containerStyle= {
-        marginTop: '150px',
+        marginTop: '75px',
         width: '90%',
         height: '30%',
         paddingLeft: '5%',
