@@ -85,7 +85,6 @@ function Academicsintroduction2({ language }) {
            </div>
            <div style={lineStyle}></div>
           </div>
-        </div>
         <div style={headline2Style}>
           <p>SUBJECTS</p>
         </div>
