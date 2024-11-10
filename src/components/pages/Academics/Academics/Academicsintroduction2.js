@@ -14,18 +14,6 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1',
     };
 
-    const rowStyle = {
-       display: 'flex',
-       alignItems: 'center',
-    };
-    
-    const containerStyle= {
-        marginTop: '50px',
-        width: '90%',
-        height: '80%',
-        paddingLeft: '10%',
-    };
-
     const courseintroductionStyle = {
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
@@ -67,10 +55,8 @@ function Academicsintroduction2({ language }) {
           <p>COURSE</p>
           <p>CATALOG</p>
         </div>
-
-        <div style={containerStyle}>
-          <div style={rowStyle}>
-           <div style={courseintroductionStyle}>
+        
+        <div style={courseintroductionStyle}>
            {language === 'zh' ? (
                     <p>
                        我们的学校提供多元化的国际课程，包括英国IGCSE、A-Level和美国AP课程，满足学生的学术需求。这些课程为提升学生进入世界顶尖大学的机会奠定了坚实基础。通过深化知识和培养批判性思维能力，我们的学生为在全球学术舞台上取得优异成绩做好了充分准备。
