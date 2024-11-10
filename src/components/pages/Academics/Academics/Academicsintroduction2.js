@@ -70,6 +70,7 @@ function Academicsintroduction2({ language }) {
 
         <div style={containerStyle}>
           <div style={rowStyle}>
+           <div style={yellowSquareStyle}></div>
            <div style={courseintroductionStyle}>
            {language === 'zh' ? (
                     <p>
@@ -80,7 +81,6 @@ function Academicsintroduction2({ language }) {
                        Our school offers a diverse range of international programs, including the British IGCSE, A-level, and American AP courses, meeting students' academic needs. These programs provide a strong foundation for boosting university admissions chances to top institutions worldwide. By deepening their knowledge and developing critical thinking skills, our students are well-prepared to excel on the global academic stage.
                     </p>
                 )}  
-            <div style={yellowSquareStyle}></div>
            </div>
            <div style={lineStyle}></div>
           </div>
