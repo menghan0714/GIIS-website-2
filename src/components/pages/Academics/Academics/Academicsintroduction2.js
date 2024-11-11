@@ -44,7 +44,7 @@ function Academicsintroduction2({ language }) {
         top: '20%', 
         left: '100%', 
         marginLeft: language === 'zh' ? '5%' : '',
-        top: language === 'zh' ? '10%' : '15%',
+        top: language === 'zh' ? '15%' : '15%',
     };
 
     const headline2Style = {
