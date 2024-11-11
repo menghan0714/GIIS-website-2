@@ -15,8 +15,10 @@ function Academicsintroduction2({ language }) {
     };
 
     const courseintroductionStyle = {
+        position: 'relative',
         color: 'rgba(0, 0, 0, 1)',
         width: '50%',
+        paddingLeft: '10%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'normal',
         fontSize: '30px',
@@ -24,16 +26,20 @@ function Academicsintroduction2({ language }) {
     };
 
     const lineStyle = {
+        position: 'absolute',
         width: '35%', // Adjust width according to your needs
         height: '4px',
+        paddingLeft: '10%',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
         marginTop: '35px',
     };
 
     const yellowSquareStyle = {
+        position: 'absolute',
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
-        backgroundColor: 'rgba(213, 168, 54, 1)', // Set to yellow color    
+        backgroundColor: 'rgba(213, 168, 54, 1)',   
+        paddingLeft: '10%',
         marginLeft: '60%', 
     };
 
@@ -66,14 +72,12 @@ function Academicsintroduction2({ language }) {
                        Our school offers a diverse range of international programs, including the British IGCSE, A-level, and American AP courses, meeting students' academic needs. These programs provide a strong foundation for boosting university admissions chances to top institutions worldwide. By deepening their knowledge and developing critical thinking skills, our students are well-prepared to excel on the global academic stage.
                     </p>
                 )}  
-            </div>
-            <div style={yellowSquareStyle}></div>
-           </div>
-           <div style={lineStyle}></div>
-          </div>
-        <div style={headline2Style}>
+         </div>
+         <div style={lineStyle}></div> 
+         <div style={yellowSquareStyle}></div>
+         <div style={headline2Style}>
           <p>SUBJECTS</p>
-        </div>
+         </div>
       </>
    );
 }
