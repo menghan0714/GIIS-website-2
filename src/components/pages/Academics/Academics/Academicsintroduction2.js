@@ -64,7 +64,8 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         justifyContent: 'center', // 水平居中
         marginTop: '5%', // 與導航欄保持距離
-        width: '80%',
+        width: '85%',
+        paddingLeft: '10%',
     };
 
     const imageStyle = {
