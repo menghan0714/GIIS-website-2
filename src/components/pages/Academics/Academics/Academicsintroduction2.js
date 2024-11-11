@@ -48,7 +48,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const headline2Style = {
-        marginTop: '100px',
+        marginTop: '120px',
         color: 'rgba(0, 0, 0, 1)',
         width: '100%',
         paddingLeft: '10%',
