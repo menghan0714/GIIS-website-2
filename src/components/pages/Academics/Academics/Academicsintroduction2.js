@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../../img/Homepage/homepage8.png';
+import img from '../../../img/Academics/Math.png';
 
 
 function Academicsintroduction2({ language }) {
@@ -59,6 +59,20 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1',
     };
 
+    const containerStyle = {
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center', // 水平居中
+        marginTop: '5%', // 與導航欄保持距離
+        width: '80%',
+    };
+
+    const imageStyle = {
+        width: '100%', // 保持容器的寬度
+        height: '400px', // 固定高度
+        objectFit: 'cover'
+    };
+
     
     return (
       <>
@@ -82,6 +96,9 @@ function Academicsintroduction2({ language }) {
          </div>
          <div style={headline2Style}>
           <p>SUBJECTS</p>
+         </div>
+         <div style={containerStyle}>
+           <img src={img} alt="Math" style={imageStyle} />
          </div>
       </>
    );
