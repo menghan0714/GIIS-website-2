@@ -32,7 +32,7 @@ function Academicsintroduction2({ language }) {
         height: '4px',
         paddingLeft: '10%',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
-        marginTop: '35%',
+        marginTop: '90%',
     };
 
     const yellowSquareStyle = {
@@ -42,7 +42,7 @@ function Academicsintroduction2({ language }) {
         backgroundColor: 'rgba(213, 168, 54, 1)',   
         paddingLeft: '10%',
         marginLeft: '60%', 
-        marginLeft: '30%', 
+        marginTop: '50%', 
     };
 
     const headline2Style = {
