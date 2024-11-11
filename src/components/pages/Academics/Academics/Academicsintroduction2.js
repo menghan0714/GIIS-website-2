@@ -42,7 +42,7 @@ function Academicsintroduction2({ language }) {
         backgroundColor: 'rgba(213, 168, 54, 1)',   
         paddingLeft: '10%',
         top: '60px', 
-        left: '200px', 
+        left: '300px', 
     };
 
     const headline2Style = {
