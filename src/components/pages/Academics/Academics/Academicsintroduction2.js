@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../../../img/Academics/Math.png';
+import img from '../../../../img/Academics/Math.jpg';
 
 
 function Academicsintroduction2({ language }) {
