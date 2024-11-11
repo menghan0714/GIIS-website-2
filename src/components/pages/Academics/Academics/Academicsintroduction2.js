@@ -32,7 +32,7 @@ function Academicsintroduction2({ language }) {
         height: '4px',
         paddingLeft: '10%',
         backgroundColor: 'rgba(0, 0, 0, 1)', 
-        marginTop: '50%',
+        marginTop: '35px',
     };
 
     const yellowSquareStyle = {
