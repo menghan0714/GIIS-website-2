@@ -41,8 +41,8 @@ function Academicsintroduction2({ language }) {
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)',   
         paddingLeft: '10%',
-        top: '60px', 
-        left: '300px', 
+        top: '20%', 
+        left: '50%', 
     };
 
     const headline2Style = {
