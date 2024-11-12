@@ -110,8 +110,8 @@ function Academicsintroduction2({ language }) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '60px', // 设置圆框的大小
-    height: '60px',
+    width: '100px', // 设置圆框的大小
+    height: '100px',
     border: '3px solid black', 
     borderRadius: '50%',      
     marginLeft: '10px',        
