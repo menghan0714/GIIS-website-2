@@ -3,38 +3,6 @@ import img from '../../../../img/Academics/Math.jpg';
 import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
-    const courses = [
-    { id: 1, title: 'A-Level', description: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ', bgColor: '#000' },
-    { id: 2, title: 'IGCSE', description: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.', bgColor: '#222' },
-    { id: 3, title: 'AP', description: 'Empower yourself with the globally recognized Advanced Placement  Program.', bgColor: '#333' },
-    ];
-
-    const [currentCourse, setCurrentCourse] = useState(0);
-    const [startX, setStartX] = useState(0);
-    const [deltaX, setDeltaX] = useState(0);
-
-    const handleMouseDown = (e) => {
-        setStartX(e.clientX); // 記錄滑鼠按下時的初始位置
-        setDeltaX(0); // 清空移動距離
-    };
-
-    const handleMouseMove = (e) => {
-        if (startX !== 0) {
-            setDeltaX(e.clientX - startX); // 計算滑鼠移動距離
-        }
-    };
-
-    const handleMouseUp = () => {
-        if (deltaX > 100) {
-            // 如果向右滑超過 100px，切換到上一個課程
-            setCurrentCourse((prev) => (prev - 1 + courses.length) % courses.length);
-        } else if (deltaX < -100) {
-            // 如果向左滑超過 100px，切換到下一個課程
-            setCurrentCourse((prev) => (prev + 1) % courses.length);
-        }
-        setStartX(0); // 重置初始位置
-        setDeltaX(0); // 重置移動距離
-    };
     
     const headlineStyle = {
         marginTop: '115px',
@@ -164,26 +132,6 @@ const arrowStyle = {
     
     return (
       <>
-         <div
-            className="academics-container"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp} // 防止滑鼠移出視窗時無法正確觸發
-        >
-            <div
-                className="course-box"
-                style={{
-                    backgroundColor: courses[currentCourse].bgColor,
-                    transform: `translateX(${deltaX}px)`, // 讓方塊隨滑鼠移動
-                    transition: startX === 0 ? 'transform 0.3s ease' : 'none', // 只有滑鼠鬆開時才啟用動畫
-                }}
-            >
-                <h1>{courses[currentCourse].title}</h1>
-                <p>{courses[currentCourse].description}</p>
-            </div>
-        </div>
-    
         <div style={headlineStyle}>
           <p>COURSE</p>
           <p>CATALOG</p>
