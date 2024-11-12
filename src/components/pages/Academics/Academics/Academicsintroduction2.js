@@ -92,8 +92,6 @@ function Academicsintroduction2({ language }) {
         height: '100px', // 固定高度
         backgroundColor: 'rgba(210, 180, 140, 0.7)', // 半透明棕色
         color: 'white',
-        paddingLeft: '40%',
-        paddingBootom: '15%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -103,6 +101,8 @@ function Academicsintroduction2({ language }) {
         fontSize: '120px',
         fontWeight: 'bold',
         fontFamily: 'Inter, sans-serif',
+        paddingLeft: '40%',
+        paddingBootom: '15%',
     };
 
     const arrowStyle = {
