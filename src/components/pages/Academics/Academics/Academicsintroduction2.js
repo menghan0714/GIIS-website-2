@@ -99,7 +99,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const overlayTextStyle = {
-        fontSize: '90px',
+        fontSize: '120px',
         fontWeight: 'bold',
         fontFamily: 'Inter, sans-serif',
     };
