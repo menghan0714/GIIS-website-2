@@ -73,7 +73,7 @@ function Academicsintroduction2({ language }) {
         width: '100%', // 保持容器的寬度
         height: '400px', // 固定高度
         objectFit: 'cover',
-        opacity: '0.5', 
+        filter: 'blur(6px)',
         zIndex: '100',
     };
 
@@ -113,7 +113,7 @@ function Academicsintroduction2({ language }) {
     justifyContent: 'center',
     width: '100px', // 设置圆框的大小
     height: '100px',
-    border: '3px solid white', 
+    border: '5px solid white', 
     borderRadius: '50%',      
     marginLeft: '70%',
     marginTop: '-10%',
