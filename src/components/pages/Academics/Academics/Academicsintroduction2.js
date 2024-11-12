@@ -82,7 +82,7 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         justifyContent: 'flex-end', 
         bottom: '-10%',
-        width: '200px',
+        width: '1000px',
         paddingLeft: '20%',
         zIndex: '200',
     };
