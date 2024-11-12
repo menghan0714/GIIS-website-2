@@ -79,11 +79,11 @@ function Academicsintroduction2({ language }) {
 
     const overlayStyle = {
         position: 'absolute',
-        marginTop: '20%',
-        width: '90%',
-        backgroundColor: 'rgba(210, 180, 140, 0.6)', // 半透明棕色
+        marginTop: '30%',
+        width: '100%',
+        backgroundColor: 'rgba(210, 180, 140, 0.7)', // 半透明棕色
         color: 'white',
-        paddingLeft: '10=5%',
+        paddingLeft: '20%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
