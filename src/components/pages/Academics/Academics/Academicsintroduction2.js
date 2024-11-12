@@ -115,8 +115,8 @@ function Academicsintroduction2({ language }) {
     height: '100px',
     border: '3px solid black', 
     borderRadius: '50%',      
-    paddingLeft: '70%',
-    paddingTop: '0',
+    marginLeft: '70%',
+    marginTop: '-10%',
 };
 
 const arrowStyle = {
