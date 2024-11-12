@@ -192,18 +192,6 @@ const arrowStyle = {
                     ))}
                 </div>
         </div>
-   
-         <div style={containerStyle}>
-           <img src={img} alt="Math" style={imageStyle} />
-           <div style={overlaycontainerStyle}>
-            <div style={overlayStyle}>
-             <span style={overlayTextStyle}>MATH</span>
-             <div style={arrowContainerStyle}>
-              <span style={arrowStyle}>→</span>
-             </div>
-            </div>
-           </div>
-         </div>
       </>
    );
 }
