@@ -3,6 +3,11 @@ import img from '../../../../img/Academics/Math.jpg';
 import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
+    const courses = [
+    { id: 1, title: 'Math', description: 'Mathematics course details...', bgColor: '#000' },
+    { id: 2, title: 'Science', description: 'Science course details...', bgColor: '#222' },
+    { id: 3, title: 'History', description: 'History course details...', bgColor: '#333' },
+    ];
 
     const [currentCourse, setCurrentCourse] = useState(0);
     const [startX, setStartX] = useState(0);
