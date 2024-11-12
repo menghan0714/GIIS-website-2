@@ -3,6 +3,11 @@ import img from '../../../../img/Academics/Math.jpg';
 
 
 function Academicsintroduction2({ language }) {
+    
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % courses.length);
+    };
 
     const headlineStyle = {
         marginTop: '115px',
@@ -26,6 +31,20 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1.5',
         marginTop: '35px',
     };
+
+    const sliderStyle = {
+        display: 'flex',
+        overflow: 'hidden',
+        width: '100%',
+        transition: 'transform 0.5s ease',
+        transform: `translateX(-${currentIndex * 100}%)`
+    };
+
+    const courses = [
+        { title: 'MATH', description: '數學課程介紹...', img: img },
+        { title: 'SCIENCE', description: '科學課程介紹...', img: img },
+        { title: 'ENGLISH', description: '英語課程介紹...', img: img },
+    ];
 
     const lineStyle = {
         position: 'absolute',
@@ -153,6 +172,27 @@ const arrowStyle = {
          <div style={headline2Style}>
           <p>SUBJECTS</p>
          </div>
+              
+         <div style={{ overflow: 'hidden', width: '90%', margin: '0 auto' }}>
+                <div style={sliderStyle}>
+                    {courses.map((course, index) => (
+                        <div key={index} style={{ width: '100%', flexShrink: 0 }}>
+                            <div style={containerStyle}>
+                                <img src={course.img} alt={course.title} style={imageStyle} />
+                                <div style={overlaycontainerStyle}>
+                                    <div style={overlayStyle}>
+                                        <span style={overlayTextStyle}>{course.title}</span>
+                                        <div style={arrowContainerStyle} onClick={handleNext}>
+                                            <span style={arrowStyle}>→</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+        </div>
+   
          <div style={containerStyle}>
            <img src={img} alt="Math" style={imageStyle} />
            <div style={overlaycontainerStyle}>
