@@ -160,7 +160,7 @@ const arrowStyle = {
          </div>
               
         <div style={containerStyle}>
-         <img src={course.img} alt={course.title} style={imageStyle} />
+         <img src={img} alt="Math" style={imageStyle} />
          <div style={overlaycontainerStyle}>
            <div style={overlayStyle}>
             <span style={overlayTextStyle}>{course.title}</span>
