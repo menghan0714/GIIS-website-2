@@ -75,17 +75,6 @@ function Academicsintroduction2({ language }) {
         filter: 'blur(4px)',
         zIndex: '100',
     };
-
-    const rectangleStyle = {
-        position: 'absolute',
-        width: '88%', 
-        height: '15%', 
-        color: 'rgba(228, 188, 128, 0.6)',
-        marginTop: '50%',
-        marginLeft: '5%',
-        zIndex: '200',
-    };
-
     
     return (
       <>
@@ -112,7 +101,6 @@ function Academicsintroduction2({ language }) {
          </div>
          <div style={containerStyle}>
            <img src={img} alt="Math" style={imageStyle} />
-           <div style={rectangleStyle}></div>
          </div>
       </>
    );
