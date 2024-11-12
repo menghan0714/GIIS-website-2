@@ -1,8 +1,25 @@
 import React, { useState }  from 'react';
 import img from '../../../../img/Academics/Math.jpg';
-
+import { motion, AnimatePresence } from 'framer-motion';
+import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
+
+    const [currentCourse, setCurrentCourse] = useState(0);
+
+    const handleNext = () => {
+        setCurrentCourse((prev) => (prev + 1) % courses.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentCourse((prev) => (prev - 1 + courses.length) % courses.length);
+    };
+
+    const courses = [
+    { id: 1, title: 'Math', description: 'Mathematics course details...', bgColor: '#000' },
+    { id: 2, title: 'Science', description: 'Science course details...', bgColor: '#222' },
+    { id: 3, title: 'History', description: 'History course details...', bgColor: '#333' },
+];
     
     const headlineStyle = {
         marginTop: '115px',
@@ -132,6 +149,28 @@ const arrowStyle = {
     
     return (
       <>
+        <div className="academics-container">
+            <AnimatePresence>
+                <motion.div
+                    key={courses[currentCourse].id}
+                    className="course-box"
+                    style={{ backgroundColor: courses[currentCourse].bgColor }}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h1>{courses[currentCourse].title}</h1>
+                    <p>{courses[currentCourse].description}</p>
+                </motion.div>
+            </AnimatePresence>
+
+            <div className="navigation-buttons">
+                <button onClick={handlePrev}>← Previous</button>
+                <button onClick={handleNext}>Next →</button>
+            </div>
+        </div>
+    
         <div style={headlineStyle}>
           <p>COURSE</p>
           <p>CATALOG</p>
