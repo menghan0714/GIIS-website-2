@@ -80,10 +80,10 @@ function Academicsintroduction2({ language }) {
     const overlayStyle = {
         position: 'absolute',
         bottom: '0',
-        width: '100%',
+        width: '80%',
         backgroundColor: 'rgba(210, 180, 140, 0.8)', // 半透明棕色
         color: 'white',
-        padding: '20px',
+        paddingLeft: '5%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
