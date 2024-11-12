@@ -66,7 +66,7 @@ function Academicsintroduction2({ language }) {
         marginTop: '5%', // 與導航欄保持距離
         width: '80%',
         height: '100%',
-        paddingLeft: '5%',
+        paddingLeft: '10%',
     };
 
     const imageStyle = {
