@@ -102,7 +102,7 @@ function Academicsintroduction2({ language }) {
         fontSize: '150px',
         fontWeight: 'bold',
         fontFamily: 'Inter, sans-serif',
-        bottom:'3%',
+        bottom:'0',
         paddingLeft: '40%',
     };
 
