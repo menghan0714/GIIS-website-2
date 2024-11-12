@@ -4,11 +4,6 @@ import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
     
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % courses.length);
-    };
-
     const headlineStyle = {
         marginTop: '115px',
         color: 'rgba(0, 0, 0, 1)',
