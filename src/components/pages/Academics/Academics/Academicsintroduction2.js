@@ -163,10 +163,11 @@ const arrowStyle = {
          <img src={course.img} alt={course.title} style={imageStyle} />
          <div style={overlaycontainerStyle}>
            <div style={overlayStyle}>
-           <span style={overlayTextStyle}>{course.title}</span>
-           <div style={arrowContainerStyle} onClick={handleNext}>
-             <span style={arrowStyle}>→</span>
-           </div>
+            <span style={overlayTextStyle}>{course.title}</span>
+            <div style={arrowContainerStyle} onClick={handleNext}>
+              <span style={arrowStyle}>→</span>
+            </div>
+           </div>  
          </div>
         </div>
       </>
