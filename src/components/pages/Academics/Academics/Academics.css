@@ -1,10 +1,11 @@
 .academics-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    user-select: none; /* 防止選中文本 */
+    cursor: grab;
 }
 
 .course-box {
@@ -18,23 +19,9 @@
     align-items: center;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease; /* 平滑切換動畫 */
 }
 
-.navigation-buttons {
-    margin-top: 20px;
-}
-
-.navigation-buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.navigation-buttons button:hover {
-    background-color: #555;
-    color: white;
+.course-box:active {
+    cursor: grabbing;
 }
