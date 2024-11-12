@@ -108,11 +108,11 @@ function Academicsintroduction2({ language }) {
 
     const arrowStyle = {
         position: 'absolute',
-        fontSize: '20px',
+        fontSize: '25px',
         fontWeight: 'bold',
-        border: '2px solid white',
+        border: '6px solid black',
         borderRadius: '50%',
-        padding: '30px',
+        padding: '15px',
     };
     
     return (
