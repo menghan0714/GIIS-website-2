@@ -136,9 +136,11 @@ function Academicsintroduction2({ language }) {
          </div>
          <div style={containerStyle}>
            <img src={img} alt="Math" style={imageStyle} />
-           <div style={overlayStyle}>
-            <span style={overlayTextStyle}>MATH</span>
-            <span style={arrowStyle}>→</span>
+           <div style={overlaycontainerStyle}>
+            <div style={overlayStyle}>
+             <span style={overlayTextStyle}>MATH</span>
+             <span style={arrowStyle}>→</span>
+            </div>
            </div>
          </div>
       </>
