@@ -110,9 +110,9 @@ function Academicsintroduction2({ language }) {
         position: 'absolute',
         fontSize: '25px',
         fontWeight: 'bold',
-        border: '6px solid black',
+        border: '3px solid black',
         borderRadius: '50%',
-        padding: '15px',
+        padding: '50px',
     };
     
     return (
