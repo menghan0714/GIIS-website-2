@@ -173,24 +173,15 @@ const arrowStyle = {
           <p>SUBJECTS</p>
          </div>
               
-         <div style={{ overflow: 'hidden', width: '90%', margin: '0 auto' }}>
-                <div style={sliderStyle}>
-                    {courses.map((course, index) => (
-                        <div key={index} style={{ width: '100%', flexShrink: 0 }}>
-                            <div style={containerStyle}>
-                                <img src={course.img} alt={course.title} style={imageStyle} />
-                                <div style={overlaycontainerStyle}>
-                                    <div style={overlayStyle}>
-                                        <span style={overlayTextStyle}>{course.title}</span>
-                                        <div style={arrowContainerStyle} onClick={handleNext}>
-                                            <span style={arrowStyle}>→</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div style={containerStyle}>
+         <img src={course.img} alt={course.title} style={imageStyle} />
+         <div style={overlaycontainerStyle}>
+           <div style={overlayStyle}>
+           <span style={overlayTextStyle}>{course.title}</span>
+           <div style={arrowContainerStyle} onClick={handleNext}>
+             <span style={arrowStyle}>→</span>
+           </div>
+         </div>
         </div>
       </>
    );
