@@ -93,6 +93,7 @@ function Academicsintroduction2({ language }) {
         backgroundColor: 'rgba(210, 180, 140, 0.7)', // 半透明棕色
         color: 'white',
         paddingLeft: '40%',
+        paddingBootom: '15%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
