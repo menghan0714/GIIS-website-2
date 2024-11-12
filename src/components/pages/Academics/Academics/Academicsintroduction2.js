@@ -73,7 +73,7 @@ function Academicsintroduction2({ language }) {
         width: '100%', // 保持容器的寬度
         height: '400px', // 固定高度
         objectFit: 'cover',
-        filter: 'blur(6px)',
+        opacity: '0.5', 
         zIndex: '100',
     };
 
