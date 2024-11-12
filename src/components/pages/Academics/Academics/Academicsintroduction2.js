@@ -108,7 +108,7 @@ function Academicsintroduction2({ language }) {
 
     const arrowStyle = {
         position: 'absolute',
-        fontSize: '40px',
+        fontSize: '20px',
         fontWeight: 'bold',
         border: '2px solid white',
         borderRadius: '50%',
