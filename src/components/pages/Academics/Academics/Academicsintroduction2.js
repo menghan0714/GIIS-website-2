@@ -66,7 +66,6 @@ function Academicsintroduction2({ language }) {
         marginTop: '5%', // 與導航欄保持距離
         width: '85%',
         paddingLeft: '10%',
-        zIndex: '100',
     };
 
     const imageStyle = {
@@ -74,6 +73,7 @@ function Academicsintroduction2({ language }) {
         height: '400px', // 固定高度
         objectFit: 'cover',
         filter: 'blur(4px)',
+        zIndex: '100',
     };
 
     const rectangleStyle = {
