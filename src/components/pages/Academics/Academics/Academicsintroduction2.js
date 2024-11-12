@@ -86,6 +86,7 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        zIndex: '200',
     };
 
     const overlayTextStyle = {
