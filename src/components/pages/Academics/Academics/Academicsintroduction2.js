@@ -113,7 +113,7 @@ function Academicsintroduction2({ language }) {
     justifyContent: 'center',
     width: '100px', // 设置圆框的大小
     height: '100px',
-    border: '5px solid white', 
+    border: '5px solid black', 
     borderRadius: '50%',      
     marginLeft: '70%',
     marginTop: '-10%',
@@ -121,7 +121,7 @@ function Academicsintroduction2({ language }) {
 
 const arrowStyle = {
     fontSize: '60px',
-    color: 'white',            // 设置箭头颜色为黑色
+    color: 'black',            // 设置箭头颜色为黑色
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
