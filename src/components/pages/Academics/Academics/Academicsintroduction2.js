@@ -1,6 +1,5 @@
 import React, { useState }  from 'react';
 import img from '../../../../img/Academics/Math.jpg';
-import { motion, AnimatePresence } from 'framer-motion';
 import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
