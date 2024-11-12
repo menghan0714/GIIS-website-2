@@ -110,15 +110,15 @@ function Academicsintroduction2({ language }) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '45px', // 设置圆框的大小
-    height: '45px',
-    border: '3px solid black', // 外圈的黑色边框
-    borderRadius: '50%',       // 圆形
-    marginLeft: '10px',        // 与文字的间距
+    width: '60px', // 设置圆框的大小
+    height: '60px',
+    border: '3px solid black', 
+    borderRadius: '50%',      
+    marginLeft: '10px',        
 };
 
 const arrowStyle = {
-    fontSize: '20px',
+    fontSize: '60px',
     color: 'black',            // 设置箭头颜色为黑色
     display: 'flex',
     justifyContent: 'center',
