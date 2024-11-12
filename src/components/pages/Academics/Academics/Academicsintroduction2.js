@@ -77,17 +77,25 @@ function Academicsintroduction2({ language }) {
         zIndex: '100',
     };
 
-    const overlayStyle = {
+     const overlaycontainerStyle = {
         position: 'absolute',
-        marginTop: '30%',
+        display: 'flex',
+        justifyContent: 'flex-end', 
+        marginTop: '20%', 
         width: '100%',
+        paddingLeft: '5%',
+        zIndex: '200',
+    };
+
+    const overlayStyle = {
+        width: '100%', // 保持容器的寬度
+        height: '100px', // 固定高度
         backgroundColor: 'rgba(210, 180, 140, 0.7)', // 半透明棕色
         color: 'white',
         paddingLeft: '40%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        zIndex: '200',
     };
 
     const overlayTextStyle = {
