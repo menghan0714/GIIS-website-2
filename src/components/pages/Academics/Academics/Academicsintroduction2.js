@@ -6,20 +6,31 @@ import './Academics.css'; // 如果需要額外分離 CSS
 function Academicsintroduction2({ language }) {
 
     const [currentCourse, setCurrentCourse] = useState(0);
+    const [startX, setStartX] = useState(0);
+    const [deltaX, setDeltaX] = useState(0);
 
-    const handleNext = () => {
-        setCurrentCourse((prev) => (prev + 1) % courses.length);
+    const handleMouseDown = (e) => {
+        setStartX(e.clientX); // 記錄滑鼠按下時的初始位置
+        setDeltaX(0); // 清空移動距離
     };
 
-    const handlePrev = () => {
-        setCurrentCourse((prev) => (prev - 1 + courses.length) % courses.length);
+    const handleMouseMove = (e) => {
+        if (startX !== 0) {
+            setDeltaX(e.clientX - startX); // 計算滑鼠移動距離
+        }
     };
 
-    const courses = [
-    { id: 1, title: 'Math', description: 'Mathematics course details...', bgColor: '#000' },
-    { id: 2, title: 'Science', description: 'Science course details...', bgColor: '#222' },
-    { id: 3, title: 'History', description: 'History course details...', bgColor: '#333' },
-];
+    const handleMouseUp = () => {
+        if (deltaX > 100) {
+            // 如果向右滑超過 100px，切換到上一個課程
+            setCurrentCourse((prev) => (prev - 1 + courses.length) % courses.length);
+        } else if (deltaX < -100) {
+            // 如果向左滑超過 100px，切換到下一個課程
+            setCurrentCourse((prev) => (prev + 1) % courses.length);
+        }
+        setStartX(0); // 重置初始位置
+        setDeltaX(0); // 重置移動距離
+    };
     
     const headlineStyle = {
         marginTop: '115px',
@@ -149,25 +160,23 @@ const arrowStyle = {
     
     return (
       <>
-        <div className="academics-container">
-            <AnimatePresence>
-                <motion.div
-                    key={courses[currentCourse].id}
-                    className="course-box"
-                    style={{ backgroundColor: courses[currentCourse].bgColor }}
-                    initial={{ x: 300, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -300, opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h1>{courses[currentCourse].title}</h1>
-                    <p>{courses[currentCourse].description}</p>
-                </motion.div>
-            </AnimatePresence>
-
-            <div className="navigation-buttons">
-                <button onClick={handlePrev}>← Previous</button>
-                <button onClick={handleNext}>Next →</button>
+         <div
+            className="academics-container"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp} // 防止滑鼠移出視窗時無法正確觸發
+        >
+            <div
+                className="course-box"
+                style={{
+                    backgroundColor: courses[currentCourse].bgColor,
+                    transform: `translateX(${deltaX}px)`, // 讓方塊隨滑鼠移動
+                    transition: startX === 0 ? 'transform 0.3s ease' : 'none', // 只有滑鼠鬆開時才啟用動畫
+                }}
+            >
+                <h1>{courses[currentCourse].title}</h1>
+                <p>{courses[currentCourse].description}</p>
             </div>
         </div>
     
