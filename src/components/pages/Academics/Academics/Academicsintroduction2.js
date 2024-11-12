@@ -80,7 +80,7 @@ function Academicsintroduction2({ language }) {
         width: '88%', 
         height: '15%', 
         color: 'rgba(228, 188, 128, 0.6)',
-        marginTop: '80%',
+        marginTop: '50%',
         marginLeft: '5%',
     };
 
