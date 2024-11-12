@@ -81,9 +81,9 @@ function Academicsintroduction2({ language }) {
         position: 'absolute',
         display: 'flex',
         justifyContent: 'flex-end', 
-        marginTop: '20%', 
+        marginTop: '30%', 
         width: '100%',
-        paddingLeft: '5%',
+        paddingLeft: '10%',
         zIndex: '200',
     };
 
