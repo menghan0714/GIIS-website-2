@@ -107,11 +107,12 @@ function Academicsintroduction2({ language }) {
     };
 
     const arrowStyle = {
-        fontSize: '30px',
+        position: 'absolute',
+        fontSize: '40px',
         fontWeight: 'bold',
         border: '2px solid white',
         borderRadius: '50%',
-        padding: '10px',
+        paddingLeft: '55%',
     };
     
     return (
