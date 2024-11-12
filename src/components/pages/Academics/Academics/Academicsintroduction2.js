@@ -32,20 +32,6 @@ function Academicsintroduction2({ language }) {
         marginTop: '35px',
     };
 
-    const sliderStyle = {
-        display: 'flex',
-        overflow: 'hidden',
-        width: '100%',
-        transition: 'transform 0.5s ease',
-        transform: `translateX(-${currentIndex * 100}%)`
-    };
-
-    const courses = [
-        { title: 'MATH', description: '數學課程介紹...', img: img },
-        { title: 'SCIENCE', description: '科學課程介紹...', img: img },
-        { title: 'ENGLISH', description: '英語課程介紹...', img: img },
-    ];
-
     const lineStyle = {
         position: 'absolute',
         width: '35%', // Adjust width according to your needs
