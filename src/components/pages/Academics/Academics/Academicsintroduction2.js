@@ -113,6 +113,8 @@ function Academicsintroduction2({ language }) {
         border: '3px solid black',
         borderRadius: '50%',
         padding: '15px',
+        color: 'black', 
+        backgroundColor: 'black',
     };
     
     return (
