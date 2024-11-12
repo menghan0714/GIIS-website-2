@@ -106,16 +106,27 @@ function Academicsintroduction2({ language }) {
         paddingLeft: '30%',
     };
 
-    const arrowStyle = {
-        position: 'absolute',
-        fontSize: '25px',
-        fontWeight: 'bold',
-        border: '3px solid black',
-        borderRadius: '50%',
-        padding: '15px',
-        color: 'black', 
-        backgroundColor: 'black',
-    };
+  const arrowContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '45px', // 设置圆框的大小
+    height: '45px',
+    border: '3px solid black', // 外圈的黑色边框
+    borderRadius: '50%',       // 圆形
+    marginLeft: '10px',        // 与文字的间距
+};
+
+const arrowStyle = {
+    fontSize: '20px',
+    color: 'black',            // 设置箭头颜色为黑色
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+};
+
     
     return (
       <>
@@ -145,7 +156,9 @@ function Academicsintroduction2({ language }) {
            <div style={overlaycontainerStyle}>
             <div style={overlayStyle}>
              <span style={overlayTextStyle}>MATH</span>
-             <span style={arrowStyle}>→</span>
+             <div style={arrowContainerStyle}>
+              <span style={arrowStyle}>→</span>
+             </div>
             </div>
            </div>
          </div>
