@@ -103,7 +103,7 @@ function Academicsintroduction2({ language }) {
         fontWeight: 'bold',
         fontFamily: 'Inter, sans-serif',
         bottom:'5%',
-        paddingLeft: '15%',
+        paddingLeft: '25%',
     };
 
     const arrowStyle = {
