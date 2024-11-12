@@ -163,7 +163,7 @@ const arrowStyle = {
          <img src={img} alt="Math" style={imageStyle} />
          <div style={overlaycontainerStyle}>
            <div style={overlayStyle}>
-            <span style={overlayTextStyle}>{course.title}</span>
+            <span style={overlayTextStyle}>Math</span>
             <div style={arrowContainerStyle} onClick={handleNext}>
               <span style={arrowStyle}>→</span>
             </div>
