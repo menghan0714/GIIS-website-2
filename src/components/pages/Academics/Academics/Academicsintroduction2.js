@@ -83,7 +83,7 @@ function Academicsintroduction2({ language }) {
         width: '100%',
         backgroundColor: 'rgba(210, 180, 140, 0.7)', // 半透明棕色
         color: 'white',
-        paddingLeft: '20%',
+        paddingLeft: '40%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
