@@ -94,6 +94,7 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        cursor: 'pointer',
     };
 
     const overlayTextStyle = {
