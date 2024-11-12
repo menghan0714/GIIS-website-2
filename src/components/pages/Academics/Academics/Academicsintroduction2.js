@@ -107,6 +107,7 @@ function Academicsintroduction2({ language }) {
     };
 
   const arrowContainerStyle = {
+    position: 'absolute',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -114,7 +115,8 @@ function Academicsintroduction2({ language }) {
     height: '100px',
     border: '3px solid black', 
     borderRadius: '50%',      
-    marginLeft: '100px',        
+    paddingLeft: '80%',
+    paddingTop: '50%',
 };
 
 const arrowStyle = {
