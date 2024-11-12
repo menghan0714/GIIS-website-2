@@ -79,7 +79,7 @@ function Academicsintroduction2({ language }) {
 
     const overlayStyle = {
         position: 'absolute',
-        marginTop: '100%',
+        marginTop: '40%',
         width: '80%',
         backgroundColor: 'rgba(210, 180, 140, 0.8)', // 半透明棕色
         color: 'white',
