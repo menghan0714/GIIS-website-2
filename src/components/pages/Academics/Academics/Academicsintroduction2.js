@@ -1,6 +1,5 @@
 import React, { useState }  from 'react';
 import img from '../../../../img/Academics/Math.jpg';
-import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
     
@@ -129,6 +128,10 @@ const arrowStyle = {
     height: '100%',
 };
 
+const handleNavigation = () => {
+        window.open('https://moodles.genesisideas.school/', '_blank'); // 新分頁開啟網址
+    };
+
     
     return (
       <>
@@ -157,7 +160,7 @@ const arrowStyle = {
         <div style={containerStyle}>
          <img src={img} alt="Math" style={imageStyle} />
          <div style={overlaycontainerStyle}>
-           <div style={overlayStyle}>
+           <div style={overlayStyle} onClick={handleNavigation}>
             <span style={overlayTextStyle}>MATH</span>
             <div style={arrowContainerStyle}>
               <span style={arrowStyle}>→</span>
