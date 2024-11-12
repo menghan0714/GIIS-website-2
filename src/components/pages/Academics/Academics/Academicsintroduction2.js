@@ -75,6 +75,31 @@ function Academicsintroduction2({ language }) {
         filter: 'blur(4px)',
         zIndex: '100',
     };
+
+    const overlayStyle = {
+        position: 'absolute',
+        bottom: '0',
+        width: '100%',
+        backgroundColor: 'rgba(210, 180, 140, 0.8)', // 半透明棕色
+        color: 'white',
+        padding: '20px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    };
+
+    const overlayTextStyle = {
+        fontSize: '30px',
+        fontWeight: 'bold',
+    };
+
+    const arrowStyle = {
+        fontSize: '30px',
+        fontWeight: 'bold',
+        border: '2px solid white',
+        borderRadius: '50%',
+        padding: '10px',
+    };
     
     return (
       <>
@@ -101,6 +126,10 @@ function Academicsintroduction2({ language }) {
          </div>
          <div style={containerStyle}>
            <img src={img} alt="Math" style={imageStyle} />
+           <div style={overlayStyle}>
+            <span style={overlayTextStyle}>MATH</span>
+            <span style={arrowStyle}>→</span>
+           </div>
          </div>
       </>
    );
