@@ -112,7 +112,7 @@ function Academicsintroduction2({ language }) {
         fontWeight: 'bold',
         border: '2px solid white',
         borderRadius: '50%',
-        paddingLeft: '55%',
+        padding: '100px',
     };
     
     return (
