@@ -83,7 +83,7 @@ function Academicsintroduction2({ language }) {
         justifyContent: 'flex-end', 
         bottom: '-10%',
         width: '100%',
-        paddingLeft: '10%',
+        paddingLeft: '20%',
         zIndex: '200',
     };
 
