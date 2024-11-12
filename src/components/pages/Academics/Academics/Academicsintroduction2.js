@@ -4,9 +4,9 @@ import './Academics.css'; // 如果需要額外分離 CSS
 
 function Academicsintroduction2({ language }) {
     const courses = [
-    { id: 1, title: 'Math', description: 'Mathematics course details...', bgColor: '#000' },
-    { id: 2, title: 'Science', description: 'Science course details...', bgColor: '#222' },
-    { id: 3, title: 'History', description: 'History course details...', bgColor: '#333' },
+    { id: 1, title: 'A-Level', description: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education. ', bgColor: '#000' },
+    { id: 2, title: 'IGCSE', description: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.', bgColor: '#222' },
+    { id: 3, title: 'AP', description: 'Empower yourself with the globally recognized Advanced Placement  Program.', bgColor: '#333' },
     ];
 
     const [currentCourse, setCurrentCourse] = useState(0);
