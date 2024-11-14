@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
@@ -41,7 +41,6 @@ function Academicsintroduction2({ language }) {
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)',   
         paddingLeft: '10%',
-        top: '20%', 
         left: '100%', 
         marginLeft: language === 'zh' ? '5%' : '5%',
         top: language === 'zh' ? '20%' : '50%',
