@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
