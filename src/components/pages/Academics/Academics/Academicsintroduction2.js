@@ -99,8 +99,14 @@ function Academicsintroduction2({ language }) {
     cursor: 'pointer',
 };
 
+   const spaceStyle= {
+    backgroundColor: 'white',
+    minWidth: '20vh',
+    height: '570px',
+};
+
   
-    const headlineStyle = {
+   const headlineStyle = {
         marginTop: '100px',
         color: 'rgba(0, 0, 0, 1)',
         width: '100%',
@@ -264,6 +270,7 @@ const handleNavigation = () => {
                     <p style={contentStyle}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
                 </div>
+                <div style={spaceStyle}></div>
              ))}
           </div>
          </div>
