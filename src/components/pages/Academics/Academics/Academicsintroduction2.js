@@ -59,7 +59,7 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
-        width: '30vh',
+        width: '50vh',
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
