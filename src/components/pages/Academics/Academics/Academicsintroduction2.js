@@ -59,12 +59,12 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
-        width: '100vh',
+        width: '30vh',
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
    const courseBoxStyle = {
-        minWidth: '30vh',
+        minWidth: '100vh',
         height: '300px',
         backgroundColor: 'black',
         color: 'white',
