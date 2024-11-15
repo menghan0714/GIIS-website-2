@@ -1,4 +1,4 @@
-import React, { useRef, useState} from 'react';
+import React, { useRef, useState,useEffect} from 'react';
 import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
@@ -50,20 +50,20 @@ function Academicsintroduction2({ language }) {
     return () => scrollRef.current.removeEventListener('scroll', handleScroll);
 }, [extendedCourses.length, courses.length]);
 
- const handleMouseDown = (e) => {
+const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
     e.preventDefault();
 };
 
- const handleMouseUp = () => {
+const handleMouseUp = () => {
     if (isDragging) {
         setIsDragging(false);
     }
 };
 
- const handleMouseMove = (e) => {
+const handleMouseMove = (e) => {
     if (!isDragging) return;
 
     const x = e.pageX - scrollRef.current.offsetLeft;
