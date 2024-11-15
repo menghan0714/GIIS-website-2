@@ -90,6 +90,7 @@ function Academicsintroduction2({ language }) {
 };
 
   const titleStyle = {
+    position: 'relative',
     fontSize: '3rem',
     fontWeight: 'bold',
     marginBottom: '10px',
@@ -136,7 +137,8 @@ function Academicsintroduction2({ language }) {
     };
 
    const lineStyle = {
-       paddingLeft: '15%',
+       position: 'rabsolute',
+       justifyContent: 'center',
        width: '100px',
        height: '3px',
        backgroundColor: 'white',
