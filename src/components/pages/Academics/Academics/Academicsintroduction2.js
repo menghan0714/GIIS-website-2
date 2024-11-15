@@ -3,7 +3,7 @@ import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
 
-    const courses = [
+    const course = [
         { title: 'IGCSE', 
          content: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.' , 
          content2: 
