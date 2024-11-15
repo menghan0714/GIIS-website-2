@@ -99,7 +99,7 @@ function Academicsintroduction2({ language }) {
 
   
     const headlineStyle = {
-        marginTop: '115px',
+        marginTop: '100px',
         color: 'rgba(0, 0, 0, 1)',
         width: '100%',
         paddingLeft: '10%',
