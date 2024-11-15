@@ -30,7 +30,7 @@ function Academicsintroduction2({ language }) {
             const start = childWidth * index;
             const end = start + childWidth;
 
-            if (scrollPosition + childWidth * 0.8 >= start && scrollPosition <= end) {
+            if (scrollPosition + childWidth * 0.5 >= start && scrollPosition <= end) {
                 setCompletedCourses((prev) => {
                     const newCompleted = [...prev];
                     newCompleted[index] = true; // 標記為已完成
