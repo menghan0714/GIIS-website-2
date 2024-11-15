@@ -108,7 +108,7 @@ function Academicsintroduction2({ language }) {
 
    const spaceStyle= {
     backgroundColor: 'white',
-    minWidth: '20vh',
+    minWidth: '15vh',
     height: '570px',
 };
  
