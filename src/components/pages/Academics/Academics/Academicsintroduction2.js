@@ -65,7 +65,7 @@ function Academicsintroduction2({ language }) {
 
    const courseBoxStyle = {
         minWidth: '100vh',
-        height: '300px',
+        height: '500px',
         backgroundColor: 'black',
         color: 'white',
         display: 'flex',
