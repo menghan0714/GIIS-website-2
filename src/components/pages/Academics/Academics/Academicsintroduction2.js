@@ -89,13 +89,13 @@ function Academicsintroduction2({ language }) {
 
   const contentStyle = {
     fontSize: '1.2rem',
-    lineHeight: '1.6',
+    lineHeight: '1.2',
     marginTop: '30px',
 };
 
   const content2Style = {
     fontSize: '1.2rem',
-    lineHeight: '1.6',
+    lineHeight: '1.2',
     marginTop: '15px',
 };
 
