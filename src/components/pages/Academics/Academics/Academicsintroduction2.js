@@ -9,16 +9,41 @@ function Academicsintroduction2({ language }) {
         { title: 'HISTORY', content: 'History course details...' },
     ];
 
+    const scrollRef = useRef(null);
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+        isDragging = true;
+        startX = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeft = scrollRef.current.scrollLeft;
+    };
+
+    const handleMouseLeaveOrUp = () => {
+        isDragging = false;
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust scroll speed by multiplying
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
     const frameStyle = {
         display: 'flex',
-        overflowX: 'scroll',
+        overflowX: 'hidden', // Hide the scrollbar visually
         scrollSnapType: 'x mandatory',
-        clipPath: 'inset(0)', // This will clip content to show only one box at a time
-        width: '100vw', // Adjust width to fit only one box at a time
+        clipPath: 'inset(0)',
+        width: '100vw',
+        cursor: 'grab', // Cursor indicates draggable content
     };
 
     const courseBoxStyle = {
-        minWidth: '100vw', // Full viewport width to show only one box
+        minWidth: '100vw',
         height: '300px',
         backgroundColor: 'black',
         color: 'white',
@@ -27,7 +52,7 @@ function Academicsintroduction2({ language }) {
         alignItems: 'center',
         scrollSnapAlign: 'start',
     };
-    
+  
     const headlineStyle = {
         marginTop: '115px',
         color: 'rgba(0, 0, 0, 1)',
@@ -179,7 +204,14 @@ const handleNavigation = () => {
           <div style={yellowSquareStyle}></div>
          </div>
 
-         <div style={frameStyle}>
+         <div
+            ref={scrollRef}
+            style={frameStyle}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeaveOrUp}
+            onMouseUp={handleMouseLeaveOrUp}
+            onMouseMove={handleMouseMove}
+         >
             {courses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
                     <h2>{course.title}</h2>
