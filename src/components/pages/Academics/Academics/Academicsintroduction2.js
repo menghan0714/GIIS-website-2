@@ -69,7 +69,7 @@ function Academicsintroduction2({ language }) {
     };
 
   const courseBoxStyle = {
-    minWidth: '100vh', // 水平填充寬度
+    minWidth: '80vh', // 水平填充寬度
     height: '570px', // 固定高度
     backgroundColor: 'black',
     color: 'white',
@@ -104,6 +104,9 @@ function Academicsintroduction2({ language }) {
     minWidth: '20vh',
     height: '570px',
 };
+
+   const textStyle = {
+    
 
   
    const headlineStyle = {
