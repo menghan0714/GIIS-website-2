@@ -137,9 +137,10 @@ function Academicsintroduction2({ language }) {
 
    const lineStyle = {
        width: "100px",
-       height: "2px",
+       height: "3px",
        backgroundColor: "white",
        margin: "10px 0",
+       justifyContent: 'center',
     };
 
     const courseintroductionStyle = {
