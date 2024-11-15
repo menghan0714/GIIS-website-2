@@ -91,12 +91,14 @@ function Academicsintroduction2({ language }) {
     fontSize: '1.2rem',
     lineHeight: '1.2',
     marginTop: '30px',
+    textAlign: left;
 };
 
   const content2Style = {
     fontSize: '1.2rem',
     lineHeight: '1.2',
     marginTop: '15px',
+    textAlign: left;
 };
 
   const arrowStyle = {
