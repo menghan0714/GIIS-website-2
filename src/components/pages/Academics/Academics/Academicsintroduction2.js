@@ -9,18 +9,33 @@ function Academicsintroduction2({ language }) {
         { title: 'HISTORY', content: 'History course details...' },
     ];
     
+    const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
 
+     useEffect(() => {
+        const scrollWidth = scrollRef.current.scrollWidth;
+        const childWidth = scrollWidth / extendedCourses.length;
+        scrollRef.current.scrollLeft = childWidth * courses.length;
+
+     const handleScroll = () => {
+            if (scrollRef.current.scrollLeft <= 0) {
+                scrollRef.current.scrollLeft = childWidth * courses.length;
+            } else if (scrollRef.current.scrollLeft >= childWidth * (courses.length * 2)) {
+                scrollRef.current.scrollLeft = childWidth * courses.length;
+            }
+        };
+
+        scrollRef.current.addEventListener('scroll', handleScroll);
+        return () => scrollRef.current.removeEventListener('scroll', handleScroll);
+    }, [extendedCourses.length, courses.length]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setStartX(e.pageX - scrollRef.current.offsetLeft);
         setScrollLeft(scrollRef.current.scrollLeft);
-
-        // 阻止文字選取，以免在拖曳時選取到文字
         e.preventDefault();
     };
 
@@ -32,9 +47,9 @@ function Academicsintroduction2({ language }) {
 
     const handleMouseMove = (e) => {
         if (!isDragging) return;
-        
+
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 1.5; // 調整移動速度
+        const walk = (x - startX) * 1.5;
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
@@ -208,7 +223,7 @@ const handleNavigation = () => {
           <div style={yellowSquareStyle}></div>
          </div>
 
-         <div
+        <div
             ref={scrollRef}
             style={frameStyle}
             onMouseDown={handleMouseDown}
@@ -216,7 +231,7 @@ const handleNavigation = () => {
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
         >
-            {courses.map((course, index) => (
+            {extendedCourses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
                     <h2>{course.title}</h2>
                     <p>{course.content}</p>
