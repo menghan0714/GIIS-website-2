@@ -138,7 +138,7 @@ function Academicsintroduction2({ language }) {
 
    const lineStyle = {
        position: 'absolute',
-       marginLeft:'10%',
+       margin: "10px auto",
        width: '100px',
        height: '3px',
        backgroundColor: 'white',
