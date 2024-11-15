@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
@@ -8,38 +8,54 @@ function Academicsintroduction2({ language }) {
         { title: 'SCIENCE', content: 'Science course details...' },
         { title: 'HISTORY', content: 'History course details...' },
     ];
-
+    
     const scrollRef = useRef(null);
-
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleMouseDown = (e) => {
-        isDragging = true;
-        startX = e.pageX - scrollRef.current.offsetLeft;
-        scrollLeft = scrollRef.current.scrollLeft;
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
     };
 
     const handleMouseLeaveOrUp = () => {
-        isDragging = false;
+        if (isDragging) {
+            setIsDragging(false);
+            snapToNearestBox();
+        }
     };
 
     const handleMouseMove = (e) => {
         if (!isDragging) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2; // Adjust scroll speed by multiplying
+        const walk = (x - startX) * 2;
         scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    // 自動對齊到最近的課程區塊
+    const snapToNearestBox = () => {
+        const boxWidth = scrollRef.current.clientWidth;
+        const scrollPos = scrollRef.current.scrollLeft;
+        const newIndex = Math.round(scrollPos / boxWidth);
+
+        setCurrentIndex(newIndex); // 更新當前索引
+        scrollRef.current.scrollTo({
+            left: newIndex * boxWidth,
+            behavior: 'smooth',
+        });
     };
 
     const frameStyle = {
         display: 'flex',
-        overflowX: 'hidden', // Hide the scrollbar visually
+        overflowX: 'hidden',
         scrollSnapType: 'x mandatory',
         clipPath: 'inset(0)',
         width: '100vw',
-        cursor: 'grab', // Cursor indicates draggable content
+        cursor: isDragging ? 'grabbing' : 'grab',
     };
 
     const courseBoxStyle = {
@@ -211,14 +227,14 @@ const handleNavigation = () => {
             onMouseLeave={handleMouseLeaveOrUp}
             onMouseUp={handleMouseLeaveOrUp}
             onMouseMove={handleMouseMove}
-         >
+        >
             {courses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
                     <h2>{course.title}</h2>
                     <p>{course.content}</p>
                 </div>
             ))}
-         </div>
+        </div>
             
          <div style={headline2Style}>
           <p>SUBJECTS</p>
