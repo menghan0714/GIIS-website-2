@@ -259,7 +259,7 @@ const arrowContainerStyle2 = {
 const arrowStyle = {
     fontSize: '2rem',
     fontWeight: 'bold',
-    align-items: center;
+    alignItems: 'center',
     cursor: 'pointer',
 };
 
