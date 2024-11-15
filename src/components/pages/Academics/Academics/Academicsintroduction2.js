@@ -142,8 +142,6 @@ function Academicsintroduction2({ language }) {
        width: '100px',
        height: '3px',
        backgroundColor: 'white',
-       margin: '10px 0',
-
     };
 
     const courseintroductionStyle = {
