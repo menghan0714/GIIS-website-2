@@ -2,6 +2,31 @@ import React from 'react';
 import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
+
+    const courses = [
+        { title: 'MATH', content: 'Mathematics course details...' },
+        { title: 'SCIENCE', content: 'Science course details...' },
+        { title: 'HISTORY', content: 'History course details...' },
+    ];
+
+    const frameStyle = {
+        display: 'flex',
+        overflowX: 'scroll',
+        scrollSnapType: 'x mandatory',
+        clipPath: 'inset(0)', // This will clip content to show only one box at a time
+        width: '100vw', // Adjust width to fit only one box at a time
+    };
+
+    const courseBoxStyle = {
+        minWidth: '100vw', // Full viewport width to show only one box
+        height: '300px',
+        backgroundColor: 'black',
+        color: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        scrollSnapAlign: 'start',
+    };
     
     const headlineStyle = {
         marginTop: '115px',
@@ -153,6 +178,16 @@ const handleNavigation = () => {
           <div style={lineStyle}></div> 
           <div style={yellowSquareStyle}></div>
          </div>
+
+         <div style={frameStyle}>
+            {courses.map((course, index) => (
+                <div key={index} style={courseBoxStyle}>
+                    <h2>{course.title}</h2>
+                    <p>{course.content}</p>
+                </div>
+            ))}
+         </div>
+            
          <div style={headline2Style}>
           <p>SUBJECTS</p>
          </div>
