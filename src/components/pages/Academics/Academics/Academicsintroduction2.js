@@ -264,6 +264,7 @@ const handleNavigation = () => {
             onMouseLeave={handleMouseUp}
           >
             {extendedCourses.map((course, index) => (
+              <>
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
                     <p style={contentStyle}>{course.content}</p>
@@ -271,7 +272,8 @@ const handleNavigation = () => {
                     <div style={arrowStyle}>→</div>
                 </div>
                 <div style={spaceStyle}></div>
-             ))};
+              </>
+             ))}
           </div>
          </div>
             
