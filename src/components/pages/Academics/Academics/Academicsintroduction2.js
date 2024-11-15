@@ -263,7 +263,6 @@ const handleNavigation = () => {
                     <p style={contentStyle}>{course.content}</p>
                     <p style={contentStyle}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
-                 </div>
                 </div>
              ))}
           </div>
