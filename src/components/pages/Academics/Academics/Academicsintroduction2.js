@@ -213,7 +213,7 @@ function Academicsintroduction2({ language }) {
     marginTop: '-10%',
 };
 
-const arrowStyle = {
+const arrowStyle2 = {
     fontSize: '60px',
     color: 'white',            // 设置箭头颜色为黑色
     display: 'flex',
@@ -227,7 +227,6 @@ const handleNavigation = () => {
         window.open('https://moodles.genesisideas.school/', '_blank'); // 新分頁開啟網址
     };
 
-    
     return (
       <>
         <div style={headlineStyle}>
@@ -276,7 +275,7 @@ const handleNavigation = () => {
            <div style={overlayStyle} onClick={handleNavigation}>
             <span style={overlayTextStyle}>MATH</span>
             <div style={arrowContainerStyle}>
-              <span style={arrowStyle}>→</span>
+              <span style={arrowStyle2}>→</span>
             </div>
            </div>  
          </div>
