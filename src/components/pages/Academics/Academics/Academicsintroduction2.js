@@ -42,12 +42,12 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
-        width: '30%',
+        width: '100vh',
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
     const courseBoxStyle = {
-        width: '30%',
+        width: '100vh',
         height: '300px',
         backgroundColor: 'black',
         color: 'white',
