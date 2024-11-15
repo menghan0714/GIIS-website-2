@@ -29,20 +29,22 @@ function Academicsintroduction2({ language }) {
      const scrollWidth = scrollRef.current.scrollWidth;
      const childWidth = scrollWidth / extendedCourses.length;
      scrollRef.current.scrollLeft = childWidth * courses.length;
-
         
-        // 當滾動超出邊界時跳轉回中間
-    const handleScroll = () => {
-            if (scrollRef.current.scrollLeft <= 0) {
-                scrollRef.current.scrollLeft = childWidth * courses.length;
-            } else if (scrollRef.current.scrollLeft >= childWidth * (courses.length * 2)) {
-                scrollRef.current.scrollLeft = childWidth * courses.length;
-            }
-        };
+     const scrollElement = scrollRef.current; // 保存 scrollRef.current 的当前值
 
-        scrollRef.current.addEventListener('scroll', handleScroll);
-        return () => scrollRef.current.removeEventListener('scroll', handleScroll);
-    }, [extendedCourses.length, courses.length]);
+     const handleScroll = () => {
+        if (scrollElement.scrollLeft <= 0) {
+            scrollElement.scrollLeft = childWidth * courses.length;
+        } else if (scrollElement.scrollLeft >= childWidth * (courses.length * 2)) {
+            scrollElement.scrollLeft = childWidth * courses.length;
+        }
+     };
+
+     scrollElement.addEventListener('scroll', handleScroll);
+     return () => {
+        scrollElement.removeEventListener('scroll', handleScroll); // 确保清理时使用同一个元素
+     };
+    }, [extendedCourses.length, courses.length, childWidth]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
