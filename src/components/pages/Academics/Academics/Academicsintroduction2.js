@@ -47,7 +47,7 @@ function Academicsintroduction2({ language }) {
     };
 
     const courseBoxStyle = {
-        minWidth: '100vw',
+        width: '30%',
         height: '300px',
         backgroundColor: 'black',
         color: 'white',
