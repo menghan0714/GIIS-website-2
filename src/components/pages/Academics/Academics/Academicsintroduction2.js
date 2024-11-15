@@ -101,7 +101,7 @@ function Academicsintroduction2({ language }) {
     textAlign: 'left',
     fontSize: '1.2rem',
     lineHeight: '1.2',
-    marginTop: '40px',
+    marginTop: '30%',
 };
 
   const content2Style = {
@@ -109,7 +109,7 @@ function Academicsintroduction2({ language }) {
     textAlign: 'left',
     fontSize: '1.2rem',
     lineHeight: '1.2',
-    marginTop: '20px',
+    marginTop: '15%',
 };
 
   const arrowStyle = {
