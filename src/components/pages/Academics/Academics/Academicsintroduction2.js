@@ -13,46 +13,34 @@ function Academicsintroduction2({ language }) {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
+
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setStartX(e.pageX - scrollRef.current.offsetLeft);
         setScrollLeft(scrollRef.current.scrollLeft);
+
+        // 阻止文字選取，以免在拖曳時選取到文字
+        e.preventDefault();
     };
 
-    const handleMouseLeaveOrUp = () => {
+    const handleMouseUp = () => {
         if (isDragging) {
             setIsDragging(false);
-            snapToNearestBox();
         }
     };
 
     const handleMouseMove = (e) => {
         if (!isDragging) return;
-        e.preventDefault();
+        
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
+        const walk = (x - startX) * 1.5; // 調整移動速度
         scrollRef.current.scrollLeft = scrollLeft - walk;
-    };
-
-    // 自動對齊到最近的課程區塊
-    const snapToNearestBox = () => {
-        const boxWidth = scrollRef.current.clientWidth;
-        const scrollPos = scrollRef.current.scrollLeft;
-        const newIndex = Math.round(scrollPos / boxWidth);
-
-        setCurrentIndex(newIndex); // 更新當前索引
-        scrollRef.current.scrollTo({
-            left: newIndex * boxWidth,
-            behavior: 'smooth',
-        });
     };
 
     const frameStyle = {
         display: 'flex',
-        overflowX: 'hidden',
-        scrollSnapType: 'x mandatory',
+        overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
         width: '100vw',
         cursor: isDragging ? 'grabbing' : 'grab',
@@ -66,8 +54,8 @@ function Academicsintroduction2({ language }) {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        scrollSnapAlign: 'start',
     };
+
   
     const headlineStyle = {
         marginTop: '115px',
@@ -224,9 +212,9 @@ const handleNavigation = () => {
             ref={scrollRef}
             style={frameStyle}
             onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeaveOrUp}
-            onMouseUp={handleMouseLeaveOrUp}
             onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
         >
             {courses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
