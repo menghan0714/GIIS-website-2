@@ -259,7 +259,7 @@ const arrowContainerStyle2 = {
 const arrowStyle = {
     fontSize: '2rem',
     fontWeight: 'bold',
-    marginTop: '10px',
+    marginTop: '15%',
     cursor: 'pointer',
 };
 
@@ -334,9 +334,9 @@ const handleNavigation = () => {
           <div style={overlaycontainerStyle}>
             <div style={overlayStyle} onClick={handleNavigation}>
              <span style={overlayTextStyle}>MATH</span>
-             <div style={arrowContainerStyle2}>
+              <div style={arrowContainerStyle2}>
                <span style={arrowStyle2}>→</span>
-             </div>
+              </div>
             </div>  
           </div>
          </div>
