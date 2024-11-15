@@ -284,6 +284,7 @@ const handleNavigation = () => {
               <>
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
+                    <div style={lineStyle}></div>
                     <p style={contentStyle}>{course.content}</p>
                     <p style={content2Style}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
