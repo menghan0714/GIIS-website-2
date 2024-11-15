@@ -58,7 +58,7 @@ function Academicsintroduction2({ language }) {
     const frameStyle = {
         position: 'absolute',
         left: '150%',
-        bottom: '-10px',
+        bottom: '-12px',
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
@@ -68,7 +68,7 @@ function Academicsintroduction2({ language }) {
 
    const courseBoxStyle = {
         minWidth: '100vh',
-        height: '500px',
+        height: '600px',
         backgroundColor: 'black',
         color: 'white',
         display: 'flex',
