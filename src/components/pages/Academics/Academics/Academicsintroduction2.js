@@ -242,12 +242,12 @@ function Academicsintroduction2({ language }) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '60px', // 设置圆框的大小
-    height: '60px',
-    border: '5px solid white', 
+    width: '70px', // 设置圆框的大小
+    height: '70px',
+    border: '3px solid white', 
     borderRadius: '50%',      
-    marginLeft: '30%',
-    marginTop: '15%',
+    marginLeft: '50%',
+    marginTop: '10%',
 };
 
 const arrowContainerStyle2 = {
