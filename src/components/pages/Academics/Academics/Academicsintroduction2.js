@@ -66,15 +66,36 @@ function Academicsintroduction2({ language }) {
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
-   const courseBoxStyle = {
-        minWidth: '100vh',
-        height: '550px',
-        backgroundColor: 'black',
-        color: 'white',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    };
+  const courseBoxStyle = {
+    minWidth: '100vh', // 水平填充寬度
+    height: '550px', // 固定高度
+    backgroundColor: 'black',
+    color: 'white',
+    display: 'flex',
+    flexDirection: 'column', // 垂直排列內容
+    justifyContent: 'space-between', // 標題與箭頭居上下兩側
+    alignItems: 'center',
+    padding: '40px', // 增加內邊距
+    textAlign: 'center', // 文字居中
+};
+
+  const titleStyle = {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+};
+
+  const contentStyle = {
+    fontSize: '1.2rem',
+    lineHeight: '1.6',
+};
+
+  const arrowStyle = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    marginTop: '20px',
+    cursor: 'pointer',
+};
 
   
     const headlineStyle = {
@@ -237,8 +258,9 @@ const handleNavigation = () => {
           >
             {extendedCourses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
-                    <h2>{course.title}</h2>
-                    <p>{course.content}</p>
+                    <h2 style={titleStyle}>{course.title}</h2>
+                    <p style={contentStyle}>{course.content}</p>
+                    <div style={arrowStyle}>→</div>
                 </div>
             ))}
          </div>
