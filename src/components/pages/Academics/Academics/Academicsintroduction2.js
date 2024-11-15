@@ -55,7 +55,7 @@ function Academicsintroduction2({ language }) {
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
-const frameStyle = {
+    const frameStyle = {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
@@ -63,7 +63,7 @@ const frameStyle = {
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
-const courseBoxStyle = {
+   const courseBoxStyle = {
         minWidth: '100vh',
         height: '300px',
         backgroundColor: 'black',
