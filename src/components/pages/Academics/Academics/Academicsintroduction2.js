@@ -271,7 +271,7 @@ const handleNavigation = () => {
                     <div style={arrowStyle}>→</div>
                 </div>
                 <div style={spaceStyle}></div>
-             ))}
+             ))};
           </div>
          </div>
             
