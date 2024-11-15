@@ -259,7 +259,6 @@ const handleNavigation = () => {
           >
             {extendedCourses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
-                 <div style={textStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
                     <p style={contentStyle}>{course.content}</p>
                     <p style={contentStyle}>{course.content2}</p>
