@@ -9,68 +9,52 @@ function Academicsintroduction2({ language }) {
         { title: 'HISTORY', content: 'History course details...' },
     ];
     
-   const extendedCourses = [...courses, ...courses, ...courses]; // 擴展課程資料
-   const scrollRef = useRef(null);
-   const [isDragging, setIsDragging] = useState(false);
-   const [startX, setStartX] = useState(0);
-   const [scrollLeft, setScrollLeft] = useState(0);
-   const [completedCourses, setCompletedCourses] = useState(
-      Array(extendedCourses.length).fill(false) // 初始化每個課程未完成
-   );
+    const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
     
     useEffect(() => {
      const scrollWidth = scrollRef.current.scrollWidth;
      const childWidth = scrollWidth / extendedCourses.length;
      scrollRef.current.scrollLeft = childWidth * courses.length;
 
+        
+        // 當滾動超出邊界時跳轉回中間
     const handleScroll = () => {
-        const scrollPosition = scrollRef.current.scrollLeft;
-
-        extendedCourses.forEach((_, index) => {
-            const start = childWidth * index;
-            const end = start + childWidth;
-
-            if (scrollPosition + childWidth * 0.5 >= start && scrollPosition <= end) {
-                setCompletedCourses((prev) => {
-                    const newCompleted = [...prev];
-                    newCompleted[index] = true; // 標記為已完成
-                    return newCompleted;
-                });
+            if (scrollRef.current.scrollLeft <= 0) {
+                scrollRef.current.scrollLeft = childWidth * courses.length;
+            } else if (scrollRef.current.scrollLeft >= childWidth * (courses.length * 2)) {
+                scrollRef.current.scrollLeft = childWidth * courses.length;
             }
-        });
+        };
 
-        if (scrollPosition <= 0) {
-            scrollRef.current.scrollLeft = childWidth * courses.length;
-        } else if (scrollPosition >= childWidth * (courses.length * 2)) {
-            scrollRef.current.scrollLeft = childWidth * courses.length;
+        scrollRef.current.addEventListener('scroll', handleScroll);
+        return () => scrollRef.current.removeEventListener('scroll', handleScroll);
+    }, [extendedCourses.length, courses.length]);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+        e.preventDefault();
+    };
+
+    const handleMouseUp = () => {
+        if (isDragging) {
+            setIsDragging(false);
         }
     };
 
-    scrollRef.current.addEventListener('scroll', handleScroll);
-    return () => scrollRef.current.removeEventListener('scroll', handleScroll);
-}, [extendedCourses.length, courses.length]);
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
 
-const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-    e.preventDefault();
-};
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
 
-const handleMouseUp = () => {
-    if (isDragging) {
-        setIsDragging(false);
-    }
-};
-
-const handleMouseMove = (e) => {
-    if (!isDragging) return;
-
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-};
-    
 const frameStyle = {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
@@ -241,24 +225,20 @@ const handleNavigation = () => {
           <div style={yellowSquareStyle}></div>
          </div>
 
-        <div
-        ref={scrollRef}
-        style={frameStyle}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+       <div
+            ref={scrollRef}
+            style={frameStyle}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
         >
-        {extendedCourses.map((course, index) => (
-            <div key={index} style={courseBoxStyle}>
-                <h2>{course.title}</h2>
-                <p>
-                    {completedCourses[index]
-                        ? course.content
-                        : course.content.slice(0, Math.floor(course.content.length * 0.8)) + '...'}
-                </p>
-            </div>
-        ))}
+            {extendedCourses.map((course, index) => (
+                <div key={index} style={courseBoxStyle}>
+                    <h2>{course.title}</h2>
+                    <p>{course.content}</p>
+                </div>
+            ))}
         </div>
             
          <div style={headline2Style}>
