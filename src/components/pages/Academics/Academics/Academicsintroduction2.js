@@ -16,7 +16,7 @@ function Academicsintroduction2({ language }) {
         
         { title: 'AP', 
          content: 'Empower yourself with the globally recognized Advanced Placement  Program.' , 
-         content2: ' Our AP courses are designed to provide students with the opportunity to pursue college-level studies while still in high school. These courses not only prepare students for the AP exams but also foster a deeper understanding of subjects, equipping them with the skills necessary for success in university and beyond.'},
+         content2: ' Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.'},
         ];
     
     const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
