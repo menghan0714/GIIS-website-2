@@ -9,51 +9,69 @@ function Academicsintroduction2({ language }) {
         { title: 'HISTORY', content: 'History course details...' },
     ];
     
-    const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
-    const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+   const extendedCourses = [...courses, ...courses, ...courses]; // 擴展課程資料
+   const scrollRef = useRef(null);
+   const [isDragging, setIsDragging] = useState(false);
+   const [startX, setStartX] = useState(0);
+   const [scrollLeft, setScrollLeft] = useState(0);
+   const [completedCourses, setCompletedCourses] = useState(
+      Array(extendedCourses.length).fill(false) // 初始化每個課程未完成
+   );
+    
+    useEffect(() => {
+     const scrollWidth = scrollRef.current.scrollWidth;
+     const childWidth = scrollWidth / extendedCourses.length;
+     scrollRef.current.scrollLeft = childWidth * courses.length;
 
-     useEffect(() => {
-        const scrollWidth = scrollRef.current.scrollWidth;
-        const childWidth = scrollWidth / extendedCourses.length;
-        scrollRef.current.scrollLeft = childWidth * courses.length;
+    const handleScroll = () => {
+        const scrollPosition = scrollRef.current.scrollLeft;
 
-     const handleScroll = () => {
-            if (scrollRef.current.scrollLeft <= 0) {
-                scrollRef.current.scrollLeft = childWidth * courses.length;
-            } else if (scrollRef.current.scrollLeft >= childWidth * (courses.length * 2)) {
-                scrollRef.current.scrollLeft = childWidth * courses.length;
+        extendedCourses.forEach((_, index) => {
+            const start = childWidth * index;
+            const end = start + childWidth;
+
+            if (scrollPosition + childWidth * 0.8 >= start && scrollPosition <= end) {
+                setCompletedCourses((prev) => {
+                    const newCompleted = [...prev];
+                    newCompleted[index] = true; // 標記為已完成
+                    return newCompleted;
+                });
             }
-        };
+        });
 
-        scrollRef.current.addEventListener('scroll', handleScroll);
-        return () => scrollRef.current.removeEventListener('scroll', handleScroll);
-    }, [extendedCourses.length, courses.length]);
-
-    const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
-        e.preventDefault();
-    };
-
-    const handleMouseUp = () => {
-        if (isDragging) {
-            setIsDragging(false);
+        if (scrollPosition <= 0) {
+            scrollRef.current.scrollLeft = childWidth * courses.length;
+        } else if (scrollPosition >= childWidth * (courses.length * 2)) {
+            scrollRef.current.scrollLeft = childWidth * courses.length;
         }
     };
 
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
+    scrollRef.current.addEventListener('scroll', handleScroll);
+    return () => scrollRef.current.removeEventListener('scroll', handleScroll);
+}, [extendedCourses.length, courses.length]);
 
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
-    };
+ const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+    e.preventDefault();
+};
 
-    const frameStyle = {
+ const handleMouseUp = () => {
+    if (isDragging) {
+        setIsDragging(false);
+    }
+};
+
+ const handleMouseMove = (e) => {
+    if (!isDragging) return;
+
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+};
+    
+const frameStyle = {
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
         clipPath: 'inset(0)',
@@ -61,7 +79,7 @@ function Academicsintroduction2({ language }) {
         cursor: isDragging ? 'grabbing' : 'grab',
     };
 
-    const courseBoxStyle = {
+const courseBoxStyle = {
         minWidth: '100vh',
         height: '300px',
         backgroundColor: 'black',
@@ -224,19 +242,23 @@ const handleNavigation = () => {
          </div>
 
         <div
-            ref={scrollRef}
-            style={frameStyle}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+        ref={scrollRef}
+        style={frameStyle}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
         >
-            {extendedCourses.map((course, index) => (
-                <div key={index} style={courseBoxStyle}>
-                    <h2>{course.title}</h2>
-                    <p>{course.content}</p>
-                </div>
-            ))}
+        {extendedCourses.map((course, index) => (
+            <div key={index} style={courseBoxStyle}>
+                <h2>{course.title}</h2>
+                <p>
+                    {completedCourses[index]
+                        ? course.content
+                        : course.content.slice(0, Math.floor(course.content.length * 0.8)) + '...'}
+                </p>
+            </div>
+        ))}
         </div>
             
          <div style={headline2Style}>
