@@ -57,7 +57,7 @@ function Academicsintroduction2({ language }) {
 
     const frameStyle = {
         position: 'absolute',
-        left: '150%',
+        left: '140%',
         bottom: '-12px',
         display: 'flex',
         overflow: 'hidden', // 隱藏滾動條
