@@ -105,6 +105,7 @@ function Academicsintroduction2({ language }) {
 };
 
   const content2Style = {
+    position: 'relative',
     justifyContent: 'center',
     textAlign: 'left',
     fontSize: '1.2rem',
@@ -241,14 +242,27 @@ function Academicsintroduction2({ language }) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100px', // 设置圆框的大小
-    height: '100px',
+    width: '60px', // 设置圆框的大小
+    height: '60px',
     border: '5px solid white', 
     borderRadius: '50%',      
     marginLeft: '70%',
     marginTop: '-10%',
 };
 
+const arrowContainerStyle2 = {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100px', // 设置圆框的大小
+    height: '100px',
+    border: '5px solid white', 
+    borderRadius: '50%',      
+    marginLeft: '50%',
+    marginTop: '15%',
+};
+    
 const arrowStyle2 = {
     fontSize: '60px',
     color: 'white',            // 设置箭头颜色为黑色
@@ -299,7 +313,9 @@ const handleNavigation = () => {
                     <div style={lineStyle}></div>
                     <p style={contentStyle}>{courses.content}</p>
                     <p style={content2Style}>{courses.content2}</p>
-                    <div style={arrowStyle}>→</div>
+                    <div style={arrowContainerStyle}>
+                     <span style={arrowStyle}>→</span>
+                    </div>
                  </div>
                 </div>
                 <div style={spaceStyle}></div>
@@ -317,7 +333,7 @@ const handleNavigation = () => {
           <div style={overlaycontainerStyle}>
             <div style={overlayStyle} onClick={handleNavigation}>
              <span style={overlayTextStyle}>MATH</span>
-             <div style={arrowContainerStyle}>
+             <div style={arrowContainerStyle2}>
                <span style={arrowStyle2}>→</span>
              </div>
             </div>  
