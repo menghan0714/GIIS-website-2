@@ -226,27 +226,27 @@ const handleNavigation = () => {
                 )}  
           <div style={lineStyle}></div> 
           <div style={yellowSquareStyle}></div>
-         </div>
 
-       <div
+         <div
             ref={scrollRef}
             style={frameStyle}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
-        >
+          >
             {extendedCourses.map((course, index) => (
                 <div key={index} style={courseBoxStyle}>
                     <h2>{course.title}</h2>
                     <p>{course.content}</p>
                 </div>
             ))}
+         </div>
         </div>
             
-         <div style={headline2Style}>
+        <div style={headline2Style}>
           <p>SUBJECTS</p>
-         </div>
+        </div>
               
         <div style={containerStyle}>
          <img src={img} alt="Math" style={imageStyle} />
