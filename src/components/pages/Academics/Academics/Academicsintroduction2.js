@@ -104,11 +104,7 @@ function Academicsintroduction2({ language }) {
     minWidth: '20vh',
     height: '570px',
 };
-
-   const textStyle = {
-    
-
-  
+ 
    const headlineStyle = {
         marginTop: '100px',
         color: 'rgba(0, 0, 0, 1)',
