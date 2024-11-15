@@ -146,7 +146,7 @@ function Academicsintroduction2({ language }) {
         marginTop: '35px',
     };
 
-    const lineStyle = {
+    const lineStyle2 = {
         position: 'absolute',
         width: '35%', // Adjust width according to your needs
         height: '4px',
@@ -269,7 +269,7 @@ const handleNavigation = () => {
                        Our school offers a diverse range of international programs, including the British IGCSE, A-level, and American AP courses, meeting students' academic needs. These programs provide a strong foundation for boosting university admissions chances to top institutions worldwide. By deepening their knowledge and developing critical thinking skills, our students are well-prepared to excel on the global academic stage.
                     </p>
                 )}  
-          <div style={lineStyle}></div> 
+          <div style={lineStyle2}></div> 
           <div style={yellowSquareStyle}></div>
 
           <div
