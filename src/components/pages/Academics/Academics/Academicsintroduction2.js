@@ -288,7 +288,7 @@ const handleNavigation = () => {
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
           >
-            {extendedCourses.map((course, index) => (
+            {extendedCourses.map((courses, index) => (
               <>
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{courses.title}</h2>
