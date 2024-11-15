@@ -113,13 +113,6 @@ function Academicsintroduction2({ language }) {
     marginTop: '10%',
 };
 
-  const arrowStyle = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    marginTop: '20px',
-    cursor: 'pointer',
-};
-
    const spaceStyle= {
     backgroundColor: 'white',
     minWidth: '15vh',
@@ -245,7 +238,8 @@ function Academicsintroduction2({ language }) {
     width: '70px', // 设置圆框的大小
     height: '70px',
     border: '3px solid white', 
-    borderRadius: '50%',      
+    borderRadius: '50%',  
+    marginLeft: '50%',
     marginTop: '10%',
 };
 
@@ -261,6 +255,14 @@ const arrowContainerStyle2 = {
     marginLeft: '70%',
     marginTop: '-10%',
 };
+
+const arrowStyle = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    marginTop: '10px',
+    cursor: 'pointer',
+};
+
     
 const arrowStyle2 = {
     fontSize: '60px',
