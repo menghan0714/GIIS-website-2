@@ -136,11 +136,12 @@ function Academicsintroduction2({ language }) {
     };
 
    const lineStyle = {
+       paddingLeft: '15%',
        width: '100px',
        height: '3px',
        backgroundColor: 'white',
        margin: '10px 0',
-       justifyContent: 'center',
+
     };
 
     const courseintroductionStyle = {
