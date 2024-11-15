@@ -291,11 +291,13 @@ const handleNavigation = () => {
             {extendedCourses.map((courses, index) => (
               <>
                 <div key={index} style={courseBoxStyle}>
+                 <div>
                     <h2 style={titleStyle}>{courses.title}</h2>
                     <div style={lineStyle}></div>
                     <p style={contentStyle}>{courses.content}</p>
                     <p style={content2Style}>{courses.content2}</p>
                     <div style={arrowStyle}>→</div>
+                 </div>
                 </div>
                 <div style={spaceStyle}></div>
               </>
