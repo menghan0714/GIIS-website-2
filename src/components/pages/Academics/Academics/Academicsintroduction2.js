@@ -90,7 +90,13 @@ function Academicsintroduction2({ language }) {
   const contentStyle = {
     fontSize: '1.2rem',
     lineHeight: '1.6',
-    marginTop: '20px',
+    marginTop: '30px',
+};
+
+  const content2Style = {
+    fontSize: '1.2rem',
+    lineHeight: '1.6',
+    marginTop: '15px',
 };
 
   const arrowStyle = {
@@ -268,7 +274,7 @@ const handleNavigation = () => {
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
                     <p style={contentStyle}>{course.content}</p>
-                    <p style={contentStyle}>{course.content2}</p>
+                    <p style={content2Style}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
                 </div>
                 <div style={spaceStyle}></div>
