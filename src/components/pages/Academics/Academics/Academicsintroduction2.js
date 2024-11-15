@@ -246,7 +246,6 @@ function Academicsintroduction2({ language }) {
     height: '70px',
     border: '3px solid white', 
     borderRadius: '50%',      
-    marginLeft: '50%',
     marginTop: '10%',
 };
 
