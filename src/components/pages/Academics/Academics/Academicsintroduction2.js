@@ -127,6 +127,13 @@ function Academicsintroduction2({ language }) {
         lineHeight: '1',
     };
 
+   const lineStyle = {
+       width: "50px",
+       height: "2px",
+       backgroundColor: "white",
+       margin: "10px 0",
+    };
+
     const courseintroductionStyle = {
         position: 'relative',
         color: 'rgba(0, 0, 0, 1)',
@@ -277,6 +284,7 @@ const handleNavigation = () => {
               <>
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
+                    <div style={lineStyle}></div>
                     <p style={contentStyle}>{course.content}</p>
                     <p style={content2Style}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
