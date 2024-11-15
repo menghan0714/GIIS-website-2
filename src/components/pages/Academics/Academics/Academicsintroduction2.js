@@ -90,6 +90,7 @@ function Academicsintroduction2({ language }) {
   const contentStyle = {
     fontSize: '1.2rem',
     lineHeight: '1.6',
+    marginTop: '20px',
 };
 
   const arrowStyle = {
