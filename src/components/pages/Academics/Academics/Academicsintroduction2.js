@@ -239,7 +239,7 @@ function Academicsintroduction2({ language }) {
     height: '70px',
     border: '3px solid white', 
     borderRadius: '50%',  
-    marginLeft: '50%',
+    marginLeft: '30%',
     marginTop: '10%',
 };
 
@@ -259,7 +259,7 @@ const arrowContainerStyle2 = {
 const arrowStyle = {
     fontSize: '2rem',
     fontWeight: 'bold',
-    marginTop: '15%',
+    marginTop: '5%',
     cursor: 'pointer',
 };
 
