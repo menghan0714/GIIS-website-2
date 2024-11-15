@@ -240,7 +240,7 @@ function Academicsintroduction2({ language }) {
     border: '3px solid white', 
     borderRadius: '50%',  
     marginLeft: '25%',
-    marginTop: '4%',
+    marginTop: '2%',
 };
 
 const arrowContainerStyle2 = {
