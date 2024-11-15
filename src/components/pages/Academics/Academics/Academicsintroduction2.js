@@ -4,9 +4,11 @@ import img from '../../../../img/Academics/Math.jpg';
 function Academicsintroduction2({ language }) {
 
     const courses = [
-        { title: 'MATH', content: 'Mathematics course details...' },
-        { title: 'SCIENCE', content: 'Science course details...' },
-        { title: 'HISTORY', content: 'History course details...' },
+        { title: 'IGCSE', content: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.' , content2: 
+        'These courses provide a comprehensive curriculum, designed to develop students' analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.'},
+        { title: 'A-Level', content: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.', content2:
+        'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.'},
+        { title: 'AP', content: 'Empower yourself with the globally recognized Advanced Placement  Program.' , content2: ' Our AP courses are designed to provide students with the opportunity to pursue college-level studies while still in high school. These courses not only prepare students for the AP exams but also foster a deeper understanding of subjects, equipping them with the skills necessary for success in university and beyond.'},
     ];
     
     const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
@@ -259,6 +261,7 @@ const handleNavigation = () => {
                 <div key={index} style={courseBoxStyle}>
                     <h2 style={titleStyle}>{course.title}</h2>
                     <p style={contentStyle}>{course.content}</p>
+                    <p style={contentStyle}>{course.content2}</p>
                     <div style={arrowStyle}>→</div>
                 </div>
             ))}
