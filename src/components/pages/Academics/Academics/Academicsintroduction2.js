@@ -3,7 +3,7 @@ import img from '../../../../img/Academics/Math.jpg';
 
 function Academicsintroduction2({ language }) {
 
-    const course = [
+    const courses = [
         { title: 'IGCSE', 
          content: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.' , 
          content2: 
@@ -291,10 +291,10 @@ const handleNavigation = () => {
             {extendedCourses.map((course, index) => (
               <>
                 <div key={index} style={courseBoxStyle}>
-                    <h2 style={titleStyle}>{course.title}</h2>
+                    <h2 style={titleStyle}>{courses.title}</h2>
                     <div style={lineStyle}></div>
-                    <p style={contentStyle}>{course.content}</p>
-                    <p style={content2Style}>{course.content2}</p>
+                    <p style={contentStyle}>{courses.content}</p>
+                    <p style={content2Style}>{courses.content2}</p>
                     <div style={arrowStyle}>→</div>
                 </div>
                 <div style={spaceStyle}></div>
