@@ -267,6 +267,7 @@ const handleNavigation = () => {
                  </div>
                 </div>
              ))}
+          </div>
          </div>
             
          <div style={headline2Style}>
