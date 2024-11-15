@@ -137,7 +137,7 @@ function Academicsintroduction2({ language }) {
     };
 
    const lineStyle = {
-       position: 'rabsolute',
+       position: 'absolute',
        justifyContent: 'center',
        width: '100px',
        height: '3px',
