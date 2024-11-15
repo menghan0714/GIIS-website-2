@@ -266,24 +266,24 @@ const handleNavigation = () => {
                     <div style={arrowStyle}>→</div>
                  </div>
                 </div>
-            ))}
-        </div>
-            
-        <div style={headline2Style}>
-          <p>SUBJECTS</p>
-        </div>
-              
-        <div style={containerStyle}>
-         <img src={img} alt="Math" style={imageStyle} />
-         <div style={overlaycontainerStyle}>
-           <div style={overlayStyle} onClick={handleNavigation}>
-            <span style={overlayTextStyle}>MATH</span>
-            <div style={arrowContainerStyle}>
-              <span style={arrowStyle2}>→</span>
-            </div>
-           </div>  
+             ))}
          </div>
-        </div>
+            
+         <div style={headline2Style}>
+           <p>SUBJECTS</p>
+         </div>
+              
+         <div style={containerStyle}>
+          <img src={img} alt="Math" style={imageStyle} />
+          <div style={overlaycontainerStyle}>
+            <div style={overlayStyle} onClick={handleNavigation}>
+             <span style={overlayTextStyle}>MATH</span>
+             <div style={arrowContainerStyle}>
+               <span style={arrowStyle2}>→</span>
+             </div>
+            </div>  
+          </div>
+         </div>
       </>
    );
 }
