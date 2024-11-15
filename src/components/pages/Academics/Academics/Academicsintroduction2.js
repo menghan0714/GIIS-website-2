@@ -24,6 +24,9 @@ function Academicsintroduction2({ language }) {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const childWidth = scrollRef.current
+    ? scrollRef.current.scrollWidth / extendedCourses.length
+    : 0;
     
     useEffect(() => {
      const scrollWidth = scrollRef.current.scrollWidth;
