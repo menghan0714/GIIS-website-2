@@ -82,7 +82,7 @@ function Academicsintroduction2({ language }) {
 };
 
   const titleStyle = {
-    fontSize: '2.5rem',
+    fontSize: '30px',
     fontWeight: 'bold',
     marginBottom: '10px',
 };
