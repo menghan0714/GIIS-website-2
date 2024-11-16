@@ -5,20 +5,39 @@ function Academicsintroduction2({ language }) {
 
     const courses = [
         { title: 'IGCSE', 
-         content: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.' , 
-         content2: 
-        'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.'},
-        
-        { title: 'A-Level', 
-         content: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.', 
-         content2:
-         'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.'},
-        
-        { title: 'AP', 
-         content: 'Empower yourself with the globally recognized Advanced Placement  Program.' , 
-         content2: ' Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.'},
-        ];
-    
+         content: {
+           en: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
+           zh: '接受全球認可的培生愛德思國際普通中等教育證書 (International GCSEs) 挑戰吧！'
+          },
+         content2: {
+            en: 'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
+            zh: '這些課程提供全面的課程設計，旨在培養學生的分析能力、創造力和解決問題的能力，為未來的學術成功做好準備。'
+         }
+        },
+        {
+        title: 'A-Level',
+        content: {
+            en: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.',
+            zh: '我們的 A-Level 課程以 IGCSE 為基礎，提供嚴謹的學術體驗，提升批判性思維、深化學科掌握，並為大學教育的挑戰做好準備。'
+         },
+        content2: {
+            en: 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.',
+            zh: '通過多樣的學科選擇，學生可以根據自己的學術和職業目標量身定制學習計劃。'
+         }
+        },
+        {
+        title: 'AP',
+        content: {
+            en: 'Empower yourself with the globally recognized Advanced Placement Program.',
+            zh: '通過全球認可的高級課程 (AP) 計劃提升自我。'
+         },
+        content2: {
+            en: 'Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.',
+            zh: '我們的 AP 課程在高中階段提供大學水平的學習，幫助學生準備 AP 考試並為大學及以後的發展奠定基礎。'
+         }
+        }
+   ];
+
     const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -317,8 +336,8 @@ const handleNavigation = () => {
                  <div>
                     <h2 style={titleStyle}>{courses.title}</h2>
                     <div style={lineStyle}></div>
-                    <p style={contentStyle}>{courses.content}</p>
-                    <p style={content2Style}>{courses.content2}</p>
+                    <p style={contentStyle}>{courses.content[language]}</p>
+                    <p style={content2Style}>{courses.content2[language]}</p>
                     <div style={arrowContainerStyle}>
                      <span style={arrowStyle}>→</span>
                     </div>
