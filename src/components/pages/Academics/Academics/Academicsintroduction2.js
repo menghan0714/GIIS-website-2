@@ -7,33 +7,33 @@ function Academicsintroduction2({ language }) {
         { title: 'IGCSE', 
          content: {
            en: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
-           zh: '接受全球認可的培生愛德思國際普通中等教育證書 (International GCSEs) 挑戰吧！'
+           zh: '接受全球认可的培生爱德思国际普通中等教育证书 (International GCSEs) 挑战吧！'
           },
          content2: {
             en: 'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
-            zh: '這些課程提供全面的課程設計，旨在培養學生的分析能力、創造力和解決問題的能力，為未來的學術成功做好準備。'
+            zh: '这些课程提供全面的课程设计，旨在培养学生的分析能力、创造力和解决问题的能力，为未来的学术成功做好准备。'
          }
         },
         {
         title: 'A-Level',
         content: {
             en: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.',
-            zh: '我們的 A-Level 課程以 IGCSE 為基礎，提供嚴謹的學術體驗，提升批判性思維、深化學科掌握，並為大學教育的挑戰做好準備。'
+            zh: '我们的 A-Level 课程以 IGCSE 为基础，提供严谨的学术体验，提升批判性思维、深化学科掌握，并为大学教育的挑战做好准备。'
          },
         content2: {
             en: 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.',
-            zh: '通過多樣的學科選擇，學生可以根據自己的學術和職業目標量身定制學習計劃。'
+            zh: '通过多样的学科选择，学生可以根据自己的学术和职业目标量身定制学习计划。'
          }
         },
         {
         title: 'AP',
         content: {
             en: 'Empower yourself with the globally recognized Advanced Placement Program.',
-            zh: '通過全球認可的高級課程 (AP) 計劃提升自我。'
+            zh: '通过全球认可的高级课程 (AP) 计划提升自我。'
          },
         content2: {
             en: 'Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.',
-            zh: '我們的 AP 課程在高中階段提供大學水平的學習，幫助學生準備 AP 考試並為大學及以後的發展奠定基礎。'
+            zh: '我们的 AP 课程在高中阶段提供大学水平的学习，帮助学生准备 AP 考试并为大学及以后的发展奠定基础。'
          }
         }
    ];
