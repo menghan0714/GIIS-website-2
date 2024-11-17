@@ -265,6 +265,7 @@ function Academicsintroduction2({ language }) {
     borderRadius: '50%',  
     marginLeft: '25%',
     marginTop: '1%',
+    marginBottom: '5%',
 };
 
 const arrowContainerStyle2 = {
