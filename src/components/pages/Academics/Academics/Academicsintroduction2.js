@@ -98,7 +98,6 @@ function Academicsintroduction2({ language }) {
         clipPath: 'inset(0)',
         width: '60vh',
         cursor: isDragging ? 'grabbing' : 'grab',
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
     };
 
   const courseBoxStyle = {
@@ -112,6 +111,7 @@ function Academicsintroduction2({ language }) {
     alignItems: 'center',
     padding: '40px', // 增加內邊距
     textAlign: 'center', // 文字居中
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
 };
 
   const titleStyle = {
