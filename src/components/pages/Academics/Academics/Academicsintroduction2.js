@@ -111,7 +111,7 @@ function Academicsintroduction2({ language }) {
     alignItems: 'center',
     padding: '40px', // 增加內邊距
     textAlign: 'center', // 文字居中
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
 };
 
   const titleStyle = {
