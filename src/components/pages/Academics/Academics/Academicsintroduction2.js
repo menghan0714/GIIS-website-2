@@ -98,6 +98,7 @@ function Academicsintroduction2({ language }) {
         clipPath: 'inset(0)',
         width: '60vh',
         cursor: isDragging ? 'grabbing' : 'grab',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
     };
 
   const courseBoxStyle = {
