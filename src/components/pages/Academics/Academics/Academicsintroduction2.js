@@ -5,20 +5,39 @@ function Academicsintroduction2({ language }) {
 
     const courses = [
         { title: 'IGCSE', 
-         content: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.' , 
-         content2: 
-        'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.'},
-        
-        { title: 'A-Level', 
-         content: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.', 
-         content2:
-         'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.'},
-        
-        { title: 'AP', 
-         content: 'Empower yourself with the globally recognized Advanced Placement  Program.' , 
-         content2: ' Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.'},
-        ];
-    
+         content: {
+           en: 'Challenge yourself with the globally recognized Pearson Edexcel International GCSEs.',
+           zh: '接受全球认可的培生爱德思国际普通中等教育证书 (International GCSEs) 挑战吧！'
+          },
+         content2: {
+            en: 'These courses provide a comprehensive curriculum, designed to develop students analytical skills, creativity, and problem-solving abilities across various subjects, preparing them for future academic success.',
+            zh: '这些课程提供全面的课程设计，旨在培养学生的分析能力、创造力和解决问题的能力，为未来的学术成功做好准备。'
+         }
+        },
+        {
+        title: 'A-Level',
+        content: {
+            en: 'Our A-Level courses build on the foundation of IGCSE, providing a rigorous academic experience that sharpens critical thinking, enhances subject mastery, and prepares students for the demands of university-level education.',
+            zh: '我们的 A-Level 课程以 IGCSE 为基础，提供严谨的学术体验，提升批判性思维、深化学科掌握，并为大学教育的挑战做好准备。'
+         },
+        content2: {
+            en: 'With a broad range of subjects to choose from, students can tailor their studies to suit their academic and career aspirations.',
+            zh: '通过多样的学科选择，学生可以根据自己的学术和职业目标量身定制学习计划。'
+         }
+        },
+        {
+        title: 'AP',
+        content: {
+            en: 'Empower yourself with the globally recognized Advanced Placement Program.',
+            zh: '通过全球认可的高级课程 (AP) 计划提升自我。'
+         },
+        content2: {
+            en: 'Our AP courses offer college-level studies in high school, preparing students for AP exams and building skills for university and beyond.',
+            zh: '我们的 AP 课程在高中阶段提供大学水平的学习，帮助学生准备 AP 考试并为大学及以后的发展奠定基础。'
+         }
+        }
+   ];
+
     const extendedCourses = [...courses, ...courses, ...courses]; // 將課程清單擴展為三倍以實現無限滾動效果
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -92,6 +111,7 @@ function Academicsintroduction2({ language }) {
     alignItems: 'center',
     padding: '40px', // 增加內邊距
     textAlign: 'center', // 文字居中
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
 };
 
   const titleStyle = {
@@ -195,6 +215,7 @@ function Academicsintroduction2({ language }) {
         width: '90%',
         height: '100%',
         paddingLeft: '10%',
+        marginBottom: '5%',
     };
 
     const imageStyle = {
@@ -246,6 +267,7 @@ function Academicsintroduction2({ language }) {
     borderRadius: '50%',  
     marginLeft: '25%',
     marginTop: '1%',
+    marginBottom: '5%',
 };
 
 const arrowContainerStyle2 = {
@@ -317,8 +339,8 @@ const handleNavigation = () => {
                  <div>
                     <h2 style={titleStyle}>{courses.title}</h2>
                     <div style={lineStyle}></div>
-                    <p style={contentStyle}>{courses.content}</p>
-                    <p style={content2Style}>{courses.content2}</p>
+                    <p style={contentStyle}>{courses.content[language]}</p>
+                    <p style={content2Style}>{courses.content2[language]}</p>
                     <div style={arrowContainerStyle}>
                      <span style={arrowStyle}>→</span>
                     </div>
