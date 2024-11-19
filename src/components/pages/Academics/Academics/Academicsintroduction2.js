@@ -214,6 +214,7 @@ function Academicsintroduction2({ language }) {
         width: '90%',
         height: '100%',
         paddingLeft: '10%',
+        marginBottom: '10%',
     };
 
     const imageStyle = {
