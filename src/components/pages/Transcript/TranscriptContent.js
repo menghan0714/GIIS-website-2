@@ -5,7 +5,6 @@ function TranscriptContent({ language }) {
     const container = {
      textAlign: 'center',
      width: '100%',
-     margin: '0 auto',
     };
 
     const title = {
