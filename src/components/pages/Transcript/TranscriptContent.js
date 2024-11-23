@@ -8,6 +8,7 @@ function TranscriptContent({ language }) {
     };
 
     const title = {
+     marginTop: '10%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '50px',
      fontWeight: 'bold',
