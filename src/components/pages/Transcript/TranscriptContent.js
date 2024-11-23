@@ -31,6 +31,27 @@ function TranscriptContent({ language }) {
      boxSizing: 'border-box',
    };
 
+    const table = {
+     width: '80%',
+     margin: '0 auto',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+    };
+
+   const thTd = {
+     border: '1px solid black',
+     padding: '10px',
+     textAlign: 'left',
+     fontSize: '16px',
+   };
+
+   const input = {
+    width: '90%',
+    padding: '5px',
+    fontSize: '14px',
+    boxSizing: 'border-box',
+   };
+
      return (
         <div style={container}>
          <div style={title}>
