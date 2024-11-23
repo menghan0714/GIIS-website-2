@@ -141,8 +141,8 @@ function TranscriptContent({ language }) {
         </tbody>
       </table>
      </div>
-                  
-     <button
+    </div>
+    <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -155,9 +155,8 @@ function TranscriptContent({ language }) {
         }}
       >
         Export to PDF
-      </button>
-    </div>
-     );
+     </button>
+    );
 }
 
 export default TranscriptContent;
