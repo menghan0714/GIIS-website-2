@@ -7,7 +7,7 @@ function TranscriptMain({ language }) {
     return (
       <div className={styles.container}>
        <div className={styles.title}>
-          <p>Genesis of Ideas International School</p>
+        <h2>Genesis of Ideas International School</h2>
        </div>
        <div className={styles.columns}>
         <div className={styles.column}>
