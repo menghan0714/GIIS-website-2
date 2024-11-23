@@ -32,7 +32,7 @@ function TranscriptContent({ language }) {
    };
 
     const table = {
-     width: '80%',
+     width: '100%',
      margin: '0 auto',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
