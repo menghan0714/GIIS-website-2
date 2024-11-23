@@ -50,3 +50,5 @@ function TranscriptContent({ language }) {
        </div>
      );
 }
+
+export default TranscriptContent;
