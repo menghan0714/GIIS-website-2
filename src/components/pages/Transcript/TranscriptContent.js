@@ -40,6 +40,7 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
+     padding: '5px',
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '16px',
