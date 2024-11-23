@@ -1,5 +1,5 @@
 import React from 'react';
-import TranscriptContent from './TranscriptContetn.js';
+import TranscriptContent from './TranscriptContent.js';
 
 
 function TranscriptMain({ language }) {
