@@ -33,6 +33,7 @@ function App() {
          <Route path="/academics" element={<Academics language={language} />} />
          <Route path="/admission" element={<Admission language={language} />} />
          <Route path="/support" element={<Support language={language} />} />
+         <Route path="/transcript" element={<Transcript language={language} />} />
        </Routes>
       </main>
       <Footer />
