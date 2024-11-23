@@ -41,7 +41,6 @@ function TranscriptContent({ language }) {
 
    const thTd = {
      border: '1px solid black',
-     padding: '10px',
      textAlign: 'left',
      fontSize: '16px',
    };
