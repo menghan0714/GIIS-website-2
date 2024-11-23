@@ -30,7 +30,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '10px',
      boxSizing: 'border-box',
-     fontSize: '12px',
+     fontSize: '14px',
    };
 
     const table = {
