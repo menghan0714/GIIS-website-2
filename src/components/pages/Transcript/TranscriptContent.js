@@ -26,7 +26,7 @@ function TranscriptContent({ language }) {
 
     const column = {
      flex: '1',
-     textAlign: 'center',
+     textAlign: 'left',
      padding: '10px',
      boxSizing: 'border-box',
    };
