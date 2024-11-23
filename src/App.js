@@ -8,6 +8,7 @@ import Discovery from './components/pages/Discovery/DiscoveryMain';
 import Academics from './components/pages/Academics/AcademicsMain';
 import Admission from './components/pages/Admission/AdmissionMain';
 import Support from './components/pages/Support/SupportMain';
+import Transcript from './components/pages/Transcript/TranscriptMain';
 
 function App() {
    const [language, setLanguage] = useState('en');
