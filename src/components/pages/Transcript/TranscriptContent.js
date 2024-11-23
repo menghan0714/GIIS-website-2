@@ -4,7 +4,7 @@ import React from 'react';
 function TranscriptContent({ language }) {
     const container = {
      textAlign: 'center',
-     width: '80%',
+     width: '100%',
      margin: '0 auto',
     };
 
