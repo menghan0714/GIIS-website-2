@@ -104,6 +104,9 @@ function TranscriptContent({ language }) {
                 <option value="Male">Male</option>
               </select>
             </td>
+            <td style={thTd}>
+              Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
+            </td>     
           </tr>
           <tr>
             <td style={thTd}>
@@ -116,6 +119,9 @@ function TranscriptContent({ language }) {
             <td style={thTd}>
               State: <input type="text" style={input} placeholder="Enter State" />
             </td>
+            <td style={thTd}>
+              Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
+            </td>
           </tr>
           <tr>
             <td style={thTd}>
@@ -126,6 +132,9 @@ function TranscriptContent({ language }) {
             </td>
             <td style={thTd}>
               Graduation Date: <input type="date" style={input} />
+            </td>
+            <td style={thTd}>
+              Transcript Date: <input type="date" style={input} />
             </td>
           </tr>
         </tbody>
