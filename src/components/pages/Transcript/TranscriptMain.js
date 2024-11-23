@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TranscriotMain.css';
+import styles from './TranscriptMain.css';
 
 
 function TranscriptMain({ language }) {
