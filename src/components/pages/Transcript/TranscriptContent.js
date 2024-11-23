@@ -94,7 +94,8 @@ function TranscriptContent({ language }) {
               Address: <input type="text" style={input} placeholder="Enter Address" />
             </td>
             <td style={thTd}>
-              City: <input type="text" style={input} placeholder="Enter City" />
+             <div>City:</div>
+             <input type="text" style={input} placeholder="Enter City" />
             </td>
             <td style={thTd}>
               State: <input type="text" style={input} placeholder="Enter State" />
