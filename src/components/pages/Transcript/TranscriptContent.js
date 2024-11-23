@@ -30,7 +30,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '10px',
      boxSizing: 'border-box',
-     fontSize: '14px',
+     fontSize: '16px',
    };
 
     const table = {
@@ -43,7 +43,7 @@ function TranscriptContent({ language }) {
      border: '1px solid black',
      padding: '10px',
      textAlign: 'left',
-     fontSize: '12px',
+     fontSize: '16px',
    };
 
    const input = {
@@ -51,9 +51,6 @@ function TranscriptContent({ language }) {
     padding: '5px',
     fontSize: '12px',
     boxSizing: 'border-box',
-    border: 'none', // 移除邊框
-    background: 'transparent', // 移除背景
-    outline: 'none', // 移除點擊時的高亮框
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
