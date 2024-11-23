@@ -1,12 +1,10 @@
 .container {
+  text-align: center;
   width: 80%;
   margin: 0 auto;
 }
 
 .title {
-  color: white;
-  paddingLeft: 50%;
-  fontFamily: Inter, sans-serif;
   fontWeight: bold',
   fontSize: 50px',
 }
