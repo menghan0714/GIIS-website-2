@@ -69,6 +69,7 @@ function TranscriptContent({ language }) {
 
 
      return (
+     <>
       <div ref={formRef}>
         <div style={container}>
          <div style={title}>
@@ -156,6 +157,7 @@ function TranscriptContent({ language }) {
       >
         Export to PDF
      </button>
+    </>
     );
 }
 
