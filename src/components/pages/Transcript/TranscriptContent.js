@@ -17,7 +17,7 @@ function TranscriptContent({ language }) {
     };
 
     const columns = {
-     width: '90%',
+     width: '100%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
@@ -34,7 +34,7 @@ function TranscriptContent({ language }) {
    };
 
     const table = {
-     width: '90%',
+     width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
     };
@@ -51,6 +51,9 @@ function TranscriptContent({ language }) {
     padding: '5px',
     fontSize: '12px',
     boxSizing: 'border-box',
+    border: 'none', // 移除邊框
+    background: 'transparent', // 移除背景
+    outline: 'none', // 移除點擊時的高亮框
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
