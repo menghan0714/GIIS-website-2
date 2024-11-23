@@ -19,14 +19,14 @@ function TranscriptContent({ language }) {
      width: '100%',
      display: 'flex',
      justifyContent: 'space-between',
-     backgroundColor: '#e6f0ff', /* Optional: blue background */
+     backgroundColor: 'rgba(213, 168, 54, 0.5)', 
      padding: '10px',
      border: '1px solid #ccc',
    };
 
     const column = {
      flex: '1',
-     textAlign: 'left',
+     textAlign: 'center',
      padding: '10px',
      boxSizing: 'border-box',
    };
