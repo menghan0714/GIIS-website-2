@@ -1,4 +1,5 @@
 import React from 'react';
+import html2pdf from "html2pdf.js";
 
 
 function TranscriptContent({ language }) {
@@ -52,7 +53,22 @@ function TranscriptContent({ language }) {
     boxSizing: 'border-box',
    };
 
+   const formRef = useRef(null); // Ref 用於匯出內容
+
+   const exportToPDF = () => {
+    const element = formRef.current; // 引用表格的 DOM 節點
+    const options = {
+      margin: 10,
+      filename: "Transcript.pdf",
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+    html2pdf().set(options).from(element).save();
+   };
+
+
      return (
+      <div ref={formRef}>
         <div style={container}>
          <div style={title}>
           <p>Genesis of Ideas International School</p>
@@ -115,6 +131,22 @@ function TranscriptContent({ language }) {
         </tbody>
       </table>
      </div>
+                  
+     <button
+        onClick={exportToPDF}
+        style={{
+          marginTop: "20px",
+          padding: "10px 20px",
+          backgroundColor: "#007BFF",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Export to PDF
+      </button>
+    </div>
      );
 }
 
