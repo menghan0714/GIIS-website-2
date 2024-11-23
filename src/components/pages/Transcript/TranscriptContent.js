@@ -30,7 +30,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '10px',
      boxSizing: 'border-box',
-     fontSize: '16px',
+     fontSize: '12px',
    };
 
     const table = {
@@ -43,7 +43,7 @@ function TranscriptContent({ language }) {
      padding: '5px',
      border: '1px solid black',
      textAlign: 'left',
-     fontSize: '16px',
+     fontSize: '12px',
    };
 
    const input = {
