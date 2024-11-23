@@ -16,6 +16,7 @@ function TranscriptContent({ language }) {
     };
 
     const columns = {
+     width: '100%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: '#e6f0ff', /* Optional: blue background */
