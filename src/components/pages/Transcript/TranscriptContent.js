@@ -10,7 +10,7 @@ function TranscriptContent({ language }) {
 
     const title = {
      fontFamily: 'Inter, sans-serif',
-     fontSize: '40px',
+     fontSize: '50px',
      fontWeight: 'bold',
      marginBottom: '20px',
     };
