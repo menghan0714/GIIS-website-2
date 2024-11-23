@@ -9,7 +9,7 @@ function TranscriptContent({ language }) {
     };
 
     const title = {
-     fontSize: '24px',
+     fontSize: '40px',
      marginBottom: '20px',
     };
 
