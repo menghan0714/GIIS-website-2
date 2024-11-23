@@ -19,7 +19,7 @@ function TranscriptContent({ language }) {
      width: '100%',
      display: 'flex',
      justifyContent: 'space-between',
-     backgroundColor: 'rgba(213, 168, 54, 0.5)', 
+     backgroundColor: 'rgba(255, 255, 255, 1)', 
      padding: '10px',
      border: '1px solid #ccc',
    };
