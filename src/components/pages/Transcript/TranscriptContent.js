@@ -48,3 +48,5 @@ function TranscriptContent({ language }) {
          </div>
         </div>
        </div>
+     );
+}
