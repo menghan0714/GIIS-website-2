@@ -50,7 +50,49 @@ function TranscriptContent({ language }) {
            President: Shiyu Zhang, Ph.D.<br />
          </div>
         </div>
-       </div>
+
+        <table style={table}>
+         <tbody>
+          <tr>
+            <td style={thTd}>
+              Name: <input type="text" style={input} placeholder="Enter Name" />
+            </td>
+            <td style={thTd}>
+              Birth Date: <input type="date" style={input} />
+            </td>
+            <td style={thTd}>
+              Gender: 
+              <select style={input}>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style={thTd}>
+              Address: <input type="text" style={input} placeholder="Enter Address" />
+            </td>
+            <td style={thTd}>
+              City: <input type="text" style={input} placeholder="Enter City" />
+            </td>
+            <td style={thTd}>
+              State: <input type="text" style={input} placeholder="Enter State" />
+            </td>
+          </tr>
+          <tr>
+            <td style={thTd}>
+              Entry Date: <input type="date" style={input} />
+            </td>
+            <td style={thTd}>
+              Withdrawal Date: <input type="date" style={input} />
+            </td>
+            <td style={thTd}>
+              Graduation Date: <input type="date" style={input} />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
      );
 }
 
