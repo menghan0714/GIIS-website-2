@@ -57,10 +57,13 @@ function TranscriptContent({ language }) {
 
    const exportToPDF = () => {
     const element = formRef.current; // 引用表格的 DOM 節點
+    element.style.transform = "scale(0.8)"; // 縮小到 80%
+    element.style.transformOrigin = "top left"; // 以左上角為縮放基準
+
     const options = {
       margin: 10,
       filename: "Transcript.pdf",
-      html2canvas: { scale: 1.5 },
+      html2canvas: { scale: 2 },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
     html2pdf().set(options).from(element).save();
