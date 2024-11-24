@@ -40,6 +40,7 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
+     width: '25%',
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
@@ -57,7 +58,7 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '60%',
+     width: '90%',
      fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
@@ -74,7 +75,7 @@ function TranscriptContent({ language }) {
     const options = {
       margin: 10,
       filename: "Transcript.pdf",
-      html2canvas: { scale: 2 },
+      html2canvas: { scale: 3 },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
     html2pdf().set(options).from(element).save();
