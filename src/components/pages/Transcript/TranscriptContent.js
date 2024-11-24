@@ -57,14 +57,14 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '80%',
+     width: '70%',
      fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
      borderBottom: '2px solid black', // 黑色底線
+     paddingBottom: '5px',
      background: 'none', // 背景透明
      outline: 'none', // 移除點擊時的外框
-     minHeight: '20%', // 設置最小高度
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
