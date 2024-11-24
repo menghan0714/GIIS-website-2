@@ -69,11 +69,9 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
-    const element = formRef.current;
-    const originalElement = formRef.current; // 原始表單元素
-    const clone = originalElement.cloneNode(true);
-       
-    const inputs = element.querySelectorAll("input, select");
+    const element = formRef.current; // 原始 DOM 節點
+    const clone = element.cloneNode(true); // 複製 DOM 節點
+    const inputs = clone.querySelectorAll("input, select");
     inputs.forEach((input) => {
       const parent = input.parentElement;
       const value = input.value || input.placeholder;
@@ -118,7 +116,7 @@ function TranscriptContent({ language }) {
           <tr>
             <td style={thTd}>
              <div style={labelInputWrapper}>
-               <label style={label}>Name:</label>
+               <div style={label}>Name:</div>
                <input type="text" style={input} placeholder="Enter Name" />
              </div>
             </td>
@@ -147,7 +145,7 @@ function TranscriptContent({ language }) {
                   
             <td style={thTd}>
              <div style={labelInputWrapper}>
-              <label style={label}>City:</label> 
+              <div style={label}>City:</div> 
               <input type="text" style={input} placeholder="Enter City" />
              </div>
             </td>
