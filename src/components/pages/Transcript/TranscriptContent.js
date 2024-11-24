@@ -46,8 +46,18 @@ function TranscriptContent({ language }) {
      fontSize: '12px',
    };
 
+   const labelInputWrapper = {
+     display: 'flex', // 水平排列
+     alignItems: 'center', // 垂直居中
+   };
+
+   const label = {
+     marginRight: '10px', // 提示詞與輸入框的間距
+     fontSize: '12px', // 提示詞字體大小
+   };
+
    const input = {
-     width: '90%',
+     width: '60%',
      fontSize: '12px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
@@ -97,8 +107,11 @@ function TranscriptContent({ language }) {
          <tbody>
           <tr>
             <td style={thTd}>
-              Name: <input type="text" style={input} placeholder="Enter Name" />
+             <div style={labelInputWrapper}>
+             <input type="text" style={input} placeholder="Enter Name" />
+             </div>
             </td>
+             
             <td style={thTd}>
               Birth Date: <input type="date" style={input} />
             </td>
