@@ -40,7 +40,6 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
-     width: '50%',
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
@@ -67,7 +66,7 @@ function TranscriptContent({ language }) {
      outline: 'none', // 移除點擊時的外框
      padding: '2px 0', // 增加上方和底線的間距
      lineHeight: '1.5',
-     minHeight: '20px', // 設置最小高度
+     minHeight: '20%', // 設置最小高度
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
