@@ -64,7 +64,6 @@ function TranscriptContent({ language }) {
      borderBottom: '2px solid black', // 黑色底線
      background: 'none', // 背景透明
      outline: 'none', // 移除點擊時的外框
-     padding: '2px 0', // 增加上方和底線的間距
      lineHeight: '1.5',
      minHeight: '20%', // 設置最小高度
    };
