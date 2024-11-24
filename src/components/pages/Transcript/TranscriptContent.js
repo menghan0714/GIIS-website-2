@@ -40,7 +40,7 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
-     width: '100%',
+     width: '50%',
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
