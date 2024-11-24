@@ -40,7 +40,6 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
-     width: '25%',
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
@@ -75,7 +74,7 @@ function TranscriptContent({ language }) {
     const options = {
       margin: 10,
       filename: "Transcript.pdf",
-      html2canvas: { scale: 3 },
+      html2canvas: { scale: 2 },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
     html2pdf().set(options).from(element).save();
