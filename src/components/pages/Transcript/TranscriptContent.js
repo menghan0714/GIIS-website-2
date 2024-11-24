@@ -69,6 +69,7 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
+    const element = formRef.current;
     const originalElement = formRef.current; // 原始表單元素
     const clone = originalElement.cloneNode(true);
        
