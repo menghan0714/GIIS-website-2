@@ -116,6 +116,7 @@ function TranscriptContent({ language }) {
             <td style={thTd}>
               Birth Date: <input type="date" style={input} />
             </td>
+             
             <td style={thTd}>
               Gender: 
               <select style={input}>
@@ -123,35 +124,46 @@ function TranscriptContent({ language }) {
                 <option value="Male">Male</option>
               </select>
             </td>
+                  
             <td style={thTd}>
               Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
-            </td>     
+            </td>  
           </tr>
+                  
           <tr>
             <td style={thTd}>
               Address: <input type="text" style={input} placeholder="Enter Address" />
             </td>
+                  
             <td style={thTd}>
-             <div>City:</div>
-             <input type="text" style={input} placeholder="Enter City" />
+             <div style={labelInputWrapper}>
+              <div style={label}>City:</div> 
+              <input type="text" style={input} placeholder="Enter City" />
+             </div>
             </td>
+                  
             <td style={thTd}>
               State: <input type="text" style={input} placeholder="Enter State" />
             </td>
+                  
             <td style={thTd}>
               Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
             </td>
           </tr>
+                  
           <tr>
             <td style={thTd}>
               Entry Date: <input type="date" style={input} />
             </td>
+                  
             <td style={thTd}>
               Withdrawal Date: <input type="date" style={input} />
             </td>
+                  
             <td style={thTd}>
               Graduation Date: <input type="date" style={input} />
             </td>
+                  
             <td style={thTd}>
               Transcript Date: <input type="date" style={input} />
             </td>
