@@ -70,6 +70,14 @@ function TranscriptContent({ language }) {
 
    const exportToPDF = () => {
     const element = formRef.current; // 引用表格的 DOM 節點
+    const inputs = element.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const parent = input.parentElement;
+      const value = input.value || input.placeholder;
+      const textNode = document.createTextNode(value);
+      parent.replaceChild(textNode, input);
+    });
+       
     const options = {
       margin: 10,
       filename: "Transcript.pdf",
