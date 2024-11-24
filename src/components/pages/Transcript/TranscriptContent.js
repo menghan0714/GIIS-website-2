@@ -69,7 +69,9 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
-    const element = formRef.current; // 引用表格的 DOM 節點
+    const originalElement = formRef.current; // 原始表單元素
+    const clone = originalElement.cloneNode(true);
+       
     const inputs = element.querySelectorAll("input, select");
     inputs.forEach((input) => {
       const parent = input.parentElement;
@@ -81,7 +83,7 @@ function TranscriptContent({ language }) {
     const options = {
       margin: 10,
       filename: "Transcript.pdf",
-      html2canvas: { scale: 2 },
+      html2canvas: { scale: 3 }, // 提高解析度
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
     html2pdf().set(options).from(element).save();
