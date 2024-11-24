@@ -69,15 +69,15 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
-    const element = formRef.current; // 原始 DOM 節點
-    const clone = element.cloneNode(true); // 複製 DOM 節點
+    const element = formRef.current;
+    const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
     inputs.forEach((input) => {
-      const parent = input.parentElement;
       const value = input.value || input.placeholder;
       const textNode = document.createTextNode(value);
-      parent.replaceChild(textNode, input);
+      input.replaceWith(textNode);
     });
+
        
     const options = {
       margin: 10,
