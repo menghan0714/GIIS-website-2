@@ -107,8 +107,9 @@ function TranscriptContent({ language }) {
          <tbody>
           <tr>
             <td style={thTd}>
-             <div style={label}>Name:</div>
-             <input type="text" style={input} placeholder="Enter Name" />
+             <div style={labelInputWrapper}>
+              <div style={label}>Name:</div>
+              <input type="text" style={input} placeholder="Enter Name" />
              </div>
             </td>
              
