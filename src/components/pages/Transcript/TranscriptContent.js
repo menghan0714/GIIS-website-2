@@ -11,7 +11,7 @@ function TranscriptContent({ language }) {
     const title = {
      marginTop: '5%',
      fontFamily: 'Inter, sans-serif',
-     fontSize: '18px',
+     fontSize: '20px',
      fontWeight: 'bold',
      marginBottom: '20px',
     };
