@@ -29,7 +29,7 @@ function TranscriptContent({ language }) {
     const column = {
      flex: '1',
      textAlign: 'center',
-     padding: '5px',
+     padding: '10px',
      boxSizing: 'border-box',
      fontSize: '12px',
    };
