@@ -69,20 +69,26 @@ function TranscriptContent({ language }) {
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
-
+    
    const exportToPDF = () => {
-
     const element = formRef.current;
+    const clone = element.cloneNode(true);
+    const inputs = clone.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder;
+      const textNode = document.createTextNode(value);
+      input.replaceWith(textNode);
+    });
+
+       
     const options = {
-        margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5, // 提高解析度
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };
-        html2pdf().set(options).from(element).save();
-     };
+      margin: 10,
+      filename: "Transcript.pdf",
+      html2canvas: { scale: 3 }, // 提高解析度
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+    html2pdf().set(options).from(element).save();
+   };
 
 
 
