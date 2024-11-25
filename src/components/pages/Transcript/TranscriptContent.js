@@ -46,8 +46,6 @@ function TranscriptContent({ language }) {
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
-     overflowWrap: 'break-word',  // 自動斷行
-     whiteSpace: 'normal',
    };
 
    const labelInputWrapper = {
@@ -68,6 +66,8 @@ function TranscriptContent({ language }) {
      borderBottom: '2px solid black', // 黑色底線
      background: 'none', // 背景透明
      outline: 'none', // 移除點擊時的外框
+     overflowWrap: 'break-word',  // 自動斷行
+     whiteSpace: 'normal',
    };
 
    const inputSelect = {
