@@ -70,27 +70,35 @@ function TranscriptContent({ language }) {
 
    const formRef = useRef(null); // Ref 用於匯出內容
     
-   const exportToPDF = () => {
+const exportToPDF = () => {
     const element = formRef.current;
+    // 複製 DOM 結構以替換輸入框的內容
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
     inputs.forEach((input) => {
-      const value = input.value || input.placeholder;
-      const textNode = document.createTextNode(value);
-      input.replaceWith(textNode);
+        const value = input.value || input.placeholder;
+        const textNode = document.createTextNode(value);
+        input.replaceWith(textNode);
     });
 
-       
+    // 設置 PDF 選項
     const options = {
-      margin: 10,
-      filename: "Transcript.pdf",
-      html2canvas: { scale: 3 }, // 提高解析度
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
+        filename: "Transcript.pdf",
+        html2canvas: {
+            scale: 5, // 提高解析度
+            useCORS: true, // 啟用跨域處理（如果需要）
+        },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
-    html2pdf().set(options).from(element).save();
-   };
 
-
+    // 匯出為 PDF
+    html2pdf()
+        .set(options)
+        .from(clone) // 使用複製後的 DOM
+        .save()
+        .catch((error) => console.error("PDF Export Error:", error));
+};
 
      return (
      <>
