@@ -76,7 +76,7 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
     
 const exportToPDF = () => {
-    const element = document.getElementById('your-table-id');
+    const element = formRef.current;
     // 複製 DOM 結構以替換輸入框的內容
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
