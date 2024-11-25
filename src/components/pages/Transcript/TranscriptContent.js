@@ -1,5 +1,5 @@
 import React, { useRef }  from 'react';
-import html2pdf from '../../../../public/html2pdf.bundle.min.js';
+import html2pdf from '../../../html2pdf.bundle.min.js';
 
 
 function TranscriptContent({ language }) {
