@@ -73,6 +73,7 @@ function TranscriptContent({ language }) {
    };
 
     const formRef = useRef(null);
+    const html2pdf = window.html2pdf;
     
     const exportToPDF = () => {
       const element = document.getElementById('content');
@@ -98,7 +99,7 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-        html2pdf().set(options).from(element).save();
+        window.html2pdf().set(options).from(clone).save();
      };
 
      return (
