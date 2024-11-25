@@ -59,7 +59,7 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '40%',
+     width: '20%',
      fontSize: '8px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
