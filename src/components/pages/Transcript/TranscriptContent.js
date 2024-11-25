@@ -1,10 +1,8 @@
 import React, { useRef }  from 'react';
-import html2pdf from "html2pdf.js";
+import html2pdf from '../../../../public/html2pdf.bundle.min.js';
 
 
 function TranscriptContent({ language }) {
-    const html2pdf = window.html2pdf;
-    
     const container = {
      textAlign: 'center',
      width: '100%',
