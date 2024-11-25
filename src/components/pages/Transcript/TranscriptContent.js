@@ -70,6 +70,10 @@ function TranscriptContent({ language }) {
      outline: 'none', // 移除點擊時的外框
    };
 
+    const input, select = {
+     width: 'auto',
+   };
+
    const formRef = useRef(null); // Ref 用於匯出內容
     
 const exportToPDF = () => {
@@ -88,8 +92,10 @@ const exportToPDF = () => {
         margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
         html2canvas: {
-            scale: 5, // 提高解析度
-            useCORS: true, // 啟用跨域處理（如果需要）
+            scale: 5,
+            useCORS: true, /
+            allowTaint: true, 
+            logging: true,
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
