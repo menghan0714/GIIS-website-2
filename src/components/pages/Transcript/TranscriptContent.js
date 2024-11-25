@@ -76,7 +76,7 @@ function TranscriptContent({ language }) {
     const formRef = useRef(null);
     
     const exportToPDF = () => {
-      const element = document.getElementById("content");
+      const element = document.getElementById('content');
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
@@ -99,7 +99,7 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-        window.html2pdf().set(options).from(clone).save();
+        html2pdf().set(options).from(element).save();
      };
 
      return (
