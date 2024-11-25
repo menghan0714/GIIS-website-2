@@ -71,7 +71,10 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
+    const clone = element.cloneNode(true);
     const element = formRef.current;
+    const inputs = clone.querySelectorAll("input, select");
+
     const options = {
         margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
