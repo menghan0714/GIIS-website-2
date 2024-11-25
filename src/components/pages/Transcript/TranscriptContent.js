@@ -99,7 +99,7 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-        html2pdf().set(options).from(element).save();
+        window.html2pdf().set(options).from(clone).save();
      };
 
      return (
