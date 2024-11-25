@@ -23,6 +23,7 @@ function TranscriptContent({ language }) {
      backgroundColor: 'rgba(255, 255, 255, 1)', 
      padding: '10px',
      border: '1px solid #ccc',
+     margin: '0 auto',
    };
 
     const column = {
@@ -37,6 +38,7 @@ function TranscriptContent({ language }) {
      width: '80%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
     };
 
    const thTd = {
