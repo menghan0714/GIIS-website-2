@@ -104,7 +104,7 @@ function TranscriptContent({ language }) {
 
      return (
      <>
-      <div ref={formRef}>
+      <div id="content" ref={formRef}>
         <div style={container}>
          <div style={title}>
           <p>Genesis of Ideas International School</p>
