@@ -31,7 +31,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
-     fontSize: '12px',
+     fontSize: '10px',
    };
 
     const table = {
@@ -46,7 +46,7 @@ function TranscriptContent({ language }) {
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
-     fontSize: '10px',
+     fontSize: '8px',
      width: '25%',
    };
 
@@ -57,12 +57,12 @@ function TranscriptContent({ language }) {
 
    const label = {
      marginRight: '8px', // 提示詞與輸入框的間距
-     fontSize: '10px', // 提示詞字體大小
+     fontSize: '8px', // 提示詞字體大小
    };
 
    const input = {
      width: '50%',
-     fontSize: '10px',
+     fontSize: '8px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
      borderBottom: '2px solid black', // 黑色底線
