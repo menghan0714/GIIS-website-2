@@ -192,7 +192,7 @@ function TranscriptContent({ language }) {
         </tbody>
       </table>
      </div>
-    <button
+     <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -203,9 +203,9 @@ function TranscriptContent({ language }) {
           borderRadius: "5px",
           cursor: "pointer",
         }}
-      >
+       >
         Export to PDF
-     </button>
+      </button>
     </>
     );
 }
