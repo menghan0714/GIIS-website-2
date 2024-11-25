@@ -114,15 +114,15 @@ function TranscriptContent({ language }) {
            7901 4th St N STE 300,<br />
            St. Petersburg, FL 33702<br />
           </div>
-         <div style={column}>
+          <div style={column}>
            Phone: +1 (813) 501-5756<br />
            <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
-         </div>
-         <div style={column}>
+          </div>
+          <div style={column}>
            School Code: 650<br />
            President: Shiyu Zhang, Ph.D.<br />
+          </div>
          </div>
-        </div>
 
         <table style={table}>
          <tbody>
@@ -192,7 +192,8 @@ function TranscriptContent({ language }) {
         </tbody>
       </table>
      </div>
-     <button
+    </div>
+    <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -203,9 +204,9 @@ function TranscriptContent({ language }) {
           borderRadius: "5px",
           cursor: "pointer",
         }}
-       >
+      >
         Export to PDF
-      </button>
+     </button>
     </>
     );
 }
