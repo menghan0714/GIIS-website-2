@@ -68,11 +68,7 @@ function TranscriptContent({ language }) {
      outline: 'none', // 移除點擊時的外框
      overflowWrap: 'break-word',  // 自動斷行
      whiteSpace: 'normal',
-   };
-
-   const inputSelect = {
-     ...input, // 繼承 input 樣式
-     width: 'auto', // 覆寫寬度為自動
+     wordWrap: 'break-word', // 強制換行
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
@@ -97,6 +93,7 @@ const exportToPDF = () => {
             useCORS: true, 
             allowTaint: true, 
             logging: true,
+            letterRendering: true,
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
