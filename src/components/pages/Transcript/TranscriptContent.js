@@ -1,5 +1,4 @@
 import React, { useRef }  from 'react';
-import html2pdf from '../../../../public/html2pdf.bundle.min.js';
 
 
 function TranscriptContent({ language }) {
@@ -73,17 +72,18 @@ function TranscriptContent({ language }) {
      wordWrap: 'break-word', // 強制換行
    };
 
+    const html2pdf = window.html2pdf;
     
-const exportToPDF = () => {
-    const element = document.getElementById("content");
+    const exportToPDF = () => {
+      const element = document.getElementById("content");
     // 複製 DOM 結構以替換輸入框的內容
-    const clone = element.cloneNode(true);
-    const inputs = clone.querySelectorAll("input, select");
-    inputs.forEach((input) => {
+      const clone = element.cloneNode(true);
+      const inputs = clone.querySelectorAll("input, select");
+      inputs.forEach((input) => {
         const value = input.value || input.placeholder;
         const textNode = document.createTextNode(value);
         input.replaceWith(textNode);
-    });
+     });
 
     // 設置 PDF 選項
     const options = {
@@ -97,7 +97,9 @@ const exportToPDF = () => {
             letterRendering: true,
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    };
+     };
+        html2pdf().set(options).from(element).save();
+     };
 
     // 匯出為 PDF
     html2pdf()
