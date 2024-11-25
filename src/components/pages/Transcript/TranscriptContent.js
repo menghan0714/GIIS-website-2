@@ -72,7 +72,6 @@ function TranscriptContent({ language }) {
      wordWrap: 'break-word', // 強制換行
    };
 
-    const html2pdf = window.html2pdf;
     const formRef = useRef(null);
     
     const exportToPDF = () => {
