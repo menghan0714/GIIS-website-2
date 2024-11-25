@@ -46,6 +46,8 @@ function TranscriptContent({ language }) {
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
+     wordWrap: 'break-word', // 自動斷行
+     whiteSpace: 'normal',
    };
 
    const labelInputWrapper = {
