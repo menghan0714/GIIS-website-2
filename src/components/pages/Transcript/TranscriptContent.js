@@ -21,7 +21,7 @@ function TranscriptContent({ language }) {
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
-     padding: '10px',
+     padding: '5px',
      border: '1px solid #ccc',
      margin: '0 auto',
    };
@@ -29,7 +29,7 @@ function TranscriptContent({ language }) {
     const column = {
      flex: '1',
      textAlign: 'center',
-     padding: '10px',
+     padding: '5px',
      boxSizing: 'border-box',
      fontSize: '12px',
    };
