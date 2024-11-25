@@ -101,14 +101,6 @@ function TranscriptContent({ language }) {
         html2pdf().set(options).from(element).save();
      };
 
-    // 匯出為 PDF
-    html2pdf()
-        .set(options)
-        .from(clone) // 使用複製後的 DOM
-        .save()
-        .catch((error) => console.error("PDF Export Error:", error));
-};
-
      return (
      <>
       <div ref={formRef}>
