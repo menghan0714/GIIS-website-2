@@ -17,8 +17,7 @@ function TranscriptContent({ language }) {
     };
 
     const columns = {
-     width: '100%',
-     height: '20%',
+     width: '80%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
@@ -35,7 +34,7 @@ function TranscriptContent({ language }) {
    };
 
     const table = {
-     width: '100%',
+     width: '80%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
     };
