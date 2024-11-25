@@ -36,7 +36,6 @@ function TranscriptContent({ language }) {
 
     const table = {
      width: '80%',
-     maxHeight: '20%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -49,6 +48,7 @@ function TranscriptContent({ language }) {
      fontSize: '8px',
      wordWrap: 'break-word', // 自動斷行
      whiteSpace: 'normal',
+     maxHeight: '20%',
    };
 
    const labelInputWrapper = {
