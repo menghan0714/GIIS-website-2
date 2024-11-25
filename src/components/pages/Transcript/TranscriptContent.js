@@ -18,6 +18,7 @@ function TranscriptContent({ language }) {
 
     const columns = {
      width: '100%',
+     height: '20%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
