@@ -36,6 +36,7 @@ function TranscriptContent({ language }) {
 
     const table = {
      width: '80%',
+     maxHeight: '20%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
