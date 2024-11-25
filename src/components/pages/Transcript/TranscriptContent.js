@@ -72,16 +72,6 @@ function TranscriptContent({ language }) {
 
    const exportToPDF = () => {
     const element = formRef.current;
-    // 複製 DOM 結構以替換輸入框的內容
-    const clone = element.cloneNode(true);
-    const inputs = clone.querySelectorAll("input, select");
-    inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-    });
-
-       
     const options = {
         margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
@@ -90,14 +80,6 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
-
-    html2pdf()
-      .set(options)
-      .from(clone) // 使用複製的 DOM
-      .save()
-      .catch((error) => console.error("PDF Export Error:", error)); // 捕捉錯誤
-  };
-
 
 
      return (
