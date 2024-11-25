@@ -1,5 +1,5 @@
 import React, { useRef }  from 'react';
-import html2pdf from '../../../html2pdf.bundle.min.js';
+import html2pdf from '../../../../public/html2pdf.bundle.min.js';
 
 
 function TranscriptContent({ language }) {
@@ -73,10 +73,9 @@ function TranscriptContent({ language }) {
      wordWrap: 'break-word', // 強制換行
    };
 
-   const formRef = useRef(null); // Ref 用於匯出內容
     
 const exportToPDF = () => {
-    const element = formRef.current;
+    const element = document.getElementById("content");
     // 複製 DOM 結構以替換輸入框的內容
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
