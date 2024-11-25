@@ -94,7 +94,7 @@ const exportToPDF = () => {
         filename: "Transcript.pdf",
         html2canvas: {
             scale: 5,
-            useCORS: true, /
+            useCORS: true, 
             allowTaint: true, 
             logging: true,
         },
