@@ -79,7 +79,8 @@ function TranscriptContent({ language }) {
             scale: 5, // 提高解析度
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    };
+     };
+   };
 
 
      return (
