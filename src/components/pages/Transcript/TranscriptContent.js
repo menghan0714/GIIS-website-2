@@ -71,10 +71,8 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
 
    const exportToPDF = () => {
-    const clone = element.cloneNode(true);
-    const element = formRef.current;
-    const inputs = clone.querySelectorAll("input, select");
 
+    const element = formRef.current;
     const options = {
         margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
@@ -83,7 +81,9 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-   };
+        html2pdf().set(options).from(element).save();
+     };
+
 
 
      return (
