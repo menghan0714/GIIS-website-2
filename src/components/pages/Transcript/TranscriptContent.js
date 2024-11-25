@@ -39,6 +39,7 @@ function TranscriptContent({ language }) {
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
+     tableLayout: 'fixed', 
     };
 
    const thTd = {
@@ -46,6 +47,7 @@ function TranscriptContent({ language }) {
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
+     width: '25%',
    };
 
    const labelInputWrapper = {
@@ -59,7 +61,7 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '40%',
+     width: '50%',
      fontSize: '8px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
@@ -74,7 +76,7 @@ function TranscriptContent({ language }) {
    const formRef = useRef(null); // Ref 用於匯出內容
     
 const exportToPDF = () => {
-    const element = formRef.current;
+    const element = document.getElementById('your-table-id');
     // 複製 DOM 結構以替換輸入框的內容
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
