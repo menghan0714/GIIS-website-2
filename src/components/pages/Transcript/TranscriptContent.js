@@ -70,8 +70,9 @@ function TranscriptContent({ language }) {
      outline: 'none', // 移除點擊時的外框
    };
 
-    const input, select = {
-     width: 'auto',
+   const inputSelect = {
+     ...input, // 繼承 input 樣式
+     width: 'auto', // 覆寫寬度為自動
    };
 
    const formRef = useRef(null); // Ref 用於匯出內容
