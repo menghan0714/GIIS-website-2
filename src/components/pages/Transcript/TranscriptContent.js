@@ -35,11 +35,11 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
-     fontSize: '12px',
+     fontSize: '1px',
    };
 
     const table = {
-     width: '100%',
+     width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -64,7 +64,7 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '50%',
+     width: '90%',
      fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
