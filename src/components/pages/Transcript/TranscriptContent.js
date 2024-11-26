@@ -223,7 +223,7 @@ function TranscriptContent({ language }) {
                 </table>
                </td>
               </tr>
-            </tboddy>
+            </tbody>
         </table>       
       </div>
               
