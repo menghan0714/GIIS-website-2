@@ -20,7 +20,7 @@ function TranscriptContent({ language }) {
     };
 
     const columns = {
-     width: '80%',
+     width: '90%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
@@ -38,7 +38,7 @@ function TranscriptContent({ language }) {
    };
 
     const table = {
-     width: '80%',
+     width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -64,8 +64,8 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '90%',
-     fontSize: '10px',
+     width: '50%',
+     fontSize: '8px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
      borderBottom: '2px solid black', // 黑色底線
@@ -197,9 +197,7 @@ function TranscriptContent({ language }) {
         </tbody>
        </table>
       </div>
-
-     
-                    
+              
       <button
         onClick={exportToPDF}
         style={{
