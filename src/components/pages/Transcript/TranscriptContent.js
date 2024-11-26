@@ -78,7 +78,6 @@ function TranscriptContent({ language }) {
    };
 
     const formRef = useRef(null);
-    const html2pdf = window.html2pdf;
     
     
     const exportToPDF = () => {
