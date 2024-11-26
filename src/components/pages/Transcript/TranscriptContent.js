@@ -196,6 +196,18 @@ function TranscriptContent({ language }) {
           </tr>
         </tbody>
        </table>
+       <table style={table}>
+         <tbody>
+           <tr>
+             <td style={{ ...thTd, width: '50%' }}>
+               Additional Info 1: <input type="text" style={input} placeholder="Enter Info 1" />
+             </td>
+             <td style={{ ...thTd, width: '50%' }}>
+               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
+             </td>
+           </tr>
+         </tbody>
+       </table>
       </div>
               
       <button
