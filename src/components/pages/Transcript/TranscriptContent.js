@@ -47,6 +47,7 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
+     padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
@@ -64,8 +65,8 @@ function TranscriptContent({ language }) {
    };
 
    const input = {
-     width: '40%',
-     fontSize: '8px',
+     width: '90%',
+     fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
      borderBottom: '2px solid black', // 黑色底線
