@@ -213,7 +213,7 @@ function TranscriptContent({ language }) {
                 <table style={table}>
                  <thead>
                    <tr>
-                    <td colSpan="2" style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold' }}>
                      Grade 9 - Fall Semester
                     </td>
                    </tr>
