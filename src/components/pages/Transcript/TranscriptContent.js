@@ -204,6 +204,7 @@ function TranscriptContent({ language }) {
        >
         Export to PDF
       </button> 
+    </div>
     );
 }
 
