@@ -221,9 +221,13 @@ function TranscriptContent({ language }) {
                   </tr>
                  </thead>
                 </table>
-               </td>
-              </tr>
-            </tbody>
+              </td>
+
+              <td style={thTd}>
+               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
+              </td>
+             </tr>
+           </tbody>
         </table>       
       </div>
               
