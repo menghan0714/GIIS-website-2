@@ -90,7 +90,7 @@ function TranscriptContent({ language }) {
 
     // 設置 PDF 選項
     const options = {
-        margin: 0, // 上下左右邊距 (mm)
+        margin: [10, 10, 10, 10],  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
         html2canvas: {
             scale: 5,
