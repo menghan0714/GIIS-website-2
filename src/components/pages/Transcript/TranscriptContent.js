@@ -209,14 +209,22 @@ function TranscriptContent({ language }) {
          <tbody>
            <tr>
              <td style={thTd}>
-               Additional Info 1: <input type="text" style={input} placeholder="Enter Info 1" />
-             </td>
-             <td style={thTd}>
-               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
-             </td>
-           </tr>
-         </tbody>
-       </table>
+                <table style={table}>
+                 <thead>
+                  <tr>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
+                  </tr>
+                 </thead>
+                </table>
+               </td>
+              </tr>
+            </tboddy>
+        </table>       
       </div>
               
       <button
