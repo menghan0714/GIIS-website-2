@@ -3,13 +3,16 @@ import React, { useRef }  from 'react';
 
 function TranscriptContent({ language }) {
 
+    const container = {
+     textAlign: 'center',
+     width: '100%',
+
     const title = {
      marginTop: '5%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
      fontWeight: 'bold',
      marginBottom: '20px',
-     textAlign: 'center',
     };
 
     const columns = {
@@ -95,7 +98,6 @@ function TranscriptContent({ language }) {
             logging: true,
             letterRendering: true,
             ignoreElements: (element) => element.tagName === "BUTTON",
-            backgroundColor: null,
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
@@ -104,8 +106,9 @@ function TranscriptContent({ language }) {
 
 
      return (
-       <>
-         <div id="content" ref={formRef}  style={{ backgroundColor: "white", border: "none", outline: "none", boxShadow: "none",}}>
+      <>
+        <div id="content" ref={formRef}>
+         <div style={container}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
@@ -192,7 +195,8 @@ function TranscriptContent({ language }) {
         </tbody>
        </table>
       </div>
-      <button
+     </div>
+     <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -205,7 +209,7 @@ function TranscriptContent({ language }) {
         }}
        >
         Export to PDF
-      </button> 
+     </button> 
      </>
     );
 }
