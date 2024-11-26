@@ -76,7 +76,7 @@ function TranscriptContent({ language }) {
     const formRef = useRef(null);
     
     const exportToPDF = () => {
-      const element = document.getElementById('content');
+      const element = formRef.current;
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
@@ -103,8 +103,7 @@ function TranscriptContent({ language }) {
      };
 
      return (
-     <>
-      <div id="content" ref={formRef}>
+
         <div style={container}>
          <div style={title}>
           <p>Genesis of Ideas International School</p>
@@ -191,9 +190,7 @@ function TranscriptContent({ language }) {
           </tr>
         </tbody>
       </table>
-     </div>
-    </div>
-    <button
+      <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -204,10 +201,9 @@ function TranscriptContent({ language }) {
           borderRadius: "5px",
           cursor: "pointer",
         }}
-      >
+       >
         Export to PDF
-     </button>
-    </>
+      </button> 
     );
 }
 
