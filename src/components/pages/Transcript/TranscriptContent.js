@@ -107,6 +107,7 @@ function TranscriptContent({ language }) {
      return (
       <>
         <div id="content" ref={formRef}>
+         <div style={container}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
@@ -191,7 +192,8 @@ function TranscriptContent({ language }) {
             </td>
           </tr>
         </tbody>
-       </table>          
+       </table>
+      </div>
      </div>
      <button
         onClick={exportToPDF}
