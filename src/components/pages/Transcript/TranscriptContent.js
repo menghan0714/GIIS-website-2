@@ -2,10 +2,6 @@ import React, { useRef }  from 'react';
 
 
 function TranscriptContent({ language }) {
-    const container = {
-     textAlign: 'center',
-     width: '100%',
-    };
 
     const title = {
      marginTop: '5%',
@@ -13,6 +9,7 @@ function TranscriptContent({ language }) {
      fontSize: '20px',
      fontWeight: 'bold',
      marginBottom: '20px',
+     textAlign: 'center',
     };
 
     const columns = {
@@ -106,7 +103,7 @@ function TranscriptContent({ language }) {
 
 
      return (
-        <div style={container}>
+       <>
          <div id="content" ref={formRef}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
@@ -208,7 +205,7 @@ function TranscriptContent({ language }) {
        >
         Export to PDF
       </button> 
-     </div>
+     </>
     );
 }
 
