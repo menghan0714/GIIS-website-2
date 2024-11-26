@@ -208,10 +208,10 @@ function TranscriptContent({ language }) {
        <table style={table2}>
          <tbody>
            <tr>
-             <td style={{ ...thTd, width: '50%' }}>
+             <td style={thTd}>
                Additional Info 1: <input type="text" style={input} placeholder="Enter Info 1" />
              </td>
-             <td style={{ ...thTd, width: '50%' }}>
+             <td style={thTd}>
                Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
              </td>
            </tr>
