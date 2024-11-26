@@ -44,6 +44,14 @@ function TranscriptContent({ language }) {
      margin: '0 auto',
      tableLayout: 'fixed', 
     };
+    const table2 = {
+     marginTop:'2.5%',
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    };
 
 
    const thTd = {
