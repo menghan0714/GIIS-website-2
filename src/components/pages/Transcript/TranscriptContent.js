@@ -47,7 +47,6 @@ function TranscriptContent({ language }) {
     };
 
    const thTd = {
-     padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '10px',
