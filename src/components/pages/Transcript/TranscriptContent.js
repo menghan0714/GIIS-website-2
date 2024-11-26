@@ -217,15 +217,52 @@ function TranscriptContent({ language }) {
                      Grade 9 - Fall Semester
                     </td>
                    </tr>
-                 </thead>
-                 <tr>
+                   <tr>
                     <th style={thTd}>Course Name</th>
                     <th style={thTd}>Type</th>
                     <th style={thTd}>Credits</th>
                     <th style={thTd}>Grade</th>
                     <th style={thTd}>Weighted GPA</th>
                     <th style={thTd}>Unweighted GPA</th>
-                  </tr>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'English I', type: 'Core', credits: 1.0, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'Biology', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'World History', type: 'Core', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
+                       <input
+                        type="text"
+                        defaultValue={row.grade}
+                        style={{
+                         width: '50px',
+                         textAlign: 'center',
+                         border: '1px solid #ccc',
+                         borderRadius: '4px',
+                        }}
+                        />
+                       </td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                      <tr>
+                       <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
+                        Semester Totals
+                       </td>
+                       <td style={thTd}></td>
+                       <td style={thTd}>3.85</td>
+                       <td style={thTd}>3.85</td>
+                      </tr>
+                    </tbody>
                 </table>
               </td>
 
