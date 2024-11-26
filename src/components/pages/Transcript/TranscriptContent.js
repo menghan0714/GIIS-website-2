@@ -95,6 +95,7 @@ function TranscriptContent({ language }) {
             logging: true,
             letterRendering: true,
             ignoreElements: (element) => element.tagName === "BUTTON",
+            backgroundColor: null,
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
@@ -104,7 +105,7 @@ function TranscriptContent({ language }) {
 
      return (
        <>
-         <div id="content" ref={formRef}>
+         <div id="content" ref={formRef}  style={{ backgroundColor: "white", border: "none", outline: "none", boxShadow: "none",}}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
