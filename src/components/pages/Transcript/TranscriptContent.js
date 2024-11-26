@@ -54,6 +54,14 @@ function TranscriptContent({ language }) {
      width: '30%',
    };
 
+    const thTd2 = {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '50%',
+   };
+
    const labelInputWrapper = {
      display: 'flex', // 水平排列
      alignItems: 'center', // 垂直居中
@@ -197,6 +205,20 @@ function TranscriptContent({ language }) {
           </tr>
         </tbody>
        </table>
+       
+       <table style={table}>
+        <tbody>
+           <tr>
+             <td style={thTd2}>
+               Additional Info 1: <input type="text" style={input} placeholder="Enter Info 1" />
+             </td>
+             <td style={thTd2}>
+               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
+             </td>
+           </tr>
+         </tbody>
+       </table>
+        
       </div>
       <button
         onClick={exportToPDF}
