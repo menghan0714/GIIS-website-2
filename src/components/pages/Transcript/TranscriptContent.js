@@ -46,7 +46,7 @@ function TranscriptContent({ language }) {
     };
 
     const table2 = {
-     marginTop:'2%',
+     marginTop:'0.5%',
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
