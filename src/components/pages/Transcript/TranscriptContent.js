@@ -104,14 +104,7 @@ function TranscriptContent({ language }) {
             ignoreElements: (element) => element.tagName === "BUTTON",
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };
-
-        const pdfWidth = 210; 
-        const contentWidth = element.offsetWidth;
-        const scaleRatio = pdfWidth / contentWidth; 
-
-        options.html2canvas.scale *= scaleRatio;
-        
+     };    
         window.html2pdf().set(options).from(clone).save();
      };
 
