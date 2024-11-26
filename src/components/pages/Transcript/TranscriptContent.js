@@ -211,13 +211,14 @@ function TranscriptContent({ language }) {
            <tr>
              <td style={thTd}>
                 <table style={table}>
-                  <tr>
+                 <thead>
+                   <tr>
                     <td colSpan="2" style={{ textAlign: 'center', fontWeight: 'bold' }}>
                      Grade 9 - Fall Semester
                     </td>
-                 </tr>
-                 <thead>
-                  <tr>
+                   </tr>
+                 </thead>
+                 <tr>
                     <th style={thTd}>Course Name</th>
                     <th style={thTd}>Type</th>
                     <th style={thTd}>Credits</th>
@@ -225,7 +226,6 @@ function TranscriptContent({ language }) {
                     <th style={thTd}>Weighted GPA</th>
                     <th style={thTd}>Unweighted GPA</th>
                   </tr>
-                 </thead>
                 </table>
               </td>
 
