@@ -77,7 +77,7 @@ function TranscriptContent({ language }) {
     
     
     const exportToPDF = () => {
-      const element = document.getElementById('content');
+      const element = document.getElementById("content");
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
