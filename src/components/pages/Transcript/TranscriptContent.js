@@ -105,8 +105,8 @@ function TranscriptContent({ language }) {
      };
 
      return (
-        <div style={container}>
-         <div id="content" style={{ backgroundColor: "white", border: "none" }} ref={formRef}>
+      <>
+        <div id="content" ref={formRef}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
@@ -191,9 +191,9 @@ function TranscriptContent({ language }) {
             </td>
           </tr>
         </tbody>
-       </table>
-      </div>
-      <button
+       </table>          
+     </div>
+     <button
         onClick={exportToPDF}
         style={{
           marginTop: "20px",
@@ -206,8 +206,8 @@ function TranscriptContent({ language }) {
         }}
        >
         Export to PDF
-      </button> 
-    </div>
+     </button> 
+    </>
     );
 }
 
