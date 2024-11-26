@@ -197,6 +197,9 @@ function TranscriptContent({ language }) {
         </tbody>
        </table>
       </div>
+
+     
+                    
       <button
         onClick={exportToPDF}
         style={{
