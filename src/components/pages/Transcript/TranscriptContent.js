@@ -37,7 +37,8 @@ function TranscriptContent({ language }) {
      fontSize: '10px',
    };
 
-    const table = {
+    const table2 = {
+     marginTop:'2%',
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
@@ -196,7 +197,7 @@ function TranscriptContent({ language }) {
           </tr>
         </tbody>
        </table>
-       <table style={table}>
+       <table style={table2}>
          <tbody>
            <tr>
              <td style={{ ...thTd, width: '50%' }}>
