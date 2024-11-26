@@ -17,7 +17,6 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
      fontWeight: 'bold',
-     marginBottom: '10px',
     };
 
     const columns = {
