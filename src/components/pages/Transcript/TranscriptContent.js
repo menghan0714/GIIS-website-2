@@ -59,7 +59,7 @@ function TranscriptContent({ language }) {
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
-     width: '30%',
+     width: '25%',
    };
 
    const labelInputWrapper = {
