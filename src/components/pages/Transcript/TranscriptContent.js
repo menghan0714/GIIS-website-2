@@ -6,6 +6,7 @@ function TranscriptContent({ language }) {
     const container = {
      textAlign: 'center',
      width: '100%',
+    };
 
     const title = {
      marginTop: '5%',
