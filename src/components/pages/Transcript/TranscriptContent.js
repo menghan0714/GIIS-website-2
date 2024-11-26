@@ -80,6 +80,10 @@ function TranscriptContent({ language }) {
       const element = document.getElementById("content");
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
+      const button = clone.querySelector("button");
+        if (button) {
+          button.remove();
+        }
       const inputs = clone.querySelectorAll("input, select");
       inputs.forEach((input) => {
         const value = input.value || input.placeholder;
@@ -100,7 +104,7 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-        window.html2pdf().set(options).from(clone).save();
+        window.html2pdf().set(options).from(document.getElementById("content")).save();
      };
 
      return (
