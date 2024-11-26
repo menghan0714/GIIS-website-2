@@ -54,12 +54,36 @@ function TranscriptContent({ language }) {
      tableLayout: 'fixed', 
     };
 
+    const table3 = {
+     width: '95',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    };
+
    const thTd = {
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
      width: '25%',
+   };
+
+    const thTd2 = {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '50%',
+   };
+
+     const thTd3 = {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '17%',
    };
 
    const labelInputWrapper = {
@@ -208,16 +232,16 @@ function TranscriptContent({ language }) {
        <table style={table2}>
          <tbody>
            <tr>
-             <td style={thTd}>
-                <table style={table}>
+             <td style={thTd2}>
+                <table style={table3}>
                  <thead>
                   <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={thTd3}>Course Name</th>
+                    <th style={thTd3}>Type</th>
+                    <th style={thTd3}>Credits</th>
+                    <th style={thTd3}>Grade</th>
+                    <th style={thTd3}>Weighted GPA</th>
+                    <th style={thTd3}>Unweighted GPA</th>
                   </tr>
                  </thead>
                 </table>
