@@ -1,5 +1,4 @@
 import React, { useRef }  from 'react';
-import html2pdf from 'html2pdf.js';
 
 
 function TranscriptContent({ language }) {
@@ -74,9 +73,11 @@ function TranscriptContent({ language }) {
    };
 
     const formRef = useRef(null);
+    const html2pdf = window.html2pdf;
+    
     
     const exportToPDF = () => {
-      const element = formRef.current;
+      const element = document.getElementById('content');
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
@@ -99,76 +100,76 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-        html2pdf().set(options).from(clone).save();
+        window.html2pdf().set(options).from(clone).save();
      };
 
      return (
-
         <div style={container}>
-         <div style={title}>
-          <p>Genesis of Ideas International School</p>
-         </div>
-         <div style={columns}>
-          <div style={column}>
-           7901 4th St N STE 300,<br />
-           St. Petersburg, FL 33702<br />
+         <div id="content" ref={formRef}>
+          <div style={title}>
+           <p>Genesis of Ideas International School</p>
           </div>
-          <div style={column}>
-           Phone: +1 (813) 501-5756<br />
-           <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
+          <div style={columns}>
+           <div style={column}>
+            7901 4th St N STE 300,<br />
+            St. Petersburg, FL 33702<br />
+           </div>
+           <div style={column}>
+            Phone: +1 (813) 501-5756<br />
+            <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
+           </div>
+           <div style={column}>
+            School Code: 650<br />
+            President: Shiyu Zhang, Ph.D.<br />
+           </div>
           </div>
-          <div style={column}>
-           School Code: 650<br />
-           President: Shiyu Zhang, Ph.D.<br />
-          </div>
-         </div>
-
-        <table style={table}>
-         <tbody>
-          <tr>
-            <td style={thTd}>
-             <div style={labelInputWrapper}>
-               <div style={label}>Name:</div>
-               <input type="text" style={input} placeholder="Enter Name" />
-             </div>
-            </td>
+              
+          <table style={table}>
+           <tbody>
+            <tr>
+              <td style={thTd}>
+              <div style={labelInputWrapper}>
+                <div style={label}>Name:</div>
+                <input type="text" style={input} placeholder="Enter Name" />
+              </div>
+              </td>
              
-            <td style={thTd}>
-              Birth Date: <input type="date" style={input} />
-            </td>
+              <td style={thTd}>
+               Birth Date: <input type="date" style={input} />
+              </td>
              
-            <td style={thTd}>
-              Gender: 
-              <select style={input}>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-              </select>
-            </td>
+              <td style={thTd}>
+               Gender: 
+                <select style={input}>
+                 <option value="Female">Female</option>
+                 <option value="Male">Male</option>
+                </select>
+              </td>
                   
-            <td style={thTd}>
-              Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
-            </td>  
-          </tr>
+              <td style={thTd}>
+                Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
+              </td>  
+            </tr>
                   
-          <tr>
-            <td style={thTd}>
-              Address: <input type="text" style={input} placeholder="Enter Address" />
-            </td>
+            <tr>
+              <td style={thTd}>
+               Address: <input type="text" style={input} placeholder="Enter Address" />
+              </td>
                   
-            <td style={thTd}>
-             <div style={labelInputWrapper}>
-              <div style={label}>City:</div> 
-              <input type="text" style={input} placeholder="Enter City" />
-             </div>
-            </td>
+              <td style={thTd}>
+               <div style={labelInputWrapper}>
+                <div style={label}>City:</div> 
+                <input type="text" style={input} placeholder="Enter City" />
+               </div>
+              </td>
                   
-            <td style={thTd}>
-              State: <input type="text" style={input} placeholder="Enter State" />
-            </td>
+              <td style={thTd}>
+                State: <input type="text" style={input} placeholder="Enter State" />
+              </td>
                   
-            <td style={thTd}>
-              Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
-            </td>
+              <td style={thTd}>
+               Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
+              </td>
           </tr>
                   
           <tr>
@@ -189,7 +190,8 @@ function TranscriptContent({ language }) {
             </td>
           </tr>
         </tbody>
-      </table>
+       </table>
+      </div>
       <button
         onClick={exportToPDF}
         style={{
