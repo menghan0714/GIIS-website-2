@@ -106,7 +106,7 @@ function TranscriptContent({ language }) {
 
      return (
         <div style={container}>
-         <div id="content" ref={formRef}>
+         <div id="content" style={{ backgroundColor: "white", border: "none" }} ref={formRef}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
