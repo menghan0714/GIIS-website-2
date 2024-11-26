@@ -101,6 +101,7 @@ function TranscriptContent({ language }) {
             allowTaint: true, 
             logging: true,
             letterRendering: true,
+            ignoreElements: (element) => element.tagName === "BUTTON",
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
