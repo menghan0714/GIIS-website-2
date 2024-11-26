@@ -1,5 +1,4 @@
 import React, { useRef }  from 'react';
-import html2pdf from "html2pdf.js";
 
 
 function TranscriptContent({ language }) {
@@ -78,7 +77,7 @@ function TranscriptContent({ language }) {
     
     
     const exportToPDF = () => {
-      const element = formRef.current;
+      const element = document.getElementById('content');
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
@@ -102,16 +101,13 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-         html2pdf()
-        .set(options)
-        .from(clone) // 使用複製後的 DOM
-        .save()
-        .catch((error) => console.error("PDF Export Error:", error));
+         window.html2pdf().set(options).from(clone).save();
      };
+
 
      return (
       <>
-        <div ref={formRef}>
+        <div id="content" ref={formRef}>
          <div style={container}>
           <div style={title}>
            <p>Genesis of Ideas International School</p>
