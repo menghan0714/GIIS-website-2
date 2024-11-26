@@ -35,7 +35,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
-     fontSize: '10px',
+     fontSize: '12px',
    };
 
     const table = {
@@ -50,7 +50,7 @@ function TranscriptContent({ language }) {
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
-     fontSize: '8px',
+     fontSize: '10px',
      width: '30%',
    };
 
@@ -61,12 +61,12 @@ function TranscriptContent({ language }) {
 
    const label = {
      marginRight: '8px', // 提示詞與輸入框的間距
-     fontSize: '8px', // 提示詞字體大小
+     fontSize: '10px', // 提示詞字體大小
    };
 
    const input = {
      width: '50%',
-     fontSize: '8px',
+     fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', // 移除邊框
      borderBottom: '2px solid black', // 黑色底線
@@ -93,7 +93,7 @@ function TranscriptContent({ language }) {
 
     // 設置 PDF 選項
     const options = {
-        margin: 0,  // 上下左右邊距 (mm)
+        margin: 10,  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
         html2canvas: {
             scale: 5,
@@ -105,7 +105,14 @@ function TranscriptContent({ language }) {
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };
-         window.html2pdf().set(options).from(clone).save();
+
+        const pdfWidth = 210; 
+        const contentWidth = element.offsetWidth;
+        const scaleRatio = pdfWidth / contentWidth; 
+
+        options.html2canvas.scale *= scaleRatio;
+        
+        window.html2pdf().set(options).from(clone).save();
      };
 
 
