@@ -6,6 +6,10 @@ function TranscriptContent({ language }) {
     const container = {
      textAlign: 'center',
      width: '100%',
+     backgroundColor: "white",
+     border: "none",
+     outline: "none", // 移除外圍框
+     boxShadow: "none", // 移除可能的陰影
     };
 
     const title = {
