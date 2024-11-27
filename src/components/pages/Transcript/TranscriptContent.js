@@ -281,6 +281,7 @@ const exportToPDF = () => {
               </td>
              </tr>
          </tbody>    
+        </table>
       </div>
               
       <button
