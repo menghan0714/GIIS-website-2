@@ -98,11 +98,11 @@ function TranscriptContent({ language }) {
   const formRef = useRef(null);
     
 const exportToPDF = () => {
+  // 取得 DOM 元素
   const element = document.getElementById("content");
 
   // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
-
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
     const value = input.value || input.placeholder;
@@ -110,59 +110,52 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
-  // 取得內容的總高度
-  const pageHeight = 1122; // A4 的高度，以像素為單位
-  const contentHeight = clone.scrollHeight;
+  // 計算元素的寬高（像素）
+  const boundingClientRect = clone.getBoundingClientRect();
+  const width = boundingClientRect.width; // 元素的寬度
+  const height = boundingClientRect.height; // 元素的高度
 
-  // 如果內容超出一頁
-  if (contentHeight > pageHeight) {
-    let currentHeight = 0;
+  // 設定 Canvas
+  const canvas = document.createElement("canvas");
+  const devicePixelRatio = window.devicePixelRatio || 1; // 設備的像素比例
+  const scale = 2 * devicePixelRatio; // 放大倍率
+  canvas.width = width * scale; // Canvas 的寬度
+  canvas.height = height * scale; // Canvas 的高度
+  const context = canvas.getContext("2d");
+  context.scale(scale / devicePixelRatio, scale / devicePixelRatio); // 縮放比例
 
-    const pages = [];
-    while (currentHeight < contentHeight) {
-      const page = document.createElement("div");
-      page.style.height = `${pageHeight}px`;
-      page.style.overflow = "hidden";
-      page.style.position = "relative";
+  // 使用 html2canvas 進行渲染
+  html2canvas(clone, {
+    canvas,
+    allowTaint: true,
+    taintTest: true,
+    useCORS: true,
+    scale,
+    logging: true,
+  }).then((canvas) => {
+    // 將 Canvas 轉為圖片
+    const binary = canvas.toDataURL("image/jpeg", 1); // JPEG 格式，高品質 1.0
+    canvas.toBlob((blobObj) => {
+      // 取得內容寬高 (以 px 為單位)
+      const contentWidth = canvas.width;
+      const contentHeight = canvas.height;
 
-      // 複製內容到新頁面
-      const clonedChild = clone.cloneNode(true);
-      page.appendChild(clonedChild);
+      // 創建 jsPDF 實例並動態設置寬高
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "pt",
+        format: [contentWidth, contentHeight], // 使用像素大小作為頁面格式
+      });
 
-      // 記錄新頁面並更新高度
-      pages.push(page);
-      currentHeight += pageHeight;
+      // 將圖片添加到 PDF 中
+      pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
 
-      // 插入分頁標記
-      const pageBreak = document.createElement("div");
-      pageBreak.className = "page-break";
-      clone.insertBefore(pageBreak, null);
-    }
-
-    // 替換原內容為多個頁面
-    clone.innerHTML = "";
-    pages.forEach((page) => clone.appendChild(page));
-  }
-
-  const options = {
-    margin: [0, 0, 0, 0],
-    filename: "Transcript.pdf",
-    html2canvas: {
-      scale: 5, // 渲染高分辨率
-      useCORS: true,
-      allowTaint: true,
-      logging: true,
-      letterRendering: true,
-      ignoreElements: (element) => element.tagName === "BUTTON",
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-  };
-
-  window.html2pdf()
-    .set(options)
-    .from(clone)
-    .save();
+      // 儲存 PDF 文件
+      pdf.save("Transcript.pdf");
+    });
+  });
 };
+
     
      return (
         <div style={container}>
