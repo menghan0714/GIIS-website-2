@@ -3,6 +3,8 @@ import React, { useRef }  from 'react';
 function TranscriptContent({ language }) {
     
   const container = {
+    border: '1px solid red',
+    padding: '10px',
      textAlign: 'center',
      width: '100%',
      backgroundColor: 'white',
