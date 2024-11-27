@@ -25,7 +25,7 @@ function TranscriptContent({ language }) {
         margin: 0,  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
         html2canvas: {
-            scale: 5,
+            scale: 1,
             useCORS: true, 
             allowTaint: true, 
             logging: true,
