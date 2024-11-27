@@ -1,8 +1,98 @@
 import React, { useRef }  from 'react';
-import styles from './TranscriptContent.module.css';
 
 function TranscriptContent({ language }) {
     
+  const container {
+     textAlign: 'center',
+     width: '100%',
+     backgroundColor: 'white',
+     border: 'none',
+     outline: 'none',
+     boxShadow: 'none', 
+  }
+
+  const title {
+     marginTop: 5%',
+     fontFamily: 'Inter, sans-serif',
+     fontSize: '20px',
+     fontWeight: 'bold',
+  }
+
+ const columns {
+     width: '90%',
+     display: 'flex',
+     justifyContent: 'space-between',
+     backgroundColor: 'rgba(255, 255, 255, 1)', 
+     padding: '5px',
+     border: '1px solid #ccc',
+     margin: '0 auto',
+   }
+
+  const column {
+     flex: '1',
+     textAlign: 'center',
+     padding: '5px',
+     boxSizing: 'border-box',
+     fontSize: '10px',
+   }
+
+   const table {
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    }
+
+   const table2 {
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    }
+
+   const table3 {
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    }
+
+   const thTd {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '25%',
+   }
+
+    const thTd2 {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '6px',
+     width: '25%',
+   }
+
+    const labelInputWrapper {
+     display: 'flex',
+     alignItems: 'center', 
+   }
+
+    const input {
+     width: '50%',
+     fontSize: '8px',
+     boxSizing: 'border-box',
+     border: 'none', 
+     borderBottom: '2px solid black',
+     background: 'none',
+     outline: 'none',
+     overflowWrap: 'break-word',
+     whiteSpace: 'normal',
+     wordWrap: 'break-word',
+   }
   const formRef = useRef(null);
     
 const exportToPDF = () => {
@@ -39,98 +129,98 @@ const exportToPDF = () => {
   };
     
      return (
-        <div className={styles.container}>
+        <div style={container}>
          <div id="content" ref={formRef}>
-          <div className={styles.title}>
+          <div style={title}>
            <p>Genesis of Ideas International School</p>
           </div>
-          <div className={styles.columns}>
-           <div className={styles.column}>
+          <div style={columns}>
+           <div style={column}>
             7901 4th St N STE 300,<br />
             St. Petersburg, FL 33702<br />
            </div>
-           <div className={styles.column}>
+           <div style={column}>
             Phone: +1 (813) 501-5756<br />
             <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
            </div>
-           <div className={styles.column}>
+           <div style={column}>
             School Code: 650<br />
             President: Shiyu Zhang, Ph.D.<br />
            </div>
           </div>
               
-          <table className={styles.table}>
+          <table style={table}>
            <tbody>
             <tr>
-              <td className={styles.thTd}>
-              <div className={styles.labelInputWrapper}>
-                <div className={styles.labelInputWrapper}>Name:</div>
-                <input type="text" className={styles.input} placeholder="Enter Name" />
+              <td style={thTd}>
+              <div style={labelInputWrapper}>
+                <div style={labelInputWrapper}>Name:</div>
+                <input type="text" style={input} placeholder="Enter Name" />
               </div>
               </td>
              
-              <td className={styles.thTd}>
-               Birth Date: <input type="date" className={styles.input} />
+              <td style={thTd}>
+               Birth Date: <input type="date" style={input} />
               </td>
              
-              <td className={styles.thTd}>
+              <td style={thTd}>
                Gender: 
-                <select className={styles.input}>
+                <select style={input}>
                  <option value="Female">Female</option>
                  <option value="Male">Male</option>
                 </select>
               </td>
                   
-              <td className={styles.thTd}>
-                Parent/Guardian: <input type="text" className={styles.input} placeholder="Enter Name"/>
+              <td style={thTd}>
+                Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
               </td>  
             </tr>
                   
             <tr>
-              <td className={styles.thTd}>
-               Address: <input type="text" className={styles.input} placeholder="Enter Address" />
+              <td style={thTd}>
+               Address: <input type="text" style={input} placeholder="Enter Address" />
               </td>
                   
-              <td className={styles.thTd}>
-               <div className={styles.labelInputWrapper}>
-                <div className={styles.label}>City:</div> 
-                <input type="text" className={styles.input} placeholder="Enter City" />
+              <td style={thTd}>
+               <div style={labelInputWrapper}>
+                <div style={label}>City:</div> 
+                <input type="text" style={input} placeholder="Enter City" />
                </div>
               </td>
                   
-              <td className={styles.thTd}>
-                State: <input type="text" className={styles.input} placeholder="Enter State" />
+              <td style={thTd}>
+                State: <input type="text" style={input} placeholder="Enter State" />
               </td>
                   
-              <td className={styles.thTd}>
-               Zip Code: <input type="text" className={styles.input} placeholder="Enter Zip Code" />
+              <td style={thTd}>
+               Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
               </td>
           </tr>
                   
           <tr>
-            <td className={styles.thTd}>
-              Entry Date: <input type="date" className={styles.input} />
+            <td style={thTd}>
+              Entry Date: <input type="date" style={input} />
             </td>
                   
-            <td className={styles.thTd}>
-              Withdrawal Date: <input type="date" className={styles.input} />
+            <td style={thTd}>
+              Withdrawal Date: <input type="date" style={input} />
             </td>
                   
-            <td className={styles.thTd}>
-              Graduation Date: <input type="date" className={styles.input} />
+            <td style={thTd}>
+              Graduation Date: <input type="date" style={input} />
             </td>
                   
-            <td className={styles.thTd}>
-              Transcript Date: <input type="date" className={styles.input} />
+            <td style={thTd}>
+              Transcript Date: <input type="date" style={input} />
             </td>
           </tr>
         </tbody>
        </table>
-       <table className={styles.table2}>
+       <table style={table2}>
          <tbody>
            <tr>
-             <td className={styles.thTd}>
-                <table className={styles.table3}>
+             <td style={thTd}>
+                <table style={table3}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
@@ -138,12 +228,12 @@ const exportToPDF = () => {
                     </td>
                    </tr>
                    <tr>
-                    <th className={styles.thTd2}>Course Name</th>
-                    <th className={styles.thTd2}>Type</th>
-                    <th className={styles.thTd2}>Credits</th>
-                    <th className={styles.thTd2}>Grade</th>
-                    <th className={styles.thTd2}>Weighted GPA</th>
-                    <th className={styles.thTd2}>Unweighted GPA</th>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -155,10 +245,10 @@ const exportToPDF = () => {
                     { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td className={styles.thTd2}>{row.name}</td>
-                      <td className={styles.thTd2}>{row.type}</td>
-                      <td className={styles.thTd2}>{row.credits}</td>
-                      <td className={styles.thTd2}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
                        <input
                         type="text"
                         defaultValue={row.grade}
@@ -170,24 +260,24 @@ const exportToPDF = () => {
                         }}
                         />
                        </td>
-                       <td className={styles.thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td className={styles.thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                       <tr>
                        <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
                         Semester Totals
                        </td>
-                       <td className={styles.thTd2}></td>
-                       <td className={styles.thTd2}>3.85</td>
-                       <td className={styles.thTd2}>3.85</td>
+                       <td style={thTd2}></td>
+                       <td style={thTd2}>3.85</td>
+                       <td style={thTd2}>3.85</td>
                       </tr>
                     </tbody>
                 </table>
               </td>
 
-              <td className={styles.thTd}>
-               Additional Info 2: <input type="text" className={styles.input} placeholder="Enter Info 2" />
+              <td style={thTd}>
+               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
               </td>
              </tr>
            </tbody>
