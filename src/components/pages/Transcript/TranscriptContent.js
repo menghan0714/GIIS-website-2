@@ -125,7 +125,7 @@ function TranscriptContent({ language }) {
          <tbody>
            <tr>
              <td className={styles.thTd}>
-                <table className={styles.table}>
+                <table className={styles.table3}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
