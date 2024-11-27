@@ -12,7 +12,7 @@ function TranscriptContent({ language }) {
   }
 
   const titlE = {
-     marginTop: 5%',
+     marginTop: '5%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
      fontWeight: 'bold',
