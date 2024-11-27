@@ -101,70 +101,35 @@ function TranscriptContent({ language }) {
 const exportToPDF = () => {
   const element = document.getElementById("content");
 
-  // 克隆 DOM
+  // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
 
-  // 處理輸入框
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
     const value = input.value || input.placeholder;
-    input.replaceWith(document.createTextNode(value));
+    const textNode = document.createTextNode(value);
+    input.replaceWith(textNode);
   });
+    
+  const options = {
+    margin: [0, 0, 0, 0],
+    filename: "Transcript.pdf",
+    html2canvas: {
+      scale: 5, // 渲染高分辨率
+      useCORS: true,
+      allowTaint: true,
+      logging: true,
+      letterRendering: true,
+      ignoreElements: (element) => element.tagName === "BUTTON",
+    },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+  };
 
-  // 處理 iframe
-  const iframes = clone.querySelectorAll("iframe");
-  iframes.forEach((iframe) => {
-    try {
-      // 嘗試訪問 iframe 的內容
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-      if (iframeDoc) {
-        // 如果可訪問，複製其內容
-        const iframeClone = iframeDoc.body.cloneNode(true);
-        const divWrapper = document.createElement("div");
-        divWrapper.style.width = iframe.offsetWidth + "px";
-        divWrapper.style.height = iframe.offsetHeight + "px";
-        divWrapper.style.border = "1px solid #ccc"; // 標記 iframe 的邊框
-        divWrapper.appendChild(iframeClone);
-        iframe.replaceWith(divWrapper);
-      }
-    } catch (e) {
-      // 如果無法訪問，替換為占位符
-      console.warn("無法克隆 iframe 的內容，原因可能是跨域限制。", e);
-      const placeholder = document.createElement("div");
-      placeholder.style.width = iframe.offsetWidth + "px";
-      placeholder.style.height = iframe.offsetHeight + "px";
-      placeholder.style.background = "#ccc"; // 標記不可用的 iframe
-      placeholder.textContent = "Iframe content not accessible";
-      placeholder.style.display = "flex";
-      placeholder.style.alignItems = "center";
-      placeholder.style.justifyContent = "center";
-      placeholder.style.color = "#000";
-      iframe.replaceWith(placeholder);
-    }
-  });
-
-  // 使用 html2canvas 渲染克隆的 DOM
-  const scale = 2;
-  window.html2canvas(clone, {
-    scale,
-    useCORS: true,
-    allowTaint: false,
-  })
-    .then((canvas) => {
-      // 生成 PDF
-      const pdf = new window.jspdf.jsPDF({
-        orientation: "portrait",
-        unit: "pt",
-        format: [canvas.width, canvas.height],
-      });
-
-      const imgData = canvas.toDataURL("image/jpeg", 1.0);
-      pdf.addImage(imgData, "JPEG", 0, 0, canvas.width, canvas.height);
-      pdf.save("Transcript.pdf");
-    })
-    .catch((error) => console.error("PDF 生成失敗：", error));
+  window.html2pdf()
+    .set(options)
+    .from(clone)
+    .save();
 };
-
     
      return (
         <div style={container}>
