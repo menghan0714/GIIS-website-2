@@ -24,6 +24,9 @@ function App() {
     setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
   };
 
+  const location = useLocation();
+  const isTranscript = location.pathname === '/transcript';
+
   return (
      <>
       {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
