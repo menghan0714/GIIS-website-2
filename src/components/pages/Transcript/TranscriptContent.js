@@ -182,8 +182,7 @@ const exportToPDF = () => {
                   
               <td style={thTd}>
                <div style={labelInputWrapper}>
-                <div style={label}>City:</div> 
-                <input type="text" style={input} placeholder="Enter City" />
+                  City:<input type="text" style={input} placeholder="Enter City" />
                </div>
               </td>
                   
