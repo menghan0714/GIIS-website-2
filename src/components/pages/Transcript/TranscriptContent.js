@@ -123,6 +123,7 @@ html2pdf().set({
     orientation: 'portrait',
   },
 }).from(document.getElementById('content')).save();
+}
 
     
      return (
