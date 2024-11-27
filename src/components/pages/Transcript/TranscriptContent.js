@@ -111,13 +111,17 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
-  const scaleFactor = window.devicePixelRatio || 1;
+  clone.style.margin = "0";
+  clone.style.padding = "0";
+  clone.style.position = "relative";
+  clone.style.top = "0px";
+
 
   const options = {
     margin: [0, 0, 0, 0],
     filename: "Transcript.pdf",
     html2canvas: {
-      scale: scaleFactor > 2 ? 2 : 5, // 渲染高分辨率
+      scale: 5, // 渲染高分辨率
       useCORS: true,
       allowTaint: true,
       logging: true,
