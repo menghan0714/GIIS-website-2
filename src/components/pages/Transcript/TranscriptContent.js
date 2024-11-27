@@ -244,6 +244,7 @@ const exportToPDF = () => {
                     { name: 'Biology', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
                     { name: 'World History', type: 'Core', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
                     { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.85, unweighted: 3.85 }, 
                     ].map((row, index) => (
                      <tr key={index}>
                       <td style={thTd2}>{row.name}</td>
@@ -265,16 +266,6 @@ const exportToPDF = () => {
                        <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
-                      <tr>
-                       <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold' }}>
-                        Semester Totals
-                       </td>
-                       <td style={thTd2}></td>
-                       <td style={thTd2}>4.0</td>
-                       <td style={thTd2}></td>    
-                       <td style={thTd2}>3.85</td>
-                       <td style={thTd2}>3.85</td>
-                      </tr>
                     </tbody>
                 </table>
               </td>
