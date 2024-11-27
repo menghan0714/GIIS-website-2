@@ -98,70 +98,38 @@ function TranscriptContent({ language }) {
   const formRef = useRef(null);
     
 
- const exportToPDF = () => {
+const exportToPDF = () => {
   const element = document.getElementById("content");
 
+  // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
 
-  // 清除輸入框並處理 iframe
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
     const value = input.value || input.placeholder;
     const textNode = document.createTextNode(value);
     input.replaceWith(textNode);
   });
-
-  const iframes = clone.querySelectorAll("iframe");
-  iframes.forEach((iframe) => {
-    const placeholder = document.createElement("div");
-    placeholder.style.width = iframe.offsetWidth + "px";
-    placeholder.style.height = iframe.offsetHeight + "px";
-    placeholder.style.background = "#ccc";
-    iframe.replaceWith(placeholder);
-  });
-
-  // 設置 Canvas
-  const boundingClientRect = clone.getBoundingClientRect();
-  const width = boundingClientRect.width;
-  const height = boundingClientRect.height;
-  const canvas = document.createElement("canvas");
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  const scale = 2 * devicePixelRatio;
-  canvas.width = width * scale;
-  canvas.height = height * scale;
-  const context = canvas.getContext("2d");
-  context.scale(scale / devicePixelRatio, scale / devicePixelRatio);
-
-  import("html2canvas").then((html2canvas) => {
-    html2canvas.default(clone, {
-      canvas,
-      allowTaint: true,
-      taintTest: true,
+    
+  const options = {
+    margin: [0, 0, 0, 0],
+    filename: "Transcript.pdf",
+    html2canvas: {
+      scale: 5, // 渲染高分辨率
       useCORS: true,
-      scale,
+      allowTaint: true,
       logging: true,
-      ignoreElements: (el) => el.tagName === "IFRAME" || el.tagName === "BUTTON",
-    }).then((canvas) => {
-      const binary = canvas.toDataURL("image/jpeg", 1);
-      const contentWidth = canvas.width;
-      const contentHeight = canvas.height;
+      letterRendering: true,
+      ignoreElements: (element) => element.tagName === "BUTTON",
+    },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+  };
 
-      import("jspdf").then((jspdf) => {
-        const { jsPDF } = jspdf.default;
-        const pdf = new jsPDF({
-          orientation: "portrait",
-          unit: "pt",
-          format: [contentWidth, contentHeight],
-        });
-        pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
-        pdf.save("Transcript.pdf");
-      });
-    }).catch((error) => {
-      console.error("Error during rendering:", error);
-    });
-  });
+  window.html2pdf()
+    .set(options)
+    .from(clone)
+    .save();
 };
-
     
      return (
         <div style={container}>
