@@ -41,7 +41,7 @@ function App() {
          <Route path="/transcript" element={<Transcript language={language} />} />
        </Routes>
       </main>
-      <Footer />
+      {!isTranscript && <Footer />}
      </>
   );
 }
