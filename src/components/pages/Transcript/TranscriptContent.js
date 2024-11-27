@@ -1,5 +1,5 @@
 import React, { useRef }  from 'react';
-import styles from './TranscriptContent.css';
+import styles from './TranscriptContent.module.css';
 
 function TranscriptContent({ language }) {
     
