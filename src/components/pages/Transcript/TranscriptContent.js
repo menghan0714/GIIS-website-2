@@ -16,6 +16,11 @@ function TranscriptContent({ language }) {
         input.replaceWith(textNode);
      });
 
+      clone.style.width = "794px"; // A4 寬度 (以 px 為單位)
+      clone.style.height = "auto";
+      clone.style.overflow = "hidden";
+      document.body.appendChild(clone);
+
     const options = {
         margin: 0,  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
@@ -27,9 +32,12 @@ function TranscriptContent({ language }) {
             letterRendering: true,
             ignoreElements: (element) => element.tagName === "BUTTON",
         },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        jsPDF: { unit: "mm", format: [794, 1123], orientation: "portrait" },
      };    
         window.html2pdf().set(options).from(clone).save();
+     };
+
+      clone.remove();
      };
 
 
