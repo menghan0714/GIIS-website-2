@@ -46,10 +46,7 @@ const exportToPDF = () => {
     .set(options)
     .from(clone)
     .save()
-    .then(() => {
-      clone.remove(); // 匯出後刪除
-    });
-};
+  };
      return (
         <div className={styles.container}>
          <div id="content" ref={formRef}>
