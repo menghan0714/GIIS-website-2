@@ -97,12 +97,7 @@ function TranscriptContent({ language }) {
    }
   const formRef = useRef(null);
     
-import React from "react";
 
-// 確保在 package.json 中安裝了 html2canvas 和 jspdf
-// npm install html2canvas jspdf --save
-
-const TranscriptPage = () => {
   const exportToPDF = () => {
     const element = document.getElementById("content");
 
