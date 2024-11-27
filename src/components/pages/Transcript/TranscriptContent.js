@@ -21,7 +21,7 @@ const exportToPDF = () => {
     margin: 0,
     filename: "Transcript.pdf",
     html2canvas: {
-      scale: 2, // 渲染高分辨率
+      scale: 5, // 渲染高分辨率
       useCORS: true,
       allowTaint: true,
       logging: true,
