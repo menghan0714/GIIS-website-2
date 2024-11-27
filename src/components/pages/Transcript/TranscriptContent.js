@@ -2,7 +2,7 @@ import React, { useRef }  from 'react';
 
 function TranscriptContent({ language }) {
     
-  const container + {
+  const container = {
      textAlign: 'center',
      width: '100%',
      backgroundColor: 'white',
