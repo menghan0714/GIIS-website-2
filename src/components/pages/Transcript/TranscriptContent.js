@@ -103,19 +103,12 @@ const exportToPDF = () => {
   // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
 
-    
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
     const value = input.value || input.placeholder;
     const textNode = document.createTextNode(value);
     input.replaceWith(textNode);
   });
-
-  clone.style.margin = "0";
-  clone.style.padding = "0";
-  clone.style.position = "relative";
-  clone.style.top = "0px";
-
 
   const options = {
     margin: [0, 0, 0, 0],
@@ -137,7 +130,6 @@ const exportToPDF = () => {
     .from(clone)
     .save()
   };
-
 
      return (
         <div style={container}>
