@@ -125,8 +125,8 @@ const exportToPDF = () => {
   const context = canvas.getContext("2d");
   context.scale(scale / devicePixelRatio, scale / devicePixelRatio); // 縮放比例
 
-  // 使用 html2canvas 進行渲染
-  html2canvas(clone, {
+  // 使用全局 html2canvas 進行渲染
+  window.html2canvas(clone, {
     canvas,
     allowTaint: true,
     taintTest: true,
@@ -141,8 +141,8 @@ const exportToPDF = () => {
       const contentWidth = canvas.width;
       const contentHeight = canvas.height;
 
-      // 創建 jsPDF 實例並動態設置寬高
-      const pdf = new jsPDF({
+      // 使用全局 jsPDF 創建實例並動態設置寬高
+      const pdf = new window.jspdf.jsPDF({
         orientation: "portrait",
         unit: "pt",
         format: [contentWidth, contentHeight], // 使用像素大小作為頁面格式
@@ -156,6 +156,7 @@ const exportToPDF = () => {
     });
   });
 };
+
     
      return (
         <div style={container}>
