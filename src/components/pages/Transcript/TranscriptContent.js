@@ -128,17 +128,17 @@ function TranscriptContent({ language }) {
                 <table className={styles.table}>
                  <thead>
                    <tr>
-                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold' }}>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
                      Grade 9 - Fall Semester
                     </td>
                    </tr>
                    <tr>
-                    <th className={styles.thTd}>Course Name</th>
-                    <th className={styles.thTd}>Type</th>
-                    <th className={styles.thTd}>Credits</th>
-                    <th className={styles.thTd}>Grade</th>
-                    <th className={styles.thTd}>Weighted GPA</th>
-                    <th className={styles.thTd}>Unweighted GPA</th>
+                    <th className={styles.thTd2}>Course Name</th>
+                    <th className={styles.thTd2}>Type</th>
+                    <th className={styles.thTd2}>Credits</th>
+                    <th className={styles.thTd2}>Grade</th>
+                    <th className={styles.thTd2}>Weighted GPA</th>
+                    <th className={styles.thTd2}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -150,10 +150,10 @@ function TranscriptContent({ language }) {
                     { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td className={styles.thTd}>{row.name}</td>
-                      <td className={styles.thTd}>{row.type}</td>
-                      <td className={styles.thTd}>{row.credits}</td>
-                      <td className={styles.thTd}>
+                      <td className={styles.thTd2}>{row.name}</td>
+                      <td className={styles.thTd2}>{row.type}</td>
+                      <td className={styles.thTd2}>{row.credits}</td>
+                      <td className={styles.thTd2}>
                        <input
                         type="text"
                         defaultValue={row.grade}
@@ -165,17 +165,17 @@ function TranscriptContent({ language }) {
                         }}
                         />
                        </td>
-                       <td className={styles.thTd}>{row.weighted.toFixed(2)}</td>
-                       <td className={styles.thTd}>{row.unweighted.toFixed(2)}</td>
+                       <td className={styles.thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td className={styles.thTd2}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                       <tr>
                        <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
                         Semester Totals
                        </td>
-                       <td className={styles.thTd}></td>
-                       <td className={styles.thTd}>3.85</td>
-                       <td className={styles.thTd}>3.85</td>
+                       <td className={styles.thTd2}></td>
+                       <td className={styles.thTd2}>3.85</td>
+                       <td className={styles.thTd2}>3.85</td>
                       </tr>
                     </tbody>
                 </table>
