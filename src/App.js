@@ -26,7 +26,7 @@ function App() {
 
   return (
      <>
-      {!isTranscriptPage && <Header language={language} toggleLanguage={toggleLanguage} />}
+      {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
       <main className="container-fluid">
        <Routes>
          <Route path="/" element={<Homepage language={language} />} />
