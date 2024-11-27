@@ -110,6 +110,40 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
+  // 取得內容的總高度
+  const pageHeight = 1122; // A4 的高度，以像素為單位
+  const contentHeight = clone.scrollHeight;
+
+  // 如果內容超出一頁
+  if (contentHeight > pageHeight) {
+    let currentHeight = 0;
+
+    const pages = [];
+    while (currentHeight < contentHeight) {
+      const page = document.createElement("div");
+      page.style.height = `${pageHeight}px`;
+      page.style.overflow = "hidden";
+      page.style.position = "relative";
+
+      // 複製內容到新頁面
+      const clonedChild = clone.cloneNode(true);
+      page.appendChild(clonedChild);
+
+      // 記錄新頁面並更新高度
+      pages.push(page);
+      currentHeight += pageHeight;
+
+      // 插入分頁標記
+      const pageBreak = document.createElement("div");
+      pageBreak.className = "page-break";
+      clone.insertBefore(pageBreak, null);
+    }
+
+    // 替換原內容為多個頁面
+    clone.innerHTML = "";
+    pages.forEach((page) => clone.appendChild(page));
+  }
+
   const options = {
     margin: [0, 0, 0, 0],
     filename: "Transcript.pdf",
@@ -122,15 +156,14 @@ const exportToPDF = () => {
       ignoreElements: (element) => element.tagName === "BUTTON",
     },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    
   };
 
   window.html2pdf()
     .set(options)
     .from(clone)
-    .save()
-  };
-
+    .save();
+};
+    
      return (
         <div style={container}>
          <div id="content" ref={formRef}>
