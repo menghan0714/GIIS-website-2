@@ -216,9 +216,8 @@ const exportToPDF = () => {
             </td>
           </tr>
         </tbody>
-       </table>
-       <table style={table2}>
-         <tbody>
+                    
+        <tbody>
            <tr>
              <td style={thTd}>
                 <table style={table3}>
@@ -274,15 +273,14 @@ const exportToPDF = () => {
                        <td style={thTd2}>3.85</td>
                       </tr>
                     </tbody>
-                </table>
-              </td>
+                   </table>
+                 </td>
 
               <td style={thTd}>
                Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
               </td>
              </tr>
-           </tbody>
-        </table>       
+         </tbody>    
       </div>
               
       <button
