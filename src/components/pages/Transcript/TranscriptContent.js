@@ -9,7 +9,7 @@ function TranscriptContent({ language }) {
      width: '100%',
      width: '210mm', /* A4 寬度 */
      height: 'auto',
-     max-height: '297mm', /* A4 高度 */
+     maxHeight: '297mm', /* A4 高度 */
      overflow: 'hidden', /* 防止超出內容 */
   }
 
