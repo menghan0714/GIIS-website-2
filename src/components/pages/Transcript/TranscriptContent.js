@@ -3,14 +3,14 @@ import React, { useRef }  from 'react';
 function TranscriptContent({ language }) {
     
   const container = {
-    border: '1px solid red',
-    padding: '10px',
+     border: '1px solid red',
+     padding: '10px',
      textAlign: 'center',
      width: '100%',
-     backgroundColor: 'white',
-     border: 'none',
-     outline: 'none',
-     boxShadow: 'none', 
+     width: '210mm', /* A4 寬度 */
+     height: 'auto',
+     max-height: '297mm', /* A4 高度 */
+     overflow: 'hidden', /* 防止超出內容 */
   }
 
   const title = {
