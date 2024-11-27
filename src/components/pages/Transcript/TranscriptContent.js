@@ -266,10 +266,12 @@ const exportToPDF = () => {
                       </tr>
                       ))}
                       <tr>
-                       <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
+                       <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold' }}>
                         Semester Totals
                        </td>
                        <td style={thTd2}></td>
+                       <td style={thTd2}>4.0</td>
+                       <td style={thTd2}></td>    
                        <td style={thTd2}>3.85</td>
                        <td style={thTd2}>3.85</td>
                       </tr>
