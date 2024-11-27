@@ -1,93 +1,9 @@
 import React, { useRef }  from 'react';
-
+import styles from './TranscriptContent.css';
 
 function TranscriptContent({ language }) {
-
-    const container = {
-     textAlign: 'center',
-     width: '100%',
-     backgroundColor: "white",
-     border: "none",
-     outline: "none", // 移除外圍框
-     boxShadow: "none", // 移除可能的陰影
-    };
-
-    const title = {
-     marginTop: '5%',
-     fontFamily: 'Inter, sans-serif',
-     fontSize: '20px',
-     fontWeight: 'bold',
-    };
-
-    const columns = {
-     width: '90%',
-     display: 'flex',
-     justifyContent: 'space-between',
-     backgroundColor: 'rgba(255, 255, 255, 1)', 
-     padding: '5px',
-     border: '1px solid #ccc',
-     margin: '0 auto',
-   };
-
-    const column = {
-     flex: '1',
-     textAlign: 'center',
-     padding: '5px',
-     boxSizing: 'border-box',
-     fontSize: '10px',
-   };
-
-    const table = {
-     width: '90%',
-     borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
-     margin: '0 auto',
-     tableLayout: 'fixed', 
-    };
-    const table2 = {
-     marginTop:'2.5%',
-     width: '90%',
-     borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
-     margin: '0 auto',
-     tableLayout: 'fixed', 
-    };
-
-
-   const thTd = {
-     padding: '2px',
-     border: '1px solid black',
-     textAlign: 'left',
-     fontSize: '8px',
-     width: '25%',
-   };
-
-
-   const labelInputWrapper = {
-     display: 'flex', // 水平排列
-     alignItems: 'center', // 垂直居中
-   };
-
-   const label = {
-     marginRight: '8px', // 提示詞與輸入框的間距
-     fontSize: '8px', // 提示詞字體大小
-   };
-
-   const input = {
-     width: '50%',
-     fontSize: '8px',
-     boxSizing: 'border-box',
-     border: 'none', // 移除邊框
-     borderBottom: '2px solid black', // 黑色底線
-     background: 'none', // 背景透明
-     outline: 'none', // 移除點擊時的外框
-     overflowWrap: 'break-word',  // 自動斷行
-     whiteSpace: 'normal',
-     wordWrap: 'break-word', // 強制換行
-   };
-
-    const formRef = useRef(null);
     
+    const formRef = useRef(null);
     
     const exportToPDF = () => {
       const element = document.getElementById('content');
@@ -100,7 +16,6 @@ function TranscriptContent({ language }) {
         input.replaceWith(textNode);
      });
 
-    // 設置 PDF 選項
     const options = {
         margin: 0,  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
@@ -119,98 +34,98 @@ function TranscriptContent({ language }) {
 
 
      return (
-        <div style={container}>
+        <div className={styles.container}>
          <div id="content" ref={formRef}>
-          <div style={title}>
+          <div className={styles.title}>
            <p>Genesis of Ideas International School</p>
           </div>
-          <div style={columns}>
-           <div style={column}>
+          <div className={styles.columns}>
+           <div className={styles.column}>
             7901 4th St N STE 300,<br />
             St. Petersburg, FL 33702<br />
            </div>
-           <div style={column}>
+           <div className={styles.column}>
             Phone: +1 (813) 501-5756<br />
             <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
            </div>
-           <div style={column}>
+           <div className={styles.column}>
             School Code: 650<br />
             President: Shiyu Zhang, Ph.D.<br />
            </div>
           </div>
               
-          <table style={table}>
+          <table className={styles.table}>
            <tbody>
             <tr>
-              <td style={thTd}>
-              <div style={labelInputWrapper}>
-                <div style={label}>Name:</div>
-                <input type="text" style={input} placeholder="Enter Name" />
+              <td className={styles.thTd}>
+              <div className={styles.labelInputWrapper}>
+                <div style={labelInputWrapper}>Name:</div>
+                <input type="text" className={styles.input} placeholder="Enter Name" />
               </div>
               </td>
              
-              <td style={thTd}>
-               Birth Date: <input type="date" style={input} />
+              <td className={styles.thTd}>
+               Birth Date: <input type="date" className={styles.input} />
               </td>
              
-              <td style={thTd}>
+              <td className={styles.thTd}>
                Gender: 
-                <select style={input}>
+                <select className={styles.input}>
                  <option value="Female">Female</option>
                  <option value="Male">Male</option>
                 </select>
               </td>
                   
-              <td style={thTd}>
-                Parent/Guardian: <input type="text" style={input} placeholder="Enter Name"/>
+              <td className={styles.thTd}>
+                Parent/Guardian: <input type="text" className={styles.input} placeholder="Enter Name"/>
               </td>  
             </tr>
                   
             <tr>
-              <td style={thTd}>
-               Address: <input type="text" style={input} placeholder="Enter Address" />
+              <td className={styles.thTd}>
+               Address: <input type="text" className={styles.input} placeholder="Enter Address" />
               </td>
                   
-              <td style={thTd}>
+              <td className={styles.thTd}>
                <div style={labelInputWrapper}>
                 <div style={label}>City:</div> 
-                <input type="text" style={input} placeholder="Enter City" />
+                <input type="text" className={styles.input} placeholder="Enter City" />
                </div>
               </td>
                   
-              <td style={thTd}>
-                State: <input type="text" style={input} placeholder="Enter State" />
+              <td className={styles.thTd}>
+                State: <input type="text" className={styles.input} placeholder="Enter State" />
               </td>
                   
-              <td style={thTd}>
-               Zip Code: <input type="text" style={input} placeholder="Enter Zip Code" />
+              <td className={styles.thTd}>
+               Zip Code: <input type="text" className={styles.input} placeholder="Enter Zip Code" />
               </td>
           </tr>
                   
           <tr>
-            <td style={thTd}>
-              Entry Date: <input type="date" style={input} />
+            <td className={styles.thTd}>
+              Entry Date: <input type="date" className={styles.input} />
             </td>
                   
-            <td style={thTd}>
-              Withdrawal Date: <input type="date" style={input} />
+            <td className={styles.thTd}>
+              Withdrawal Date: <input type="date" className={styles.input} />
             </td>
                   
-            <td style={thTd}>
-              Graduation Date: <input type="date" style={input} />
+            <td className={styles.thTd}>
+              Graduation Date: <input type="date" className={styles.input} />
             </td>
                   
-            <td style={thTd}>
-              Transcript Date: <input type="date" style={input} />
+            <td className={styles.thTd}>
+              Transcript Date: <input type="date" className={styles.input} />
             </td>
           </tr>
         </tbody>
        </table>
-       <table style={table2}>
+       <table className={styles.table2}>
          <tbody>
            <tr>
-             <td style={thTd}>
-                <table style={table}>
+             <td className={styles.thTd}>
+                <table className={styles.table}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold' }}>
@@ -218,12 +133,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th className={styles.thTd}>Course Name</th>
+                    <th className={styles.thTd}>Type</th>
+                    <th className={styles.thTd}>Credits</th>
+                    <th className={styles.thTd}>Grade</th>
+                    <th className={styles.thTd}>Weighted GPA</th>
+                    <th className={styles.thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -235,10 +150,10 @@ function TranscriptContent({ language }) {
                     { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd}>{row.name}</td>
-                      <td style={thTd}>{row.type}</td>
-                      <td style={thTd}>{row.credits}</td>
-                      <td style={thTd}>
+                      <td className={styles.thTd}>{row.name}</td>
+                      <td className={styles.thTd}>{row.type}</td>
+                      <td className={styles.thTd}>{row.credits}</td>
+                      <td className={styles.thTd}>
                        <input
                         type="text"
                         defaultValue={row.grade}
@@ -250,24 +165,24 @@ function TranscriptContent({ language }) {
                         }}
                         />
                        </td>
-                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
+                       <td className={styles.thTd}>{row.weighted.toFixed(2)}</td>
+                       <td className={styles.thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                       <tr>
                        <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
                         Semester Totals
                        </td>
-                       <td style={thTd}></td>
-                       <td style={thTd}>3.85</td>
-                       <td style={thTd}>3.85</td>
+                       <td className={styles.thTd}></td>
+                       <td className={styles.thTd}>3.85</td>
+                       <td className={styles.thTd}>3.85</td>
                       </tr>
                     </tbody>
                 </table>
               </td>
 
-              <td style={thTd}>
-               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
+              <td className={styles.thTd}>
+               Additional Info 2: <input type="text" className={styles.input} placeholder="Enter Info 2" />
               </td>
              </tr>
            </tbody>
