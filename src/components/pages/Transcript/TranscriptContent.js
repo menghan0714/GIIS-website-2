@@ -251,16 +251,20 @@ const exportToPDF = () => {
                       <td style={thTd2}>{row.type}</td>
                       <td style={thTd2}>{row.credits}</td>
                       <td style={thTd2}>
-                       <input
-                        type="text"
-                        defaultValue={row.grade}
-                        style={{
-                         width: '50px',
-                         textAlign: 'center',
-                         border: '1px solid #ccc',
-                         borderRadius: '4px',
-                        }}
-                        />
+                       {row.name === "Semester Name" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "50px",
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
                        </td>
                        <td style={thTd2}>{row.weighted.toFixed(2)}</td>
                        <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
