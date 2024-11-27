@@ -59,7 +59,7 @@ function TranscriptContent({ language }) {
             <tr>
               <td className={styles.thTd}>
               <div className={styles.labelInputWrapper}>
-                <div style={labelInputWrapper}>Name:</div>
+                <div className={styles.labelInputWrapper}>Name:</div>
                 <input type="text" className={styles.input} placeholder="Enter Name" />
               </div>
               </td>
@@ -87,8 +87,8 @@ function TranscriptContent({ language }) {
               </td>
                   
               <td className={styles.thTd}>
-               <div style={labelInputWrapper}>
-                <div style={label}>City:</div> 
+               <div className={styles.labelInputWrapper}>
+                <div className={styles.label}>City:</div> 
                 <input type="text" className={styles.input} placeholder="Enter City" />
                </div>
               </td>
