@@ -1,26 +1,26 @@
 import React, { useRef }  from 'react';
 
-
 function TranscriptContent({ language }) {
-
-    const container = {
+    
+  const container = {
+    border: '1px solid red',
+    padding: '10px',
      textAlign: 'center',
      width: '100%',
-     backgroundColor: "white",
-     border: "none",
-     outline: "none", // 移除外圍框
-     boxShadow: "none", // 移除可能的陰影
-    };
+     backgroundColor: 'white',
+     border: 'none',
+     outline: 'none',
+     boxShadow: 'none', 
+  }
 
-    const title = {
+  const title = {
      marginTop: '5%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
      fontWeight: 'bold',
-     marginBottom: '20px',
-    };
+  }
 
-    const columns = {
+ const columns ={
      width: '90%',
      display: 'flex',
      justifyContent: 'space-between',
@@ -28,85 +28,107 @@ function TranscriptContent({ language }) {
      padding: '5px',
      border: '1px solid #ccc',
      margin: '0 auto',
-   };
+   }
 
-    const column = {
+  const column ={
      flex: '1',
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
      fontSize: '10px',
-   };
+   }
 
-    const table = {
+   const table ={
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-    };
+    }
 
-   const thTd = {
+   const table2 ={
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    }
+
+   const table3 ={
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    }
+
+   const thTd ={
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
      fontSize: '8px',
-     width: '30%',
-   };
+     width: '25%',
+   }
 
-   const labelInputWrapper = {
-     display: 'flex', // 水平排列
-     alignItems: 'center', // 垂直居中
-   };
+    const thTd2 ={
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '6px',
+     width: '25%',
+   }
 
-   const label = {
-     marginRight: '8px', // 提示詞與輸入框的間距
-     fontSize: '8px', // 提示詞字體大小
-   };
+    const labelInputWrapper ={
+     display: 'flex',
+     alignItems: 'center', 
+   }
 
-   const input = {
+    const input ={
      width: '50%',
      fontSize: '8px',
      boxSizing: 'border-box',
-     border: 'none', // 移除邊框
-     borderBottom: '2px solid black', // 黑色底線
-     background: 'none', // 背景透明
-     outline: 'none', // 移除點擊時的外框
-     overflowWrap: 'break-word',  // 自動斷行
+     border: 'none', 
+     borderBottom: '2px solid black',
+     background: 'none',
+     outline: 'none',
+     overflowWrap: 'break-word',
      whiteSpace: 'normal',
-     wordWrap: 'break-word', // 強制換行
-   };
-
-    const formRef = useRef(null);
+     wordWrap: 'break-word',
+   }
+  const formRef = useRef(null);
     
-    
-    const exportToPDF = () => {
-      const element = document.getElementById('content');
-    // 複製 DOM 結構以替換輸入框的內容
-      const clone = element.cloneNode(true);
-      const inputs = clone.querySelectorAll("input, select");
-      inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-     });
+const exportToPDF = () => {
+  const element = document.getElementById("content");
 
-    // 設置 PDF 選項
-    const options = {
-        margin: 0,  // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5,
-            useCORS: true, 
-            allowTaint: true, 
-            logging: true,
-            letterRendering: true,
-            ignoreElements: (element) => element.tagName === "BUTTON",
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };
-         window.html2pdf().set(options).from(clone).save();
-     };
+  // 複製 DOM 並清除輸入框
+  const clone = element.cloneNode(true);
+  const inputs = clone.querySelectorAll("input, select");
+  inputs.forEach((input) => {
+    const value = input.value || input.placeholder;
+    const textNode = document.createTextNode(value);
+    input.replaceWith(textNode);
+  });
+
+  const options = {
+    margin: 0,
+    filename: "Transcript.pdf",
+    html2canvas: {
+      scale: 5, // 渲染高分辨率
+      useCORS: true,
+      allowTaint: true,
+      logging: true,
+      letterRendering: true,
+      ignoreElements: (element) => element.tagName === "BUTTON",
+    },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    
+  };
+
+  window.html2pdf()
+    .set(options)
+    .from(clone)
+    .save()
+  };
 
 
      return (
@@ -135,8 +157,7 @@ function TranscriptContent({ language }) {
             <tr>
               <td style={thTd}>
               <div style={labelInputWrapper}>
-                <div style={label}>Name:</div>
-                <input type="text" style={input} placeholder="Enter Name" />
+                Name:<input type="text" style={input} placeholder="Enter Name" />
               </div>
               </td>
              
@@ -164,8 +185,7 @@ function TranscriptContent({ language }) {
                   
               <td style={thTd}>
                <div style={labelInputWrapper}>
-                <div style={label}>City:</div> 
-                <input type="text" style={input} placeholder="Enter City" />
+                  City:<input type="text" style={input} placeholder="Enter City" />
                </div>
               </td>
                   
@@ -197,7 +217,74 @@ function TranscriptContent({ language }) {
           </tr>
         </tbody>
        </table>
+       <table style={table2}>
+         <tbody>
+           <tr>
+             <td style={thTd}>
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 9 - Fall Semester
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'English I', type: 'Core', credits: 1.0, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'Biology', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'World History', type: 'Core', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       <input
+                        type="text"
+                        defaultValue={row.grade}
+                        style={{
+                         width: '50px',
+                         textAlign: 'center',
+                         border: '1px solid #ccc',
+                         borderRadius: '4px',
+                        }}
+                        />
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                      <tr>
+                       <td colSpan="3" style={{ textAlign: 'right', fontWeight: 'bold' }}>
+                        Semester Totals
+                       </td>
+                       <td style={thTd2}></td>
+                       <td style={thTd2}>3.85</td>
+                       <td style={thTd2}>3.85</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </td>
+
+              <td style={thTd}>
+               Additional Info 2: <input type="text" style={input} placeholder="Enter Info 2" />
+              </td>
+             </tr>
+           </tbody>
+        </table>       
       </div>
+              
       <button
         onClick={exportToPDF}
         style={{
@@ -217,3 +304,4 @@ function TranscriptContent({ language }) {
 }
 
 export default TranscriptContent;
+
