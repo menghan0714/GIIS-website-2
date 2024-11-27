@@ -1,0 +1,82 @@
+.container {
+     textAlign: 'center',
+     width: '100%',
+     backgroundColor: "white",
+     border: "none",
+     outline: "none", // 移除外圍框
+     boxShadow: "none", // 移除可能的陰影
+    };
+
+.title {
+     marginTop: '5%',
+     fontFamily: 'Inter, sans-serif',
+     fontSize: '20px',
+     fontWeight: 'bold',
+    };
+
+.columns {
+     width: '90%',
+     display: 'flex',
+     justifyContent: 'space-between',
+     backgroundColor: 'rgba(255, 255, 255, 1)', 
+     padding: '5px',
+     border: '1px solid #ccc',
+     margin: '0 auto',
+   };
+
+.column {
+     flex: '1',
+     textAlign: 'center',
+     padding: '5px',
+     boxSizing: 'border-box',
+     fontSize: '10px',
+   };
+
+.table {
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    };
+
+.table2 {
+     marginTop:'2.5%',
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     margin: '0 auto',
+     tableLayout: 'fixed', 
+    };
+
+.thTd {
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '25%',
+   };
+
+.labelInputWrapper {
+     display: 'flex', // 水平排列
+     alignItems: 'center', // 垂直居中
+   };
+
+.input {
+     width: '50%',
+     fontSize: '8px',
+     boxSizing: 'border-box',
+     border: 'none', // 移除邊框
+     borderBottom: '2px solid black', // 黑色底線
+     background: 'none', // 背景透明
+     outline: 'none', // 移除點擊時的外框
+     overflowWrap: 'break-word',  // 自動斷行
+     whiteSpace: 'normal',
+     wordWrap: 'break-word', // 強制換行
+   };
+
+
+
+
+
+
