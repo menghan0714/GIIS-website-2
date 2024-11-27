@@ -59,7 +59,6 @@
 
 .labelInputWrapper {
      display: flex; // 水平排列
-     align-items: center; // 垂直居中
    };
 
 .input {
