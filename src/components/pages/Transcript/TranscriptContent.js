@@ -97,60 +97,60 @@ function TranscriptContent({ language }) {
    }
   const formRef = useRef(null);
     
-const exportToPDF = () => {
-  // 從 DOM 中取得要轉為 PDF 的內容
-  const element = document.getElementById("content");
+import React from "react";
 
-  // 複製 DOM 並清除輸入框
-  const clone = element.cloneNode(true);
-  const inputs = clone.querySelectorAll("input, select");
-  inputs.forEach((input) => {
-    const value = input.value || input.placeholder;
-    const textNode = document.createTextNode(value);
-    input.replaceWith(textNode);
-  });
+// 確保在 package.json 中安裝了 html2canvas 和 jspdf
+// npm install html2canvas jspdf --save
 
-  // 設定 Canvas
-  const boundingClientRect = clone.getBoundingClientRect();
-  const width = boundingClientRect.width;
-  const height = boundingClientRect.height;
-  const canvas = document.createElement("canvas");
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  const scale = 2 * devicePixelRatio;
-  canvas.width = width * scale;
-  canvas.height = height * scale;
-  const context = canvas.getContext("2d");
-  context.scale(scale / devicePixelRatio, scale / devicePixelRatio);
+const TranscriptPage = () => {
+  const exportToPDF = () => {
+    const element = document.getElementById("content");
 
-  // 使用 html2canvas 進行渲染
-  html2canvas(clone, {
-    canvas,
-    allowTaint: true,
-    taintTest: true,
-    useCORS: true,
-    scale,
-    logging: true,
-  }).then((canvas) => {
-    // 將 Canvas 轉為圖片
-    const binary = canvas.toDataURL("image/jpeg", 1);
-    const contentWidth = canvas.width;
-    const contentHeight = canvas.height;
-
-    // 創建 jsPDF 實例（從全域空間載入）
-    const { jsPDF } = window.jspdf; // 使用全域的 jsPDF
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "pt",
-      format: [contentWidth, contentHeight],
+    const clone = element.cloneNode(true);
+    const inputs = clone.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder;
+      const textNode = document.createTextNode(value);
+      input.replaceWith(textNode);
     });
 
-    // 將圖片添加到 PDF 中
-    pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
+    const boundingClientRect = clone.getBoundingClientRect();
+    const width = boundingClientRect.width;
+    const height = boundingClientRect.height;
+    const canvas = document.createElement("canvas");
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const scale = 2 * devicePixelRatio;
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+    const context = canvas.getContext("2d");
+    context.scale(scale / devicePixelRatio, scale / devicePixelRatio);
 
-    // 儲存 PDF 文件
-    pdf.save("Transcript.pdf");
-  });
-};
+    import("html2canvas").then((html2canvas) => {
+      html2canvas.default(clone, {
+        canvas,
+        allowTaint: true,
+        taintTest: true,
+        useCORS: true,
+        scale,
+        logging: true,
+      }).then((canvas) => {
+        const binary = canvas.toDataURL("image/jpeg", 1);
+        const contentWidth = canvas.width;
+        const contentHeight = canvas.height;
+
+        import("jspdf").then((jspdf) => {
+          const { jsPDF } = jspdf.default;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [contentWidth, contentHeight],
+          });
+          pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
+          pdf.save("Transcript.pdf");
+        });
+      });
+    });
+  };
 
     
      return (
