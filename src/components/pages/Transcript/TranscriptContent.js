@@ -32,7 +32,7 @@ function TranscriptContent({ language }) {
             letterRendering: true,
             ignoreElements: (element) => element.tagName === "BUTTON",
         },
-        jsPDF: { unit: "mm", format: [794, 1123], orientation: "portrait" },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
      };    
         window.html2pdf().set(options).from(clone).save();
         clone.remove();
