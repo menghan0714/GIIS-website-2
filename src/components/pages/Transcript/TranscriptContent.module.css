@@ -5,14 +5,14 @@
      border: none !important;
      outline: none !important;
      box-shadow: none !important; 
-    };
+}
 
 .title {
      margin-top: 5%;
      font-family: Inter, sans-serif;
      font-size: 20px;
      font-weight: bold;
-    };
+}
 
 .columns {
      width: 90%;
@@ -22,7 +22,7 @@
      padding: 5px;
      border: 1px solid #ccc;
      margin: 0 auto;
-   };
+   }
 
 .column {
      flex: 1;
@@ -30,7 +30,7 @@
      padding: 5px;
      box-sizing: border-box;
      font-size: 10px;
-   };
+   }
 
 .table {
      width: 90%;
@@ -38,7 +38,7 @@
      font-family: Inter, sans-serif;
      margin: 0 auto;
      table-layout: fixed; 
-    };
+    }
 
 .table2 {
      margin-top:2.5%;
@@ -47,7 +47,7 @@
      font-family: Inter, sans-serif;
      margin: 0 auto;
      table-layout: fixed; 
-    };
+    }
 
 .thTd {
      padding: 2px;
@@ -55,12 +55,12 @@
      text-align: left;
      font-size: 8px;
      width: 25%;
-   };
+   }
 
 .labelInputWrapper {
      display: flex; 
      align-items: center; 
-   };
+   }
 
 .input {
      width: 50%;
@@ -73,7 +73,7 @@
      overflow-wrap: break-word;
      white-space: normal;
      word-wrap: break-word;
-   };
+   }
 
 
 
