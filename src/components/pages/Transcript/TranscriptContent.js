@@ -113,7 +113,7 @@ const exportToPDF = () => {
     margin: 0,
     filename: "Transcript.pdf",
     html2canvas: {
-      scale: 5, // 渲染高分辨率
+      scale: window.devicePixelRatio > 2 ? 2 : 5, // 渲染高分辨率
       useCORS: true,
       allowTaint: true,
       logging: true,
