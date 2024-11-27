@@ -324,6 +324,109 @@ const exportToPDF = () => {
                       ))}
                     </tbody>
                 </table>
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 10 - Fall Semester
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'English II', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Geometry', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Chemistry', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7},
+                    { name: 'U.S. History', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Film Studies', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       {row.name === "Semester Totals" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "50px",
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                    </tbody>
+                </table>
+
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 10 - Spring Semester
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'English II - Literature', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Algebra II', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'Physics Fundamentals', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0},
+                    { name: 'World Politics', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Photography Basics', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       {row.name === "Semester Totals" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "50px",
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                    </tbody>
+                </table>
               </td>
 
               <td style={thTd}>
