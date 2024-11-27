@@ -35,9 +35,7 @@ function TranscriptContent({ language }) {
         jsPDF: { unit: "mm", format: [794, 1123], orientation: "portrait" },
      };    
         window.html2pdf().set(options).from(clone).save();
-     };
-
-      clone.remove();
+        clone.remove();
      };
 
 
