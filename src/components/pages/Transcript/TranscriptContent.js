@@ -239,12 +239,64 @@ const exportToPDF = () => {
                   </thead>
                   <tbody>
                    {[
-                    { name: 'English I', type: 'Core', credits: 1.0, grade: 'A', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'Biology', type: 'Core', credits: 1.0, grade: 'A-', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'World History', type: 'Core', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: 'A', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'English I', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'Biology', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'World History', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
                     { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.85, unweighted: 3.85 }, 
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       {row.name === "Semester Totals" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "50px",
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                    </tbody>
+                </table>
+
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 9 - Spring Semester
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'English I - Writing Focus', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Geometry', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
+                    { name: 'Environmental Science', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0},
+                    { name: 'Geography', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Art Fundamentals', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
                     ].map((row, index) => (
                      <tr key={index}>
                       <td style={thTd2}>{row.name}</td>
