@@ -2,7 +2,7 @@ import React, { useRef }  from 'react';
 
 function TranscriptContent({ language }) {
     
-  const container {
+  const container + {
      textAlign: 'center',
      width: '100%',
      backgroundColor: 'white',
@@ -11,14 +11,14 @@ function TranscriptContent({ language }) {
      boxShadow: 'none', 
   }
 
-  const title {
+  const titlE = {
      marginTop: 5%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
      fontWeight: 'bold',
   }
 
- const columns {
+ const columns ={
      width: '90%',
      display: 'flex',
      justifyContent: 'space-between',
@@ -28,7 +28,7 @@ function TranscriptContent({ language }) {
      margin: '0 auto',
    }
 
-  const column {
+  const column ={
      flex: '1',
      textAlign: 'center',
      padding: '5px',
@@ -36,7 +36,7 @@ function TranscriptContent({ language }) {
      fontSize: '10px',
    }
 
-   const table {
+   const table ={
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
@@ -44,7 +44,7 @@ function TranscriptContent({ language }) {
      tableLayout: 'fixed', 
     }
 
-   const table2 {
+   const table2 ={
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
@@ -52,7 +52,7 @@ function TranscriptContent({ language }) {
      tableLayout: 'fixed', 
     }
 
-   const table3 {
+   const table3 ={
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
@@ -60,7 +60,7 @@ function TranscriptContent({ language }) {
      tableLayout: 'fixed', 
     }
 
-   const thTd {
+   const thTd ={
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
@@ -68,7 +68,7 @@ function TranscriptContent({ language }) {
      width: '25%',
    }
 
-    const thTd2 {
+    const thTd2 ={
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
@@ -76,12 +76,12 @@ function TranscriptContent({ language }) {
      width: '25%',
    }
 
-    const labelInputWrapper {
+    const labelInputWrapper ={
      display: 'flex',
      alignItems: 'center', 
    }
 
-    const input {
+    const input ={
      width: '50%',
      fontSize: '8px',
      boxSizing: 'border-box',
