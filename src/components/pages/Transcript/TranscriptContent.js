@@ -251,7 +251,7 @@ const exportToPDF = () => {
                       <td style={thTd2}>{row.type}</td>
                       <td style={thTd2}>{row.credits}</td>
                       <td style={thTd2}>
-                       {row.name === "Semester Name" ? (
+                       {row.name === "Semester Totals" ? (
                          ""
                         ) : (
                           <input
