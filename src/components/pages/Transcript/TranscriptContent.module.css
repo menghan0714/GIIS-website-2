@@ -57,6 +57,14 @@
      width: 25%;
    }
 
+.thTd2 {
+     padding: 2px;
+     border: 1px solid black;
+     text-align: left;
+     font-size: 6px;
+     width: 25%;
+   }
+
 .labelInputWrapper {
      display: flex; 
      align-items: center; 
