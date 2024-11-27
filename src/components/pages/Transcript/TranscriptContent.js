@@ -102,9 +102,7 @@ const exportToPDF = () => {
 
   // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
-  clone.style.width = "794px"; // A4 寬度對應 px
-  clone.style.height = "1123px"; // A4 高度對應 px
-  document.body.appendChild(clone); // 暫時加入 DOM 測試效果
+
     
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
@@ -113,11 +111,13 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
+  const scaleFactor = window.devicePixelRatio || 1;
+
   const options = {
-    margin: 0,
+    margin: [0, 0, 0, 0],
     filename: "Transcript.pdf",
     html2canvas: {
-      scale: 5, // 渲染高分辨率
+      scale: scaleFactor > 2 ? 2 : 5, // 渲染高分辨率
       useCORS: true,
       allowTaint: true,
       logging: true,
