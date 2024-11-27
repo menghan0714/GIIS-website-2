@@ -97,7 +97,7 @@ function TranscriptContent({ language }) {
    }
   const formRef = useRef(null);
     
-const exportToPDF = () => {
+const exportToPDF = async () => {
   const element = document.getElementById("content");
 
   // 複製 DOM 並清除輸入框
@@ -109,27 +109,20 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
-  const options = {
-    margin: 0,
-    filename: "Transcript.pdf",
-    html2canvas: {
-      scale: 5, // 渲染高分辨率
-      useCORS: true,
-      allowTaint: true,
-      logging: true,
-      letterRendering: true,
-      ignoreElements: (element) => element.tagName === "BUTTON",
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    
-  };
+  const canvas = await html2canvas(clone, {
+    scale: 3,
+    useCORS: true, // 避免跨域問題
+  });
 
-  window.html2pdf()
-    .set(options)
-    .from(clone)
-    .save()
-  };
+  const imgData = canvas.toDataURL("image/png");
+  const pdf = new jsPDF("p", "mm", "a4");
 
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  pdf.save("Transcript.pdf");
+};
 
      return (
         <div style={container}>
