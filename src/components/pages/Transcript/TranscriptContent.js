@@ -99,62 +99,70 @@ function TranscriptContent({ language }) {
     
 
 const exportToPDF = () => {
-  // 取得 DOM 元素
   const element = document.getElementById("content");
 
-  // 複製 DOM 並清除輸入框
+  // 克隆 DOM
   const clone = element.cloneNode(true);
+
+  // 處理輸入框
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
     const value = input.value || input.placeholder;
-    const textNode = document.createTextNode(value);
-    input.replaceWith(textNode);
+    input.replaceWith(document.createTextNode(value));
   });
 
-  // 計算元素的寬高（像素）
-  const boundingClientRect = clone.getBoundingClientRect();
-  const width = boundingClientRect.width; // 元素的寬度
-  const height = boundingClientRect.height; // 元素的高度
+  // 處理 iframe
+  const iframes = clone.querySelectorAll("iframe");
+  iframes.forEach((iframe) => {
+    try {
+      // 嘗試訪問 iframe 的內容
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      if (iframeDoc) {
+        // 如果可訪問，複製其內容
+        const iframeClone = iframeDoc.body.cloneNode(true);
+        const divWrapper = document.createElement("div");
+        divWrapper.style.width = iframe.offsetWidth + "px";
+        divWrapper.style.height = iframe.offsetHeight + "px";
+        divWrapper.style.border = "1px solid #ccc"; // 標記 iframe 的邊框
+        divWrapper.appendChild(iframeClone);
+        iframe.replaceWith(divWrapper);
+      }
+    } catch (e) {
+      // 如果無法訪問，替換為占位符
+      console.warn("無法克隆 iframe 的內容，原因可能是跨域限制。", e);
+      const placeholder = document.createElement("div");
+      placeholder.style.width = iframe.offsetWidth + "px";
+      placeholder.style.height = iframe.offsetHeight + "px";
+      placeholder.style.background = "#ccc"; // 標記不可用的 iframe
+      placeholder.textContent = "Iframe content not accessible";
+      placeholder.style.display = "flex";
+      placeholder.style.alignItems = "center";
+      placeholder.style.justifyContent = "center";
+      placeholder.style.color = "#000";
+      iframe.replaceWith(placeholder);
+    }
+  });
 
-  // 設定 Canvas
-  const canvas = document.createElement("canvas");
-  const devicePixelRatio = window.devicePixelRatio || 1; // 設備的像素比例
-  const scale = 2 * devicePixelRatio; // 放大倍率
-  canvas.width = width * scale; // Canvas 的寬度
-  canvas.height = height * scale; // Canvas 的高度
-  const context = canvas.getContext("2d");
-  context.scale(scale / devicePixelRatio, scale / devicePixelRatio); // 縮放比例
-
-  // 使用全局 html2canvas 進行渲染
+  // 使用 html2canvas 渲染克隆的 DOM
+  const scale = 2;
   window.html2canvas(clone, {
-    canvas,
-    allowTaint: true,
-    taintTest: true,
-    useCORS: true,
     scale,
-    logging: true,
-  }).then((canvas) => {
-    // 將 Canvas 轉為圖片
-    const binary = canvas.toDataURL("image/jpeg", 1); // JPEG 格式，高品質 1.0
-    canvas.toBlob((blobObj) => {
-      // 取得內容寬高 (以 px 為單位)
-      const contentWidth = canvas.width;
-      const contentHeight = canvas.height;
-
-      // 使用全局 jsPDF 創建實例並動態設置寬高
+    useCORS: true,
+    allowTaint: false,
+  })
+    .then((canvas) => {
+      // 生成 PDF
       const pdf = new window.jspdf.jsPDF({
         orientation: "portrait",
         unit: "pt",
-        format: [contentWidth, contentHeight], // 使用像素大小作為頁面格式
+        format: [canvas.width, canvas.height],
       });
 
-      // 將圖片添加到 PDF 中
-      pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
-
-      // 儲存 PDF 文件
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      pdf.addImage(imgData, "JPEG", 0, 0, canvas.width, canvas.height);
       pdf.save("Transcript.pdf");
-    });
-  });
+    })
+    .catch((error) => console.error("PDF 生成失敗：", error));
 };
 
     
