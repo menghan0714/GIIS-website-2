@@ -5,40 +5,51 @@ function TranscriptContent({ language }) {
     
     const formRef = useRef(null);
     
-    const exportToPDF = () => {
-      const element = document.getElementById('content');
-    // 複製 DOM 結構以替換輸入框的內容
-      const clone = element.cloneNode(true);
-      const inputs = clone.querySelectorAll("input, select");
-      inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-     });
+const exportToPDF = () => {
+  const element = document.getElementById("content");
 
-      clone.style.width = "794px"; // A4 寬度 (以 px 為單位)
-      clone.style.height = "auto";
-      clone.style.overflow = "hidden";
-      document.body.appendChild(clone);
+  // 複製 DOM 並清除輸入框
+  const clone = element.cloneNode(true);
+  const inputs = clone.querySelectorAll("input, select");
+  inputs.forEach((input) => {
+    const value = input.value || input.placeholder;
+    const textNode = document.createTextNode(value);
+    input.replaceWith(textNode);
+  });
 
-    const options = {
-        margin: 0,  // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5,
-            useCORS: true, 
-            allowTaint: true, 
-            logging: true,
-            letterRendering: true,
-            ignoreElements: (element) => element.tagName === "BUTTON",
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };    
-        window.html2pdf().set(options).from(clone).save();
-        clone.remove();
-     };
+  // 設定固定尺寸並縮放比例
+  clone.style.width = "794px"; // 固定為 A4 寬度
+  clone.style.height = "1123px"; // 固定為 A4 高度
+  clone.style.overflow = "hidden";
+  clone.style.position = "absolute";
+  clone.style.transform = "scale(1)"; // 強制移除縮放影響
+  clone.style.transformOrigin = "top left"; // 縮放原點
+  clone.style.zoom = "100%"; // 避免因縮放導致截斷
+  document.body.appendChild(clone); // 臨時加入 DOM 樹
 
+  const options = {
+    margin: 0,
+    filename: "Transcript.pdf",
+    html2canvas: {
+      scale: 2, // 渲染高分辨率
+      useCORS: true,
+      allowTaint: true,
+      logging: true,
+      letterRendering: true,
+      scrollY: 0, // 禁止滾動影響
+    },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+  };
 
+  // 匯出 PDF
+  window.html2pdf()
+    .set(options)
+    .from(clone)
+    .save()
+    .then(() => {
+      clone.remove(); // 匯出後刪除
+    });
+};
      return (
         <div className={styles.container}>
          <div id="content" ref={formRef}>
