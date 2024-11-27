@@ -11,7 +11,7 @@ function TranscriptContent({ language }) {
      boxShadow: 'none', 
   }
 
-  const titlE = {
+  const title = {
      marginTop: '5%',
      fontFamily: 'Inter, sans-serif',
      fontSize: '20px',
@@ -154,7 +154,7 @@ const exportToPDF = () => {
             <tr>
               <td style={thTd}>
               <div style={labelInputWrapper}>
-                <div style={labelInputWrapper}>Name:</div>
+                <div style={label}>Name:</div>
                 <input type="text" style={input} placeholder="Enter Name" />
               </div>
               </td>
