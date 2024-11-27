@@ -41,8 +41,16 @@
     }
 
 .table2 {
-     margin-top:2.5%;
+     margin-top: 5%;
      width: 90%;
+     border-collapse: collapse;
+     font-family: Inter, sans-serif;
+     margin: 0 auto;
+     table-layout: fixed; 
+    }
+
+.table3 {
+     width: 100%;
      border-collapse: collapse;
      font-family: Inter, sans-serif;
      margin: 0 auto;
