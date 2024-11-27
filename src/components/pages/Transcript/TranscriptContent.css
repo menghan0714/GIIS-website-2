@@ -58,7 +58,8 @@
    };
 
 .labelInputWrapper {
-     display: flex; // 水平排列
+     display: flex; 
+     align-items: center; 
    };
 
 .input {
