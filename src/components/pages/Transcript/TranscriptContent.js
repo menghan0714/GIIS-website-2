@@ -103,8 +103,6 @@ const exportToPDF = () => {
 
   // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
-  clone.style.width = "210mm"; // A4 寬度
-  clone.style.maxHeight = "297mm"; // A4 高度
 
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
