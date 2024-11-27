@@ -109,23 +109,28 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
-const scale = 1 / window.devicePixelRatio; // 自動獲取縮放比例
-html2pdf().set({
-  margin: [10, 10, 10, 10],
-  filename: 'Transcript.pdf',
-  html2canvas: {
-    scale: window.devicePixelRatio, // 使用裝置像素比例補償縮放
-    useCORS: true,
-  },
-  jsPDF: {
-    unit: 'mm',
-    format: 'a4',
-    orientation: 'portrait',
-  },
-}).from(document.getElementById('content')).save();
-}
-
+  const options = {
+    margin: 0,
+    filename: "Transcript.pdf",
+    html2canvas: {
+      scale: 5, // 渲染高分辨率
+      useCORS: true,
+      allowTaint: true,
+      logging: true,
+      letterRendering: true,
+      ignoreElements: (element) => element.tagName === "BUTTON",
+    },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     
+  };
+
+  window.html2pdf()
+    .set(options)
+    .from(clone)
+    .save()
+  };
+
+
      return (
         <div style={container}>
          <div id="content" ref={formRef}>
