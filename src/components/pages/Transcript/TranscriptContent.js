@@ -3,14 +3,14 @@ import React, { useRef }  from 'react';
 function TranscriptContent({ language }) {
     
   const container = {
-     border: '1px solid red',
-     padding: '10px',
+    border: '1px solid red',
+    padding: '10px',
      textAlign: 'center',
      width: '100%',
-     width: '210mm', /* A4 寬度 */
-     height: 'auto',
-     maxHeight: '297mm', /* A4 高度 */
-     overflow: 'hidden', /* 防止超出內容 */
+     backgroundColor: 'white',
+     border: 'none',
+     outline: 'none',
+     boxShadow: 'none', 
   }
 
   const title = {
@@ -129,6 +129,7 @@ const exportToPDF = () => {
     .from(clone)
     .save()
   };
+
 
      return (
         <div style={container}>
@@ -303,5 +304,3 @@ const exportToPDF = () => {
 }
 
 export default TranscriptContent;
-
-
