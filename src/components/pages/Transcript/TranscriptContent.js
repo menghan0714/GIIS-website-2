@@ -233,7 +233,7 @@ function TranscriptContent({ language }) {
          <tbody>
            <tr>
              <td style={thTd}>
-                <table style={ table3, verticalAlign: "top"}>
+                <table style={{ ...table3, verticalAlign: "top" }}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
@@ -442,7 +442,7 @@ function TranscriptContent({ language }) {
               </td>
 
               <td style={thTd}>
-                <table style={ table3, verticalAlign: "top"} >
+                <table style={{ ...table3, verticalAlign: "top" }}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
