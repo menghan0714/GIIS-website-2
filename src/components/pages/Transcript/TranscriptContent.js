@@ -21,7 +21,7 @@ function TranscriptContent({ language }) {
   }
 
  const columns ={
-     width: '90%',
+     width: '100%',
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
@@ -39,7 +39,7 @@ function TranscriptContent({ language }) {
    }
 
    const table ={
-     width: '90%',
+     width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -47,7 +47,7 @@ function TranscriptContent({ language }) {
     }
 
    const table2 ={
-     width: '90%',
+     width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
