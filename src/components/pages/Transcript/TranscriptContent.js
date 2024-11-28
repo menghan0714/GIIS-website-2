@@ -240,8 +240,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -273,8 +273,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -292,8 +292,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -325,8 +325,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -343,8 +343,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -376,8 +376,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -395,8 +395,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -428,8 +428,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -449,8 +449,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -482,8 +482,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -500,8 +500,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -533,8 +533,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "20%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -551,8 +551,8 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "10%" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" }}>Credits</th>
                     <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "20%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "20%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -569,8 +569,8 @@ function TranscriptContent({ language }) {
                       <td style={{ ...thTd, width: "10%" }}>{row.type}</td>
                       <td style={{ ...thTd, width: "10%" }}>{row.credits}</td>
                       <td style={{ ...thTd, width: "10%" }}>{row.grade}</td>
-                      <td style={{ ...thTd, width: "20%" }}>{row.weightedGPA}</td>
-                      <td style={{ ...thTd, width: "20%" }}>{row.unweightedGPA}</td>
+                      <td style={{ ...thTd, width: "10%" }}>{row.weightedGPA}</td>
+                      <td style={{ ...thTd, width: "10%" }}>{row.unweightedGPA}</td>
                      </tr>
                       ))}
                     </tbody>
