@@ -573,25 +573,10 @@ function TranscriptContent({ language }) {
                       <td style={thTd2}>{row.name}</td>
                       <td style={thTd2}>{row.type}</td>
                       <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
-                       {row.name === "Semester Totals" ? (
-                         ""
-                        ) : (
-                          <input
-                            type="text"
-                            defaultValue={row.grade}
-                            style={{
-                             width: "100%", 
-                             textAlign: "center",
-                             border: "1px solid #ccc",
-                             borderRadius: "4px",
-                             }}
-                          />
-                       )}
-                       </td>
-                       <td style={thTd2}>{row.weightedGPA}</td>
-                       <td style={thTd2}>{row.unweightedGPA}</td>
-                      </tr>
+                      <td style={thTd2}>{row.grade}</td>
+                      <td style={thTd2}>{row.weightedGPA}</td>
+                      <td style={thTd2}>{row.unweightedGPA}</td>
+                     </tr>
                       ))}
                     </tbody>
                 </table>
