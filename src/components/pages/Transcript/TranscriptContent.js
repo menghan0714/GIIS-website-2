@@ -1,5 +1,4 @@
 import React, { useRef }  from 'react';
-const { jsPDF } = window.jspdf;
 
 function TranscriptContent({ language }) {
     
@@ -99,6 +98,7 @@ function TranscriptContent({ language }) {
     
 
   const formRef = useRef(null);
+  const { jsPDF } = window.jspdf;
 
 /* global html2canvas, jsPDF */
 const exportToPDF = () => {
