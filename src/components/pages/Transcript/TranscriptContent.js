@@ -493,6 +493,108 @@ function TranscriptContent({ language }) {
                       ))}
                     </tbody>
                 </table>
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 11 - Spring Semester
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'AP Calculus AB', type: 'Core (AP)', credits: 1.0, grade: '', weighted: 5.0, unweighted: 4.0 },
+                    { name: 'Physics - Mechanics', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'World Economics', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0},
+                    { name: 'Social Media Marketing', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Media Project Development', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
+                    { name: 'Semester Totals', type: '', credits: 3.5, grade: '', weighted: 4.29, unweighted: 4.0 }, 
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       {row.name === "Semester Totals" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "100%", 
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                    </tbody>
+                </table>
+                <table style={table3}>
+                 <thead>
+                   <tr>
+                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
+                     Grade 12 - Fall Semester (In Progress)
+                    </td>
+                   </tr>
+                   <tr>
+                    <th style={thTd2}>Course Name</th>
+                    <th style={thTd2}>Type</th>
+                    <th style={thTd2}>Credits</th>
+                    <th style={thTd2}>Grade</th>
+                    <th style={thTd2}>Weighted GPA</th>
+                    <th style={thTd2}>Unweighted GPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {[
+                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted:  },
+                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted:  },
+                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted: },
+                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: '', weighted: , unweighted:  },
+                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: '', weighted: , unweighted:  },
+                    { name: 'Semester Totals', type: '', credits: 4.5, grade: '', weighted: , unweighted:  }, 
+                    ].map((row, index) => (
+                     <tr key={index}>
+                      <td style={thTd2}>{row.name}</td>
+                      <td style={thTd2}>{row.type}</td>
+                      <td style={thTd2}>{row.credits}</td>
+                      <td style={thTd2}>
+                       {row.name === "Semester Totals" ? (
+                         ""
+                        ) : (
+                          <input
+                            type="text"
+                            defaultValue={row.grade}
+                            style={{
+                             width: "100%", 
+                             textAlign: "center",
+                             border: "1px solid #ccc",
+                             borderRadius: "4px",
+                             }}
+                          />
+                       )}
+                       </td>
+                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                      </tr>
+                      ))}
+                    </tbody>
+                </table>
               </td>
              </tr>
            </tbody>
