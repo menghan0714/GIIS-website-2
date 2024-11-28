@@ -129,6 +129,21 @@ function TranscriptContent({ language }) {
     
     
      return (
+        <button
+        onClick={exportToPDF}
+        style={{
+          marginTop: "20px",
+          padding: "10px 20px",
+          backgroundColor: "#007BFF",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+         }}
+        >
+        Export to PDF
+        </button> 
+            
         <div style={container}>
          <div id="content" ref={formRef}>
           <div style={title}>
@@ -433,21 +448,6 @@ function TranscriptContent({ language }) {
            </tbody>
         </table>       
       </div>
-              
-      <button
-        onClick={exportToPDF}
-        style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-       >
-        Export to PDF
-     </button> 
     </div>
     );
 }
