@@ -146,19 +146,6 @@ const exportToPDF = () => {
     pdf.save("Transcript.pdf");
   });
 };
-
-    
-  return (
-    <div>
-      <div ref={formRef} id="content">
-        {/* 替換成你的表單或內容 */}
-        <h1>My Form</h1>
-        <input type="text" placeholder="Enter text" />
-      </div>
-      <button onClick={exportToPDF}>Export to PDF</button>
-    </div>
-  );
-};
     
      return (
         <div style={container}>
