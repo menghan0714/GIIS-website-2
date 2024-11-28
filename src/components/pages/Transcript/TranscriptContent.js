@@ -511,12 +511,12 @@ function TranscriptContent({ language }) {
                   </thead>
                   <tbody>
                    {[
-                    { name: 'AP Calculus AB', type: 'Core (AP)', credits: 1.0, grade: '', weighted: '-', unweighted: '-' },
-                    { name: 'Physics - Mechanics', type: 'Core', credits: 1.0, grade: '', weighted: '-', unweighted: '-' },
-                    { name: 'World Economics', type: 'Core', credits: 0.5, grade: '', weighted: '-', unweighted: '-' },
-                    { name: 'Social Media Marketing', type: 'Elective', credits: 0.5, grade: '', weighted: '-', unweighted: '-' },
-                    { name: 'Media Project Development', type: 'Elective', credits: 0.5, grade: '', weighted: '-', unweighted: '-' },
-                    { name: 'Semester Totals', type: '', credits: 3.5, grade: '', weighted: '-', unweighted: '-' }, 
+                    { name: 'AP Calculus AB', type: 'Core (AP)', credits: 1.0, grade: '', weighted: 5 , unweighted: 4 },
+                    { name: 'Physics - Mechanics', type: 'Core', credits: 1.0, grade: '', weighted: 4, unweighted: 4 },
+                    { name: 'World Economics', type: 'Core', credits: 0.5, grade: '', weighted: 4, unweighted: 4 },
+                    { name: 'Social Media Marketing', type: 'Elective', credits: 0.5, grade: '', weighted: 4 , unweighted: 4 },
+                    { name: 'Media Project Development', type: 'Elective', credits: 0.5, grade: '', weighted: 4, unweighted: 4 },
+                    { name: 'Semester Totals', type: '', credits: 3.5, grade: '', weighted: 4.29 , unweighted: 4 }, 
                     ].map((row, index) => (
                      <tr key={index}>
                       <td style={thTd2}>{row.name}</td>
@@ -562,11 +562,11 @@ function TranscriptContent({ language }) {
                   </thead>
                   <tbody>
                    {[
-                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: ''},
-                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: ''},
-                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: ''},
-                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: ''},
-                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: ''},
+                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-' },
+                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
+                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
+                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
+                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: 'In Progress', weighted: '-' , unweighted: '-'},
                     { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
                     ].map((row, index) => (
                      <tr key={index}>
