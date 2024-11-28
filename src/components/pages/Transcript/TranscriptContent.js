@@ -275,8 +275,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -378,8 +378,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
