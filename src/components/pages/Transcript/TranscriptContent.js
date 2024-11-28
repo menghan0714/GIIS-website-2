@@ -35,7 +35,7 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
-     fontSize: '8px',
+     fontSize: '10px',
    }
 
    const table ={
@@ -44,6 +44,7 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
+     fontSize: '8px',
     }
 
    const table2 ={
@@ -61,6 +62,7 @@ function TranscriptContent({ language }) {
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
+     fontSize: '6px',
     }
 
 
