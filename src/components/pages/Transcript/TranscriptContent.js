@@ -98,7 +98,8 @@ function TranscriptContent({ language }) {
     
 
   const formRef = useRef(null);
-    
+
+/* global html2canvas, jsPDF */
 const exportToPDF = () => {
   const element = document.getElementById("content");
 
