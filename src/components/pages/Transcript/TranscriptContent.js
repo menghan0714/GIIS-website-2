@@ -52,6 +52,8 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
+     display: 'flex', 
+     alignItems: 'flex-start',
     }
 
    const table3 ={
