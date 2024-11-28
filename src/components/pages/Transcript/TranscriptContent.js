@@ -53,6 +53,7 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
+     fontSize: '6px',
 
     }
 
