@@ -104,7 +104,6 @@ function TranscriptContent({ language }) {
 const exportToPDF = () => {
   const element = document.getElementById("content");
 
-  // 複製 DOM 並清除輸入框
   const clone = element.cloneNode(true);
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
@@ -113,22 +112,22 @@ const exportToPDF = () => {
     input.replaceWith(textNode);
   });
 
-  // 取得內容區域大小
   const boundingClientRect = element.getBoundingClientRect();
   const width = boundingClientRect.width;
   const height = boundingClientRect.height;
 
-  // 建立高分辨率的 Canvas
   const canvas = document.createElement("canvas");
   const devicePixelRatio = window.devicePixelRatio || 1;
-  const scale = 2 * devicePixelRatio; // 調整縮放比例
-  canvas.width = width * scale;
-  canvas.height = height * scale;
+  const scale = 2 * devicePixelRatio;
+
+  // 確保調整比例正確
+  const zoomLevel = window.devicePixelRatio || 1;
+  canvas.width = width * scale / zoomLevel;
+  canvas.height = height * scale / zoomLevel;
 
   const context = canvas.getContext("2d");
-  context.scale(scale / devicePixelRatio, scale / devicePixelRatio);
+  context.scale(scale / zoomLevel, scale / zoomLevel);
 
-  // 使用 html2canvas 渲染
   html2canvas(element, {
     canvas: canvas,
     allowTaint: true,
@@ -137,10 +136,7 @@ const exportToPDF = () => {
     letterRendering: true,
     ignoreElements: (element) => element.tagName === "BUTTON",
   }).then((canvas) => {
-    // 將 Canvas 轉為圖片
     const binary = canvas.toDataURL("image/jpeg", 1.0);
-
-    // 使用 jsPDF 將圖片轉為 PDF
     const contentWidth = canvas.width / scale;
     const contentHeight = canvas.height / scale;
     const pdf = new jsPDF("portrait", "pt", [contentWidth, contentHeight]);
