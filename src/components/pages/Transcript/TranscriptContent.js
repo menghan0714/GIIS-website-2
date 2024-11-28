@@ -74,14 +74,6 @@ function TranscriptContent({ language }) {
      width: '25%',
    }
 
-    const thTd2 ={
-     padding: '2px',
-     border: '1px solid black',
-     textAlign: 'left',
-     fontSize: '6px',
-     width: '25%',
-    
-   }
 
     const labelInputWrapper ={
      display: 'flex',
@@ -446,7 +438,7 @@ function TranscriptContent({ language }) {
                 </table>
               </td>
 
-              <td style={thTd}>
+              <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                  <thead>
                    <tr>
