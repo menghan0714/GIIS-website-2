@@ -44,17 +44,16 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-     display: 'flex', 
-     alignItems: 'flex-start',
     }
 
    const table2 ={
-     flex: '1',
      width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
+     display: 'flex', 
+     alignItems: 'flex-start',
     }
 
    const table3 ={
@@ -81,6 +80,7 @@ function TranscriptContent({ language }) {
      textAlign: 'left',
      fontSize: '6px',
      width: '25%',
+    
    }
 
     const labelInputWrapper ={
@@ -238,7 +238,7 @@ function TranscriptContent({ language }) {
          <tbody>
            <tr>
              <td style={thTd}>
-                <table style={{ ...table3, verticalAlign: "top" }}>
+                <table style={table3}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
