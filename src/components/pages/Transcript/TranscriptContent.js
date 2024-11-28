@@ -246,12 +246,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -264,10 +264,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.85, unweighted: 3.85 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -298,12 +298,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -316,10 +316,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -335,8 +335,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -349,12 +349,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -367,10 +367,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -401,12 +401,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -419,10 +419,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.93, unweighted: 3.93 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -438,8 +438,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -455,12 +455,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -473,10 +473,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.5, grade: '', weighted: 4.22, unweighted: 4.0 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -492,8 +492,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -506,12 +506,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -524,10 +524,10 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 3.5, grade: '', weighted: 4.29 , unweighted: 4 }, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>
                        {row.name === "Semester Totals" ? (
                          ""
                         ) : (
@@ -543,8 +543,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.weighted.toFixed(2)}</td>
+                       <td style={thTd}>{row.unweighted.toFixed(2)}</td>
                       </tr>
                       ))}
                     </tbody>
@@ -557,12 +557,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd2}>Course Name</th>
-                    <th style={thTd2}>Type</th>
-                    <th style={thTd2}>Credits</th>
-                    <th style={thTd2}>Grade</th>
-                    <th style={thTd2}>Weighted GPA</th>
-                    <th style={thTd2}>Unweighted GPA</th>
+                    <th style={thTd}>Course Name</th>
+                    <th style={thTd}>Type</th>
+                    <th style={thTd}>Credits</th>
+                    <th style={thTd}>Grade</th>
+                    <th style={thTd}>Weighted GPA</th>
+                    <th style={thTd}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -575,12 +575,12 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={thTd2}>{row.name}</td>
-                      <td style={thTd2}>{row.type}</td>
-                      <td style={thTd2}>{row.credits}</td>
-                      <td style={thTd2}>{row.grade}</td>
-                      <td style={thTd2}>{row.weightedGPA}</td>
-                      <td style={thTd2}>{row.unweightedGPA}</td>
+                      <td style={thTd}>{row.name}</td>
+                      <td style={thTd}>{row.type}</td>
+                      <td style={thTd}>{row.credits}</td>
+                      <td style={thTd}>{row.grade}</td>
+                      <td style={thTd}>{row.weightedGPA}</td>
+                      <td style={thTd}>{row.unweightedGPA}</td>
                      </tr>
                       ))}
                     </tbody>
