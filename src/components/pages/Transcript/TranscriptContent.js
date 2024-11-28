@@ -1,4 +1,5 @@
 import React, { useRef }  from 'react';
+const { jsPDF } = window.jspdf;
 
 function TranscriptContent({ language }) {
     
@@ -99,7 +100,7 @@ function TranscriptContent({ language }) {
 
   const formRef = useRef(null);
 
-/* global html2canvas, jspdf */
+/* global html2canvas, jsPDF */
 const exportToPDF = () => {
   const element = document.getElementById("content");
 
@@ -141,7 +142,7 @@ const exportToPDF = () => {
     // 使用 jsPDF 將圖片轉為 PDF
     const contentWidth = canvas.width / scale;
     const contentHeight = canvas.height / scale;
-    const pdf = new jspdf("portrait", "pt", [contentWidth, contentHeight]);
+    const pdf = new jsPDF("portrait", "pt", [contentWidth, contentHeight]);
 
     pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
     pdf.save("Transcript.pdf");
