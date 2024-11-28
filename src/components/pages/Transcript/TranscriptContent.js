@@ -270,6 +270,8 @@ function TranscriptContent({ language }) {
                             type="text"
                             defaultValue={row.grade}
                             style={{
+                             width: "100%", 
+                             maxWidth: "50px",
                              width: "50px",
                              textAlign: "center",
                              border: "1px solid #ccc",
