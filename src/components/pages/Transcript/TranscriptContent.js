@@ -58,7 +58,7 @@ function TranscriptContent({ language }) {
 
    const table3 ={
      flex: '1',
-     width: '90%',
+     width: '95%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
