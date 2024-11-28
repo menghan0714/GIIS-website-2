@@ -589,8 +589,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={thTd2}>{row.weighted.toFixed(2)}</td>
-                       <td style={thTd2}>{row.unweighted.toFixed(2)}</td>
+                       <td style={thTd2}>{row.weightedGPA}</td>
+                       <td style={thTd2}>{row.unweightedGPA}</td>
                       </tr>
                       ))}
                     </tbody>
