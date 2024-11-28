@@ -47,7 +47,7 @@ function TranscriptContent({ language }) {
     }
 
    const table2 ={
-     width: '100%',
+     width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -55,7 +55,7 @@ function TranscriptContent({ language }) {
     }
 
    const table3 ={
-     width: '100%',
+     width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
