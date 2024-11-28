@@ -39,6 +39,7 @@ function TranscriptContent({ language }) {
    }
 
    const table ={
+     position: 'relative',
      width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
@@ -65,10 +66,13 @@ function TranscriptContent({ language }) {
     }
 
     const table4 ={
+     position: 'absolute',
      width: '90%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      tableLayout: 'fixed', 
+     margin: '0 auto',
+     marginTop: 0,
     }
 
 
