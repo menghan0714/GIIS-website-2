@@ -323,7 +323,8 @@ function TranscriptContent({ language }) {
                             type="text"
                             defaultValue={row.grade}
                             style={{
-                             width: "50px",
+                             width: "100%", 
+                             maxWidth: "50px",
                              textAlign: "center",
                              border: "1px solid #ccc",
                              borderRadius: "4px",
@@ -374,7 +375,8 @@ function TranscriptContent({ language }) {
                             type="text"
                             defaultValue={row.grade}
                             style={{
-                             width: "50px",
+                             width: "100%", 
+                             maxWidth: "50px",
                              textAlign: "center",
                              border: "1px solid #ccc",
                              borderRadius: "4px",
