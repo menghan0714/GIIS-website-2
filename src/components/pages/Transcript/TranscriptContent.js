@@ -133,9 +133,9 @@ function TranscriptContent({ language }) {
          <button
           onClick={exportToPDF}
           style={{
-            marginTop: "20px",
+            marginTop: "15px",
             padding: "10px 20px",
-            backgroundColor: "#007BFF",
+            backgroundColor: "rgba(43, 61, 109, 0.8)",
             color: "white",
             border: "none",
             borderRadius: "5px",
