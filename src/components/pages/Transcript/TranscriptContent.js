@@ -562,12 +562,12 @@ function TranscriptContent({ language }) {
                   </thead>
                   <tbody>
                    {[
-                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted:  },
-                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted:  },
-                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: '', weighted: , unweighted: },
-                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: '', weighted: , unweighted:  },
-                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: '', weighted: , unweighted:  },
-                    { name: 'Semester Totals', type: '', credits: 4.5, grade: '', weighted: , unweighted:  }, 
+                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: ''},
+                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: ''},
+                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: ''},
+                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: ''},
+                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: ''},
+                    { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
                     ].map((row, index) => (
                      <tr key={index}>
                       <td style={thTd2}>{row.name}</td>
