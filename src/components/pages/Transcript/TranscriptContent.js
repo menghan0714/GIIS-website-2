@@ -64,6 +64,13 @@ function TranscriptContent({ language }) {
      tableLayout: 'fixed', 
     }
 
+    const table4 ={
+     width: '90%',
+     borderCollapse: 'collapse',
+     fontFamily: 'Inter, sans-serif',
+     tableLayout: 'fixed', 
+    }
+
 
    const thTd ={
      padding: '2px',
@@ -445,7 +452,7 @@ function TranscriptContent({ language }) {
               </td>
 
               <td style={thTd}>
-                <table style={table3}>
+                <table style={table4}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
@@ -496,7 +503,7 @@ function TranscriptContent({ language }) {
                       ))}
                     </tbody>
                 </table>
-                <table style={table3}>
+                <table style={table4}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
@@ -547,7 +554,7 @@ function TranscriptContent({ language }) {
                       ))}
                     </tbody>
                 </table>
-                <table style={table3}>
+                <table style={table4}>
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
