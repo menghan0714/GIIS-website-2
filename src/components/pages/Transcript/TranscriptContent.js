@@ -272,7 +272,6 @@ function TranscriptContent({ language }) {
                             style={{
                              width: "100%", 
                              maxWidth: "50px",
-                             width: "50px",
                              textAlign: "center",
                              border: "1px solid #ccc",
                              borderRadius: "4px",
