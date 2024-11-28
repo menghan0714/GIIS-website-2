@@ -548,7 +548,7 @@ function TranscriptContent({ language }) {
                  <thead>
                    <tr>
                     <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
-                     Grade 12 - Fall Semester (In Progress)
+                     Grade 12 - Fall Semester
                     </td>
                    </tr>
                    <tr>
