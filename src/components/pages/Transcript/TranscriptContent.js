@@ -98,53 +98,35 @@ function TranscriptContent({ language }) {
     
 
   const formRef = useRef(null);
-  const { jsPDF } = window.jspdf;
 
-/* global html2canvas, jsPDF */
-const exportToPDF = () => {
-  const element = document.getElementById("content");
+    const exportToPDF = () => {
+      const element = document.getElementById('content');
+    // 複製 DOM 結構以替換輸入框的內容
+      const clone = element.cloneNode(true);
+      const inputs = clone.querySelectorAll("input, select");
+      inputs.forEach((input) => {
+        const value = input.value || input.placeholder;
+        const textNode = document.createTextNode(value);
+        input.replaceWith(textNode);
+     });
 
-  const clone = element.cloneNode(true);
-  const inputs = clone.querySelectorAll("input, select");
-  inputs.forEach((input) => {
-    const value = input.value || input.placeholder;
-    const textNode = document.createTextNode(value);
-    input.replaceWith(textNode);
-  });
-
-  const boundingClientRect = element.getBoundingClientRect();
-  const width = boundingClientRect.width;
-  const height = boundingClientRect.height;
-
-  const canvas = document.createElement("canvas");
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  const scale = 2 * devicePixelRatio;
-
-  // 確保調整比例正確
-  const zoomLevel = window.devicePixelRatio || 1;
-  canvas.width = width * scale / zoomLevel;
-  canvas.height = height * scale / zoomLevel;
-
-  const context = canvas.getContext("2d");
-  context.scale(scale / zoomLevel, scale / zoomLevel);
-
-  html2canvas(element, {
-    canvas: canvas,
-    allowTaint: true,
-    useCORS: true,
-    logging: true,
-    letterRendering: true,
-    ignoreElements: (element) => element.tagName === "BUTTON",
-  }).then((canvas) => {
-    const binary = canvas.toDataURL("image/jpeg", 1.0);
-    const contentWidth = canvas.width / scale;
-    const contentHeight = canvas.height / scale;
-    const pdf = new jsPDF("portrait", "pt", [contentWidth, contentHeight]);
-
-    pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
-    pdf.save("Transcript.pdf");
-  });
-};
+    // 設置 PDF 選項
+    const options = {
+        margin: 0,  // 上下左右邊距 (mm)
+        filename: "Transcript.pdf",
+        html2canvas: {
+            scale: 5,
+            useCORS: true, 
+            allowTaint: true, 
+            logging: true,
+            letterRendering: true,
+            ignoreElements: (element) => element.tagName === "BUTTON",
+        },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+     };
+         window.html2pdf().set(options).from(clone).save();
+     };
+    
     
      return (
         <div style={container}>
