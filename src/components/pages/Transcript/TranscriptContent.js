@@ -62,7 +62,6 @@ function TranscriptContent({ language }) {
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
-     tableLayout: 'fixed', 
     }
 
 
@@ -238,12 +237,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -290,12 +289,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -341,12 +340,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -393,12 +392,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -447,12 +446,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -498,12 +497,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -549,12 +548,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={thTd}>Course Name</th>
-                    <th style={thTd}>Type</th>
-                    <th style={thTd}>Credits</th>
-                    <th style={thTd}>Grade</th>
-                    <th style={thTd}>Weighted GPA</th>
-                    <th style={thTd}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "30%" }}>Type</th>
+                    <th style={{ ...thTd, width: "30%" }}>Credits</th>
+                    <th style={{ ...thTd, width: "30%" }}>Grade</th>
+                    <th style={{ ...thTd, width: "30%" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "30%" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
