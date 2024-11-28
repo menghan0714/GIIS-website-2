@@ -44,10 +44,13 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
+     display: 'flex', 
+     alignItems: 'flex-start',
     }
 
    const table2 ={
-     width: '90%',
+     flex: '1',
+     width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
@@ -55,7 +58,8 @@ function TranscriptContent({ language }) {
     }
 
    const table3 ={
-     width: '90%',
+     flex: '1',
+     width: '100%',
      borderCollapse: 'collapse',
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
