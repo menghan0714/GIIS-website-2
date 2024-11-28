@@ -135,6 +135,7 @@ const exportToPDF = () => {
     useCORS: true,
     logging: true,
     letterRendering: true,
+    ignoreElements: (element) => element.tagName === "BUTTON",
   }).then((canvas) => {
     // 將 Canvas 轉為圖片
     const binary = canvas.toDataURL("image/jpeg", 1.0);
