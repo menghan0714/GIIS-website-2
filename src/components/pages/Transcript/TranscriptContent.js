@@ -95,40 +95,71 @@ function TranscriptContent({ language }) {
      whiteSpace: 'normal',
      wordWrap: 'break-word',
    }
+    
+const MyComponent = () => {
   const formRef = useRef(null);
-    
 
-const exportToPDF = () => {
-  const element = document.getElementById("content");
+  const exportToPDF = () => {
+    const element = formRef.current;
 
-  // 複製 DOM 並清除輸入框
-  const clone = element.cloneNode(true);
+    // 複製 DOM 並清除輸入框
+    const clone = element.cloneNode(true);
+    const inputs = clone.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder;
+      const textNode = document.createTextNode(value);
+      input.replaceWith(textNode);
+    });
 
-  const inputs = clone.querySelectorAll("input, select");
-  inputs.forEach((input) => {
-    const value = input.value || input.placeholder;
-    const textNode = document.createTextNode(value);
-    input.replaceWith(textNode);
-  });
-    
-  const options = {
-    margin: [0, 0, 0, 0],
-    filename: "Transcript.pdf",
-    html2canvas: {
-      scale: 5, // 渲染高分辨率
-      useCORS: true,
+    // 取得內容區域大小
+    const boundingClientRect = element.getBoundingClientRect();
+    const width = boundingClientRect.width;
+    const height = boundingClientRect.height;
+
+    // 建立高分辨率的 Canvas
+    const canvas = document.createElement("canvas");
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const scale = 2 * devicePixelRatio; // 調整縮放比例
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+
+    const context = canvas.getContext("2d");
+    context.scale(scale / devicePixelRatio, scale / devicePixelRatio);
+
+    // 使用 html2canvas 渲染
+    html2canvas(element, {
+      canvas: canvas,
       allowTaint: true,
+      useCORS: true,
       logging: true,
       letterRendering: true,
-      ignoreElements: (element) => element.tagName === "BUTTON",
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    }).then((canvas) => {
+      const binary = canvas.toDataURL("image/jpeg", 1.0);
+      canvas.toBlob((blobObj) => {
+        const contentWidth = canvas.width / scale;
+        const contentHeight = canvas.height / scale;
+
+        // 建立 jsPDF 並新增圖片
+        const pdf = new jsPDF("portrait", "pt", [contentWidth, contentHeight]);
+        pdf.addImage(binary, "JPEG", 0, 0, contentWidth, contentHeight);
+
+        // 儲存 PDF
+        pdf.save("Transcript.pdf");
+      });
+    });
   };
 
-  window.html2pdf()
-    .set(options)
-    .from(clone)
-    .save();
+    
+  return (
+    <div>
+      <div ref={formRef} id="content">
+        {/* 替換成你的表單或內容 */}
+        <h1>My Form</h1>
+        <input type="text" placeholder="Enter text" />
+      </div>
+      <button onClick={exportToPDF}>Export to PDF</button>
+    </div>
+  );
 };
     
      return (
