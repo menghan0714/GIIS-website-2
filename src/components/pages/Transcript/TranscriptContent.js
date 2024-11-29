@@ -249,12 +249,12 @@ function TranscriptContent({ language }) {
                   </thead>
                   <tbody>
                    {[
-                    { name: 'English I', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'Biology', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'World History', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.85, unweighted: 3.85 }, 
+                    { name: 'English I', type: 'Core', credits: 1.0, grade: '', weighted: '-', unweighted: '-' },
+                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: '', weighted: '-', unweighted: '-' },
+                    { name: 'Biology', type: 'Core', credits: 1.0, grade: '', weighted: '-', unweighted: '-' },
+                    { name: 'World History', type: 'Core', credits: 0.5, grade: '', weighted: '-', unweighted: '-' },
+                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: '', weighted: '-', unweighted: '-' },
+                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: '-', unweighted: '-' }, 
                     ].map((row, index) => (
                      <tr key={index}>
                       <td style={{ ...thTd, width: "30%" }}>{row.name}</td>
@@ -276,8 +276,8 @@ function TranscriptContent({ language }) {
                           />
                        )}
                        </td>
-                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.weightedGPA}</td>
+                       <td style={{ ...thTd, width: "10%" }}>{row.unweightedGPA}</td>
                       </tr>
                       ))}
                     </tbody>
