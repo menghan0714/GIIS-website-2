@@ -1,5 +1,84 @@
 import React, { useRef }  from 'react';
 
+
+export default function GradeTable() {
+  const [rows, setRows] = useState([
+    { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Biology", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "World History", type: "Core", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Physical Education", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Semester Totals", type: "", credits: 4.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+  ]);
+
+  const gradeToGpa = {
+    A: { weighted: 5.0, unweighted: 4.0 },
+    B: { weighted: 4.0, unweighted: 3.0 },
+    C: { weighted: 3.0, unweighted: 2.0 },
+    D: { weighted: 2.0, unweighted: 1.0 },
+    F: { weighted: 0.0, unweighted: 0.0 },
+  };
+
+  const handleGradeChange = (index, value) => {
+    setRows((prevRows) => {
+      const newRows = [...prevRows];
+      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+      newRows[index].grade = value.toUpperCase();
+      newRows[index].weightedGPA = gpa.weighted;
+      newRows[index].unweightedGPA = gpa.unweighted;
+      return newRows;
+    });
+  };
+
+  return (
+    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <thead>
+        <tr>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
+            Grade 9 - Fall Semester
+          </td>
+        </tr>
+        <tr>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Course Name</th>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Type</th>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Credits</th>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Grade</th>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", padding: "8px" }}>Unweighted GPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, index) => (
+          <tr key={index}>
+            <td style={{ border: "1px solid black", padding: "8px" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", padding: "8px" }}>{row.type}</td>
+            <td style={{ border: "1px solid black", padding: "8px" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", padding: "8px" }}>
+              {row.name === "Semester Totals" ? (
+                ""
+              ) : (
+                <input
+                  type="text"
+                  value={row.grade}
+                  onChange={(e) => handleGradeChange(index, e.target.value)}
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    border: "1px solid #ccc",
+                    borderRadius: "4px",
+                  }}
+                />
+              )}
+            </td>
+            <td style={{ border: "1px solid black", padding: "8px" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", padding: "8px" }}>{row.unweightedGPA}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
 function TranscriptContent({ language }) {
     
   const container = {
@@ -232,55 +311,9 @@ function TranscriptContent({ language }) {
            <tr>
              <td style={thTd}>
                 <table style={table3}>
-                 <thead>
-                   <tr>
-                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
-                     Grade 9 - Fall Semester
-                    </td>
-                   </tr>
-                   <tr>
-                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
-                    <th style={{ ...thTd, width: "10%" }}>Type</th>
-                    <th style={{ ...thTd, width: "10%" }}>Credits</th>
-                    <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   {[
-                    { name: 'English I', type: 'Core', credits: 1.0, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Algebra I', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'Biology', type: 'Core', credits: 1.0, grade: '', weighted: 3.7, unweighted: 3.7 },
-                    { name: 'World History', type: 'Core', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Physical Education', type: 'Elective', credits: 0.5, grade: '', weighted: 4.0, unweighted: 4.0 },
-                    { name: 'Semester Totals', type: '', credits: 4.0, grade: '', weighted: 3.85, unweighted: 3.85 }, 
-                    ].map((row, index) => (
-                     <tr key={index}>
-                      <td style={{ ...thTd, width: "30%" }}>{row.name}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.type}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.credits}</td>
-                      <td style={{ ...thTd, width: "10%" }}>
-                       {row.name === "Semester Totals" ? (
-                         ""
-                        ) : (
-                          <input
-                            type="text"
-                            defaultValue={row.grade}
-                            style={{
-                             width: "100%", 
-                             textAlign: "center",
-                             border: "1px solid #ccc",
-                             borderRadius: "4px",
-                             }}
-                          />
-                       )}
-                       </td>
-                       <td style={{ ...thTd, width: "10%" }}>{row.weighted.toFixed(2)}</td>
-                       <td style={{ ...thTd, width: "10%" }}>{row.unweighted.toFixed(2)}</td>
-                      </tr>
-                      ))}
-                    </tbody>
+                 <div>
+                  <GradeTable />
+                 </div>
                 </table>
 
                 <table style={table3}>
