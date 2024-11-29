@@ -1,7 +1,7 @@
 import React, { useRef }  from 'react';
 
 
-export default function GradeTable() {
+function GradeTable() {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
