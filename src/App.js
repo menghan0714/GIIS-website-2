@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
@@ -24,9 +25,12 @@ function App() {
     setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
   };
 
+  const location = useLocation();
+  const isTranscript = location.pathname === '/transcript';
+
   return (
      <>
-      <Header language={language} toggleLanguage={toggleLanguage} />
+      {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
       <main className="container-fluid">
        <Routes>
          <Route path="/" element={<Homepage language={language} />} />
@@ -37,7 +41,7 @@ function App() {
          <Route path="/transcript" element={<Transcript language={language} />} />
        </Routes>
       </main>
-      <Footer />
+      {!isTranscript && <Footer />}
      </>
   );
 }

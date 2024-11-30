@@ -9,8 +9,7 @@ function TranscriptMain({ language }) {
          <div className="container">
            <TranscriptContent language={language} />
          </div>
-       </div>
-        
+      </div>
     );
 }
 
