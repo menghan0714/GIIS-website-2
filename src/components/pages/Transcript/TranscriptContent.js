@@ -144,10 +144,10 @@ function GradeTableG9_SS() {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%"}}>{row.type}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -164,8 +164,8 @@ function GradeTableG9_SS() {
                 />
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
@@ -230,10 +230,10 @@ function GradeTableG10_FS() {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -250,8 +250,8 @@ function GradeTableG10_FS() {
                 />
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
@@ -316,10 +316,10 @@ function GradeTableG10_SS() {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -336,8 +336,8 @@ function GradeTableG10_SS() {
                 />
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px" , width: "10%"}}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
@@ -404,10 +404,10 @@ function GradeTableG11_FS() {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -424,8 +424,8 @@ function GradeTableG11_FS() {
                 />
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
@@ -493,10 +493,10 @@ function GradeTableG11_SS() {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -513,8 +513,8 @@ function GradeTableG11_SS() {
                 />
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
