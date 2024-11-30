@@ -47,12 +47,12 @@ function GradeTableG9_FS() {
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Unweighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Grade</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Unweighted GPA</th>
         </tr>
       </thead>
       <tbody>
