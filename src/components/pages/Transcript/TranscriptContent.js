@@ -728,6 +728,14 @@ function TranscriptContent({ language }) {
      boxSizing: 'border-box',
      fontSize: '10px',
    }
+  
+   const thTd ={
+     padding: '2px',
+     border: '1px solid black',
+     textAlign: 'left',
+     fontSize: '8px',
+     width: '25%',
+   }
 
    const table ={
      width: '100%',
