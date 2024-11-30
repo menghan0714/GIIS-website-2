@@ -968,12 +968,12 @@ function TranscriptContent({ language }) {
                     </td>
                    </tr>
                    <tr>
-                    <th style={{ ...thTd, width: "30%" }}>Course Name</th>
-                    <th style={{ ...thTd, width: "10%" }}>Type</th>
-                    <th style={{ ...thTd, width: "10%" }}>Credits</th>
-                    <th style={{ ...thTd, width: "10%" }}>Grade</th>
-                    <th style={{ ...thTd, width: "10%" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "10%" }}>Unweighted GPA</th>
+                    <th style={{ ...thTd, width: "30%", fontSize: "8px" }}>Course Name</th>
+                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Type</th>
+                    <th style={{ ...thTd, width: "10%" , fontSize: "8px"}}>Credits</th>
+                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Grade</th>
+                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Weighted GPA</th>
+                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Unweighted GPA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -986,12 +986,12 @@ function TranscriptContent({ language }) {
                     { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
                     ].map((row, index) => (
                      <tr key={index}>
-                      <td style={{ ...thTd, width: "30%" }}>{row.name}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.type}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.credits}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.grade}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.weightedGPA}</td>
-                      <td style={{ ...thTd, width: "10%" }}>{row.unweightedGPA}</td>
+                      <td style={{ ...thTd, width: "30%", fontSize: "6px" }}>{row.name}</td>
+                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.type}</td>
+                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.credits}</td>
+                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.grade}</td>
+                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.weightedGPA}</td>
+                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.unweightedGPA}</td>
                      </tr>
                       ))}
                     </tbody>
