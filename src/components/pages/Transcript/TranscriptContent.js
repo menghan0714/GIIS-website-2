@@ -122,7 +122,7 @@ function GradeTableG9_SS() {
     { name: "Environmental Science", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geography", type: "Core", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Art Fundamentals", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Semester Totals", type: "", credits: 4.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
   const gradeToGpa = {
@@ -228,6 +228,7 @@ function GradeTableG9_SS() {
     </table>
   );
 }
+
 
 function GradeTableG10_FS() {
   const [rows, setRows] = useState([
