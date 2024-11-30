@@ -699,7 +699,6 @@ function TranscriptContent({ language }) {
      textAlign: 'center',
      width: '100%',
      backgroundColor: 'white',
-     border: 'none',
      outline: 'none',
      boxShadow: 'none', 
   }
