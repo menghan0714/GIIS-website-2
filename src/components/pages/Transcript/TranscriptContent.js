@@ -1,7 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
 
-function GradeTableG9_FS() {
+function GradeTableG9FS() {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -115,7 +115,7 @@ function GradeTableG9_FS() {
   );
 }
 
-function GradeTableG9_SS() {
+function GradeTableG9SS() {
   const [rows, setRows] = useState([
     { name: "English I - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -230,7 +230,7 @@ function GradeTableG9_SS() {
 }
 
 
-function GradeTableG10_FS() {
+function GradeTableG10FS() {
   const [rows, setRows] = useState([
     { name: "English II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -345,7 +345,7 @@ function GradeTableG10_FS() {
 }
 
 
-function GradeTableG10_SS() {
+function GradeTableG10SS() {
   const [rows, setRows] = useState([
     { name: "English II - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -460,7 +460,7 @@ function GradeTableG10_SS() {
 }
 
 
-function GradeTableG11_FS() {
+function GradeTableG11FS() {
   const [rows, setRows] = useState([
     { name: "AP English Language", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Pre-Calculus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -575,7 +575,7 @@ function GradeTableG11_FS() {
 }
 
 
-function GradeTableG11_SS() {
+function GradeTableG11SS() {
   const [rows, setRows] = useState([
     { name: "AP Calculus AB", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Physics - Mechanics", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -640,6 +640,8 @@ function GradeTableG11_SS() {
     });
   };
 
+
+  
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
@@ -753,15 +755,6 @@ function TranscriptContent({ language }) {
      fontFamily: 'Inter, sans-serif',
      margin: '0 auto',
      fontSize: '6px',
-    }
-
-
-   const thTd ={
-     padding: '2px',
-     border: '1px solid black',
-     textAlign: 'left',
-     fontSize: '8px',
-     width: '25%',
    }
 
 
@@ -922,25 +915,25 @@ function TranscriptContent({ language }) {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9_FS />
+                  <GradeTableG9FS />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9_SS />
+                   <GradeTableG9SS />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10_FS />
+                   <GradeTableG10FS />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10_SS />
+                   <GradeTableG10SS />
                  </div>
                 </table>
               </td>
@@ -948,14 +941,14 @@ function TranscriptContent({ language }) {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11_FS />
+                   <GradeTableG11FS />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11_SS />
+                   <GradeTableG11SS />
                  </div>
                 </table>
 
