@@ -971,7 +971,7 @@ function TranscriptContent({ language }) {
                     <th style={{ ...thTd, width: "30%", fontSize: "8px" }}>Course Name</th>
                     <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Type</th>
                     <th style={{ ...thTd, width: "10%" , fontSize: "8px"}}>Credits</th>
-                    <th style={{ ...thTd, width: "20%", fontSize: "8px" }}>Grade</th>
+                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Grade</th>
                     <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Weighted GPA</th>
                     <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Unweighted GPA</th>
                     </tr>
