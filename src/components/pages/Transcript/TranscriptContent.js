@@ -11,7 +11,7 @@ function GradeTableG9FS() {
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
-   const [cumulativeGPA, setCumulativeGPA] = useState("-");
+  const [cumulativeGPA, setCumulativeGPA] = useState("-");
 
   const gradeToGpa = {
     'A+': { weighted: 5.3, unweighted: 4.3 },
