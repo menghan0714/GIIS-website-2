@@ -1,7 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
 
-function GradeTableG9FS({ onCumulativeGPACalculated }) {
+function GradeTableG9FS({ onGPAUpdate }) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
