@@ -1015,7 +1015,7 @@ function TranscriptContent({ language }) {
               <td style={thTd}>
                Cumulative Credits: <input type="text" style={input} />
               </td>
-                  
+            </tr>
             <tr>
               <td style={thTd}>
                Unweighted
