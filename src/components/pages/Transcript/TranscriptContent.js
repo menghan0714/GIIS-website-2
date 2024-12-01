@@ -701,13 +701,6 @@ function GradeTableG11SS() {
 
 function TranscriptContent({ language }) {
 
-  const [cumulativeGPA, setCumulativeGPA] = useState("-");
-
-  const handleCumulativeGPAChange = (newGPA) => {
-    setCumulativeGPA(newGPA);
-  };
-
-    
   const container = {
      border: 'none',
      padding: '10px',
@@ -1015,38 +1008,6 @@ function TranscriptContent({ language }) {
              </tr>
            </tbody>
         </table>
-
-        <table style={table}>
-           <tbody>
-            <tr>
-              <td style={thTd}>
-                Weighted
-              </td>
-             
-              <td style={thTd}>
-                Cumulative GPA:       
-                  <GradeTableG9FS onCumulativeGPACalculated={handleCumulativeGPAChange} />
-              </td>
-
-              <td style={thTd}>
-                Cumulative Credits: <input type="text" style={input}  />
-              </td>
-            </tr>
-            <tr>
-              <td style={thTd}>
-               Unweighted
-              </td>
-                  
-              <td style={thTd}>
-                  Cumulative GPA: <input type="text" style={input}/>
-              </td>
-                  
-              <td style={thTd}>
-                Cumulative Credits: <input type="text" style={input}  />
-              </td>
-          </tr>
-        </tbody>
-       </table>
       </div>
     </div>
     );
