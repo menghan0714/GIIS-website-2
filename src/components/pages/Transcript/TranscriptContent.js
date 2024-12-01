@@ -1,7 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
 
-function GradeTableG9FS() {
+function GradeTableG9FS({ onCumulativeGPACalculated }) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -11,7 +11,6 @@ function GradeTableG9FS() {
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
-  const [cumulativeGPA, setCumulativeGPA] = useState("-");
 
   const gradeToGpa = {
     'A+': { weighted: 5.3, unweighted: 4.3 },
@@ -48,13 +47,6 @@ function GradeTableG9FS() {
     return { weightedGPA, unweightedGPA };
   };
 
-    const calculateCumulativeGPA = (rows) => {
-    const semesterGPAs = rows
-      .filter((row) => row.name === "Semester Totals" && row.weightedGPA !== "-")
-      .map((row) => parseFloat(row.weightedGPA));
-    const cumulative = semesterGPAs.length > 0 ? (semesterGPAs.reduce((a, b) => a + b, 0) / semesterGPAs.length).toFixed(2) : "-";
-    setCumulativeGPA(cumulative);
-  };
 
   const handleGradeChange = (index, value) => {
     setRows((prevRows) => {
@@ -72,7 +64,11 @@ function GradeTableG9FS() {
         newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
 
-      calculateCumulativeGPA(newRows);
+      // 通知父組件計算完成的 Cumulative GPA
+      if (onCumulativeGPACalculated) {
+        const cumulativeGPA = totals.weightedGPA; // 假設這裡以 Weighted GPA 作為累計
+        onCumulativeGPACalculated(cumulativeGPA);
+      }
 
       return newRows;
     });
@@ -704,6 +700,13 @@ function GradeTableG11SS() {
 }
 
 function TranscriptContent({ language }) {
+
+  const [cumulativeGPA, setCumulativeGPA] = useState("-");
+
+  const handleCumulativeGPAChange = (newGPA) => {
+    setCumulativeGPA(newGPA);
+  };
+
     
   const container = {
      border: 'none',
@@ -1025,7 +1028,8 @@ function TranscriptContent({ language }) {
               </td>
              
               <td style={thTd}>
-               Cumulative Credits: <input type="text" style={input} />
+                <p>Cumulative GPA: {cumulativeGPA}</p>
+                 <GradeTableG9FS onCumulativeGPACalculated={handleCumulativeGPAChange} />
               </td>
             </tr>
             <tr>
