@@ -1024,7 +1024,8 @@ function TranscriptContent({ language }) {
               </td>
              
               <td style={thTd}>
-                Cumulative GPA: {cumulativeGPA}
+                Cumulative GPA:       
+                  <GradeTableG9FS onCumulativeGPACalculated={handleCumulativeGPAChange} />
               </td>
 
               <td style={thTd}>
