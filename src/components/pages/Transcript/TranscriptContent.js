@@ -11,6 +11,8 @@ function GradeTableG9FS() {
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
+   const [cumulativeGPA, setCumulativeGPA] = useState("-");
+
   const gradeToGpa = {
     'A+': { weighted: 5.3, unweighted: 4.3 },
     'A': { weighted: 5.0, unweighted: 4.0 },
@@ -46,6 +48,14 @@ function GradeTableG9FS() {
     return { weightedGPA, unweightedGPA };
   };
 
+    const calculateCumulativeGPA = (rows) => {
+    const semesterGPAs = rows
+      .filter((row) => row.name === "Semester Totals" && row.weightedGPA !== "-")
+      .map((row) => parseFloat(row.weightedGPA));
+    const cumulative = semesterGPAs.length > 0 ? (semesterGPAs.reduce((a, b) => a + b, 0) / semesterGPAs.length).toFixed(2) : "-";
+    setCumulativeGPA(cumulative);
+  };
+
   const handleGradeChange = (index, value) => {
     setRows((prevRows) => {
       const newRows = [...prevRows];
@@ -61,6 +71,8 @@ function GradeTableG9FS() {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
         newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
+
+      calculateCumulativeGPA(newRows);
 
       return newRows;
     });
@@ -1009,7 +1021,7 @@ function TranscriptContent({ language }) {
               </td>
              
               <td style={thTd}>
-               Cumulative GPA: <input type="text" style={input} />
+               Cumulative GPA: {cumulativeGPA}
               </td>
              
               <td style={thTd}>
