@@ -56,20 +56,6 @@ function GradeTableG9FS({ onGPAUpdate }) {
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      // 通知父組件計算完成的 Cumulative GPA
-      if (onCumulativeGPACalculated) {
-        const cumulativeGPA = totals.weightedGPA; // 假設這裡以 Weighted GPA 作為累計
-        onCumulativeGPACalculated(cumulativeGPA);
-      }
-
       return newRows;
     });
   };
