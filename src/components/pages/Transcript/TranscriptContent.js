@@ -119,7 +119,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate }) {
   );
 }
 
-function GradeTableG9SS() {
+function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "English I - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -172,12 +172,14 @@ function GradeTableG9SS() {
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
       const totals = calculateTotals(newRows);
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      }
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
       return newRows;
@@ -234,7 +236,7 @@ function GradeTableG9SS() {
 }
 
 
-function GradeTableG10FS() {
+function GradeTableG10FS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "English II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -292,7 +294,10 @@ function GradeTableG10FS() {
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      }
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
       return newRows;
@@ -349,7 +354,7 @@ function GradeTableG10FS() {
 }
 
 
-function GradeTableG10SS() {
+function GradeTableG10SS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "English II - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -402,13 +407,16 @@ function GradeTableG10SS() {
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
       const totals = calculateTotals(newRows);
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
+      }
+
 
       return newRows;
     });
@@ -464,7 +472,7 @@ function GradeTableG10SS() {
 }
 
 
-function GradeTableG11FS() {
+function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "AP English Language", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Pre-Calculus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -517,12 +525,14 @@ function GradeTableG11FS() {
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
       const totals = calculateTotals(newRows);
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      }
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
       return newRows;
@@ -579,7 +589,7 @@ function GradeTableG11FS() {
 }
 
 
-function GradeTableG11SS() {
+function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "AP Calculus AB", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Physics - Mechanics", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -632,13 +642,16 @@ function GradeTableG11SS() {
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
       const totals = calculateTotals(newRows);
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
+      }
+
 
       return newRows;
     });
@@ -694,6 +707,8 @@ function GradeTableG11SS() {
     </table>
   );
 }
+
+
 
 function TranscriptContent({ language }) {
 
