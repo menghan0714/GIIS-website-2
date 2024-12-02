@@ -1039,7 +1039,7 @@ function TranscriptContent() {
                 Weighted GPA
               </td>
               
-              <td style={{ padding: "8px" }}>{cumulativeGPA.weightedGPA}</td>
+              <td style={{ padding: "8px" }}>{overallGPA.weightedGPA}</td>
                        
               <td style={thTd}>
                 Cumulative Credits:  />
