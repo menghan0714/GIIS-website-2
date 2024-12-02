@@ -1066,9 +1066,5 @@ function TranscriptContent() {
     );
 }
 
-      </div>
-    </div>
-    );
-}
 
 export default TranscriptContent;
