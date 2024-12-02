@@ -1,7 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
 
-function GradeTableG9FS() {
+function GradeTableG9FS({ semesterName, onTotalsUpdate }) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -60,9 +60,12 @@ function GradeTableG9FS() {
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
-      
+
+      if (onTotalsUpdate) {
+        onTotalsUpdate(semesterName, totals.weightedGPA);
+      }
+
       return newRows;
     });
   };
@@ -694,6 +697,23 @@ function GradeTableG11SS() {
 
 function TranscriptContent({ language }) {
 
+  const [semesterGPAs, setSemesterGPAs] = useState({});
+
+  const handleTotalsUpdate = (semesterName, weightedGPA) => {
+    setSemesterGPAs((prev) => ({
+      ...prev,
+      [semesterName]: parseFloat(weightedGPA) || 0,
+    }));
+  };
+
+  const calculateCumulativeGPA = () => {
+    const gpas = Object.values(semesterGPAs);
+    if (gpas.length === 0) return "-";
+
+  const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
+    return (totalGPA / gpas.length).toFixed(2);
+  };
+
   const container = {
      border: 'none',
      padding: '10px',
@@ -1010,7 +1030,7 @@ function TranscriptContent({ language }) {
               </td>
              
               <td style={thTd}>
-                Cumulative GPA: <input type="text" style={input}  />     
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA()}    
               </td>
 
               <td style={thTd}>
