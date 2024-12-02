@@ -11,19 +11,19 @@ function GradeTableG9FS({ onGPAUpdate }) {
   ]);
 
   const gradeToGpa = {
-    "A+": { weighted: 5.3, unweighted: 4.3 },
-    A: { weighted: 5.0, unweighted: 4.0 },
-    "A-": { weighted: 4.7, unweighted: 3.7 },
-    "B+": { weighted: 4.3, unweighted: 3.3 },
-    B: { weighted: 4.0, unweighted: 3.0 },
-    "B-": { weighted: 3.7, unweighted: 2.7 },
-    "C+": { weighted: 3.3, unweighted: 2.3 },
-    C: { weighted: 3.0, unweighted: 2.0 },
-    "C-": { weighted: 2.7, unweighted: 1.7 },
-    "D+": { weighted: 2.3, unweighted: 1.3 },
-    D: { weighted: 2.0, unweighted: 1.0 },
-    "D-": { weighted: 1.7, unweighted: 0.7 },
-    F: { weighted: 0.0, unweighted: 0.0 },
+    'A+': { weighted: 5.3, unweighted: 4.3 },
+    'A': { weighted: 5.0, unweighted: 4.0 },
+    'A-': { weighted: 4.7, unweighted: 3.7 },
+    'B+': { weighted: 4.3, unweighted: 3.3 },
+    'B': { weighted: 4.0, unweighted: 3.0 },
+    'B-': { weighted: 3.7, unweighted: 2.7 },
+    'C+': { weighted: 3.3, unweighted: 2.3 },
+    'C': { weighted: 3.0, unweighted: 2.0 },
+    'C-': { weighted: 2.7, unweighted: 1.7 },
+    'D+': { weighted: 2.3, unweighted: 1.3 },
+    'D': { weighted: 2.0, unweighted: 1.0 },
+    'D-': { weighted: 1.7, unweighted: 0.7 },
+    'F': { weighted: 0.0, unweighted: 0.0 },
   };
 
   const calculateTotals = (updatedRows) => {
@@ -61,11 +61,8 @@ function GradeTableG9FS({ onGPAUpdate }) {
         newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
 
-      // 通知父組件更新 GPA
-      onGPAUpdate({
-        weightedGPA: totals.weightedGPA,
-        unweightedGPA: totals.unweightedGPA,
-      });
+      // 通知父組件
+      onGPAUpdate(totals.weightedGPA);
 
       return newRows;
     });
@@ -1039,7 +1036,7 @@ function TranscriptContent() {
               </td>
               
               <td style={thTd}>
-                Cumulative GPA: {overallGPA.weighted}  />
+                <GradeTableG9FS onGPAUpdate={(gpa) => setCumulativeGPA(gpa.weightedGPA)} />
               </td>
                        
               <td style={thTd}>
