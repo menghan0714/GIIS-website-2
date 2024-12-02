@@ -13,7 +13,7 @@ function GradeTableG9FS() {
 
 
   const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
+    'A+': { weighted: 5.0, unweighted: 4.0 },
     'A': { weighted: 5.0, unweighted: 4.0 },
     'A-': { weighted: 4.7, unweighted: 3.7 },
     'B+': { weighted: 4.3, unweighted: 3.3 },
@@ -24,8 +24,7 @@ function GradeTableG9FS() {
     'C-': { weighted: 2.7, unweighted: 1.7 },
     'D+': { weighted: 2.3, unweighted: 1.3 },
     'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
+    'F': { weighted: 1.0, unweighted: 0.0 },
   };
 
   const calculateTotals = (updatedRows) => {
