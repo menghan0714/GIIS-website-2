@@ -1,7 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
 
-function GradeTableG9FS({ onGPAUpdate }) {
+function GradeTableG9FS() {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -63,13 +63,7 @@ function GradeTableG9FS({ onGPAUpdate }) {
         newRows[totalsIndex].weightedGPA = totals.weightedGPA;
         newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
-
-      // 通知父組件計算完成的 Cumulative GPA
-      if (onCumulativeGPACalculated) {
-        const cumulativeGPA = totals.weightedGPA; // 假設這裡以 Weighted GPA 作為累計
-        onCumulativeGPACalculated(cumulativeGPA);
-      }
-
+      
       return newRows;
     });
   };
@@ -1017,8 +1011,7 @@ function TranscriptContent({ language }) {
               </td>
              
               <td style={thTd}>
-                Cumulative GPA:       
-                  <GradeTableG9FS onCumulativeGPACalculated={handleCumulativeGPAChange} />
+                Cumulative GPA: <input type="text" style={input}  />     
               </td>
 
               <td style={thTd}>
@@ -1031,7 +1024,7 @@ function TranscriptContent({ language }) {
               </td>
                   
               <td style={thTd}>
-                  Cumulative GPA: <input type="text" style={input}/>
+                Cumulative GPA: <input type="text" style={input}/>
               </td>
                   
               <td style={thTd}>
