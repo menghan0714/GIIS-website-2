@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 
 function GradeTableG9FS({ onGPAUpdate }) {
+
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -11,21 +12,22 @@ function GradeTableG9FS({ onGPAUpdate }) {
   ]);
 
   const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
+    "A+": { weighted: 5.3, unweighted: 4.3 },
+    A: { weighted: 5.0, unweighted: 4.0 },
+    "A-": { weighted: 4.7, unweighted: 3.7 },
+    "B+": { weighted: 4.3, unweighted: 3.3 },
+    B: { weighted: 4.0, unweighted: 3.0 },
+    "B-": { weighted: 3.7, unweighted: 2.7 },
+    "C+": { weighted: 3.3, unweighted: 2.3 },
+    C: { weighted: 3.0, unweighted: 2.0 },
+    "C-": { weighted: 2.7, unweighted: 1.7 },
+    "D+": { weighted: 2.3, unweighted: 1.3 },
+    D: { weighted: 2.0, unweighted: 1.0 },
+    "D-": { weighted: 1.7, unweighted: 0.7 },
+    F: { weighted: 0.0, unweighted: 0.0 },
   };
 
+  // 計算總學期的 GPA（加權與非加權）
   const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
@@ -45,15 +47,18 @@ function GradeTableG9FS({ onGPAUpdate }) {
     return { weightedGPA, unweightedGPA };
   };
 
+  // 處理成績變更
   const handleGradeChange = (index, value) => {
     setRows((prevRows) => {
       const newRows = [...prevRows];
       const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+
+      // 更新對應行的資料
       newRows[index].grade = value.toUpperCase();
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
+      // 計算 Semester Totals
       const totals = calculateTotals(newRows);
       const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
       if (totalsIndex !== -1) {
@@ -61,7 +66,7 @@ function GradeTableG9FS({ onGPAUpdate }) {
         newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       }
 
-      // 通知父組件
+      // 通知父組件更新加權 GPA
       onGPAUpdate(totals.weightedGPA);
 
       return newRows;
@@ -700,7 +705,7 @@ function TranscriptContent() {
   const handleGPAUpdate = (index, gpa) => {
     setSemesterGPAs((prevGPAs) => {
       const updatedGPAs = [...prevGPAs];
-      updatedGPAs[index] = gpa;
+      updatedGPAs[index] = gpa; // 更新指定索引的 GPA
       return updatedGPAs;
     });
   };
@@ -708,8 +713,8 @@ function TranscriptContent() {
   const calculateOverallGPA = () => {
     if (semesterGPAs.length === 0) return { weighted: "-", unweighted: "-" };
 
-    const totalWeightedGPA = semesterGPAs.reduce((sum, gpa) => sum + parseFloat(gpa.weightedGPA || 0), 0);
-    const totalUnweightedGPA = semesterGPAs.reduce((sum, gpa) => sum + parseFloat(gpa.unweightedGPA || 0), 0);
+    const totalWeightedGPA = semesterGPAs.reduce((sum, gpa) => sum + parseFloat(gpa.weighted || 0), 0);
+    const totalUnweightedGPA = semesterGPAs.reduce((sum, gpa) => sum + parseFloat(gpa.unweighted || 0), 0);
 
     return {
       weighted: (totalWeightedGPA / semesterGPAs.length).toFixed(2),
@@ -718,7 +723,6 @@ function TranscriptContent() {
   };
 
   const overallGPA = calculateOverallGPA();
-
 
   const container = {
      border: 'none',
