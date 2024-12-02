@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState }, { useRef } from "react";
 
 function GradeTableG9FS({ onGPAUpdate }) {
   const [rows, setRows] = useState([
