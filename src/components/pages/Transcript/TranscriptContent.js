@@ -1039,9 +1039,7 @@ function TranscriptContent() {
                 Weighted GPA
               </td>
               
-              <td style={thTd}>
-                <GradeTableG9FS onGPAUpdate={(gpa) => setCumulativeGPA(gpa.weightedGPA)} />
-              </td>
+              <td style={{ padding: "8px" }}>{cumulativeGPA.weightedGPA}</td>
                        
               <td style={thTd}>
                 Cumulative Credits:  />
