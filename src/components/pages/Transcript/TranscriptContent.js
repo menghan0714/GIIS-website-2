@@ -125,7 +125,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
    }
     
 
-  const formRef = useRef(null);
+    const formRef = useRef(null);
 
     const exportToPDF = () => {
       const element = document.getElementById('content');
