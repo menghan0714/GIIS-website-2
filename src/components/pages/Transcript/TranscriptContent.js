@@ -63,6 +63,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -179,6 +180,7 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -297,6 +299,7 @@ function GradeTableG10FS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -414,6 +417,7 @@ function GradeTableG10SS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -532,6 +536,7 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -649,6 +654,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
       }
 
       if (onTotalsUpdate) {
+        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
         onTotalsUpdate(semesterName, totals.weightedGPA);
       }
 
@@ -715,17 +721,19 @@ function TranscriptContent({ language }) {
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
   const handleTotalsUpdate = (semesterName, weightedGPA) => {
+    console.log(`Received GPA for ${semesterName}:`, weightedGPA); // Debug
+    const gpa = parseFloat(weightedGPA);
     setSemesterGPAs((prev) => ({
-      ...prev,
-      [semesterName]: parseFloat(weightedGPA) || 0,
-    }));
-  };
+    ...prev,
+     [semesterName]: isNaN(gpa) ? 0 : gpa, // 避免儲存 NaN 或其他無效值
+  }));
+};
 
   const calculateCumulativeGPA = () => {
-    const gpas = Object.values(semesterGPAs);
+    const gpas = Object.values(semesterGPAs).filter((gpa) => gpa > 0); // 過濾無效 GPA
     if (gpas.length === 0) return "-";
 
-  const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
+    const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
     return (totalGPA / gpas.length).toFixed(2);
   };
 
@@ -958,7 +966,7 @@ function TranscriptContent({ language }) {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9FS />
+                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
