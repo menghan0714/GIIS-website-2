@@ -123,4 +123,4 @@ function GradeTableG10SS({ semesterName, onTotalsUpdate }) {
   );
 }
 
-export default TranscriptContent;
+export default GradeTableG10SS;
