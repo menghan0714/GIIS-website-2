@@ -48,25 +48,31 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate }) {
 
 
   const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
-
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
+  
       return newRows;
     });
   };
@@ -166,23 +172,31 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
   };
 
   const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
+
 
       return newRows;
     });
@@ -284,24 +298,31 @@ function GradeTableG10FS({ semesterName, onTotalsUpdate }) {
   };
 
   const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
+
 
       return newRows;
     });
@@ -403,25 +424,30 @@ function GradeTableG10SS({ semesterName, onTotalsUpdate }) {
   };
 
   const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
-
-
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
       return newRows;
     });
   };
@@ -521,25 +547,31 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
     return { weightedGPA, unweightedGPA };
   };
 
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   const handleGradeChange = (index, value) => {
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
-
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
       return newRows;
     });
   };
@@ -640,31 +672,34 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
   };
 
   const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
+   setRows((prevRows) => {
+    const newRows = [...prevRows];
+    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index].grade = value.toUpperCase();
+    newRows[index].weightedGPA = gpa.weighted;
+    newRows[index].unweightedGPA = gpa.unweighted;
 
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      }
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+    }
 
-      if (onTotalsUpdate) {
-        console.log(`Passing GPA to parent for ${semesterName}:`, totals.weightedGPA);
-        onTotalsUpdate(semesterName, totals.weightedGPA);
-      }
-
-
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
       return newRows;
     });
   };
 
-
-  
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
@@ -720,23 +755,29 @@ function TranscriptContent({ language }) {
 
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-  const handleTotalsUpdate = (semesterName, weightedGPA) => {
-    console.log(`Received GPA for ${semesterName}:`, weightedGPA); // Debug
-    const gpa = parseFloat(weightedGPA);
-    setSemesterGPAs((prev) => ({
+const handleTotalsUpdate = (semesterName, gpaData) => {
+  const { weightedGPA, unweightedGPA } = gpaData;
+  console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
+  console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
+
+  setSemesterGPAs((prev) => ({
     ...prev,
-     [semesterName]: isNaN(gpa) ? 0 : gpa, // 避免儲存 NaN 或其他無效值
+    [semesterName]: {
+      weightedGPA: parseFloat(weightedGPA) || 0,
+      unweightedGPA: parseFloat(unweightedGPA) || 0,
+    },
   }));
 };
 
-  const calculateCumulativeGPA = () => {
-    const gpas = Object.values(semesterGPAs).filter((gpa) => gpa > 0); // 過濾無效 GPA
-    if (gpas.length === 0) return "-";
+const calculateCumulativeGPA = (type = "weightedGPA") => {
+  const gpas = Object.values(semesterGPAs)
+    .map((gpa) => gpa[type])
+    .filter((gpa) => gpa > 0); // 過濾無效數據
+  if (gpas.length === 0) return "-";
 
-    const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
-    return (totalGPA / gpas.length).toFixed(2);
-  };
-
+  const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
+  return (totalGPA / gpas.length).toFixed(2);
+};
   const container = {
      border: 'none',
      padding: '10px',
@@ -1066,7 +1107,7 @@ function TranscriptContent({ language }) {
               </td>
                   
               <td style={thTd}>
-                Cumulative GPA: <input type="text" style={input}/>
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA("unweightedGPA")}
               </td>
                   
               <td style={thTd}>
