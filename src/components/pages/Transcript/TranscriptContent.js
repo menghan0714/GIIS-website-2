@@ -972,19 +972,19 @@ function TranscriptContent({ language }) {
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS />
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS />
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10SS />
+                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
               </td>
@@ -992,14 +992,14 @@ function TranscriptContent({ language }) {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11FS />
+                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11SS />
+                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
