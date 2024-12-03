@@ -207,7 +207,7 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 9 - Spring Semester
           </td>
         </tr>
         <tr>
@@ -333,7 +333,7 @@ function GradeTableG10FS({ semesterName, onTotalsUpdate }) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 10 - Fall Semester
           </td>
         </tr>
         <tr>
@@ -457,7 +457,7 @@ function GradeTableG10SS({ semesterName, onTotalsUpdate }) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 10 - Spring Semester
           </td>
         </tr>
         <tr>
@@ -550,10 +550,15 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
    const handleGradeChange = (index, value) => {
    setRows((prevRows) => {
     const newRows = [...prevRows];
-    const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+     
+    const isAPCourse = newRows[index].type.includes("(AP)");
+    const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    
     newRows[index].grade = value.toUpperCase();
-    newRows[index].weightedGPA = gpa.weighted;
-    newRows[index].unweightedGPA = gpa.unweighted;
+    newRows[index].weightedGPA = isAPCourse
+      ? baseGpa.weighted + 1 // AP 課程的 Weighted GPA +1
+      : baseGpa.weighted;
+    newRows[index].unweightedGPA = baseGpa.unweighted;
 
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
@@ -581,7 +586,7 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 11 - Fall Semester
           </td>
         </tr>
         <tr>
@@ -704,7 +709,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 11 - Spring Semester
           </td>
         </tr>
         <tr>
