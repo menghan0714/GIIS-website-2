@@ -13,8 +13,8 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate }) {
 
 
   const gradeToGpa = {
-    'A+': { weighted: 5.0, unweighted: 4.0 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
+    'A+': { weighted: 4.0, unweighted: 4.0 },
+    'A': { weighted: 4.0, unweighted: 4.0 },
     'A-': { weighted: 4.7, unweighted: 3.7 },
     'B+': { weighted: 4.3, unweighted: 3.3 },
     'B': { weighted: 4.0, unweighted: 3.0 },
