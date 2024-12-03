@@ -550,15 +550,22 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate }) {
    const handleGradeChange = (index, value) => {
    setRows((prevRows) => {
     const newRows = [...prevRows];
-     
     const isAPCourse = newRows[index].type.includes("(AP)");
-    const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+
+     if (value.trim() === "") {
+      newRows[index].grade = ""; // 清空 grade
+      newRows[index].weightedGPA = "-"; // 將 weightedGPA 設置為 "-"
+      newRows[index].unweightedGPA = "-"; // 將 unweightedGPA 設置為 "-"
+    } else {
+      // 如果 Grade 有輸入，計算對應的 GPA 值
+      const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+      newRows[index].grade = value.toUpperCase();
     
-    newRows[index].grade = value.toUpperCase();
-    newRows[index].weightedGPA = isAPCourse
-      ? baseGpa.weighted + 1 // AP 課程的 Weighted GPA +1
-      : baseGpa.weighted;
-    newRows[index].unweightedGPA = baseGpa.unweighted;
+      newRows[index].grade = value.toUpperCase();
+      newRows[index].weightedGPA = isAPCourse
+       ? baseGpa.weighted + 1 // AP 課程的 Weighted GPA +1
+       : baseGpa.weighted;
+      newRows[index].unweightedGPA = baseGpa.unweighted;
 
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
@@ -675,18 +682,25 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
     return { weightedGPA, unweightedGPA };
   };
 
-  const handleGradeChange = (index, value) => {
+   const handleGradeChange = (index, value) => {
    setRows((prevRows) => {
     const newRows = [...prevRows];
-
     const isAPCourse = newRows[index].type.includes("(AP)");
-    const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+
+     if (value.trim() === "") {
+      newRows[index].grade = ""; // 清空 grade
+      newRows[index].weightedGPA = "-"; // 將 weightedGPA 設置為 "-"
+      newRows[index].unweightedGPA = "-"; // 將 unweightedGPA 設置為 "-"
+    } else {
+      // 如果 Grade 有輸入，計算對應的 GPA 值
+      const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+      newRows[index].grade = value.toUpperCase();
     
-    newRows[index].grade = value.toUpperCase();
-    newRows[index].weightedGPA = isAPCourse
-      ? baseGpa.weighted + 1 // AP 課程的 Weighted GPA +1
-      : baseGpa.weighted;
-    newRows[index].unweightedGPA = baseGpa.unweighted;
+      newRows[index].grade = value.toUpperCase();
+      newRows[index].weightedGPA = isAPCourse
+       ? baseGpa.weighted + 1 // AP 課程的 Weighted GPA +1
+       : baseGpa.weighted;
+      newRows[index].unweightedGPA = baseGpa.unweighted;
 
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
