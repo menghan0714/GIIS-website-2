@@ -11,7 +11,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
   ]);
 
   // 處理成績輸入改變
-  const handleGradeChange = (index, newGrade) => {
+  const handleGrade2Change = (index, newGrade) => {
     // 更新指定課程的成績
     const updatedCourses = courses.map((course, i) =>
       i === index ? { ...course, grade: newGrade } : course
