@@ -10,22 +10,22 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
-  const [semesterData, setSemesterData] = useState({});
+  const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
-  const handleDataUpdate = (semesterName, data) => {
-  setSemesterData((prev) => ({
-    ...prev,
-    [semesterName]: data,
-  }));
-};
+  const handleDataUpdate = (semesterName, courses) => {
+    // 更新特定學期的成績資料
+    setSemesterData((prevData) => ({
+      ...prevData,
+      [semesterName]: courses,
+    }));
+    
+    const totalCredits = Object.values({ ...semesterData, [semesterName]: courses })
+      .flat()
+      .filter((course) => course.grade !== 'F') // 排除成績為「F」的課程
+      .reduce((total, course) => total + course.credits, 0);
 
-  const calculateCumulativeCredits = () => {
-  const allCredits = Object.values(semesterData)
-    .map((data) => data.validCredits || 0)
-    .reduce((total, credits) => total + credits, 0);
-
-  return allCredits;
-};
+    setCumulativeCredits(totalCredits);
+  };
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
