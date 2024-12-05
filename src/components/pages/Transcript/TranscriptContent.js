@@ -19,14 +19,19 @@ function TranscriptContent({ language }) {
       ...prevData,
       [semesterName]: courses,
     }));
-    
-    const totalCredits = Object.values({ ...semesterData, [semesterName]: courses })
-      .flat()
-      .filter((course) => course.grade !== 'F') // 排除成績為「F」的課程
-      .reduce((total, course) => total + course.credits, 0);
 
-    setCumulativeCredits(totalCredits);
-  };
+const calculateCredits = () => {
+  const mergedData = Object.values({ ...semesterData, [semesterName]: courses });
+
+  if (!Array.isArray(mergedData)) return; // 防禦性檢查
+
+  const totalCredits = mergedData
+    .flat()
+    .filter((course) => course.grade !== 'F') // 排除成績為「F」的課程
+    .reduce((total, course) => total + (course.credits || 0), 0); // 確保 credits 有值
+
+  setCumulativeCredits(totalCredits);
+};
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
@@ -52,6 +57,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
+    
   const container = {
      border: 'none',
      padding: '10px',
@@ -372,7 +378,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative credits:</strong>  {cumulativeCredits}  />
+                <strong>Cumulative credits:</strong>  {calculateCredits()} 
               </td>
             </tr>
             <tr>
