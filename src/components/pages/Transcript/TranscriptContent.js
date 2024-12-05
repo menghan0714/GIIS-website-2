@@ -372,7 +372,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative credits:</strong>  {calculateCumulativeCredits()}  />
+                <strong>Cumulative credits:</strong>  {cumulativeCredits}  />
               </td>
             </tr>
             <tr>
