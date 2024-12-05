@@ -12,7 +12,7 @@ function TranscriptContent({ language }) {
   const [semesterData, setSemesterData] = useState({});
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-  const handleTotalsUpdate = (semesterName, data) => {
+  const handleDataUpdate = (semesterName, data) => {
   setSemesterData((prev) => ({
     ...prev,
     [semesterName]: data,
@@ -40,13 +40,6 @@ const calculateCumulativeCredits = () => {
   }));
 };
 
-const calculateCumulativeCredits = () => {
-    return Object.values(semesterData)
-      .flat() // 將所有學期數據展平為一個陣列
-      .filter((course) => course.grade !== "F") // 排除成績為 'F' 的課程
-      .reduce((total, course) => total + parseFloat(course.credits || 0), 0); // 累加學分
-  };
-
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
     .map((gpa) => gpa[type])
@@ -56,6 +49,8 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
+
+  
   const container = {
      border: 'none',
      padding: '10px',
