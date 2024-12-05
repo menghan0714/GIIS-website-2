@@ -9,15 +9,8 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 
 function TranscriptContent({ language }) {
   
-  const [semesterData, setSemesterData] = useState({});
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-  const handleSemesterDataUpdate = (semesterName, courses) => {
-    setSemesterData((prev) => ({
-      ...prev,
-      [semesterName]: courses,
-    }));
-  };
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
@@ -33,12 +26,6 @@ function TranscriptContent({ language }) {
   }));
 };
 
-const calculateCumulativeCredits = () => {
-    return Object.values(semesterData)
-      .flat() // 將所有學期數據展平為一個陣列
-      .filter((course) => course.grade !== "F") // 排除成績為 'F' 的課程
-      .reduce((total, course) => total + parseFloat(course.credits || 0), 0); // 累加學分
-  };
 
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
