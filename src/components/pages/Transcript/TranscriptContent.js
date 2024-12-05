@@ -365,11 +365,11 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
              
               <td style={thTd}>
-                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA("weightedGPA")}    
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA("weightedGPA")} />   
               </td>
 
               <td style={thTd}>
-                Cumulative Credits: <input type="text" style={input}  />
+                <strong>Cumulative Credits:</strong>  {calculateCumulativeCredits} />
               </td>
             </tr>
             <tr>
