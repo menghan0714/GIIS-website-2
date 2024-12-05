@@ -51,6 +51,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
       if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
         totalWeightedGPA += row.weightedGPA * row.credits;
         totalUnweightedGPA += row.unweightedGPA * row.credits;
+        totalCredits += row.credits;
       }
     });
 
