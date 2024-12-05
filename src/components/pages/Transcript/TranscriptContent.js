@@ -10,6 +10,7 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
+  const [semesterData, setSemesterData] = useState({});
   const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
   const handleDataUpdate = (semesterName, courses) => {
