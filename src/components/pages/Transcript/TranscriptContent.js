@@ -8,13 +8,21 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 
 
 function TranscriptContent({ language }) {
-
+  
+  const [semesterData, setSemesterData] = useState({});
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-const handleTotalsUpdate = (semesterName, gpaData) => {
-  const { weightedGPA, unweightedGPA } = gpaData;
-  console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
-  console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
+  const handleSemesterDataUpdate = (semesterName, courses) => {
+    setSemesterData((prev) => ({
+      ...prev,
+      [semesterName]: courses,
+    }));
+  };
+
+  const handleTotalsUpdate = (semesterName, gpaData) => {
+   const { weightedGPA, unweightedGPA } = gpaData;
+   console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
+   console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
 
   setSemesterGPAs((prev) => ({
     ...prev,
@@ -24,6 +32,13 @@ const handleTotalsUpdate = (semesterName, gpaData) => {
     },
   }));
 };
+
+const calculateCumulativeCredits = () => {
+    return Object.values(semesterData)
+      .flat() // 將所有學期數據展平為一個陣列
+      .filter((course) => course.grade !== "F") // 排除成績為 'F' 的課程
+      .reduce((total, course) => total + parseFloat(course.credits || 0), 0); // 累加學分
+  };
 
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
@@ -263,25 +278,25 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
+                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
+                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
               </td>
@@ -289,14 +304,14 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
+                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}   />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
+                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}       />
                  </div>
                 </table>
 
