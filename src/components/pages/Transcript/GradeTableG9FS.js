@@ -1,6 +1,21 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate}) {
+function GradeTableG9FS({ semesterName, onTotalsUpdate, onTotalsUpdate}) {
+
+  const [grades, setGrades] = useState([
+    { credits: 1, grade: "A" },
+    { credits: 1, grade: "F" },
+    // ...其他課程資料
+  ]);
+
+    useEffect(() => {
+    const validCredits = grades
+      .filter((course) => course.grade !== "F")
+      .reduce((total, course) => total + course.credits, 0);
+
+    onTotalsUpdate(semesterName, { validCredits });
+  }, [grades, semesterName, onTotalsUpdate]);
+  
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -9,7 +24,6 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate}) {
     { name: "Introduction to Media Studies", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
-
 
   const gradeToGpa = {
     'A+': { weighted: 4.0, unweighted: 4.0 },
