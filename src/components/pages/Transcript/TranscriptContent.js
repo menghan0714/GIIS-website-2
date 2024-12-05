@@ -21,18 +21,18 @@ function TranscriptContent({ language }) {
     }));
   };
 
-const calculateCredits = () => {
-  const mergedData = Object.values({ ...semesterData, [semesterName]: courses });
+  const calculateCredits = () => {
+    const mergedData = Object.values({ ...semesterData, [semesterName]: courses });
 
-  if (!Array.isArray(mergedData)) return; // 防禦性檢查
+    if (!Array.isArray(mergedData)) return; // 防禦性檢查
 
-  const totalCredits = mergedData
-    .flat()
-    .filter((course) => course.grade !== 'F') // 排除成績為「F」的課程
-    .reduce((total, course) => total + (course.credits || 0), 0); // 確保 credits 有值
+    const totalCredits = mergedData
+      .flat()
+      .filter((course) => course.grade !== 'F') // 排除成績為「F」的課程
+      .reduce((total, course) => total + (course.credits || 0), 0); // 確保 credits 有值
 
-  setCumulativeCredits(totalCredits);
-};
+    setCumulativeCredits(totalCredits);
+  };
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
