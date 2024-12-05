@@ -19,6 +19,7 @@ function TranscriptContent({ language }) {
       ...prevData,
       [semesterName]: courses,
     }));
+  };
 
 const calculateCredits = () => {
   const mergedData = Object.values({ ...semesterData, [semesterName]: courses });
