@@ -1,21 +1,28 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate, onTotalsUpdate}) {
+function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
 
-  const [grades, setGrades] = useState([
-    { credits: 1, grade: "A" },
-    { credits: 1, grade: "F" },
-    // ...其他課程資料
+  const [courses, setCourses] = useState([
+    { name: 'English I', type: 'Core', credits: 1, grade: '' },
+    { name: 'Algebra I', type: 'Core', credits: 1, grade: '' },
+    { name: 'Biology', type: 'Core', credits: 1, grade: '' },
+    { name: 'World History', type: 'Core', credits: 1, grade: '' },
+    { name: 'Introduction to Media Studies', type: 'Core', credits: 1, grade: '' },
   ]);
 
-    useEffect(() => {
-    const validCredits = grades
-      .filter((course) => course.grade !== "F")
-      .reduce((total, course) => total + course.credits, 0);
+  // 處理成績輸入改變
+  const handleGradeChange = (index, newGrade) => {
+    // 更新指定課程的成績
+    const updatedCourses = courses.map((course, i) =>
+      i === index ? { ...course, grade: newGrade } : course
+    );
+    setCourses(updatedCourses);
 
-    onTotalsUpdate(semesterName, { validCredits });
-  }, [grades, semesterName, onTotalsUpdate]);
-  
+    // 傳遞更新後的課程資料給父元件
+    onDataUpdate(semesterName, updatedCourses);
+  };
+
+
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
