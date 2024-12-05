@@ -70,11 +70,6 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate}) {
         unweightedGPA: totals.unweightedGPA,
       });
     }
-
-     if (onSemesterUpdate) {
-        const courseData = newRows.filter((row) => row.name !== "Semester Totals");
-        onSemesterUpdate(semesterName, courseData);
-      }
   
       return newRows;
     });
