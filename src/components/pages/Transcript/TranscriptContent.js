@@ -12,13 +12,20 @@ function TranscriptContent({ language }) {
   const [semesterData, setSemesterData] = useState({});
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-  const handleSemesterDataUpdate = (semesterName, courses) => {
-    setSemesterData((prev) => ({
-      ...prev,
-      [semesterName]: courses,
-    }));
-  };
+  const handleTotalsUpdate = (semesterName, data) => {
+  setSemesterData((prev) => ({
+    ...prev,
+    [semesterName]: data,
+  }));
+};
+const calculateCumulativeCredits = () => {
+  const allCredits = Object.values(semesterData)
+    .map((data) => data.validCredits || 0)
+    .reduce((total, credits) => total + credits, 0);
 
+  return allCredits;
+};
+  
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
