@@ -1,6 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
+function GradeTableG9FS({ semesterName, onTotalsUpdate}) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -35,7 +35,6 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
       if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
         totalWeightedGPA += row.weightedGPA * row.credits;
         totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
       }
     });
 
