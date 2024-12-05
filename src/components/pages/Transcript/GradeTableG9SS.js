@@ -1,6 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
+function GradeTableG9SS({ semesterName, onTotalsUpdate,onSemesterUpdate}) {
   const [rows, setRows] = useState([
     { name: "English I - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -71,6 +71,11 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate }) {
       });
     }
 
+
+    if (onSemesterUpdate) {
+        const courseData = newRows.filter((row) => row.name !== "Semester Totals");
+        onSemesterUpdate(semesterName, courseData);
+      }
 
       return newRows;
     });
