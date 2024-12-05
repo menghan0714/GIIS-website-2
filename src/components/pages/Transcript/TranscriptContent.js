@@ -12,20 +12,13 @@ function TranscriptContent({ language }) {
   const [semesterData, setSemesterData] = useState({});
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
-  const handleDataUpdate = (semesterName, data) => {
-  setSemesterData((prev) => ({
-    ...prev,
-    [semesterName]: data,
-  }));
-};
-const calculateCumulativeCredits = () => {
-  const allCredits = Object.values(semesterData)
-    .map((data) => data.validCredits || 0)
-    .reduce((total, credits) => total + credits, 0);
+  const handleSemesterDataUpdate = (semesterName, courses) => {
+    setSemesterData((prev) => ({
+      ...prev,
+      [semesterName]: courses,
+    }));
+  };
 
-  return allCredits;
-};
-  
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
@@ -40,6 +33,13 @@ const calculateCumulativeCredits = () => {
   }));
 };
 
+const calculateCumulativeCredits = () => {
+    return Object.values(semesterData)
+      .flat() // 將所有學期數據展平為一個陣列
+      .filter((course) => course.grade !== "F") // 排除成績為 'F' 的課程
+      .reduce((total, course) => total + parseFloat(course.credits || 0), 0); // 累加學分
+  };
+
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
     .map((gpa) => gpa[type])
@@ -49,8 +49,6 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
-
-  
   const container = {
      border: 'none',
      padding: '10px',
@@ -280,25 +278,25 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}    />
+                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}    />
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}  />
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}  />
+                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
               </td>
@@ -306,14 +304,14 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}   />
+                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}   />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleDataUpdate}       />
+                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}       />
                  </div>
                 </table>
 
@@ -367,11 +365,11 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
              
               <td style={thTd}>
-                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA("weightedGPA")}
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA()}    
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong>  {calculateCumulativeCredits()}
+                Cumulative Credits: <input type="text" style={input}  />
               </td>
             </tr>
             <tr>
