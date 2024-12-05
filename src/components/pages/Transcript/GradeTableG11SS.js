@@ -1,6 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG11SS({ semesterName, onTotalsUpdate }) {
+function GradeTableG11SS({ semesterName, onTotalsUpdate,   onSemesterUpdate}) {
   const [rows, setRows] = useState([
     { name: "AP Calculus AB", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Physics - Mechanics", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -82,6 +82,12 @@ const handleGradeChange = (index, value) => {
       });
     }
 
+    if (onSemesterUpdate) {
+        const courseData = newRows.filter((row) => row.name !== "Semester Totals");
+        onSemesterUpdate(semesterName, courseData);
+      }
+
+    
     return newRows;
   });
 };
