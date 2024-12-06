@@ -1,33 +1,6 @@
-import React, { useRef , useState,useEffect }  from 'react';
+import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
-  
-  const onInitializeSemesterData = (semesterName, courses) => {
-  console.log(`Initializing data for ${semesterName}:`, courses);
-};
-
-  const onGradeChange = (semesterName, index, newGrade) => {
-  console.log(`Grade changed for ${semesterName}, course ${index}:`, newGrade);
-};
-
-  const courses = [
-    { name: "English I", type: "Core", credits: 1, grade: "" },
-    { name: "Algebra I", type: "Core", credits: 1, grade: "" },
-    { name: "Biology", type: "Core", credits: 1, grade: "" },
-    { name: "World History", type: "Core", credits: 1, grade: "" },
-    { name: "Introduction to Media Studies", type: "Elective", credits: 0.5, grade: "" },
-  ];
-
-  useEffect(() => {
-    onInitializeSemesterData(semesterName, courses);
-  }, [onInitializeSemesterData, semesterName]);
-
-  const handleGradeInputChange = (index, newGrade) => {
-    onGradeChange(semesterName, index, newGrade);
-  };
-
-
-  
+function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -36,6 +9,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
     { name: "Introduction to Media Studies", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
+
 
   const gradeToGpa = {
     'A+': { weighted: 4.0, unweighted: 4.0 },
@@ -132,10 +106,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
                 <input
                   type="text"
                   value={row.grade}
-                  onChange={(e) => {
-                    handleGradeChange(index, e.target.value);
-                    handleGradeInputChange(index, e.target.value);
-                  }}
+                  onChange={(e) => handleGradeChange(index, e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
@@ -155,4 +126,5 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
 }
 
 export default GradeTableG9FS;
+
 
