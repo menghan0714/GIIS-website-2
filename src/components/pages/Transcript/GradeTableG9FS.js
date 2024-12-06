@@ -1,28 +1,25 @@
-import React, { useRef , useState }  from 'react';
+import React, { useRef , useState,useEffect }  from 'react';
 
 function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
 
-  const [courses, setCourses] = useState([
-    { name: 'English I', type: 'Core', credits: 1, grade: '' },
-    { name: 'Algebra I', type: 'Core', credits: 1, grade: '' },
-    { name: 'Biology', type: 'Core', credits: 1, grade: '' },
-    { name: 'World History', type: 'Core', credits: 1, grade: '' },
-    { name: 'Introduction to Media Studies', type: 'Core', credits: 1, grade: '' },
-  ]);
+  const courses = [
+    { name: "English I", type: "Core", credits: 1, grade: "" },
+    { name: "Algebra I", type: "Core", credits: 1, grade: "" },
+    { name: "Biology", type: "Core", credits: 1, grade: "" },
+    { name: "World History", type: "Core", credits: 1, grade: "" },
+    { name: "Introduction to Media Studies", type: "Elective", credits: 0.5, grade: "" },
+  ];
 
-  // 處理成績輸入改變
-  const handleGrade2Change = (index, newGrade) => {
-    // 更新指定課程的成績
-    const updatedCourses = courses.map((course, i) =>
-      i === index ? { ...course, grade: newGrade } : course
-    );
-    setCourses(updatedCourses);
+  useEffect(() => {
+    onInitializeSemesterData(semesterName, courses);
+  }, [onInitializeSemesterData, semesterName]);
 
-    // 傳遞更新後的課程資料給父元件
-    onDataUpdate(semesterName, updatedCourses);
+  const handleGradeInputChange = (index, newGrade) => {
+    onGradeChange(semesterName, index, newGrade);
   };
 
 
+  
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -127,7 +124,10 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
                 <input
                   type="text"
                   value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
+                  onChange={(e) => {
+                    handleGradeChange(index, e.target.value);
+                    handleGradeInputChange(index, e.target.value)};
+                  }}
                   style={{
                     width: "100%",
                     textAlign: "center",
