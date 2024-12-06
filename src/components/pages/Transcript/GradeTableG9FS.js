@@ -130,7 +130,7 @@ const handleCreditChange = (index, value) => {
                   value={row.grade}
                   onChange={(e) => 
                     handleGradeChange(index, e.target.value)
-                    handleCreditChange(index, e.target.value)}
+                    handleCreditChange(index, e.target.value)
                   style={{
                     width: "100%",
                     textAlign: "center",
