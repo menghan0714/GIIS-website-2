@@ -126,7 +126,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
                   value={row.grade}
                   onChange={(e) => {
                     handleGradeChange(index, e.target.value);
-                    handleGradeInputChange(index, e.target.value)};
+                    handleGradeInputChange(index, e.target.value);
                   }}
                   style={{
                     width: "100%",
