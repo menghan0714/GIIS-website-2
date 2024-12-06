@@ -131,6 +131,7 @@ const handleCreditChange = (index, value) => {
                   onChange={(e) => 
                     handleGradeChange(index, e.target.value)
                     handleCreditChange(index, e.target.value)
+                    }
                   style={{
                     width: "100%",
                     textAlign: "center",
