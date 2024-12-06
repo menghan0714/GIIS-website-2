@@ -1,7 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredits}) {
-  
+function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -11,13 +10,6 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
-    const [courses, setCourses] = useState([
-    { id: 1, name: "English I", credits: 1, grade: "" },
-    { id: 2, name: "Algebra I", credits: 1, grade: "" },
-    { id: 3, name: "Biology", credits: 1, grade: "" },
-    { id: 4, name: "World History", credits: 1, grade: "" },
-    { id: 5, name: "Introduction to Media Studies", credits: 0.5, grade: "" },
-  ]);
 
   const gradeToGpa = {
     'A+': { weighted: 4.0, unweighted: 4.0 },
@@ -79,32 +71,16 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
         unweightedGPA: totals.unweightedGPA,
       });
     }
+
+     if (onSemesterUpdate) {
+        const courseData = newRows.filter((row) => row.name !== "Semester Totals");
+        onSemesterUpdate(semesterName, courseData);
+      }
+  
       return newRows;
     });
   };
 
-  console.log("Rendering GradeTableG9FS");
-
-  const handleCreditsChange = (id, newGrade) => {
-    const updatedCourses = courses.map((course) =>
-      course.id === id ? { ...course, grade: newGrade } : course
-    );
-
-    if (JSON.stringify(updatedCourses) !== JSON.stringify(courses)) {
-      setCourses(updatedCourses);
-
-      const totalCredits = updatedCourses.reduce((sum, course) => {
-        return course.grade.toUpperCase() !== "F" && course.grade !== ""
-          ? sum + course.credits
-          : sum;
-      }, 0);
-
-      // Only update if credits change
-      onUpdateCumulativeCredits(totalCredits);
-    }
-  };
-
-  
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
@@ -135,10 +111,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
                 <input
                   type="text"
                   value={row.grade}
-                  onChange={(e) => {
-                    handleGradeChange(index, e.target.value);
-                    handleCreditsChange(index, e.target.value);
-                    }}
+                  onChange={(e) => handleGradeChange(index, e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
@@ -158,5 +131,3 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
 }
 
 export default GradeTableG9FS;
-
-
