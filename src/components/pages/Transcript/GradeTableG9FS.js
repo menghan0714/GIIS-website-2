@@ -85,7 +85,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
 
   console.log("Rendering GradeTableG9FS");
 
-  const handleGradeChange = (id, newGrade) => {
+  const handleCreditsChange = (id, newGrade) => {
     const updatedCourses = courses.map((course) =>
       course.id === id ? { ...course, grade: newGrade } : course
     );
