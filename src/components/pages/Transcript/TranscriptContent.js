@@ -14,6 +14,7 @@ function TranscriptContent({ language }) {
   const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
   const handleGradeChange = (semesterName, courseIndex, newGrade) => {
+    console.log(`Grade changed for ${semesterName}, course ${index}:`, newGrade);
     setSemesterData((prevData) => {
       const updatedData = [...prevData];
       const semesterIndex = updatedData.findIndex(
@@ -30,6 +31,7 @@ function TranscriptContent({ language }) {
   };
 
   const initializeSemesterData = (semesterName, courses) => {
+    console.log(`Initializing data for ${semesterName}:`, courses);
     setSemesterData((prevData) => {
       if (!prevData.find((data) => data.semester === semesterName)) {
         return [...prevData, { semester: semesterName, courses }];
@@ -305,7 +307,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                  <div>
                   <GradeTableG9FS semesterName="Grade 9 - Fall Semester" 
                    onTotalsUpdate={handleTotalsUpdate} 
-                   onSemesterData={handleSemesterDataUpdate} 
+                   onSemesterData={handleGradeChange} 
                    onInitializeSemesterData={initializeSemesterData}/>
                  </div>
                 </table>
@@ -314,7 +316,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                  <div>
                    <GradeTableG9SS semesterName="Grade 9 - Spring Semester" 
                     onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleSemesterDataUpdate}
+                    onSemesterData={handleGradeChange}
                     onInitializeSemesterData={initializeSemesterData}/>
                  </div>
                 </table>
@@ -323,7 +325,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                  <div>
                    <GradeTableG10FS semesterName="Grade 10 - Fall Semester" 
                     onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleSemesterDataUpdate}
+                    onSemesterData={handleGradeChange}
                     onInitializeSemesterData={initializeSemesterData}/>
                  </div>
                 </table>
@@ -332,7 +334,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                  <div>
                    <GradeTableG10SS semesterName="Grade 10 - Spring Semester" 
                     onTotalsUpdate={handleTotalsUpdate}  
-                    onSemesterData={handleSemesterDataUpdate}
+                    onSemesterData={handleGradeChange}
                     onInitializeSemesterData={initializeSemesterData}/>
                  </div>
                 </table>
@@ -343,7 +345,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                   <div>
                    <GradeTableG11FS semesterName="Grade 11 - Fall Semester" 
                     onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleSemesterDataUpdate}
+                    onSemesterData={handleGradeChange}
                     onInitializeSemesterData={initializeSemesterData} />
                  </div>
                 </table>
@@ -353,7 +355,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                   <div>
                    <GradeTableG11SS semesterName="Grade 11 - Spring Semester" 
                     onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleSemesterDataUpdate}
+                    onSemesterData={handleGradeChange}
                     onInitializeSemesterData={initializeSemesterData}/>
                  </div>
                 </table>
