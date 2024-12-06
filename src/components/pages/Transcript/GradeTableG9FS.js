@@ -1,6 +1,14 @@
 import React, { useRef , useState,useEffect }  from 'react';
 
 function GradeTableG9FS({ semesterName, onTotalsUpdate, onDataUpdate}) {
+  
+  const onInitializeSemesterData = (semesterName, courses) => {
+  console.log(`Initializing data for ${semesterName}:`, courses);
+};
+
+  const onGradeChange = (semesterName, index, newGrade) => {
+  console.log(`Grade changed for ${semesterName}, course ${index}:`, newGrade);
+};
 
   const courses = [
     { name: "English I", type: "Core", credits: 1, grade: "" },
