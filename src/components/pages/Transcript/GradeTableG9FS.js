@@ -83,23 +83,27 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredit
     });
   };
 
-  const handleCreditsChange = (id, newGrade) => {
+  console.log("Rendering GradeTableG9FS");
+
+  const handleGradeChange = (id, newGrade) => {
     const updatedCourses = courses.map((course) =>
       course.id === id ? { ...course, grade: newGrade } : course
     );
 
-    setCourses(updatedCourses);
+    if (JSON.stringify(updatedCourses) !== JSON.stringify(courses)) {
+      setCourses(updatedCourses);
 
-    // 計算累積學分
-    const totalCredits = updatedCourses.reduce((sum, course) => {
-      return course.grade.toUpperCase() !== "F" && course.grade !== ""
-        ? sum + course.credits
-        : sum;
-    }, 0);
+      const totalCredits = updatedCourses.reduce((sum, course) => {
+        return course.grade.toUpperCase() !== "F" && course.grade !== ""
+          ? sum + course.credits
+          : sum;
+      }, 0);
 
-    // 將累積學分結果回傳給父組件
-    onUpdateCumulativeCredits(totalCredits);
+      // Only update if credits change
+      onUpdateCumulativeCredits(totalCredits);
+    }
   };
+
   
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
