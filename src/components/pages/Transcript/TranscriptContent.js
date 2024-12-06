@@ -8,49 +8,10 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 
 
 function TranscriptContent({ language }) {
-  
+
   const [semesterGPAs, setSemesterGPAs] = useState({});
-  const [semesterData, setSemesterData] = useState([]);
-  const [cumulativeCredits, setCumulativeCredits] = useState(0);
-
-  const handleGradeChange = (semesterName, courseIndex, newGrade) => {
-    console.log(`Grade changed for ${semesterName}, ${courseIndex}:`, newGrade);
-    setSemesterData((prevData) => {
-      const updatedData = [...prevData];
-      const semesterIndex = updatedData.findIndex(
-        (data) => data.semester === semesterName
-      );
-
-      if (semesterIndex >= 0) {
-        updatedData[semesterIndex].courses[courseIndex].grade = newGrade;
-      }
-
-      calculateCumulativeCredits(updatedData);
-      return updatedData;
-    });
-  };
-
-  const initializeSemesterData = (semesterName, courses) => {
-    console.log(`Initializing data for ${semesterName}:`, courses);
-    setSemesterData((prevData) => {
-      if (!prevData.find((data) => data.semester === semesterName)) {
-        return [...prevData, { semester: semesterName, courses }];
-      }
-      return prevData;
-    });
-  };
-
-  const calculateCumulativeCredits = (data) => {
-    const totalCredits = data
-      .flatMap((semester) => semester.courses)
-      .filter((course) => course.grade !== "F") // 排除成績為 F 的課程
-      .reduce((total, course) => total + course.credits, 0); // 累加學分
-    setCumulativeCredits(totalCredits);
-  };
 
 
-
-  
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
@@ -65,7 +26,6 @@ function TranscriptContent({ language }) {
   }));
 };
 
-
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
     .map((gpa) => gpa[type])
@@ -75,7 +35,6 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
-    
   const container = {
      border: 'none',
      padding: '10px',
@@ -305,37 +264,25 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" 
-                   onTotalsUpdate={handleTotalsUpdate} 
-                   onSemesterData={handleGradeChange} 
-                   onInitializeSemesterData={initializeSemesterData}/>
+                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" 
-                    onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleGradeChange}
-                    onInitializeSemesterData={initializeSemesterData}/>
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}    />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" 
-                    onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleGradeChange}
-                    onInitializeSemesterData={initializeSemesterData}/>
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" 
-                    onTotalsUpdate={handleTotalsUpdate}  
-                    onSemesterData={handleGradeChange}
-                    onInitializeSemesterData={initializeSemesterData}/>
+                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}  />
                  </div>
                 </table>
               </td>
@@ -343,20 +290,14 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" 
-                    onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleGradeChange}
-                    onInitializeSemesterData={initializeSemesterData} />
+                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}   />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" 
-                    onTotalsUpdate={handleTotalsUpdate} 
-                    onSemesterData={handleGradeChange}
-                    onInitializeSemesterData={initializeSemesterData}/>
+                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} onSemesterDataUpdate={handleSemesterDataUpdate}       />
                  </div>
                 </table>
 
@@ -414,7 +355,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative credits:</strong> {calculateCumulativeCredits()}
+                Cumulative Credits: <input type="text" style={input}  />
               </td>
             </tr>
             <tr>
