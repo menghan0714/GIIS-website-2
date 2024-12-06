@@ -46,8 +46,8 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   };
 
 
-const handleGradeChange = (index, value) => {
-  setRows((prevRows) => {
+  const handleGradeChange = (index, value) => {
+   setRows((prevRows) => {
     const newRows = [...prevRows];
     const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
     newRows[index].grade = value.toUpperCase();
@@ -62,22 +62,42 @@ const handleGradeChange = (index, value) => {
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
 
-    // 計算累加有效學分
-    const validCredits = newRows
-      .filter((row) => row.name !== "Semester Totals" && row.grade && row.grade !== "F")
-      .reduce((sum, row) => sum + row.credits, 0);
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
+    }
+      return newRows;
+    });
+  };
 
-    console.log(`Valid credits for ${semesterName}:`, validCredits);
 
-    // 將累加有效學分傳遞給父元件
+const handleCreditChange = (index, value) => {
+  setRows((prevRows) => {
+    const newRows = [...prevRows];
+    newRows[index].grade = value.toUpperCase();
+
+    // 計算有效學分
+    const totalValidCredits = newRows.reduce((total, row) => {
+      if (row.grade && row.grade !== "-" && gradeToGpa[row.grade]) {
+        return total + row.credits;
+      }
+      return total;
+    }, 0);
+
+    // 更新學分給父元件
     if (onSemesterUpdate) {
-      onSemesterUpdate(semesterName, { validCredits });
+      onSemesterUpdate(semesterName, { validCredits: totalValidCredits });
     }
 
     return newRows;
   });
 };
-
+  
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
@@ -108,7 +128,9 @@ const handleGradeChange = (index, value) => {
                 <input
                   type="text"
                   value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
+                  onChange={(e) => 
+                    handleGradeChange(index, e.target.value)
+                    handleCreditChange(index, e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
