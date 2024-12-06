@@ -11,13 +11,22 @@ function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
 
+
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
 
-  }
-  
+  setSemesterGPAs((prev) => ({
+    ...prev,
+    [semesterName]: {
+      weightedGPA: parseFloat(weightedGPA) || 0,
+      unweightedGPA: parseFloat(unweightedGPA) || 0,
+    },
+  }));
+};
+
+
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
     .map((gpa) => gpa[type])
@@ -263,13 +272,13 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate}/>
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate}  />
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
@@ -372,4 +381,5 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 }
 
 export default TranscriptContent;
+
 
