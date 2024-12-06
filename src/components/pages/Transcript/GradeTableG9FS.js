@@ -1,6 +1,7 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
+function GradeTableG9FS({ semesterName, onTotalsUpdate, onUpdateCumulativeCredits}) {
+  
   const [rows, setRows] = useState([
     { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -10,6 +11,13 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
     { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
+    const [courses, setCourses] = useState([
+    { id: 1, name: "English I", credits: 1, grade: "" },
+    { id: 2, name: "Algebra I", credits: 1, grade: "" },
+    { id: 3, name: "Biology", credits: 1, grade: "" },
+    { id: 4, name: "World History", credits: 1, grade: "" },
+    { id: 5, name: "Introduction to Media Studies", credits: 0.5, grade: "" },
+  ]);
 
   const gradeToGpa = {
     'A+': { weighted: 4.0, unweighted: 4.0 },
@@ -75,28 +83,23 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
     });
   };
 
+  const handleCreditsChange = (id, newGrade) => {
+    const updatedCourses = courses.map((course) =>
+      course.id === id ? { ...course, grade: newGrade } : course
+    );
 
-const handleCreditChange = (index, value) => {
-  setRows((prevRows) => {
-    const newRows = [...prevRows];
-    newRows[index].grade = value.toUpperCase();
+    setCourses(updatedCourses);
 
-    // 計算有效學分
-    const totalValidCredits = newRows.reduce((total, row) => {
-      if (row.grade && row.grade !== "-" && gradeToGpa[row.grade]) {
-        return total + row.credits;
-      }
-      return total;
+    // 計算累積學分
+    const totalCredits = updatedCourses.reduce((sum, course) => {
+      return course.grade.toUpperCase() !== "F" && course.grade !== ""
+        ? sum + course.credits
+        : sum;
     }, 0);
 
-    // 更新學分給父元件
-    if (onSemesterUpdate) {
-      onSemesterUpdate(semesterName, { validCredits: totalValidCredits });
-    }
-
-    return newRows;
-  });
-};
+    // 將累積學分結果回傳給父組件
+    onUpdateCumulativeCredits(totalCredits);
+  };
   
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -130,7 +133,7 @@ const handleCreditChange = (index, value) => {
                   value={row.grade}
                   onChange={(e) => {
                     handleGradeChange(index, e.target.value);
-                    handleCreditChange(index, e.target.value);
+                    handleCreditsChange(index, e.target.value);
                     }}
                   style={{
                     width: "100%",
