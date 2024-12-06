@@ -16,7 +16,9 @@ function TranscriptContent({ language }) {
   const handleGradeChange = (semesterName, courseIndex, newGrade) => {
     setSemesterData((prevData) => {
       const updatedData = [...prevData];
-      const semesterIndex = updatedData.findIndex((data) => data.semester === semesterName);
+      const semesterIndex = updatedData.findIndex(
+        (data) => data.semester === semesterName
+      );
 
       if (semesterIndex >= 0) {
         updatedData[semesterIndex].courses[courseIndex].grade = newGrade;
@@ -27,7 +29,7 @@ function TranscriptContent({ language }) {
     });
   };
 
- const initializeSemesterData = (semesterName, courses) => {
+  const initializeSemesterData = (semesterName, courses) => {
     setSemesterData((prevData) => {
       if (!prevData.find((data) => data.semester === semesterName)) {
         return [...prevData, { semester: semesterName, courses }];
@@ -45,6 +47,8 @@ function TranscriptContent({ language }) {
   };
 
 
+
+  
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
