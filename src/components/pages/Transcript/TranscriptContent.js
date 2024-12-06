@@ -14,7 +14,7 @@ function TranscriptContent({ language }) {
   const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
   const handleGradeChange = (semesterName, courseIndex, newGrade) => {
-    console.log(`Grade changed for ${semesterName}, course ${index}:`, newGrade);
+    console.log(`Grade changed for ${semesterName}, ${courseIndex}:`, newGrade);
     setSemesterData((prevData) => {
       const updatedData = [...prevData];
       const semesterIndex = updatedData.findIndex(
@@ -414,7 +414,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative credits:</strong> {calculateCumulativeCredits(data)}
+                <strong>Cumulative credits:</strong> {calculateCumulativeCredits()}
               </td>
             </tr>
             <tr>
