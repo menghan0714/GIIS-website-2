@@ -12,9 +12,11 @@ function TranscriptContent({ language }) {
   const [semesterGPAs, setSemesterGPAs] = useState({});
   const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
-  const handleCreditsUpdate = (newCumulativeCredits) => {
+  const handleCreditsUpdate = useCallback((newCumulativeCredits) => {
     setCumulativeCredits(newCumulativeCredits);
-  };
+  }, []);
+
+  console.log("Rendering TranscriptContent");
   
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
