@@ -39,6 +39,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
+  
   const container = {
      border: 'none',
      padding: '10px',
@@ -359,7 +360,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong> {handleSemesterUpdate()}
+                <strong>Cumulative Credits:</strong> {handleCreditsUpdate()}
               </td>
             </tr>
             <tr>
