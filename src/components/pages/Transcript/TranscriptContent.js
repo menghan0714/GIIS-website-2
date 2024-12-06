@@ -16,7 +16,8 @@ function TranscriptContent({ language }) {
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
 
-
+  };
+  
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
     .map((gpa) => gpa[type])
@@ -26,6 +27,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
   return (totalGPA / gpas.length).toFixed(2);
 };
+  
   const container = {
      border: 'none',
      padding: '10px',
