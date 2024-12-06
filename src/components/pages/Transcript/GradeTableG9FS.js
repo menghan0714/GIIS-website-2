@@ -78,7 +78,6 @@ const handleGradeChange = (index, value) => {
   });
 };
 
-
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
