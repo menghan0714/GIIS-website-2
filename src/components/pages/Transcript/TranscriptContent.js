@@ -13,8 +13,11 @@ function TranscriptContent({ language }) {
   const [semesterCredits, setSemesterCredits] = useState({});
 
   const handleSemesterUpdate = (semesterName, data) => {
-    console.log(`Semester ${semesterName} updated with:`, data);
-  // 將有效學分存入狀態
+    if (!data || typeof data.validCredits === "undefined") {
+      console.error(`Missing validCredits for ${semesterName}`);
+      return;
+    }
+
     setSemesterCredits((prev) => ({
       ...prev,
       [semesterName]: data.validCredits,
