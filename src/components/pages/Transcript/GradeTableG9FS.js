@@ -68,6 +68,17 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
         newRows[index].weightedGPA = gpa.weighted;
       }
     }
+
+    const totalCredits = newRows
+      .filter((row) => row.name && row.name !== "Semester Totals") // 過濾出有效的課程
+      .reduce((sum, row) => sum + parseFloat(row.credits || 0), 0); // 累加所有課程的 Credits
+
+    // 找到 Semester Totals 行並更新 Credits
+    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].credits = totalCredits; // 更新總 Credits
+
+      
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
@@ -144,18 +155,22 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
-               ""
+              row.credits // 顯示加總結果
               ) : (
-              <select
-                value={row.credits}
-                onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
-                style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
-                disabled={row.name === "Semester Totals"}
-              >
-                <option value="">-</option>
-                <option value="0.5">0.5</option>
-                <option value="1.0">1.0</option>
-              </select>
+                <select
+                 value={row.credits}
+                 onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
+                 style={{
+                  width: "100%",
+                  border: isStatic ? "1px solid black" : "none",
+                  borderRadius: "4px",
+                  }}
+                  disabled={row.name === "Semester Totals"}
+                  >
+                   <option value="">-</option>
+                   <option value="0.5">0.5</option>
+                   <option value="1.0">1.0</option>
+                 </select>
               )}
             </td>
                 
