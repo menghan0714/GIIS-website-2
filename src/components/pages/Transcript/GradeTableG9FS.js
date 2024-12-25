@@ -170,6 +170,6 @@ const GradeTableG9FS = forwardRef(({ semesterName, onTotalsUpdate, onSemesterUpd
       </tbody>
     </table>
   );
-}
+};
 
 export default GradeTableG9FS;
