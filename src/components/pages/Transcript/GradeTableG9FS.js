@@ -1,4 +1,4 @@
-import React, { useRef , useState }  from 'react';
+import React, { useRef , useState, forwardRef }  from 'react';
 
 const GradeTableG9FS = forwardRef(({ semesterName, onTotalsUpdate, onSemesterUpdate }, ref) => {
   const [rows, setRows] = useState([
