@@ -49,15 +49,14 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
 };
 
 
-  const handleGradeChange = (index, field, value) => {
-   setRows((prevRows) => {
+const handleGradeChange = (index, field, value) => {
+  setRows((prevRows) => {
     const newRows = [...prevRows];
-    
+
     // 更新欄位值
-    newRows[index][field] = value; 
+    newRows[index][field] = value;
 
-
-      // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
+    // 如果欄位是成績或課程名稱，重新計算 GPA
     if (field === "grade" || field === "name") {
       const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
@@ -66,30 +65,28 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
         ? gpa.unweighted + 1 
         : gpa.weighted;
     }
-      
-    // 計算學期總 GPA
-     const totals = calculateTotals(newRows);
+
+    // 計算總分、學分與 GPA
+    const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
       newRows[totalsIndex].credits = totals.totalCredits.toFixed(1); // 更新總學分
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
-    
-    // 將兩個 GPA 傳遞給父元件
-   if (onTotalsUpdate) {
-      console.log(Passing Weighted GPA for ${semesterName}:, totals.weightedGPA);
-      console.log(Passing Unweighted GPA for ${semesterName}:, totals.unweightedGPA);
+
+    // 傳遞 GPA 更新給父元件
+    if (onTotalsUpdate) {
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
       });
     }
 
+    return newRows;
+  });
+};
 
-      return newRows;
-    });
-  };
 
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
