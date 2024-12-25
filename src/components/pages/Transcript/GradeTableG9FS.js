@@ -47,7 +47,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
   };
 
 
-  const handleGradeChange = (index, field, value) => {
+const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
     
@@ -69,6 +69,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
       }
     }
 
+    // 計算學期總 Credits
     const totalCredits = newRows
       .filter((row) => row.name && row.name !== "Semester Totals") // 過濾出有效的課程
       .reduce((sum, row) => sum + parseFloat(row.credits || 0), 0); // 累加所有課程的 Credits
@@ -78,17 +79,14 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
     if (totalsIndex !== -1) {
       newRows[totalsIndex].credits = totalCredits; // 更新總 Credits
 
-      
-    // 計算學期總 GPA
-    const totals = calculateTotals(newRows);
-    const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-    if (totalsIndex !== -1) {
+      // 計算 GPA 總和
+      const totals = calculateTotals(newRows);
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
     
     // 將兩個 GPA 傳遞給父元件
-   if (onTotalsUpdate) {
+    if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
       onTotalsUpdate(semesterName, {
@@ -97,10 +95,10 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
       });
     }
 
+    return newRows;
+  });
+};
 
-      return newRows;
-    });
-  };
 
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
