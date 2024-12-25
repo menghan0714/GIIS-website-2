@@ -49,7 +49,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
 };
 
 
-  const handleGradeChange = (index, field, value) => {
+const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
     
@@ -70,6 +70,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
         newRows[index].weightedGPA = gpa.weighted;
       }
     }
+
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
@@ -77,21 +78,21 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
-    
-    // 將兩個 GPA 傳遞給父元件
-   if (onTotalsUpdate) {
-      console.log(Passing Weighted GPA for ${semesterName}:, totals.weightedGPA);
-      console.log(Passing Unweighted GPA for ${semesterName}:, totals.unweightedGPA);
+
+    // 將 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
       });
     }
 
+    return newRows;
+  });
+};
 
-      return newRows;
-    });
-  };
   
 
 
