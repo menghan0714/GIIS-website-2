@@ -137,7 +137,7 @@ function GradeTableG10FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
               >
                 <option value="">-</option>
                 <option value="Core">Core</option>
-                <option value="Elective">Core (AP)</option>
+                <option value="Core (AP)">Core (AP)</option>
                 <option value="Elective">Elective</option>
               </select>
              )}
