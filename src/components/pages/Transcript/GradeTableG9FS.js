@@ -51,7 +51,7 @@ const calculateTotals = (updatedRows) => {
 
 
 
-  const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
     
@@ -89,10 +89,10 @@ const calculateTotals = (updatedRows) => {
         unweightedGPA: totals.unweightedGPA,
       });
     }
-  
+    
       return newRows;
     });
-  }; 
+  };  
 
 
   return (
