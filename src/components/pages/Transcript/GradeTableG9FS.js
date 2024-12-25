@@ -88,7 +88,6 @@ const handleGradeChange = (index, field, value) => {
       totals = calculateTotals(newRows);
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-    }
     
     // 將兩個 GPA 傳遞給父元件
     if (onTotalsUpdate) {
