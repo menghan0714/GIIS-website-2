@@ -1,4 +1,4 @@
-import React, { useRef , useState }  from 'react';
+import React, {useState }  from 'react';
 
 function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStatic = false}) {
   const [rows, setRows] = useState([
@@ -142,6 +142,7 @@ const handleGradeChange = (index, field, value) => {
               >
                 <option value="">-</option>
                 <option value="Core">Core</option>
+                <option value="Core (AP)">Core (AP)</option>
                 <option value="Elective">Elective</option>
               </select>
              )}
