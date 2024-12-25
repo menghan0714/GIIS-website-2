@@ -1,6 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
+function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStatic = false}) {
   const [rows, setRows] = useState([
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -108,7 +108,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 type="text"
                 value={row.name}
                 onChange={(e) => handleGradeChange(index, "name", e.target.value)}
-                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+                style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               />
              )}
@@ -121,7 +121,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               <select
                 value={row.type}
                 onChange={(e) => handleGradeChange(index, "type", e.target.value)}
-                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+                style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               >
                 <option value="">-</option>
@@ -138,7 +138,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               <select
                 value={row.credits}
                 onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
-                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+                style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               >
                 <option value="">-</option>
@@ -158,7 +158,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                   style={{
                     width: "100%",
                     textAlign: "center",
-                    border: "1px solid #ccc",
+                    border: isStatic ? "1px solid black" : "none",
                     borderRadius: "4px",
                   }}
                 >
