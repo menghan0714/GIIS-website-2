@@ -108,7 +108,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
                 type="text"
                 value={row.name}
                 onChange={(e) => handleGradeChange(index, "name", e.target.value)}
-                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+                style={{ width: "100%", border: isStatic ? "none" : "1px solid black", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               />
              )}
