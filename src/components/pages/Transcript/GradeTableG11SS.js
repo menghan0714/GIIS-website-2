@@ -50,7 +50,7 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
 
 
   const handleGradeChange = (index, field, value) => {
-  setRows((prevRows) => {
+   setRows((prevRows) => {
     const newRows = [...prevRows];
     
     // 更新欄位值
@@ -94,7 +94,8 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
 
 
       return newRows;
-    });
+    };
+   };
   };
 
   return (
