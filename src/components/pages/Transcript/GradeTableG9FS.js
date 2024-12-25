@@ -1,4 +1,4 @@
-import React, { useRef , useState}  from 'react';
+import React, {useState}  from 'react';
 
 function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStatic = false}) {
   const [rows, setRows] = useState([
