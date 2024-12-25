@@ -110,6 +110,9 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               />
             </td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+              {row.name === "Semester Totals" ? (
+                ""
+              ) : (
               <select
                 value={row.type}
                 onChange={(e) => handleGradeChange(index, "type", e.target.value)}
@@ -122,6 +125,9 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
             </td>
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+              {row.name === "Semester Totals" ? (
+                ""
+              ) : (
               <select
                 value={row.credits}
                 onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
