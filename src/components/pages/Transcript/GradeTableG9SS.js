@@ -1,6 +1,6 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
+function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStatic = false}) {
   const [rows, setRows] = useState([
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
