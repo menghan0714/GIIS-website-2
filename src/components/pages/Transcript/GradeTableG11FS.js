@@ -1,14 +1,15 @@
 import React, { useRef , useState }  from 'react';
 
-function GradeTableG11FS({ semesterName, onTotalsUpdate,  onSemesterUpdate }) {
+function GradeTableG11FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const [rows, setRows] = useState([
-    { name: "AP English Language", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Pre-Calculus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Chemistry Advanced", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "U.S. Government", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Creative Media Design", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Semester Totals", type: "", credits:4.5 , grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
+
 
   const gradeToGpa = {
     'A+': { weighted: 4.0, unweighted: 4.0 },
@@ -25,18 +26,18 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate,  onSemesterUpdate }) {
     'F': { weighted: 0.0, unweighted: 0.0 },
   };
 
-
   const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
 
     updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
+     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+      const credits = parseFloat(row.credits); // 在此處轉換為數字
+      totalWeightedGPA += row.weightedGPA * credits;
+      totalUnweightedGPA += row.unweightedGPA * credits;
+      totalCredits += credits;
+    }
     });
 
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
@@ -45,36 +46,27 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate,  onSemesterUpdate }) {
     return { weightedGPA, unweightedGPA };
   };
 
-const handleGradeChange = (index, value) => {
+
+  const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
-
-    const isAPCourse = newRows[index].type.includes("(AP)");
-
-    if (value.trim() === "") {
-      newRows[index].grade = ""; 
-      newRows[index].weightedGPA = "-"; 
-      newRows[index].unweightedGPA = "-"; 
-    } else {
-      const baseGpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase(); 
-
-  
-      newRows[index].weightedGPA = isAPCourse
-        ? baseGpa.weighted + 1 
-        : baseGpa.weighted;
-      newRows[index].unweightedGPA = baseGpa.unweighted;
+    if (field === "grade") {
+      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+      newRows[index].weightedGPA = gpa.weighted;
+      newRows[index].unweightedGPA = gpa.unweighted;
     }
+    newRows[index][field] = value; // 更新欄位值
 
+    // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
-
-
-    if (onTotalsUpdate) {
+    
+    // 將兩個 GPA 傳遞給父元件
+   if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
       onTotalsUpdate(semesterName, {
@@ -83,21 +75,17 @@ const handleGradeChange = (index, value) => {
       });
     }
 
-    if (onSemesterUpdate) {
-        const courseData = newRows.filter((row) => row.name !== "Semester Totals");
-        onSemesterUpdate(semesterName, courseData);
-      }
-    
-    return newRows;
-  });
-};
+
+      return newRows;
+    });
+  };
 
   return (
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 11 - Fall Semester
+            Grade 9 - Fall Semester
           </td>
         </tr>
         <tr>
@@ -111,25 +99,68 @@ const handleGradeChange = (index, value) => {
       </thead>
       <tbody>
         {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
+        <tr key={index}>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>
+              <input
+                type="text"
+                value={row.name}
+                onChange={(e) => handleGradeChange(index, "name", e.target.value)}
+                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+                disabled={row.name === "Semester Totals"}
+              />
+            </td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+              <select
+                value={row.type}
+                onChange={(e) => handleGradeChange(index, "type", e.target.value)}
+                disabled={row.name === "Semester Totals"}
+                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+              >
+                <option value="">-</option>
+                <option value="Core">Core</option>
+                <option value="Elective">Elective</option>
+              </select>
+            </td>
+            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+              <select
+                value={row.credits}
+                onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
+                disabled={row.name === "Semester Totals"}
+                style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
+              >
+                <option value="">-</option>
+                <option value="0.5">0.5</option>
+                <option value="1.0">1.0</option>
+              </select>
+            </td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
-                <input
-                  type="text"
+                <select
                   value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
+                  onChange={(e) => handleGradeChange(index, "grade", e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
                     border: "1px solid #ccc",
                     borderRadius: "4px",
                   }}
-                />
+                >
+                  <option value="">-</option>
+                  <option value="A+">A+</option>
+                  <option value="A">A</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B">B</option>
+                  <option value="B-">B-</option>
+                  <option value="C+">C+</option>
+                  <option value="C">C</option>
+                  <option value="C-">C-</option>
+                  <option value="D+">D+</option>
+                  <option value="D">D</option>
+                  <option value="F">F</option>
+                </select>
               )}
             </td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
