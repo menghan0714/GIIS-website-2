@@ -110,7 +110,8 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 onChange={(e) => handleGradeChange(index, "name", e.target.value)}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
-              />
+              >
+             </input>
             </td>
                   
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
