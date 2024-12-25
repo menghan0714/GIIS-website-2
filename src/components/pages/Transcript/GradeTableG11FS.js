@@ -57,6 +57,13 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     }
     newRows[index][field] = value; // 更新欄位值
 
+      if (newRows[index].name.includes("AP")) {
+        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+      } else {
+         newRows[index].weightedGPA = gpa.weighted;
+      }
+    }
+
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
