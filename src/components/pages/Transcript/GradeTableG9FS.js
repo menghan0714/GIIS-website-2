@@ -32,11 +32,12 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
     let totalCredits = 0;
 
     updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
+     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+      const credits = parseFloat(row.credits); // 在此處轉換為數字
+      totalWeightedGPA += row.weightedGPA * credits;
+      totalUnweightedGPA += row.unweightedGPA * credits;
+      totalCredits += credits;
+    }
     });
 
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
@@ -49,15 +50,12 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
-    if (field === "credits") {
-      newRows[index][field] = value === "" ? "" : parseFloat(value); // 保持字串或轉換為數字
-    } else if (field === "grade") {
+    if (field === "grade") {
       const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
       newRows[index].weightedGPA = gpa.weighted;
       newRows[index].unweightedGPA = gpa.unweighted;
-    } else {
-      newRows[index][field] = value;
     }
+    newRows[index][field] = value; // 更新欄位值
 
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
@@ -141,7 +139,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               ) : (
                 <select
                   value={row.grade}
-                  onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
+                  onChange={(e) => handleGradeChange(index, "grade", e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
