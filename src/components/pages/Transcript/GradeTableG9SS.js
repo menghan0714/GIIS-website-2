@@ -85,7 +85,7 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
       <thead>
         <tr>
           <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
+            Grade 9 - Spring Semester
           </td>
         </tr>
         <tr>
