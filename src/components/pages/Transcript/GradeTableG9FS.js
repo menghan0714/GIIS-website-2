@@ -2,11 +2,11 @@ import React, { useRef , useState }  from 'react';
 
 function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const [rows, setRows] = useState([
-    { name: "", type: "Core", credits: , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "Core", credits: , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "Core", credits: , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "Core", credits: , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "Elective", credits: , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Semester Totals", type: "", credits:4.5 , grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
