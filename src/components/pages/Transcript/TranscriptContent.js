@@ -11,7 +11,6 @@ import GradeTableG12FS from './GradeTableG12FS.js';
 function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
-  const [isStaticMode, setIsStaticMode] = useState(false);
 
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
