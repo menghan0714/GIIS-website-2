@@ -46,12 +46,12 @@ const calculateTotals = (updatedRows) => {
   const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
   const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-  return { totalCredits, weightedGPA, unweightedGPA }; // 返回總學分和 GPA
+  return {weightedGPA, unweightedGPA }; // 返回總學分和 GPA
 };
 
 
 
-const handleGradeChange = (index, field, value) => {
+  const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
     
@@ -72,42 +72,28 @@ const handleGradeChange = (index, field, value) => {
         newRows[index].weightedGPA = gpa.weighted;
       }
     }
-
-    // 計算所有課程的總學分
-    const totalCredits = newRows
-      .filter((row) => row.name && row.name !== "Semester Totals") // 過濾出有效的課程
-      .reduce((sum, row) => sum + parseFloat(row.credits || 0), 0); // 累加所有課程的 Credits
-    console.log("Calculated Total Credits:", totalCredits);
-
-    // 找到 Semester Totals 行
+    // 計算學期總 GPA
+    const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-
     if (totalsIndex !== -1) {
-      // 更新總 Credits
-      newRows[totalsIndex].credits = totalCredits;
-
-      // 計算 GPA 總和
-      const totals = calculateTotals(newRows); // 使用你的 calculateTotals 函數
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-
-      // 傳遞 GPA 給父元件
-      if (onTotalsUpdate) {
-        console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
-        console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
-        onTotalsUpdate(semesterName, {
-          weightedGPA: totals.weightedGPA,
-          unweightedGPA: totals.unweightedGPA,
-        });
-      }
-    } else {
-      console.error("Semester Totals row not found!");
+    }
+    
+    // 將兩個 GPA 傳遞給父元件
+   if (onTotalsUpdate) {
+      console.log(Passing Weighted GPA for ${semesterName}:, totals.weightedGPA);
+      console.log(Passing Unweighted GPA for ${semesterName}:, totals.unweightedGPA);
+      onTotalsUpdate(semesterName, {
+        weightedGPA: totals.weightedGPA,
+        unweightedGPA: totals.unweightedGPA,
+      });
     }
 
-    return newRows;
-  });
-};
 
+      return newRows;
+    });
+  }; 
 
 
   return (
