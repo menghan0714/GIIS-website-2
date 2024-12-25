@@ -296,6 +296,11 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
                    <GradeTableG12FS semesterName="Grade 12 - SprFall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
+              </td>
+             </tr>
+            </tbody>
+        </table>
+             
 
         <table style={table}>
            <tbody>
