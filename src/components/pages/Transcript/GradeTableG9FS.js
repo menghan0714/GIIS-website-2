@@ -1,6 +1,6 @@
 import React, { useRef , useState, forwardRef }  from 'react';
 
-const GradeTableG9FS = forwardRef(({ semesterName, onTotalsUpdate, onSemesterUpdate }, ref) => {
+function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
   const [rows, setRows] = useState([
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
@@ -170,6 +170,6 @@ const GradeTableG9FS = forwardRef(({ semesterName, onTotalsUpdate, onSemesterUpd
       </tbody>
     </table>
   );
-});
+}
 
 export default GradeTableG9FS;
