@@ -1,4 +1,4 @@
-import React, { useRef , useState }  from 'react';
+import React, { useRef , useState, formRef }  from 'react';
 import GradeTableG9FS from './GradeTableG9FS.js';
 import GradeTableG9SS from './GradeTableG9SS.js';
 import GradeTableG10FS from './GradeTableG10FS.js';
@@ -10,6 +10,7 @@ import GradeTableG11SS from './GradeTableG11SS.js';
 function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
+  const [isStaticMode, setIsStaticMode] = useState(false);
 
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
