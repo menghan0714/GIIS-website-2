@@ -100,7 +100,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>
+            <td style={{ border: isStatic ? "none" : "1px solid black", fontSize: "6px", width: "30%" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
@@ -114,7 +114,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: isStatic ? "none" : "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -131,7 +131,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
              )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: isStatic ? "none" : "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -148,7 +148,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
               )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: isStatic ? "none" : "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
