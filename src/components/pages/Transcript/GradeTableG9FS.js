@@ -173,7 +173,6 @@ const calculateTotals = (updatedRows) => {
                   onChange={(e) => handleGradeChange(index, "grade", e.target.value)}
                   style={{
                     width: "100%",
-                    textAlign: "center",
                     border: isStatic ? "1px solid black" : "none",
                     borderRadius: "4px",
                   }}
