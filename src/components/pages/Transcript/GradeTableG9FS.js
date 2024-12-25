@@ -82,8 +82,8 @@ const calculateTotals = (updatedRows) => {
     
     // 將兩個 GPA 傳遞給父元件
    if (onTotalsUpdate) {
-      console.log(Passing Weighted GPA for ${semesterName}:, totals.weightedGPA);
-      console.log(Passing Unweighted GPA for ${semesterName}:, totals.unweightedGPA);
+      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
+      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
