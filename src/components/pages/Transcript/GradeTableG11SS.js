@@ -27,24 +27,26 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
   };
 
   const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
+  let totalWeightedGPA = 0;
+  let totalUnweightedGPA = 0;
+  let totalCredits = 0;
 
-    updatedRows.forEach((row) => {
-     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-      const credits = parseFloat(row.credits); // 在此處轉換為數字
-      totalWeightedGPA += row.weightedGPA * credits;
-      totalUnweightedGPA += row.unweightedGPA * credits;
+  updatedRows.forEach((row) => {
+    if (row.name !== "Semester Totals" && row.credits) {
+      const credits = parseFloat(row.credits) || 0; // 確保轉換為數字
+      if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+        totalWeightedGPA += row.weightedGPA * credits;
+        totalUnweightedGPA += row.unweightedGPA * credits;
+      }
       totalCredits += credits;
     }
-    });
+  });
 
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
+  const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
+  const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-    return { weightedGPA, unweightedGPA };
-  };
+  return { totalCredits, weightedGPA, unweightedGPA };
+};
 
 
   const handleGradeChange = (index, field, value) => {
@@ -62,16 +64,20 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
       newRows[index].unweightedGPA = gpa.unweighted;
 
       // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
-      if (newRows[index].name.includes("AP")) {
-        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
-      } else {
-        newRows[index].weightedGPA = gpa.weighted;
-      }
+    if (field === "grade" || field === "name") {
+      const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
+
+      newRows[index].unweightedGPA = gpa.unweighted;
+      newRows[index].weightedGPA = newRows[index].name.includes("AP") && gpa.unweighted !== "-" 
+        ? gpa.unweighted + 1 
+        : gpa.weighted;
     }
+      
     // 計算學期總 GPA
-    const totals = calculateTotals(newRows);
+     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
+      newRows[totalsIndex].credits = totals.totalCredits.toFixed(1); // 更新總學分
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
@@ -143,9 +149,6 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
             </td>
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-             {row.name === "Semester Totals" ? (
-               ""
-              ) : (
               <select
                 value={row.credits}
                 onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
