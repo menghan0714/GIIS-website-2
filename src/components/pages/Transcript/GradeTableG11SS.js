@@ -50,13 +50,24 @@ function GradeTableG11SS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
   const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
-    if (field === "grade") {
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-    }
-    newRows[index][field] = value; // 更新欄位值
+    
+    // 更新欄位值
+    newRows[index][field] = value; 
+    
+    // 如果欄位是成績或課程名稱，重新計算 GPA
+    if (field === "grade" || field === "name") {
+      const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
+      // 計算 unweighted GPA
+      newRows[index].unweightedGPA = gpa.unweighted;
+
+      // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
+      if (newRows[index].name.includes("AP")) {
+        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+      } else {
+        newRows[index].weightedGPA = gpa.weighted;
+      }
+    }
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
