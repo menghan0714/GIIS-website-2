@@ -128,41 +128,26 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      whiteSpace: 'normal',
      wordWrap: 'break-word',
    }
+
     
-const formRef = useRef(null);
-  
-const exportToPDF = () => {
-  const element = document.getElementById("content");
-  
-  // 複製 DOM 結構
-  const clone = element.cloneNode(true);
-
-  // 找到所有表單元素，替換成它們的值
-  const inputs = clone.querySelectorAll("input, select");
-  inputs.forEach((input) => {
-    const value = input.value || input.placeholder || ""; // 確保沒有 undefined
-    const textNode = document.createTextNode(value); // 創建文字節點
-    input.replaceWith(textNode); // 用文字節點替換輸入框
-  });
-
-  // 設置 PDF 選項
-  const options = {
-    margin: 0, // 邊距
-    filename: "Transcript.pdf", // 檔案名稱
-    html2canvas: {
-      scale: 5, // 高解析度
-      useCORS: true, // 啟用跨域
-      allowTaint: true, 
-      logging: true,
-      letterRendering: true,
-      ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }, // PDF 格式
-  };
-
-  // 生成 PDF
-  window.html2pdf().set(options).from(clone).save();
+    const formRef = useRef(null);
+    const exportToPDF = () => {
+      setIsStaticMode(true); // 切換到靜態模式
+      setTimeout(() => {
+        const element = document.getElementById("content");
+        const options = {
+         margin: 0,
+         filename: "Transcript.pdf",
+         html2canvas: { scale: 5 },
+         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+         ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
+         };
+        window.html2pdf().set(options).from(element).save().finally(() => {
+         setIsStaticMode(false); // 恢復到編輯模式
+    });
+  }, 0);
 };
+
 
      return (   
         <div style={container}>
