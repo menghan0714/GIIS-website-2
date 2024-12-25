@@ -1,4 +1,4 @@
-import React, { useRef , useState}  from 'react';
+import React, {useState}  from 'react';
 
 function GradeTableG12FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStatic = false}) {
   const [rows, setRows] = useState([
@@ -138,6 +138,7 @@ const calculateTotals = (updatedRows) => {
               >
                 <option value="">-</option>
                 <option value="Core">Core</option>
+                <option value="Core(AP)">Core (AP)</option>
                 <option value="Elective">Elective</option>
               </select>
              )}
