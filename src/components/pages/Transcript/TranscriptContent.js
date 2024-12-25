@@ -292,45 +292,10 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
                   
                 <table style={table3}>
-                 <thead>
-                   <tr>
-                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
-                     Grade 12 - Fall Semester
-                    </td>
-                   </tr>
-                   <tr>
-                    <th style={{ ...thTd, width: "30%", fontSize: "8px" }}>Course Name</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Type</th>
-                    <th style={{ ...thTd, width: "10%" , fontSize: "8px"}}>Credits</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Grade</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Unweighted GPA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   {[
-                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-' },
-                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
-                    ].map((row, index) => (
-                     <tr key={index}>
-                      <td style={{ ...thTd, width: "30%", fontSize: "6px" }}>{row.name}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.type}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.credits}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.grade}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.weightedGPA}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.unweightedGPA}</td>
-                     </tr>
-                      ))}
-                    </tbody>
+                  <div>
+                   <GradeTableG12FS semesterName="Grade 12 - SprFall Semester" onTotalsUpdate={handleTotalsUpdate} />
+                 </div>
                 </table>
-              </td>
-             </tr>
-           </tbody>
-        </table>
 
         <table style={table}>
            <tbody>
