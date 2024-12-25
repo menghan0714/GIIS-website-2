@@ -113,7 +113,6 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               <select
                 value={row.type}
                 onChange={(e) => handleGradeChange(index, "type", e.target.value)}
-                disabled={row.name === "Semester Totals"}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
               >
                 <option value="">-</option>
@@ -121,11 +120,11 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 <option value="Elective">Elective</option>
               </select>
             </td>
+                
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               <select
                 value={row.credits}
                 onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
-                disabled={row.name === "Semester Totals"}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
               >
                 <option value="">-</option>
@@ -133,6 +132,7 @@ function GradeTableG9SS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 <option value="1.0">1.0</option>
               </select>
             </td>
+                
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
