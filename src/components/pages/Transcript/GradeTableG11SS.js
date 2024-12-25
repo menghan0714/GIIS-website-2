@@ -188,6 +188,7 @@ const handleGradeChange = (index, field, value) => {
                   <option value="D">D</option>
                   <option value="F">F</option>
                 </select>
+              )}
             </td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
