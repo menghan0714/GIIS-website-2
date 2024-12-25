@@ -115,6 +115,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 disabled={row.name === "Semester Totals"}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
               >
+                <option value="">-</option>
                 <option value="Core">Core</option>
                 <option value="Elective">Elective</option>
               </select>
@@ -126,9 +127,9 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                 disabled={row.name === "Semester Totals"}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
               >
+                <option value="">-</option>
                 <option value="0.5">0.5</option>
                 <option value="1.0">1.0</option>
-                <option value="2.0">2.0</option>
               </select>
             </td>
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
@@ -145,6 +146,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
                     borderRadius: "4px",
                   }}
                 >
+                  <option value="">-</option>
                   <option value="A+">A+</option>
                   <option value="A">A</option>
                   <option value="A-">A-</option>
