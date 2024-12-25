@@ -5,6 +5,7 @@ import GradeTableG10FS from './GradeTableG10FS.js';
 import GradeTableG10SS from './GradeTableG10SS.js';
 import GradeTableG11FS from './GradeTableG11FS.js';
 import GradeTableG11SS from './GradeTableG11SS.js';
+import GradeTableG12FS from './GradeTableG12FS.js';
 
 
 function TranscriptContent({ language }) {
