@@ -47,14 +47,17 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
 
 
   const handleGradeChange = (index, field, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      if (field === "grade") {
-        const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-        newRows[index].weightedGPA = gpa.weighted;
-        newRows[index].unweightedGPA = gpa.unweighted;
-      }
+  setRows((prevRows) => {
+    const newRows = [...prevRows];
+    if (field === "credits") {
+      newRows[index][field] = value === "" ? "" : parseFloat(value); // 保持字串或轉換為數字
+    } else if (field === "grade") {
+      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
+      newRows[index].weightedGPA = gpa.weighted;
+      newRows[index].unweightedGPA = gpa.unweighted;
+    } else {
       newRows[index][field] = value;
+    }
 
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
@@ -63,9 +66,9 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
-
+    
     // 將兩個 GPA 傳遞給父元件
-    if (onTotalsUpdate) {
+   if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
       onTotalsUpdate(semesterName, {
@@ -123,7 +126,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
               <select
                 value={row.credits}
-                onChange={(e) => handleGradeChange(index, "credits", parseFloat(e.target.value))}
+                onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
                 disabled={row.name === "Semester Totals"}
                 style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px" }}
               >
@@ -138,7 +141,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate}) {
               ) : (
                 <select
                   value={row.grade}
-                  onChange={(e) => handleGradeChange(index, "grade", e.target.value)}
+                  onChange={(e) => handleGradeChange(index, "credits", e.target.value)}
                   style={{
                     width: "100%",
                     textAlign: "center",
