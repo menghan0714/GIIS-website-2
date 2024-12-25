@@ -7,7 +7,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits:4.5 , grade: "", weightedGPA: "-", unweightedGPA: "-" },
+    { name: "Semester Totals", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
 
