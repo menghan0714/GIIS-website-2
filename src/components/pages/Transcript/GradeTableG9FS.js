@@ -73,12 +73,16 @@ const handleGradeChange = (index, field, value) => {
     const totalCredits = newRows
       .filter((row) => row.name && row.name !== "Semester Totals") // 過濾出有效的課程
       .reduce((sum, row) => sum + parseFloat(row.credits || 0), 0); // 累加所有課程的 Credits
+    console.log("Calculated Total Credits:", totalCredits);
 
     // 找到 Semester Totals 行並更新 Credits
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     let totals = { weightedGPA: "-", unweightedGPA: "-" }; // 初始化 totals
     if (totalsIndex !== -1) {
       newRows[totalsIndex].credits = totalCredits; // 更新總 Credits
+    } else {
+      console.error("Semester Totals row not found!");
+    }
 
       // 計算 GPA 總和
       totals = calculateTotals(newRows);
