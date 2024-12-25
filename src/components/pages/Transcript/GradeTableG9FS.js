@@ -138,6 +138,7 @@ const calculateTotals = (updatedRows) => {
               >
                 <option value="">-</option>
                 <option value="Core">Core</option>
+                <option value="Elective">Core (AP)</option>
                 <option value="Elective">Elective</option>
               </select>
              )}
