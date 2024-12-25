@@ -1,698 +1,43 @@
-import React, { useRef , useState }  from 'react';
+import React, { useRef, useState }  from 'react';
+import GradeTableG9FS from './GradeTableG9FS.js';
+import GradeTableG9SS from './GradeTableG9SS.js';
+import GradeTableG10FS from './GradeTableG10FS.js';
+import GradeTableG10SS from './GradeTableG10SS.js';
+import GradeTableG11FS from './GradeTableG11FS.js';
+import GradeTableG11SS from './GradeTableG11SS.js';
+import GradeTableG12FS from './GradeTableG12FS.js';
 
-
-function GradeTableG9FS() {
-  const [rows, setRows] = useState([
-    { name: "English I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Algebra I", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Biology", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "World History", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Introduction to Media Studies", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-function GradeTableG9SS() {
-  const [rows, setRows] = useState([
-    { name: "English I - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Environmental Science", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Geography", type: "Core", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Art Fundamentals", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-
-function GradeTableG10FS() {
-  const [rows, setRows] = useState([
-    { name: "English II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Algebra II", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Chemistry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "U.S. History", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Digital Photography", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-
-function GradeTableG10SS() {
-  const [rows, setRows] = useState([
-    { name: "English II - Writing Focus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Geometry", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Physics", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Film Studies", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Web Design", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-
-function GradeTableG11FS() {
-  const [rows, setRows] = useState([
-    { name: "AP English Language", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Pre-Calculus", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Chemistry Advanced", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "U.S. Government", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Creative Media Design", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 4.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-
-function GradeTableG11SS() {
-  const [rows, setRows] = useState([
-    { name: "AP Calculus AB", type: "Core (AP)", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Physics - Mechanics", type: "Core", credits: 1.0, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "World Economics", type: "Core", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Social Media Marketing", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Media Project Development", type: "Elective", credits: 0.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "Semester Totals", type: "", credits: 3.5, grade: "", weightedGPA: "-", unweightedGPA: "-" },
-  ]);
-
-  const gradeToGpa = {
-    'A+': { weighted: 5.3, unweighted: 4.3 },
-    'A': { weighted: 5.0, unweighted: 4.0 },
-    'A-': { weighted: 4.7, unweighted: 3.7 },
-    'B+': { weighted: 4.3, unweighted: 3.3 },
-    'B': { weighted: 4.0, unweighted: 3.0 },
-    'B-': { weighted: 3.7, unweighted: 2.7 },
-    'C+': { weighted: 3.3, unweighted: 2.3 },
-    'C': { weighted: 3.0, unweighted: 2.0 },
-    'C-': { weighted: 2.7, unweighted: 1.7 },
-    'D+': { weighted: 2.3, unweighted: 1.3 },
-    'D': { weighted: 2.0, unweighted: 1.0 },
-    'D-': { weighted: 1.7, unweighted: 0.7 },
-    'F': { weighted: 0.0, unweighted: 0.0 },
-  };
-
-  const calculateTotals = (updatedRows) => {
-    let totalWeightedGPA = 0;
-    let totalUnweightedGPA = 0;
-    let totalCredits = 0;
-
-    updatedRows.forEach((row) => {
-      if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * row.credits;
-        totalUnweightedGPA += row.unweightedGPA * row.credits;
-        totalCredits += row.credits;
-      }
-    });
-
-    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
-
-    return { weightedGPA, unweightedGPA };
-  };
-
-  const handleGradeChange = (index, value) => {
-    setRows((prevRows) => {
-      const newRows = [...prevRows];
-      const gpa = gradeToGpa[value.toUpperCase()] || { weighted: "-", unweighted: "-" };
-      newRows[index].grade = value.toUpperCase();
-      newRows[index].weightedGPA = gpa.weighted;
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 更新 Semester Totals 的 GPA
-      const totals = calculateTotals(newRows);
-      const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-      if (totalsIndex !== -1) {
-        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      }
-
-      return newRows;
-    });
-  };
-
-
-  
-  return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
-            Grade 9 - Fall Semester
-          </td>
-        </tr>
-        <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>{row.name}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.type}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.credits}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
-              {row.name === "Semester Totals" ? (
-                ""
-              ) : (
-                <input
-                  type="text"
-                  value={row.grade}
-                  onChange={(e) => handleGradeChange(index, e.target.value)}
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                  }}
-                />
-              )}
-            </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
 
 function TranscriptContent({ language }) {
-    
+  
+  const [semesterGPAs, setSemesterGPAs] = useState({});
+  const [, setIsStaticMode] = useState(false);
+
+  const handleTotalsUpdate = (semesterName, gpaData) => {
+   const { weightedGPA, unweightedGPA } = gpaData;
+   console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
+   console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
+
+  setSemesterGPAs((prev) => ({
+    ...prev,
+    [semesterName]: {
+      weightedGPA: parseFloat(weightedGPA) || 0,
+      unweightedGPA: parseFloat(unweightedGPA) || 0,
+    },
+  }));
+};
+
+
+const calculateCumulativeGPA = (type = "weightedGPA") => {
+  const gpas = Object.values(semesterGPAs)
+    .map((gpa) => gpa[type])
+    .filter((gpa) => gpa > 0); 
+  if (gpas.length === 0) return "-";
+
+  const totalGPA = gpas.reduce((acc, gpa) => acc + gpa, 0);
+  return (totalGPA / gpas.length).toFixed(2);
+};
+  
   const container = {
      border: 'none',
      padding: '10px',
@@ -782,39 +127,28 @@ function TranscriptContent({ language }) {
      whiteSpace: 'normal',
      wordWrap: 'break-word',
    }
-    
 
-  const formRef = useRef(null);
-
+    const formRef = useRef();
     const exportToPDF = () => {
-      const element = document.getElementById('content');
-    // 複製 DOM 結構以替換輸入框的內容
-      const clone = element.cloneNode(true);
-      const inputs = clone.querySelectorAll("input, select");
-      inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-     });
+      setIsStaticMode(true); // 切換到靜態模式
+      setTimeout(() => {
+        const element = document.getElementById("content");
+        const options = {
+         margin: 0,
+         filename: "Transcript.pdf",
+         html2canvas: {
+          scale: 5, // 高解析度
+          ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
+         },
+         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+         };
+        window.html2pdf().set(options).from(element).save().finally(() => {
+         setIsStaticMode(false); // 恢復到編輯模式
+    });
+  }, 0);
+};
 
-    // 設置 PDF 選項
-    const options = {
-        margin: 0,  // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5,
-            useCORS: true, 
-            allowTaint: true, 
-            logging: true,
-            letterRendering: true,
-            ignoreElements: (element) => element.tagName === "BUTTON",
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };
-         window.html2pdf().set(options).from(clone).save();
-     };
-    
-    
+
      return (   
         <div style={container}>
          <button
@@ -922,25 +256,25 @@ function TranscriptContent({ language }) {
              <td style={thTd}>
                 <table style={table3}>
                  <div>
-                  <GradeTableG9FS />
+                  <GradeTableG9FS semesterName="Grade 9 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG9SS />
+                   <GradeTableG9SS semesterName="Grade 9 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
                   
                 <table style={table3}>
                  <div>
-                   <GradeTableG10FS />
+                   <GradeTableG10FS semesterName="Grade 10 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                 <table style={table3}>
                  <div>
-                   <GradeTableG10SS />
+                   <GradeTableG10SS semesterName="Grade 10 - Spring Semester" onTotalsUpdate={handleTotalsUpdate}/>
                  </div>
                 </table>
               </td>
@@ -948,61 +282,64 @@ function TranscriptContent({ language }) {
               <td style={{ ...thTd, verticalAlign: "top" }}>
                 <table style={table3}>
                   <div>
-                   <GradeTableG11FS />
+                   <GradeTableG11FS semesterName="Grade 11 - Fall Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
                   <div>
-                   <GradeTableG11SS />
+                   <GradeTableG11SS semesterName="Grade 11 - Spring Semester" onTotalsUpdate={handleTotalsUpdate} />
                  </div>
                 </table>
 
                   
                 <table style={table3}>
-                 <thead>
-                   <tr>
-                    <td colSpan="3" style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '10px' }}>
-                     Grade 12 - Fall Semester
-                    </td>
-                   </tr>
-                   <tr>
-                    <th style={{ ...thTd, width: "30%", fontSize: "8px" }}>Course Name</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Type</th>
-                    <th style={{ ...thTd, width: "10%" , fontSize: "8px"}}>Credits</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Grade</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Weighted GPA</th>
-                    <th style={{ ...thTd, width: "10%", fontSize: "8px" }}>Unweighted GPA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   {[
-                    { name: 'AP English Literature', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-' },
-                    { name: 'AP Statistics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'AP Microeconomics', type: 'Core (AP)', credits: 1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Advanced Environmental Science', type: 'Core', credits:1.0, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Advanced Videography', type: 'Elective', credits: 0.5, grade: 'In Progress', weighted: '-' , unweighted: '-'},
-                    { name: 'Semester Totals', type: '', credits: 4.5, grade: ''}, 
-                    ].map((row, index) => (
-                     <tr key={index}>
-                      <td style={{ ...thTd, width: "30%", fontSize: "6px" }}>{row.name}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.type}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.credits}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.grade}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.weightedGPA}</td>
-                      <td style={{ ...thTd, width: "10%", fontSize: "6px" }}>{row.unweightedGPA}</td>
-                     </tr>
-                      ))}
-                    </tbody>
+                  <div>
+                   <GradeTableG12FS semesterName="Grade 12 - SprFall Semester" onTotalsUpdate={handleTotalsUpdate} />
+                 </div>
                 </table>
               </td>
              </tr>
-           </tbody>
-        </table>       
+            </tbody>
+        </table>
+             
+
+        <table style={table}>
+           <tbody>
+            <tr>
+              <td style={thTd}>
+                Weighted
+              </td>
+             
+              <td style={thTd}>
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA()}    
+              </td>
+
+              <td style={thTd}>
+                Cumulative Credits: <input type="text" style={input}  />
+              </td>
+            </tr>
+            <tr>
+              <td style={thTd}>
+               Unweighted
+              </td>
+                  
+              <td style={thTd}>
+                <strong>Cumulative GPA:</strong>  {calculateCumulativeGPA("unweightedGPA")}
+              </td>
+                  
+              <td style={thTd}>
+                Cumulative Credits: <input type="text" style={input}  />
+              </td>
+          </tr>
+        </tbody>
+       </table>
       </div>
     </div>
     );
 }
 
 export default TranscriptContent;
+
+
