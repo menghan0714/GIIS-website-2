@@ -130,33 +130,21 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
     const formRef = useRef(null);
     const exportToPDF = () => {
-      const element = document.getElementById('content');
-    // 複製 DOM 結構以替換輸入框的內容
-      const clone = element.cloneNode(true);
-      const inputs = clone.querySelectorAll("input, select");
-      inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-     });
+      setIsStaticMode(true); // 切換到靜態模式
+      setTimeout(() => {
+        const element = document.getElementById("content");
+        const options = {
+         margin: 0,
+         filename: "Transcript.pdf",
+         html2canvas: { scale: 5 },
+         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+         };
+        window.html2pdf().set(options).from(element).save().finally(() => {
+         setIsStaticMode(false); // 恢復到編輯模式
+    });
+  }, 0);
+};
 
-    // 設置 PDF 選項
-    const options = {
-        margin: 0,  // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5,
-            useCORS: true, 
-            allowTaint: true, 
-            logging: true,
-            letterRendering: true,
-            ignoreElements: (element) => element.tagName === "BUTTON",
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };
-         window.html2pdf().set(options).from(clone).save();
-     };
-  
      return (   
         <div style={container}>
          <button
