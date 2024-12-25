@@ -140,7 +140,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
          filename: "Transcript.pdf",
          html2canvas: { scale: 5 },
          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-         ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
+         ignoreElements: {(element) => element.tagName === "BUTTON"}, // 忽略按鈕
          };
         window.html2pdf().set(options).from(element).save().finally(() => {
          setIsStaticMode(false); // 恢復到編輯模式
