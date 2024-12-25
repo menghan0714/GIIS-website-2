@@ -27,27 +27,24 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
   };
   
 const calculateTotals = (updatedRows) => {
-  let totalWeightedGPA = 0;
-  let totalUnweightedGPA = 0;
-  let totalCredits = 0;
+    let totalWeightedGPA = 0;
+    let totalUnweightedGPA = 0;
+    let totalCredits = 0;
 
-  updatedRows.forEach((row) => {
-    if (row.name !== "Semester Totals") {
-      const credits = parseFloat(row.credits) || 0; // 在此處轉換為數字，避免 NaN 問題
-      totalCredits += credits; // 累加所有課程的學分
-
-      if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-        totalWeightedGPA += row.weightedGPA * credits;
-        totalUnweightedGPA += row.unweightedGPA * credits;
-      }
+    updatedRows.forEach((row) => {
+     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+      const credits = parseFloat(row.credits); // 在此處轉換為數字
+      totalWeightedGPA += row.weightedGPA * credits;
+      totalUnweightedGPA += row.unweightedGPA * credits;
+      totalCredits += credits;
     }
-  });
+    });
 
-  const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
-  const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
+    const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
+    const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-  return {weightedGPA, unweightedGPA }; // 返回總學分和 GPA
-};
+    return { weightedGPA, unweightedGPA };
+  }; 
 
 
 
