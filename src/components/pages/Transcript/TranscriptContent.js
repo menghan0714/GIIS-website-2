@@ -139,9 +139,16 @@ const exportToPDF = () => {
   // 找到所有表單元素，替換成它們的值
   const inputs = clone.querySelectorAll("input, select");
   inputs.forEach((input) => {
-    const value = input.value || input.placeholder || ""; // 確保沒有 `undefined`
-    const textNode = document.createTextNode(value); // 創建文字節點
-    input.replaceWith(textNode); // 用文字節點替換輸入框
+   let value = ""; // 預設值
+   if (input.tagName === "SELECT") {
+    // 針對下拉選單，取出選中的選項文字
+     value = input.options[input.selectedIndex]?.text || "";
+    } else {
+    // 處理其他輸入框
+     value = input.value || input.placeholder || "";
+   }
+   const textNode = document.createTextNode(value); // 創建文字節點
+   input.replaceWith(textNode); // 用文字節點替換輸入框
   });
 
   // 設置 PDF 選項
