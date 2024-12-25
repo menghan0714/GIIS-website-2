@@ -89,8 +89,7 @@ const calculateTotals = (updatedRows) => {
         unweightedGPA: totals.unweightedGPA,
       });
     }
-
-
+  
       return newRows;
     });
   }; 
