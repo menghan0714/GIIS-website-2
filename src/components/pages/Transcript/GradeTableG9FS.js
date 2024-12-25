@@ -76,11 +76,12 @@ const handleGradeChange = (index, field, value) => {
 
     // 找到 Semester Totals 行並更新 Credits
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
+    let totals = { weightedGPA: "-", unweightedGPA: "-" }; // 初始化 totals
     if (totalsIndex !== -1) {
       newRows[totalsIndex].credits = totalCredits; // 更新總 Credits
 
       // 計算 GPA 總和
-      const totals = calculateTotals(newRows);
+      totals = calculateTotals(newRows);
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
     }
