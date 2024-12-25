@@ -151,7 +151,6 @@ const handleGradeChange = (index, field, value) => {
                 <option value="0.5">0.5</option>
                 <option value="1.0">1.0</option>
               </select>
-              )}
             </td>
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
