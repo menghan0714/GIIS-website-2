@@ -32,11 +32,14 @@ const calculateTotals = (updatedRows) => {
     let totalCredits = 0;
 
     updatedRows.forEach((row) => {
-     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-      const credits = parseFloat(row.credits); // 在此處轉換為數字
-      totalWeightedGPA += row.weightedGPA * credits;
-      totalUnweightedGPA += row.unweightedGPA * credits;
+    if (row.name !== "Semester Totals") {
+      const credits = parseFloat(row.credits) || 0; // 檢查 Credits 是否有效，無效時設為 0
       totalCredits += credits;
+
+      if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+        totalWeightedGPA += row.weightedGPA * credits;
+        totalUnweightedGPA += row.unweightedGPA * credits;
+      }
     }
     });
 
@@ -56,22 +59,18 @@ const calculateTotals = (updatedRows) => {
     newRows[index][field] = value; 
     
     // 如果欄位是成績或課程名稱，重新計算 GPA
-    if (field === "grade" || field === "name" || field === "credits" ) {
-      const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    if (field === "grade" || field === "name" || field === "credits") {
+      const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 計算 unweighted GPA
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 判斷課程名稱或Type是否包含 "AP" 並計算 weighted GPA
-    if (
-     newRows[index].type.includes("AP") || 
-     newRows[index].name.includes("AP")
-    ) {
-     newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
-     } else {
-     newRows[index].weightedGPA = gpa.weighted;
-     }
-   }
+      // 計算 Weighted 和 Unweighted GPA
+      if (field === "grade" || field === "name") {
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA =
+          newRows[index].type.includes("AP") || newRows[index].name.includes("AP")
+            ? gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-"
+            : gpa.weighted;
+      }
+      
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
