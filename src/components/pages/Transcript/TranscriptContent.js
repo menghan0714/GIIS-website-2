@@ -140,23 +140,46 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      wordWrap: 'break-word',
    }
 
-    const formRef = useRef();
-    const exportToPDF = () => {
-      setIsStaticMode(true); // 切換到靜態模式
-      setTimeout(() => {
-        const element = document.getElementById("content");
-        const options = {
-         margin: 0,
-         filename: "Transcript.pdf",
-         html2canvas: {
-          scale: 5, // 高解析度
-          ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
-         },
-         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-         };
-        window.html2pdf().set(options).from(element).save().finally(() => {
-         setIsStaticMode(false); // 恢復到編輯模式
+const html2pdf = window.html2pdf;
+const formRef = useRef(null);
+
+const exportToPDF = () => {
+  setIsStaticMode(true); // 切換到靜態模式
+  setTimeout(() => {
+    const element = document.getElementById("content");
+
+    // 複製 DOM 結構以替換輸入框的內容
+    const clone = element.cloneNode(true);
+    const inputs = clone.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder;
+      const textNode = document.createTextNode(value);
+      input.replaceWith(textNode);
     });
+
+    // 設置 PDF 選項
+    const options = {
+      margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
+      filename: "Transcript.pdf",
+      html2canvas: {
+        scale: 5, // 高解析度
+        useCORS: true,
+        allowTaint: true,
+        logging: true,
+        letterRendering: true,
+        ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
+      },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+
+    // 使用 html2pdf 生成 PDF
+    html2pdf()
+      .set(options)
+      .from(clone) // 使用修改後的 clone 作為 PDF 輸出內容
+      .save()
+      .finally(() => {
+        setIsStaticMode(false); // 恢復到編輯模式
+      });
   }, 0);
 };
 
