@@ -51,27 +51,33 @@ const calculateTotals = (updatedRows) => {
 
 
 
- const handleGradeChange = (index, field, value) => {
+const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
-    
+
     // 更新欄位值
-    newRows[index][field] = value; 
-    
-    // 如果欄位是成績或課程名稱，重新計算 GPA
-    if (field === "grade" || field === "name" || field === "credits") {
+    newRows[index][field] = value;
+
+    // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
+    if (field === "grade" || field === "name" || field === "credits" || field === "type") {
       const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 計算 Weighted 和 Unweighted GPA
-      if (field === "grade" || field === "name") {
+      // 判斷 Type 和 Course name 是否包含 "AP"
+      const typeHasAP = newRows[index].type?.includes("AP") || false;
+      const nameHasAP = newRows[index].name?.includes("AP") || false;
+
+      if (typeHasAP && nameHasAP) {
+        // 當 Type 和 Course name 都包含 "AP"
         newRows[index].unweightedGPA = gpa.unweighted;
         newRows[index].weightedGPA =
-          newRows[index].type.includes("AP") || newRows[index].name.includes("AP")
-            ? gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-"
-            : gpa.weighted;
+          gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+      } else {
+        // 當 Type 或 Course name 中有任意一個不包含 "AP"
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA = gpa.unweighted;
       }
     }
-      
+
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
@@ -80,20 +86,21 @@ const calculateTotals = (updatedRows) => {
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
-    
-    // 將兩個 GPA 傳遞給父元件
 
-     if (onTotalsUpdate) {
+    // 將兩個 GPA 傳遞給父元件
+    if (onTotalsUpdate) {
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
         totalCredits: totals.totalCredits, // 傳遞學分
       });
     }
-    
-      return newRows;
-    });
-  };  
+
+    return newRows;
+  });
+};
+ 
+
 
 
   return (
