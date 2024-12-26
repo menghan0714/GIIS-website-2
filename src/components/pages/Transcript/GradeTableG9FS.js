@@ -83,6 +83,8 @@ const handleGradeChange = (index, field, value) => {
       }
     }
 
+    
+
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
