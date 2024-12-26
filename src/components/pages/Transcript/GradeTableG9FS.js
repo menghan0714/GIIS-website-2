@@ -32,64 +32,75 @@ const calculateTotals = (updatedRows) => {
     let totalCredits = 0;
 
     updatedRows.forEach((row) => {
-     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-      const credits = parseFloat(row.credits); // 在此處轉換為數字
-      totalWeightedGPA += row.weightedGPA * credits;
-      totalUnweightedGPA += row.unweightedGPA * credits;
+    if (row.name !== "Semester Totals") {
+      const credits = parseFloat(row.credits) || 0; // 檢查 Credits 是否有效，無效時設為 0
       totalCredits += credits;
+
+      if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+        totalWeightedGPA += row.weightedGPA * credits;
+        totalUnweightedGPA += row.unweightedGPA * credits;
+      }
     }
     });
 
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
     const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-    return { weightedGPA, unweightedGPA };
+    return { weightedGPA, unweightedGPA, totalCredits };
   }; 
 
 
 
- const handleGradeChange = (index, field, value) => {
+const handleGradeChange = (index, field, value) => {
   setRows((prevRows) => {
     const newRows = [...prevRows];
-    
+
     // 更新欄位值
-    newRows[index][field] = value; 
-    
-    // 如果欄位是成績或課程名稱，重新計算 GPA
-    if (field === "grade" || field === "name") {
-      const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    newRows[index][field] = value;
 
-      // 計算 unweighted GPA
-      newRows[index].unweightedGPA = gpa.unweighted;
+    // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
+    if (field === "grade" || field === "name" || field === "credits" || field === "type") {
+      const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
-      if (newRows[index].name.includes("AP")) {
-        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+      // 判斷 Type 和 Course name 是否包含 "AP"
+      const typeHasAP = newRows[index].type?.includes("AP") || false;
+      const nameHasAP = newRows[index].name?.includes("AP") || false;
+
+      if (typeHasAP && nameHasAP) {
+        // 當 Type 和 Course name 都包含 "AP"
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA =
+          gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
       } else {
-        newRows[index].weightedGPA = gpa.weighted;
+        // 當 Type 或 Course name 中有任意一個不包含 "AP"
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA = gpa.unweighted;
       }
     }
+
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
-    
+
     // 將兩個 GPA 傳遞給父元件
-   if (onTotalsUpdate) {
-      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
-      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+    if (onTotalsUpdate) {
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
+        totalCredits: totals.totalCredits, // 傳遞學分
       });
     }
-    
-      return newRows;
-    });
-  };  
+
+    return newRows;
+  });
+};
+ 
+
 
 
   return (
@@ -146,7 +157,7 @@ const calculateTotals = (updatedRows) => {
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
-              row.credits // 顯示加總結果
+              row.totalCredits // 顯示加總結果
               ) : (
                 <select
                  value={row.credits}
@@ -204,3 +215,4 @@ const calculateTotals = (updatedRows) => {
 }
 
 export default GradeTableG9FS;
+
