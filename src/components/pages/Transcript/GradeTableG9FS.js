@@ -51,7 +51,7 @@ const calculateTotals = (updatedRows) => {
 
 
 
- const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => { 
   setRows((prevRows) => {
     const newRows = [...prevRows];
     
@@ -75,7 +75,8 @@ const calculateTotals = (updatedRows) => {
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
-    const calculateTotals = (updatedRows) => {
+    if (totalsIndex !== -1) {
+      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
       newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
