@@ -148,17 +148,24 @@ const exportToPDF = () => {
   
   setTimeout(() => {
     const element = document.getElementById("content");
-    const inputs = element.querySelectorAll("input, select, textarea");
 
-    // 儲存原始節點資訊
-    const originalNodes = [];
+    // 創建一個隱藏的 DOM 副本
+    const clonedElement = element.cloneNode(true);
+    const inputs = clonedElement.querySelectorAll("input, select, textarea");
 
     inputs.forEach((input) => {
       const span = document.createElement("span");
       span.textContent = input.value || input.placeholder || ""; // 使用輸入值或預設值
-      originalNodes.push({ parent: input.parentNode, input, span }); // 儲存原始節點
       input.parentNode.replaceChild(span, input); // 替換節點
     });
+
+    // 將副本添加到隱藏區域
+    const hiddenContainer = document.createElement("div");
+    hiddenContainer.style.position = "absolute";
+    hiddenContainer.style.top = "-9999px";
+    hiddenContainer.style.left = "-9999px";
+    hiddenContainer.appendChild(clonedElement);
+    document.body.appendChild(hiddenContainer);
 
     const options = {
       margin: 0,
@@ -172,18 +179,14 @@ const exportToPDF = () => {
 
     window.html2pdf()
       .set(options)
-      .from(element)
+      .from(clonedElement)
       .save()
       .finally(() => {
-        // 還原原始節點
-        originalNodes.forEach(({ parent, input, span }) => {
-          parent.replaceChild(input, span); // 將 span 還原成 input
-        });
+        document.body.removeChild(hiddenContainer); // 移除隱藏的副本
         setIsStaticMode(false); // 恢復到編輯模式
       });
   }, 0);
 };
-
 
 
 
