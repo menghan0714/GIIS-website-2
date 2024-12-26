@@ -70,6 +70,7 @@ const calculateTotals = (updatedRows) => {
             ? gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-"
             : gpa.weighted;
       }
+    }
       
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
