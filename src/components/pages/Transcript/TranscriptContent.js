@@ -30,13 +30,14 @@ function TranscriptContent({ language }) {
   }));
 
 
-  setCumulativeCredits((prevCredits) => {
+   setCumulativeCredits(() => {
     const updatedCredits = Object.values({
-      ...semesterGPAs,
-      [semesterName]: { credits: parseFloat(credits) || 0 },
-    }).reduce((sum, current) => sum + (current.credits || 0), 0);
-    return updatedCredits;
-  });
+    ...semesterGPAs,
+    [semesterName]: { credits: parseFloat(credits) || 0 }, // 確保 credits 為數值
+  }).reduce((sum, current) => sum + (current.credits || 0), 0); // 累加 credits
+  console.log(`Updated Cumulative Credits:`, updatedCredits); // 確認加總結果
+  return updatedCredits;
+});
  
 };
 
