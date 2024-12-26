@@ -62,13 +62,16 @@ const calculateTotals = (updatedRows) => {
       // 計算 unweighted GPA
       newRows[index].unweightedGPA = gpa.unweighted;
 
-      // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
-      if (newRows[index].type.includes("AP")) {
-        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
-      } else {
-        newRows[index].weightedGPA = gpa.weighted;
-      }
-    }
+      // 判斷課程名稱或Type是否包含 "AP" 並計算 weighted GPA
+    if (
+     newRows[index].type.includes("AP") || 
+     newRows[index].courseName.includes("AP")
+    ) {
+     newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+     } else {
+     newRows[index].weightedGPA = gpa.weighted;
+     }
+   }
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
