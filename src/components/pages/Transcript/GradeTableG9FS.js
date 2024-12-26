@@ -63,7 +63,7 @@ const calculateTotals = (updatedRows) => {
       newRows[index].unweightedGPA = gpa.unweighted;
 
       // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
-      if (newRows[index].name.includes("AP")) {
+      if (newRows[index].type.includes("AP")) {
         newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
       } else {
         newRows[index].weightedGPA = gpa.weighted;
