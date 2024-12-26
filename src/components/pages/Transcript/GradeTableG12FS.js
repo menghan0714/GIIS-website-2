@@ -32,18 +32,21 @@ const calculateTotals = (updatedRows) => {
     let totalCredits = 0;
 
     updatedRows.forEach((row) => {
-     if (row.name !== "Semester Totals" && row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
-      const credits = parseFloat(row.credits); // 在此處轉換為數字
-      totalWeightedGPA += row.weightedGPA * credits;
-      totalUnweightedGPA += row.unweightedGPA * credits;
+    if (row.name !== "Semester Totals") {
+      const credits = parseFloat(row.credits) || 0; // 檢查 Credits 是否有效，無效時設為 0
       totalCredits += credits;
+
+      if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
+        totalWeightedGPA += row.weightedGPA * credits;
+        totalUnweightedGPA += row.unweightedGPA * credits;
+      }
     }
     });
 
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
     const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-    return { weightedGPA, unweightedGPA };
+    return { weightedGPA, unweightedGPA, totalCredits };
   }; 
 
 
@@ -56,25 +59,26 @@ const calculateTotals = (updatedRows) => {
     newRows[index][field] = value; 
     
     // 如果欄位是成績或課程名稱，重新計算 GPA
-    if (field === "grade" || field === "name") {
-      const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
+    if (field === "grade" || field === "name" || field === "credits") {
+      const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 計算 unweighted GPA
-      newRows[index].unweightedGPA = gpa.unweighted;
-
-      // 判斷課程名稱是否包含 "AP" 並計算 weighted GPA
-      if (newRows[index].name.includes("AP")) {
-        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
-      } else {
-        newRows[index].weightedGPA = gpa.weighted;
+      // 計算 Weighted 和 Unweighted GPA
+      if (field === "grade" || field === "name") {
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA =
+          newRows[index].type.includes("AP") || newRows[index].name.includes("AP")
+            ? gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-"
+            : gpa.weighted;
       }
     }
+      
     // 計算學期總 GPA
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      newRows[totalsIndex].credits = totals.totalCredits.toFixed(1);
     }
     
     // 將兩個 GPA 傳遞給父元件
@@ -138,7 +142,7 @@ const calculateTotals = (updatedRows) => {
               >
                 <option value="">-</option>
                 <option value="Core">Core</option>
-                <option value="Core(AP)">Core (AP)</option>
+                <option value="Core (AP)">Core (AP)</option>
                 <option value="Elective">Elective</option>
               </select>
              )}
