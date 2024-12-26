@@ -18,7 +18,8 @@ function TranscriptContent({ language }) {
    const { weightedGPA, unweightedGPA, credits} = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
-   console.log(`Received Credits for ${semesterName}:`, credits);
+   console.log(`Received Credits from ${semesterName}:`, credits);
+   console.log(`Cumulative Credits before update:`, cumulativeCredits);
 
   setSemesterGPAs((prev) => ({
     ...prev,
