@@ -18,7 +18,7 @@ function TranscriptContent({ language }) {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
-   console.log(`Received Totalcredits for ${semesterName}:`, totalCredits);
+   console.log(`Received Total Credits for ${semesterName}:`, totalCredits);
 
   setSemesterGPAs((prev) => ({
     ...prev,
@@ -29,7 +29,13 @@ function TranscriptContent({ language }) {
     },
   }));
 
-
+   setCumulativeCredits((prevCredits) => {
+    const updatedCredits = Object.values({
+      ...semesterGPAs,
+      [semesterName]: { totalCredits: parseFloat(totalCredits) || 0 },
+    }).reduce((sum, current) => sum + (current.totalCredits || 0), 0);
+    return updatedCredits;
+  });
 };
 
 
@@ -322,7 +328,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong>  {cumulativeCredits}
+                <strong>Cumulative Credits:</strong>  {cumulativeCredits.toFixed(1)}
               </td>
             </tr>
             <tr>
@@ -335,7 +341,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
                   
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong>  {cumulativeCredits}
+                <strong>Cumulative Credits:</strong>  {cumulativeCredits.toFixed(1)}
               </td>
           </tr>
         </tbody>
