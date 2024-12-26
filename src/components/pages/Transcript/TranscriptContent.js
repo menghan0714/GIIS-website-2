@@ -140,11 +140,11 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      wordWrap: 'break-word',
    }
 
-    const html2pdf = window.html2pdf;
     const formRef = useRef(null);
     
+    
     const exportToPDF = () => {
-      const element = document.getElementById("content");
+      const element = document.getElementById('content');
     // 複製 DOM 結構以替換輸入框的內容
       const clone = element.cloneNode(true);
       const inputs = clone.querySelectorAll("input, select");
@@ -156,7 +156,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
     // 設置 PDF 選項
     const options = {
-        margin: [10, 10, 10, 10], // 上下左右邊距 (mm)
+        margin: 0,  // 上下左右邊距 (mm)
         filename: "Transcript.pdf",
         html2canvas: {
             scale: 5,
@@ -164,11 +164,14 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
             allowTaint: true, 
             logging: true,
             letterRendering: true,
+            ignoreElements: (element) => element.tagName === "BUTTON",
         },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+     };    
+        window.html2pdf().set(options).from(clone).save();
      };
-        html2pdf().set(options).from(element).save();
-     };
+
+
 
      return (   
         <div style={container}>
