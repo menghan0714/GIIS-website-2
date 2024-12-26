@@ -12,14 +12,11 @@ function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
   const [, setIsStaticMode] = useState(false);
-  const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
-   const { weightedGPA, unweightedGPA, credits} = gpaData;
+   const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
-   console.log(`Received Credits from ${semesterName}:`, credits);
-   console.log(`Cumulative Credits before update:`, cumulativeCredits);
 
   setSemesterGPAs((prev) => ({
     ...prev,
@@ -28,18 +25,8 @@ function TranscriptContent({ language }) {
       unweightedGPA: parseFloat(unweightedGPA) || 0,
     },
   }));
-
-
-   setCumulativeCredits(() => {
-    const updatedCredits = Object.values({
-    ...semesterGPAs,
-    [semesterName]: { credits: parseFloat(credits) || 0 }, // 確保 credits 為數值
-  }).reduce((sum, current) => sum + (current.credits || 0), 0); // 累加 credits
-  console.log(`Updated Cumulative Credits:`, updatedCredits); // 確認加總結果
-  return updatedCredits;
-});
- 
 };
+
 
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
@@ -330,7 +317,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong> {cumulativeCredits}
+                Cumulative Credits: <input type="text" style={input}  />
               </td>
             </tr>
             <tr>
@@ -343,7 +330,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
                   
               <td style={thTd}>
-                <strong>Cumulative Credits:</strong> {cumulativeCredits}
+                Cumulative Credits: <input type="text" style={input}  />
               </td>
           </tr>
         </tbody>
@@ -354,5 +341,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 }
 
 export default TranscriptContent;
+
+
 
 
