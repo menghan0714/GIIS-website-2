@@ -63,22 +63,13 @@ const calculateTotals = (updatedRows) => {
       const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
       // 計算 Weighted 和 Unweighted GPA
-    if (field === "grade" || field === "name" || field === "type") {
-     // 如果Type和Course name都包含"AP"，則計算GPA
-     if (
-      newRows[index].type.includes("AP") &&
-      newRows[index].name.includes("AP")
-     ) {
-      newRows[index].unweightedGPA = gpa.unweighted;
-      newRows[index].weightedGPA =
-       gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
-     } 
-     // 如果Type和Course name其中之一不包含"AP"，則設為"-"
-     else {
-      newRows[index].unweightedGPA = "-";
-      newRows[index].weightedGPA = "-";
-     }
-   }
+     if (field === "grade" || field === "name") {
+        newRows[index].unweightedGPA = gpa.unweighted;
+        newRows[index].weightedGPA =
+          newRows[index].type.includes("AP") || newRows[index].name.includes("AP")
+            ? gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-"
+            : gpa.weighted;
+      } 
   }
       
     // 計算學期總 GPA
