@@ -85,7 +85,7 @@ const calculateTotals = (updatedRows) => {
    if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
-      console.log(`Passing Credits for ${semesterName}:`, totals.totalCredits);
+      console.log(`Passing Total Credits for ${semesterName}:`, totals.totalCredits);
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
