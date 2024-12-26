@@ -140,37 +140,48 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      wordWrap: 'break-word',
    }
 
-    const formRef = useRef(null);
-    
-    
-    const exportToPDF = () => {
-      const element = document.getElementById('content');
+  const formRef = useRef();
+
+const exportToPDF = () => {
+  setIsStaticMode(true); // 切換到靜態模式
+  setTimeout(() => {
+    const element = document.getElementById("content");
+
     // 複製 DOM 結構以替換輸入框的內容
-      const clone = element.cloneNode(true);
-      const inputs = clone.querySelectorAll("input, select");
-      inputs.forEach((input) => {
-        const value = input.value || input.placeholder;
-        const textNode = document.createTextNode(value);
-        input.replaceWith(textNode);
-     });
+    const clone = element.cloneNode(true);
+    const inputs = clone.querySelectorAll("input, select");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder; // 獲取輸入框的值或占位符
+      const textNode = document.createTextNode(value); // 替換為文字節點
+      input.replaceWith(textNode);
+    });
 
     // 設置 PDF 選項
     const options = {
-        margin: 0,  // 上下左右邊距 (mm)
-        filename: "Transcript.pdf",
-        html2canvas: {
-            scale: 5,
-            useCORS: true, 
-            allowTaint: true, 
-            logging: true,
-            letterRendering: true,
-            ignoreElements: (element) => element.tagName === "BUTTON",
-        },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-     };    
-        window.html2pdf().set(options).from(clone).save();
-     };
+      margin: 0, // 上下左右邊距 (mm)
+      filename: "Transcript.pdf",
+      html2canvas: {
+        scale: 5, // 高解析度
+        useCORS: true, // 支援跨域資源
+        allowTaint: true, // 允許渲染未跨域的圖片
+        logging: true, // 啟用日誌
+        letterRendering: true, // 更好的文字渲染
+        ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
+      },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }, // A4 尺寸，直向
+    };
 
+    // 使用 html2pdf 生成 PDF
+    window
+      .html2pdf()
+      .set(options)
+      .from(clone) // 使用修改後的克隆節點作為輸出
+      .save()
+      .finally(() => {
+        setIsStaticMode(false); // 恢復到編輯模式
+      });
+  }, 0);
+};
 
 
      return (   
