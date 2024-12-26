@@ -89,7 +89,7 @@ const calculateTotals = (updatedRows) => {
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
-        credits: totals.totalCredits,
+        totalCredits: totals.totalCredits,
       });
     }
     
