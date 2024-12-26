@@ -140,7 +140,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      wordWrap: 'break-word',
    }
 
-   const formRef = useRef();
+    const formRef = useRef();
     const exportToPDF = () => {
       setIsStaticMode(true); // 切換到靜態模式
       setTimeout(() => {
@@ -157,6 +157,8 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
         window.html2pdf().set(options).from(element).save().finally(() => {
          setIsStaticMode(false); // 恢復到編輯模式
     });
+  }, 0);
+};
 
 
 
