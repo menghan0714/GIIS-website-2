@@ -167,15 +167,6 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
     window.html2pdf().set(options).from(element).save().finally(() => {
       setIsStaticMode(false); // 恢復到編輯模式
-
-      // 將靜態文字節點還原為輸入欄位（若需要）
-      const spans = element.querySelectorAll("span");
-      spans.forEach((span) => {
-        const input = document.createElement("input");
-        input.value = span.textContent;
-        input.style.borderBottom = span.style.borderBottom; // 還原底線樣式
-        span.parentNode.replaceChild(input, span);
-      });
     });
   }, 0);
 };
