@@ -145,17 +145,40 @@ const formRef = useRef();
 
 const exportToPDF = () => {
   setIsStaticMode(true); // 切換到靜態模式
-  
+
   setTimeout(() => {
     const element = document.getElementById("content");
 
     // 創建一個隱藏的 DOM 副本
     const clonedElement = element.cloneNode(true);
-    const inputs = clonedElement.querySelectorAll("input, select, textarea");
 
-    inputs.forEach((input) => {
+    // 同步表單的狀態到克隆的節點
+    const originalInputs = element.querySelectorAll("input, select, textarea");
+    const clonedInputs = clonedElement.querySelectorAll("input, select, textarea");
+
+    originalInputs.forEach((input, index) => {
+      const clonedInput = clonedInputs[index];
+      if (input.tagName === "INPUT" || input.tagName === "TEXTAREA") {
+        clonedInput.value = input.value; // 同步值
+      } else if (input.tagName === "SELECT") {
+        Array.from(clonedInput.options).forEach((option) => {
+          option.selected = option.value === input.value; // 同步選中項目
+        });
+      }
+    });
+
+    // 替換表單節點為靜態文字
+    const clonedInputsForReplacement = clonedElement.querySelectorAll("input, select, textarea");
+    clonedInputsForReplacement.forEach((input) => {
       const span = document.createElement("span");
-      span.textContent = input.value || input.placeholder || ""; // 使用輸入值或預設值
+      if (input.tagName === "SELECT") {
+        // 獲取選中項目的文本
+        const selectedOption = input.options[input.selectedIndex];
+        span.textContent = selectedOption ? selectedOption.text : "";
+      } else {
+        // 使用輸入值或預設值
+        span.textContent = input.value || input.placeholder || "";
+      }
       input.parentNode.replaceChild(span, input); // 替換節點
     });
 
