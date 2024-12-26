@@ -12,21 +12,33 @@ function TranscriptContent({ language }) {
   
   const [semesterGPAs, setSemesterGPAs] = useState({});
   const [, setIsStaticMode] = useState(false);
+  const [cumulativeCredits, setCumulativeCredits] = useState(0);
 
   const handleTotalsUpdate = (semesterName, gpaData) => {
    const { weightedGPA, unweightedGPA } = gpaData;
    console.log(`Received Weighted GPA for ${semesterName}:`, weightedGPA);
    console.log(`Received Unweighted GPA for ${semesterName}:`, unweightedGPA);
+   console.log(`Received Credits for ${semesterName}:`, credits);
 
   setSemesterGPAs((prev) => ({
     ...prev,
     [semesterName]: {
       weightedGPA: parseFloat(weightedGPA) || 0,
       unweightedGPA: parseFloat(unweightedGPA) || 0,
+      credits: parseFloat(credits) || 0,
     },
   }));
-};
 
+
+  setCumulativeCredits((prevCredits) => {
+    const updatedCredits = Object.values({
+      ...semesterGPAs,
+      [semesterName]: { credits: parseFloat(credits) || 0 },
+    }).reduce((sum, current) => sum + (current.credits || 0), 0);
+    return updatedCredits;
+  });
+ 
+};
 
 const calculateCumulativeGPA = (type = "weightedGPA") => {
   const gpas = Object.values(semesterGPAs)
@@ -317,7 +329,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
 
               <td style={thTd}>
-                Cumulative Credits: <input type="text" style={input}  />
+                <strong>Cumulative Credits:</strong> {cumulativeCredits}
               </td>
             </tr>
             <tr>
@@ -330,7 +342,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
               </td>
                   
               <td style={thTd}>
-                Cumulative Credits: <input type="text" style={input}  />
+                <strong>Cumulative Credits:</strong> {cumulativeCredits}
               </td>
           </tr>
         </tbody>
