@@ -43,7 +43,7 @@ const calculateTotals = (updatedRows) => {
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
     const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-    return { weightedGPA, unweightedGPA };
+    return { weightedGPA, unweightedGPA, totalCredits };
   }; 
 
 
@@ -56,7 +56,7 @@ const calculateTotals = (updatedRows) => {
     newRows[index][field] = value; 
     
     // 如果欄位是成績或課程名稱，重新計算 GPA
-    if (field === "grade" || field === "name") {
+    if (field === "grade" || field === "name" || field === "credits" ) {
       const gpa = gradeToGpa[newRows[index].grade.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
       // 計算 unweighted GPA
@@ -78,6 +78,7 @@ const calculateTotals = (updatedRows) => {
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      newRows[totalsIndex].credits = totals.totalCredits.toFixed(1);
     }
     
     // 將兩個 GPA 傳遞給父元件
