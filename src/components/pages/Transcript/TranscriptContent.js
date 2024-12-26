@@ -143,11 +143,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const formRef = useRef();
 
 const exportToPDF = () => {
-  setIsStaticMode(true); // 切換到靜態模式
-  setTimeout(() => {
-    const element = document.getElementById("content");
-
-    // 複製 DOM 結構以替換輸入框的內容
+  
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
     inputs.forEach((input) => {
@@ -156,7 +152,10 @@ const exportToPDF = () => {
       input.replaceWith(textNode);
     });
 
-    // 設置 PDF 選項
+  setIsStaticMode(true); // 切換到靜態模式
+  setTimeout(() => {
+     const element = document.getElementById("content");
+
     const options = {
       margin: 0, // 上下左右邊距 (mm)
       filename: "Transcript.pdf",
