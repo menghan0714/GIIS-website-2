@@ -78,16 +78,18 @@ const calculateTotals = (updatedRows) => {
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      newRows[totalsIndex].credits = totals.totalCredits.toFixed(1);
+      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
     
     // 將兩個 GPA 傳遞給父元件
    if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+      console.log(`Passing Credits for ${semesterName}:`, totals.totalCredits);
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
+        credits: totals.totalCredits,
       });
     }
     
