@@ -29,13 +29,7 @@ function TranscriptContent({ language }) {
     },
   }));
 
-   setCumulativeCredits((prevTotalcredits) => {
-    const updatedCredits = Object.values({
-      ...semesterGPAs,
-      [semesterName]: { totalCredits: parseFloat(totalCredits) || 0 },
-    }).reduce((sum, current) => sum + (current.totalCredits || 0), 0);
-    return updatedTotalcredits;
-  });
+
 };
 
 
