@@ -85,12 +85,9 @@ const calculateTotals = (updatedRows) => {
    if (onTotalsUpdate) {
       console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
       console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
-      console.log(`Semester: ${semesterName}, Calculated Credits:`, totals.credits);
-     
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
-        credits: totals.credits || 0,
       });
     }
     
@@ -211,3 +208,4 @@ const calculateTotals = (updatedRows) => {
 }
 
 export default GradeTableG9FS;
+
