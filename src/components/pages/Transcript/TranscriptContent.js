@@ -141,24 +141,44 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
    }
 
     const formRef = useRef();
-    const exportToPDF = () => {
-      setIsStaticMode(true); // 切換到靜態模式
-      setTimeout(() => {
-        const element = document.getElementById("content");
-        const options = {
-         margin: 0,
-         filename: "Transcript.pdf",
-         html2canvas: {
-          scale: 5, // 高解析度
-          ignoreElements: (element) => element.tagName === "BUTTON", // 忽略按鈕
-         },
-         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-         };
-        window.html2pdf().set(options).from(element).save().finally(() => {
-         setIsStaticMode(false); // 恢復到編輯模式
+
+  const exportToPDF = () => {
+  setIsStaticMode(true); // 切換到靜態模式
+  setTimeout(() => {
+    const element = document.getElementById("content");
+    
+    // 深複製 DOM 結構
+    const clone = element.cloneNode(true);
+    
+    // 替換複製內容中的所有輸入欄位為靜態文字
+    const inputs = clone.querySelectorAll("input, select, textarea");
+    inputs.forEach((input) => {
+      const value = input.value || input.placeholder || ""; // 使用輸入值或預設值
+      const textNode = document.createTextNode(value);
+      const span = document.createElement("span");
+      span.textContent = value;
+      span.style.borderBottom = input.style.borderBottom || ""; // 可選：保留底線樣式
+      input.replaceWith(span);
+    });
+
+    // 使用 html2pdf 將處理後的複製內容轉換為 PDF
+    const options = {
+      margin: 0,
+      filename: "Transcript.pdf",
+      html2canvas: {
+        scale: 5, // 高解析度
+        ignoreElements: (el) => el.tagName === "BUTTON", // 忽略按鈕
+      },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+
+    // 將克隆的靜態 DOM 節點導出為 PDF
+    window.html2pdf().set(options).from(clone).save().finally(() => {
+      setIsStaticMode(false); // 恢復到編輯模式
     });
   }, 0);
 };
+
 
 
 
