@@ -25,7 +25,7 @@ function TranscriptContent({ language }) {
     [semesterName]: {
       weightedGPA: parseFloat(weightedGPA) || 0,
       unweightedGPA: parseFloat(unweightedGPA) || 0,
-      totalCredits: parseFloat(credits) || 0,
+      totalCredits: parseFloat(totalCredits) || 0,
     },
   }));
 
