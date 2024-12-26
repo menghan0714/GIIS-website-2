@@ -78,16 +78,16 @@ const calculateTotals = (updatedRows) => {
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      newRows[totalsIndex].credits = totals.totalCredits.toFixed(1);
+      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
     
     // 將兩個 GPA 傳遞給父元件
-   if (onTotalsUpdate) {
-      console.log(`Passing Weighted GPA for ${semesterName}:`, totals.weightedGPA);
-      console.log(`Passing Unweighted GPA for ${semesterName}:`, totals.unweightedGPA);
+
+     if (onTotalsUpdate) {
       onTotalsUpdate(semesterName, {
         weightedGPA: totals.weightedGPA,
         unweightedGPA: totals.unweightedGPA,
+        totalCredits: totals.totalCredits, // 傳遞學分
       });
     }
     
@@ -150,7 +150,7 @@ const calculateTotals = (updatedRows) => {
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
-              row.credits // 顯示加總結果
+              row.totalCredits // 顯示加總結果
               ) : (
                 <select
                  value={row.credits}
