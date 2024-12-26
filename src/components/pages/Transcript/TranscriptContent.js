@@ -90,6 +90,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      textAlign: 'left',
      fontSize: '8px',
      width: '25%',
+     wordWrap: 'break-word',
    }
 
    const table ={
