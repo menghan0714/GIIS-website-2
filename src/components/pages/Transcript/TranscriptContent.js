@@ -143,7 +143,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const formRef = useRef();
 
 const exportToPDF = () => {
-  
+    const element = document.getElementById("content");
     const clone = element.cloneNode(true);
     const inputs = clone.querySelectorAll("input, select");
     inputs.forEach((input) => {
@@ -154,8 +154,7 @@ const exportToPDF = () => {
 
   setIsStaticMode(true); // 切換到靜態模式
   setTimeout(() => {
-     const element = document.getElementById("content");
-
+    
     const options = {
       margin: 0, // 上下左右邊距 (mm)
       filename: "Transcript.pdf",
