@@ -150,7 +150,7 @@ const calculateTotals = (updatedRows) => {
                 
             <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
-              row.credits // 顯示加總結果
+              row.totalCredits // 顯示加總結果
               ) : (
                 <select
                  value={row.credits}
