@@ -140,18 +140,23 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      wordWrap: 'break-word',
    }
 
-    const formRef = useRef();
 
- const exportToPDF = () => {
+const formRef = useRef();
+
+const exportToPDF = () => {
   setIsStaticMode(true); // 切換到靜態模式
+  
   setTimeout(() => {
-    // 取得表單中的所有輸入欄位，並將其轉換為文字節點
     const element = document.getElementById("content");
     const inputs = element.querySelectorAll("input, select, textarea");
+
+    // 儲存原始節點資訊
+    const originalNodes = [];
 
     inputs.forEach((input) => {
       const span = document.createElement("span");
       span.textContent = input.value || input.placeholder || ""; // 使用輸入值或預設值
+      originalNodes.push({ parent: input.parentNode, input, span }); // 儲存原始節點
       input.parentNode.replaceChild(span, input); // 替換節點
     });
 
@@ -165,9 +170,17 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
 
-    window.html2pdf().set(options).from(element).save().finally(() => {
-      setIsStaticMode(false); // 恢復到編輯模式
-    });
+    window.html2pdf()
+      .set(options)
+      .from(element)
+      .save()
+      .finally(() => {
+        // 還原原始節點
+        originalNodes.forEach(({ parent, input, span }) => {
+          parent.replaceChild(input, span); // 將 span 還原成 input
+        });
+        setIsStaticMode(false); // 恢復到編輯模式
+      });
   }, 0);
 };
 
