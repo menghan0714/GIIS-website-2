@@ -6,7 +6,6 @@ function GradeTableG12FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Semester Totals", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
@@ -52,6 +51,7 @@ const calculateTotals = (updatedRows) => {
 
 
 const handleGradeChange = (index, field, value) => {
+  
   setRows((prevRows) => {
     const newRows = [...prevRows];
 
@@ -99,24 +99,37 @@ const handleGradeChange = (index, field, value) => {
     return newRows;
   });
 };
- 
+
+  const addRow = () => {
+  setRows((prevRows) => {
+    const newRow = { name: "", type: "", credits: "", grade: "", weightedGPA: "-", unweightedGPA: "-" };
+
+    // 確保新增行在 "Semester Totals" 之前
+    const totalsIndex = prevRows.findIndex((row) => row.name === "Semester Totals");
+    const beforeTotals = prevRows.slice(0, totalsIndex);
+    const afterTotals = prevRows.slice(totalsIndex);
+
+    return [...beforeTotals, newRow, ...afterTotals];
+  });
+};
 
 
 
   return (
+   <>
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px", fontFamily: "Times New Roman, Times, serif"}}>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" , fontFamily: "Times New Roman, Times, serif"}}>
             Grade 12 - Fall Semester
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"}}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"}}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" , fontFamily: "Times New Roman, Times, serif"}}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Credits</th>
           <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"}}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Weighted GPA</th>
           <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Unweighted GPA</th>
         </tr>
       </thead>
@@ -130,7 +143,7 @@ const handleGradeChange = (index, field, value) => {
               <input
                 type="text"
                 value={row.name}
-                onChange={(e) => handleGradeChange(index, "name", e.target.value)}
+                onChange={(e) => handleGradeChange(index, "name", e.target.value) }
                 style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               />
@@ -211,6 +224,8 @@ const handleGradeChange = (index, field, value) => {
         ))}
       </tbody>
     </table>
+    <button onClick={addRow}>Add Row</button>
+   </>
   );
 }
 
