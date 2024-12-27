@@ -400,7 +400,34 @@ const exportToPDF = () => {
           </tr>
         </tbody>
        </table>
+       <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+         <tbody>
+          <tr>
+           <td colSpan={3} style={{ textAlign: "left", padding: "10px 0", fontWeight: "bold" }}>
+            Official(s) Certifying Transcript:
+           </td>
+          </tr>
+          <tr>
+           <td style={{ width: "50%", paddingTop: "20px" }}>
+            <div>Signature</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+           </td>
+           <td style={{ width: "25%", paddingTop: "20px" }}>
+            <div>Printed Name</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+           </td>
+           <td style={{ width: "25%", paddingTop: "20px" }}>
+            <div>Date</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+           </td>
+          </tr>
+        </tbody>
+       </table>
       </div>
+
+                  
+     </div>
     </div>
     );
 }
