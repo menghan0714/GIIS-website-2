@@ -235,7 +235,7 @@ const handleGradeChange = (index, field, value) => {
               <button
                 onClick={() => deleteRow(index)}
                 disabled={row.name === "Semester Totals"}
-                style={{ width: "5%" }}
+                style={{ width: "10%" }}
               >
               Delete
               </button>
