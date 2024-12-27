@@ -191,8 +191,8 @@ const exportToPDF = () => {
     watermark.style.left = "0";
     watermark.style.width = "100%"; // 覆蓋整個內容寬度
     watermark.style.height = "100%"; // 覆蓋整個內容高度
-    watermark.style.zIndex = "-1"; // 確保浮水印在內容下層
-    watermark.style.opacity = "0.2"; // 浮水印透明度
+    watermark.style.zIndex = "1"; // 確保浮水印在內容下層
+    watermark.style.opacity = "0.8"; // 浮水印透明度
     watermark.style.pointerEvents = "none"; // 防止浮水印影響互動
 
     // 將浮水印圖片添加到克隆的節點
