@@ -406,7 +406,7 @@ const exportToPDF = () => {
           <tr>
            <td colSpan={2} style={{ textAlign: "right", padding: "10px 0", fontWeight: "bold" }}>
             <span>Official(s) Certifying Transcript:</span>
-            <span style={{ display: "inline-block", width: "100px", height: "1px", backgroundColor: "black", marginLeft: "10px" }}></span>
+            <span style={{ display: "inline-block", width: "20%", height: "1px", backgroundColor: "black", marginLeft: "10px" }}></span>
            </td>
           </tr>
 
