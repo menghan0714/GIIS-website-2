@@ -107,17 +107,17 @@ const handleGradeChange = (index, field, value) => {
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px", fontFamily: "Times New Roman, Times, serif" }}>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px"}}>
             Grade 12 - Fall Semester
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"  }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"  }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif"  }}>Unweighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px"}}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px"}}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px"}}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Grade</th>
+          <th style={{ border: "1px solid black", fontSize: "10px"}}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px"}}>Unweighted GPA</th>
         </tr>
       </thead>
       <tbody>
