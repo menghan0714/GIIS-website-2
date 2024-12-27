@@ -81,7 +81,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      textAlign: 'center',
      padding: '5px',
      boxSizing: 'border-box',
-     fontSize: '10px',
+     fontSize: '12px',
      fontFamily: 'Times New Roman, Times, serif',
    }
   
@@ -89,7 +89,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
-     fontSize: '8px',
+     fontSize: '10px',
      width: '25%',
      wordWrap: 'break-word',
      fontFamily: 'Times New Roman, Times, serif',
@@ -101,7 +101,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-     fontSize: '8px',
+     fontSize: '10px',
     }
 
    const table2 ={
@@ -110,7 +110,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-     fontSize: '6px',
+     fontSize: '8px',
 
     }
 
@@ -120,7 +120,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      borderCollapse: 'collapse',
      fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
-     fontSize: '6px',
+     fontSize: '8px',
    }
 
 
@@ -131,7 +131,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
     const input ={
      width: '50%',
-     fontSize: '8px',
+     fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', 
      borderBottom: '2px solid black',
