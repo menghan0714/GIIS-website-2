@@ -5,7 +5,7 @@ import TranscriptContent from './TranscriptContent.js';
 function TranscriptMain({ language }) {
 
     return (
-      <div className="card mt-0" id="content">
+      <div id="content">
          <div className="container">
            <TranscriptContent language={language} />
          </div>
