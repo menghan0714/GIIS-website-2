@@ -113,18 +113,7 @@ const handleGradeChange = (index, field, value) => {
   });
 };
 
-    const deleteRow = (index) => {
-    setRows((prevRows) => {
-      const isTotalsRow = prevRows[index].name === "Semester Totals";
-      if (isTotalsRow) {
-        alert("Cannot delete the 'Semester Totals' row!");
-        return prevRows;
-      }
-      return prevRows.filter((_, i) => i !== index);
-    });
-  };
 
- 
 
   return (
    <>
@@ -231,14 +220,6 @@ const handleGradeChange = (index, field, value) => {
             </td>
             <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.weightedGPA}</td>
             <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.unweightedGPA}</td>
-            <td>
-              <button
-                onClick={() => deleteRow(index)}
-                disabled={row.name === "Semester Totals"}
-              >
-              Delete
-              </button>
-             </td>
           </tr>
         ))}
       </tbody>
