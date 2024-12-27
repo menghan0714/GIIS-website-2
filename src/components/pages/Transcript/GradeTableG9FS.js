@@ -123,7 +123,7 @@ const handleGradeChange = (index, field, value) => {
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "10px", width: "30%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
@@ -137,7 +137,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -155,7 +155,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
               row.totalCredits // 顯示加總結果
               ) : (
@@ -176,7 +176,7 @@ const handleGradeChange = (index, field, value) => {
               )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -205,8 +205,8 @@ const handleGradeChange = (index, field, value) => {
                 </select>
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
