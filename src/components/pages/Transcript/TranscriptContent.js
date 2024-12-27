@@ -400,7 +400,7 @@ const exportToPDF = () => {
           </tr>
         </tbody>
        </table>
-       <div style={{ marginTop: "20px", textAlign: "center" }}>
+       <div style={{ marginTop: "5%", textAlign: "center" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
          <tbody>
           <tr>
