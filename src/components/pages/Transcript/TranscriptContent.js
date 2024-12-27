@@ -187,8 +187,8 @@ const exportToPDF = () => {
     const watermark = new Image();
     watermark.src = logoSlogan; 
     watermark.style.position = "absolute";
-    watermark.style.top = "25%";
-    watermark.style.left = "25%";
+    watermark.style.top = "50%";
+    watermark.style.left = "15%";
     watermark.style.width = "80%"; // 覆蓋整個內容寬度
     watermark.style.height = "10%"; // 覆蓋整個內容高度
     watermark.style.zIndex = "-0.5"; // 確保浮水印在內容下層
