@@ -229,12 +229,14 @@ const exportToPDF = () => {
   }, 0);
 };
 
- const today = new Date();
-  const formattedDate = today.toLocaleDateString("zh-TW", {
+  const today = new Date();
+  const options = { timeZone: "America/New_York" }; // 指定美國紐約的時區
+  const usDate = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+    month: "2-digit",
+    day: "2-digit",
+    ...options,
+  }).format(today);
 
      return (   
         <div style={container}>
@@ -444,7 +446,7 @@ const exportToPDF = () => {
             <div>Title</div>
            </td>
            <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
-            <div>{formattedDate}</div>
+            <div>{usDate}</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Date</div>
            </td>
