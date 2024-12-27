@@ -116,6 +116,7 @@ const handleGradeChange = (index, field, value) => {
  
 
   return (
+   <>
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
@@ -224,6 +225,7 @@ const handleGradeChange = (index, field, value) => {
       </tbody>
     </table>
     <button onClick={addRow}>Add Row</button>
+   </>
   );
 }
 
