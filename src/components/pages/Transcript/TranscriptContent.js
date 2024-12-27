@@ -62,7 +62,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
   const title = {
      marginTop: '5%',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      fontSize: '20px',
      fontWeight: 'bold',
   }
