@@ -107,23 +107,23 @@ const handleGradeChange = (index, field, value) => {
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" }}>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" , fontFamily: "Times New Roman, Times, serif"}}>
             Grade 9 - Fall Semester
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "10px" }}>Unweighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" , fontFamily: "Times New Roman, Times, serif"}}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Grade</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Unweighted GPA</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%", fontFamily: "Times New Roman, Times, serif" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
@@ -137,7 +137,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "15%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "15%", fontFamily: "Times New Roman, Times, serif" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -155,7 +155,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" , fontFamily: "Times New Roman, Times, serif"}}>
              {row.name === "Semester Totals" ? (
               row.totalCredits // 顯示加總結果
               ) : (
@@ -176,7 +176,7 @@ const handleGradeChange = (index, field, value) => {
               )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -205,8 +205,8 @@ const handleGradeChange = (index, field, value) => {
                 </select>
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
