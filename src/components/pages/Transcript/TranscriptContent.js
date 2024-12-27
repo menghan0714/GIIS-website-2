@@ -64,7 +64,6 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      marginTop: '5%',
      fontFamily: 'Times New Roman, Times, serif',
      fontSize: '25px',
-     fontWeight: 'bold',
   }
 
  const columns ={
@@ -83,6 +82,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      padding: '5px',
      boxSizing: 'border-box',
      fontSize: '10px',
+     fontFamily: 'Times New Roman, Times, serif',
    }
   
    const thTd ={
@@ -92,12 +92,13 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      fontSize: '8px',
      width: '25%',
      wordWrap: 'break-word',
+     fontFamily: 'Times New Roman, Times, serif',
    }
 
    const table ={
      width: '100%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
      fontSize: '8px',
@@ -106,7 +107,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
    const table2 ={
      width: '100%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
      fontSize: '6px',
@@ -117,7 +118,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      flex: '1',
      width: '95%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      fontSize: '6px',
    }
@@ -139,6 +140,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      overflowWrap: 'break-word',
      whiteSpace: 'normal',
      wordWrap: 'break-word',
+     fontFamily: 'Times New Roman, Times, serif',
    }
 
 
@@ -435,17 +437,17 @@ const exportToPDF = () => {
           </tr>
           
           <tr>
-           <td style={{ width: "50%", textAlign: "center", paddingTop: "3%" }}>
+           <td style={{ width: "50%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif" }}>
             <div>Shiyu Zhang, Ph.D.</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Printed Name</div>
            </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif"  }}>
             <div>President</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Title</div>
            </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif"  }}>
             <div>{usDate}</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Date</div>
