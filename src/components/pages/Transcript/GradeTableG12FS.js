@@ -137,7 +137,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "15%", fontFamily: "Times New Roman, Times, serif" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
