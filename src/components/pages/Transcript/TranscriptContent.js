@@ -236,6 +236,7 @@ const exportToPDF = () => {
     month: "2-digit",
     day: "2-digit",
   });
+ };
 
      return (   
         <div style={container}>
