@@ -1,4 +1,5 @@
 import React, { useRef, useState }  from 'react';
+import logoSlogan from '../../../img/logo_slogan.png';
 import GradeTableG9FS from './GradeTableG9FS.js';
 import GradeTableG9SS from './GradeTableG9SS.js';
 import GradeTableG10FS from './GradeTableG10FS.js';
@@ -182,6 +183,22 @@ const exportToPDF = () => {
       input.parentNode.replaceChild(span, input); // 替換節點
     });
 
+    // 添加浮水印層（圖片）
+    const watermark = new Image();
+    watermark.src = logoSlogan; 
+    watermark.style.position = "absolute";
+    watermark.style.top = "43%";
+    watermark.style.left = "10%";
+    watermark.style.width = "80%"; // 覆蓋整個內容寬度
+    watermark.style.height = "10%"; // 覆蓋整個內容高度
+    watermark.style.zIndex = "-0.5"; // 確保浮水印在內容下層
+    watermark.style.opacity = "0.2"; // 浮水印透明度
+    watermark.style.pointerEvents = "none"; // 防止浮水印影響互動
+
+    // 將浮水印圖片添加到克隆的節點
+    clonedElement.style.position = "relative"; // 確保父容器支持絕對定位
+    clonedElement.appendChild(watermark);
+
     // 將副本添加到隱藏區域
     const hiddenContainer = document.createElement("div");
     hiddenContainer.style.position = "absolute";
@@ -190,6 +207,7 @@ const exportToPDF = () => {
     hiddenContainer.appendChild(clonedElement);
     document.body.appendChild(hiddenContainer);
 
+    // 設置 PDF 生成選項
     const options = {
       margin: 0,
       filename: "Transcript.pdf",
@@ -211,8 +229,14 @@ const exportToPDF = () => {
   }, 0);
 };
 
-
-
+  const today = new Date();
+  const options = { timeZone: "America/Chicago" }; // 指定美國中部的時區
+  const usDate = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    ...options,
+  }).format(today);
 
      return (   
         <div style={container}>
@@ -400,7 +424,39 @@ const exportToPDF = () => {
           </tr>
         </tbody>
        </table>
+       <div style={{ marginTop: "3%", textAlign: "center" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+         <tbody>
+          <tr>
+           <td colSpan={3} style={{ textAlign: "right", padding: "10px 0", fontWeight: "bold" }}>
+            <span>Official(s) Certifying Transcript:</span>
+            <span style={{ display: "inline-block", height: "1px", width: "50%", backgroundColor: "black", marginLeft: "10px" }}></span>
+           </td>
+          </tr>
+          
+          <tr>
+           <td style={{ width: "50%", textAlign: "center", paddingTop: "3%" }}>
+            <div>Shiyu Zhang, Ph.D.</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+            <div>Printed Name</div>
+           </td>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
+            <div>President</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+            <div>Title</div>
+           </td>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
+            <div>{usDate}</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+            <div>Date</div>
+           </td>
+          </tr>
+        </tbody>
+       </table>
       </div>
+
+                  
+     </div>
     </div>
     );
 }
