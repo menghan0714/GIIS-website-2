@@ -229,7 +229,13 @@ const exportToPDF = () => {
   }, 0);
 };
 
-
+ const TableRow = () => {
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString("zh-TW", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
 
      return (   
         <div style={container}>
@@ -439,7 +445,7 @@ const exportToPDF = () => {
             <div>Title</div>
            </td>
            <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
-            <div>Date</div>
+            <div>{formattedDate}</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Date</div>
            </td>
