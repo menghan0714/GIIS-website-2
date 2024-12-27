@@ -107,23 +107,23 @@ const handleGradeChange = (index, field, value) => {
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" }}>
             Grade 11 - Fall Semester
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Grade</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" }}>Unweighted GPA</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
@@ -137,7 +137,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -155,7 +155,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
              {row.name === "Semester Totals" ? (
               row.totalCredits // 顯示加總結果
               ) : (
@@ -176,7 +176,7 @@ const handleGradeChange = (index, field, value) => {
               )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -205,8 +205,8 @@ const handleGradeChange = (index, field, value) => {
                 </select>
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
