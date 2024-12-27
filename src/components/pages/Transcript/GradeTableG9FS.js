@@ -123,7 +123,7 @@ const handleGradeChange = (index, field, value) => {
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
