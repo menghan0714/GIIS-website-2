@@ -229,14 +229,12 @@ const exportToPDF = () => {
   }, 0);
 };
 
- const TableRow = () => {
-  const today = new Date();
+ const today = new Date();
   const formattedDate = today.toLocaleDateString("zh-TW", {
     year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    month: "long",
+    day: "numeric",
   });
- };
 
      return (   
         <div style={container}>
