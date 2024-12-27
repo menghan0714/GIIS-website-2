@@ -180,7 +180,7 @@ const exportToPDF = () => {
         span.textContent = selectedOption ? selectedOption.text : "";
       } else {
         // 使用輸入值或預設值
-        span.textContent = input.value || input.placeholder || "";
+        span.textContent = input.value || ""; 
       }
       input.parentNode.replaceChild(span, input); // 替換節點
     });
