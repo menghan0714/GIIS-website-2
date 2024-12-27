@@ -1,4 +1,5 @@
 import React, { useRef, useState }  from 'react';
+import logoSlogan from '../../../img/logo_slogan.png';
 import GradeTableG9FS from './GradeTableG9FS.js';
 import GradeTableG9SS from './GradeTableG9SS.js';
 import GradeTableG10FS from './GradeTableG10FS.js';
@@ -182,6 +183,22 @@ const exportToPDF = () => {
       input.parentNode.replaceChild(span, input); // 替換節點
     });
 
+    // 添加浮水印層（圖片）
+    const watermark = new Image();
+    watermark.src = logoSlogan; 
+    watermark.style.position = "absolute";
+    watermark.style.top = "0";
+    watermark.style.left = "0";
+    watermark.style.width = "100%"; // 覆蓋整個內容寬度
+    watermark.style.height = "100%"; // 覆蓋整個內容高度
+    watermark.style.zIndex = "-1"; // 確保浮水印在內容下層
+    watermark.style.opacity = "0.2"; // 浮水印透明度
+    watermark.style.pointerEvents = "none"; // 防止浮水印影響互動
+
+    // 將浮水印圖片添加到克隆的節點
+    clonedElement.style.position = "relative"; // 確保父容器支持絕對定位
+    clonedElement.appendChild(watermark);
+
     // 將副本添加到隱藏區域
     const hiddenContainer = document.createElement("div");
     hiddenContainer.style.position = "absolute";
@@ -190,6 +207,7 @@ const exportToPDF = () => {
     hiddenContainer.appendChild(clonedElement);
     document.body.appendChild(hiddenContainer);
 
+    // 設置 PDF 生成選項
     const options = {
       margin: 0,
       filename: "Transcript.pdf",
@@ -210,7 +228,6 @@ const exportToPDF = () => {
       });
   }, 0);
 };
-
 
 
 
