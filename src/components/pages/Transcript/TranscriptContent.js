@@ -410,16 +410,17 @@ const exportToPDF = () => {
            </td>
           </tr>
 
+                  
           <tr>
-           <td style={{ width: "50%", paddingTop: "20px" }}>
-            <div>Signature</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-           </td>
-           <td style={{ width: "25%", paddingTop: "20px" }}>
+           <td style={{ width: "50%", textAlign: "center", paddingTop: "20px" }}>
             <div>Printed Name</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
            </td>
-           <td style={{ width: "25%", paddingTop: "20px" }}>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "20px" }}>
+            <div>Title</div>
+            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
+           </td>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "20px" }}>
             <div>Date</div>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
            </td>
