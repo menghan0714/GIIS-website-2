@@ -404,7 +404,7 @@ const exportToPDF = () => {
         <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
          <tbody>
           <tr>
-           <td colSpan={3} style={{ textAlign: "center", padding: "10px 0", fontWeight: "bold" }}>
+           <td style={{ width: "50%", textAlign: "center", padding: "10px 0", fontWeight: "bold" }}>
             Official(s) Certifying Transcript:
            </td>
           </tr>
