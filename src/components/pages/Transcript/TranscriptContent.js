@@ -411,15 +411,15 @@ const exportToPDF = () => {
           </tr>
           
           <tr>
-           <td style={{ width: "50%", textAlign: "center", paddingTop: "20px" }}>
+           <td style={{ width: "50%", textAlign: "center", paddingTop: "10%" }}>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Printed Name</div>
            </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "20px" }}>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "10%" }}>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Title</div>
            </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "20px" }}>
+           <td style={{ width: "25%", textAlign: "center", paddingTop: "10%" }}>
             <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
             <div>Date</div>
            </td>
