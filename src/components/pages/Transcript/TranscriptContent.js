@@ -230,7 +230,7 @@ const exportToPDF = () => {
 };
 
   const today = new Date();
-  const options = { timeZone: "America/New_York" }; // 指定美國紐約的時區
+  const options = { timeZone: "America/Chicago" }; // 指定美國中部的時區
   const usDate = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "2-digit",
