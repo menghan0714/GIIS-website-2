@@ -436,7 +436,7 @@ const exportToPDF = () => {
                 style={{
                 display: "inline-block",
                 height: "1px",
-                width: "43%", // 調整橫槓寬度，減小到 30%
+                width: "50%", // 調整橫槓寬度，減小到 30%
                 backgroundColor: "black",
                 marginLeft: "20px", // 增加文字與橫槓間距
                 verticalAlign: "-8px",  // 讓橫槓底部和文字底部貼齊
