@@ -440,22 +440,22 @@ const exportToPDF = () => {
               backgroundColor: "black",
               marginLeft: "20px", // 增加文字與橫槓間距
               verticalAlign: "-5px",  // 讓橫槓底部和文字底部貼齊
-              position: "relative",
              }}
             ></span>
            </td>
           </tr>
               
           <tr>
-           <td style={{ textAlign:"right", padding: "20px 0" }}>
+           <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
             <div
-            style={{
-             position: "absolute",
-             borderBottom: "1px solid black",
-             width: "40%",
-             }}
+             style={{
+              position: "absolute",
+              borderBottom: "1px solid black",
+              width: "40%",
+              right: 0, // 將右對齊
+              }}
              ></div>
-           </td>
+            </td>
           </tr>
         </tbody>
        </table>
