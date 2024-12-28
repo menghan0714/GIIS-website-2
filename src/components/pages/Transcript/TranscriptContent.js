@@ -482,7 +482,7 @@ const exportToPDF = () => {
                   >
                    <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "left" }}>Printed Name</span>
                    <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Title</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , paadingLeft: "50px" }}>Date</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , paadingRight: "50px" }}>Date</span>
                  </div>
                </td>
               </tr>
