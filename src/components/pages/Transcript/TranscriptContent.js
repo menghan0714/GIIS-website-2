@@ -444,35 +444,23 @@ const exportToPDF = () => {
             ></span>
            </td>
           </tr>
-              
-<tr>
-  <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
-    {/* 容器，包含文字與橫槓 */}
-    <div
-      style={{
-        display: "flex", // 使用 Flexbox 排版
-        justifyContent: "space-between", // 水平平均分配
-        alignItems: "center", // 垂直居中對齊（文字與橫槓基準線一致）
-        position: "relative", // 確保子項目位置基於此容器
-      }}
-    >
-      <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-      <span style={{ whiteSpace: "nowrap" }}>President</span>
-      <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
-    </div>
-    {/* 下方的橫槓 */}
-    <div
-      style={{
-        position: "absolute",
-        borderBottom: "2px solid black",
-        width: "40%", // 調整橫槓寬度
-        right: 0, // 將橫槓對齊右邊
-        top: "30px", // 使橫槓垂直位置適當下移，調整與文字的對齊
-      }}
-    ></div>
-  </td>
-</tr>
-
+        
+          <tr>
+           <td style={{ textAlign:"right", padding: "20px 0", position:"relative"}}>
+            <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
+            <span style={{ whiteSpace: "nowrap" }}>President </span>
+            <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+            <div
+              style={{
+               position: "absolute",
+               borderBottom: "2px solid black",
+               width: "40%",
+               right: 0, // 將右對齊
+               marginTop: "1.5%", 
+              }}
+             ></div>
+            </td>
+           </tr>
         </tbody>
        </table>
       </div>          
