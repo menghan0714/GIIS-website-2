@@ -444,6 +444,24 @@ const exportToPDF = () => {
                 ></span>
                </td>
               </tr>
+               
+          <tr>
+           <td style={{ textAlign:"right", padding: "20px 0", position:"relative"}}>
+            <div style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</div>
+            <div style={{ whiteSpace: "nowrap" }}>President</div>
+            <div style={{ whiteSpace: "nowrap" }}>{usDate}</div>
+            <div>
+              style={{
+               position: "absolute",
+               borderBottom: "2px solid black",
+               width: "40%",
+               right: 0, // 將右對齊
+               marginTop: "1.5%", 
+              }}
+             ></div>
+            </td>
+           </tr>
+
              </tbody>
            </table>         
           </div>
