@@ -439,7 +439,7 @@ const exportToPDF = () => {
               width: "30%", // 調整橫槓寬度，減小到 30%
               backgroundColor: "black",
               marginLeft: "20px", // 增加文字與橫槓間距
-              verticalAlign: "baseline",  // 讓橫槓底部和文字底部貼齊
+              verticalAlign: "-1%",  // 讓橫槓底部和文字底部貼齊
              }}
             ></span>
            </td>
