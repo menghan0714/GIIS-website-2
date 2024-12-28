@@ -436,7 +436,7 @@ const exportToPDF = () => {
                 style={{
                 display: "inline-block",
                 height: "1px",
-                width: "40%", // 調整橫槓寬度，減小到 30%
+                width: "50%", // 調整橫槓寬度，減小到 30%
                 backgroundColor: "black",
                 marginLeft: "20px", // 增加文字與橫槓間距
                 verticalAlign: "-8px",  // 讓橫槓底部和文字底部貼齊
@@ -453,7 +453,7 @@ const exportToPDF = () => {
                   columnGap: "35px", // 每列之間固定 20px 的間距
                   alignItems: "center", // 垂直居中
                   justifyContent: "end",
-                  fontSize: "12px",
+                  fontSize: "14px",
                  }}
                  >
                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>Shiyu Zhang, Ph.D.</span>
@@ -465,7 +465,7 @@ const exportToPDF = () => {
                  style={{
                   position: "absolute",
                   borderBottom: "2px solid black",
-                  width: "40%",
+                  width: "50%",
                   right: 0,
                   marginTop: "0.5%", 
                   }}
@@ -479,7 +479,7 @@ const exportToPDF = () => {
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
                    marginTop: "1%",
-                   fontSize: "12px",
+                   fontSize: "14px",
                   }}
                   >
                    <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Printed Name</span>
