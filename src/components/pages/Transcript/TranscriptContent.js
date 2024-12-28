@@ -466,8 +466,9 @@ const exportToPDF = () => {
               {usDate}
                <div>Date</div>
              </div>
-            </td>
-           </tr>
+            </div>
+           </td>
+          </tr>
         </tbody>
        </table>
       </div>          
