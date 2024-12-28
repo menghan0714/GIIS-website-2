@@ -25,7 +25,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
     'F': { weighted: 0.0, unweighted: 0.0 },
   };
   
-const calculateTotals = (updatedRows) => {
+  const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
@@ -50,7 +50,7 @@ const calculateTotals = (updatedRows) => {
 
 
 
-const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => {
   
   setRows((prevRows) => {
     const newRows = [...prevRows];
@@ -113,6 +113,17 @@ const handleGradeChange = (index, field, value) => {
   });
 };
 
+ const addButtonStyle = {
+  border: "none", // 移除按鈕的外框
+  backgroundColor: "#007bff", // 按鈕背景顏色
+  color: "white", // 按鈕文字顏色
+  borderRadius: "50%", // 讓按鈕變成圓形
+  width: "40px", // 設定按鈕寬度
+  height: "40px", // 設定按鈕高度
+  fontSize: "20px", // 文字大小
+  cursor: "pointer", // 滑鼠移上去顯示為可點擊的樣式
+  display: "flex", // 讓內容居中對齊
+};
 
 
   return (
@@ -224,7 +235,9 @@ const handleGradeChange = (index, field, value) => {
         ))}
       </tbody>
     </table>
-    <button onClick={addRow}>Add Row</button>
+    <button style={addButtonStyle} onClick={addRow}>
+      +
+    </button>
    </>
   );
 }
