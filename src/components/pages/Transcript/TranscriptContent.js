@@ -448,11 +448,13 @@ const exportToPDF = () => {
           <tr>
            <td colSpan={3} style={{ textAlign: "right", padding: "20px 0" }}>
             <div
-             style={{
-              borderBottom: "1px solid black",
-              width: "40%",
-              marginTop: "10px",
-              }}
+            style={{
+             display: "flex",
+             justifyContent: "flex-end", // 和上方右對齊保持一致
+             alignItems: "center",
+             borderBottom: "1px solid black",
+             width: "40%",
+             }}
              ></div>
            </td>
           </tr>
