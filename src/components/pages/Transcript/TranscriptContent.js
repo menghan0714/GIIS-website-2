@@ -276,7 +276,7 @@ const exportToPDF = () => {
          
          <div id="content" ref={formRef}>
           <div style={title}>
-           <p>Genesis of Ideas International School</p>
+           <p style={{marginBottom:"0"}}>Genesis of Ideas International School</p>
           </div>
           <div style={columns}>
            <div style={column1}>
