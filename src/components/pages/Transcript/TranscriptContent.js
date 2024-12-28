@@ -455,9 +455,9 @@ const exportToPDF = () => {
                   justifyContent: "end",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-                  <span style={{ whiteSpace: "nowrap" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>{usDate}</span>
                 </div>
                    
                 <div
