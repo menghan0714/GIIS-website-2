@@ -466,8 +466,7 @@ const exportToPDF = () => {
                   borderBottom: "2px solid black",
                   width: "43%",
                   right: 0,
-                  marginTop: "1%", 
-                  marginBottom: "1%",
+                  marginTop: "0.5%", 
                   }}
                  ></div>
 
@@ -478,7 +477,7 @@ const exportToPDF = () => {
                    columnGap: "20px", // 每列之間固定 20px 的間距
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
-                   marginTop: "2%",
+                   marginTop: "1%",
                   }}
                   >
                    <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Printed Name</span>
