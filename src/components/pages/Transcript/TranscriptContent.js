@@ -449,15 +449,15 @@ const exportToPDF = () => {
                 <div
                  style={{
                   display: "grid",
-                  gridTemplateColumns: "170px 170px 170px", // 定義三個列
+                  gridTemplateColumns: "13% 13% 13%", // 定義三個列
                   columnGap: "15px", // 每列之間固定 20px 的間距
                   alignItems: "center", // 垂直居中
                   justifyContent: "end",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>Shiyu Zhang, Ph.D.</span>
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "center" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "right" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "left" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "right" }}>{usDate}</span>
                 </div>
                    
                 <div
@@ -473,16 +473,16 @@ const exportToPDF = () => {
                  <div
                   style={{
                    display: "grid",
-                   gridTemplateColumns: "170px 170px 170px", // 定義三個列
+                   gridTemplateColumns: "13% 13% 13%", // 定義三個列
                    columnGap: "20px", // 每列之間固定 20px 的間距
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
                    marginTop: "1%",
                   }}
                   >
-                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>Printed Name</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "center" }}>Title</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" , paadingLeft: "50px" }}>Date</span>
+                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "left" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Title</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , paadingLeft: "50px" }}>Date</span>
                  </div>
                </td>
               </tr>
