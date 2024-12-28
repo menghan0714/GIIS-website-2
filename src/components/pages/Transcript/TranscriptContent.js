@@ -446,7 +446,7 @@ const exportToPDF = () => {
           </tr>
               
           <tr>
-           <td colSpan={3} style={{ padding: "20px 0" }}>
+           <td colSpan={3} style={{ textAlign: "right", padding: "20px 0" }}>
             <div
              style={{
               display: "flex",
