@@ -447,20 +447,28 @@ const exportToPDF = () => {
               
           <tr>
            <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
-            <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-            <span style={{ whiteSpace: "nowrap" }}>President </span>
-            <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+            <div
+             style={{
+              display: "flex",
+              justifyContent: "space-between", // 水平平均分配
+              alignItems: "flex-end",          // 文字基準與橫槓對齊
+              position: "relative",
+              }}
+             >
+              <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
+              <span style={{ whiteSpace: "nowrap" }}>President</span>
+              <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+             </div>
              <div
               style={{
                position: "absolute",
                borderBottom: "2px solid black",
                width: "40%",
-               right: 0, // 將右對齊
-               marginTop: "1.5%",
-               
-              }}
+               right: 0,
+               marginTop: "1.5%", // 控制橫槓與文字之間的距離
+               }}
               ></div>
-            </td>
+           </td>
           </tr>
         </tbody>
        </table>
