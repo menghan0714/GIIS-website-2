@@ -447,6 +447,7 @@ const exportToPDF = () => {
              </tbody>
            </table>         
           </div>
+         </div>
         </div>
     );
 }
