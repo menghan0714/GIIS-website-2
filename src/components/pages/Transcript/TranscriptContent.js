@@ -445,7 +445,7 @@ const exportToPDF = () => {
                </td>
               </tr>
                
- <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
+ <td style={{ textAlign: "right",position: "relative" }}>
   <div
     style={{
       display: "grid",
