@@ -445,15 +445,15 @@ const exportToPDF = () => {
            </td>
           </tr>
               
-          <tr>
+<tr>
   <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
-    {/* 加入文字容器 */}
+    {/* 容器，包含文字與橫槓 */}
     <div
       style={{
         display: "flex", // 使用 Flexbox 排版
         justifyContent: "space-between", // 水平平均分配
-        alignItems: "flex-end", // 文字基準對齊下方的橫槓
-        position: "relative", // 確保橫槓基於此容器定位
+        alignItems: "center", // 垂直居中對齊（文字與橫槓基準線一致）
+        position: "relative", // 確保子項目位置基於此容器
       }}
     >
       <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
@@ -465,15 +465,14 @@ const exportToPDF = () => {
       style={{
         position: "absolute",
         borderBottom: "2px solid black",
-        width: "40%", // 調整橫槓的寬度
-        right: 0, // 橫槓對齊右邊
-        marginTop: "10px", // 控制橫槓與文字之間的距離
+        width: "40%", // 調整橫槓寬度
+        right: 0, // 將橫槓對齊右邊
+        top: "30px", // 使橫槓垂直位置適當下移，調整與文字的對齊
       }}
     ></div>
   </td>
+</tr>
 
-
-          </tr>
         </tbody>
        </table>
       </div>          
