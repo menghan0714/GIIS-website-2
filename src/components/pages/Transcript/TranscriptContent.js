@@ -449,14 +449,14 @@ const exportToPDF = () => {
            <td style={{ textAlign:"right", padding: "20px 0", position:"relative"}}>
             <div
              style={{
-              display: "flex", // 使用 Flexbox 排版
-              justifyContent: "space-between", // 控制水平分佈
-              alignItems: "center", // 垂直居中對齊
-              gap: "20px", // 固定的間隔
+              display: "grid",
+              gridTemplateColumns: "auto auto auto", // 定義三個列
+              columnGap: "20px", // 每列之間固定 20px 的間距
+              alignItems: "center", // 垂直居中
               }}
              >
               <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-              <span style={{ whiteSpace: "nowrap" }}>President </span>
+              <span style={{ whiteSpace: "nowrap" }}>President</span>
               <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
              </div>
              <div>
