@@ -72,13 +72,30 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
      padding: '5px',
-     border: '1px solid #ccc',
      margin: '0 auto',
    }
 
-  const column ={
+  const column1 ={
+     flex: '1',
+     textAlign: 'left',
+     padding: '5px',
+     boxSizing: 'border-box',
+     fontSize: '12px',
+     fontFamily: 'Times New Roman, Times, serif',
+   }
+
+   const column2 ={
      flex: '1',
      textAlign: 'center',
+     padding: '5px',
+     boxSizing: 'border-box',
+     fontSize: '12px',
+     fontFamily: 'Times New Roman, Times, serif',
+   }
+
+    const column2 ={
+     flex: '1',
+     textAlign: 'right',
      padding: '5px',
      boxSizing: 'border-box',
      fontSize: '12px',
@@ -262,15 +279,15 @@ const exportToPDF = () => {
            <p>Genesis of Ideas International School</p>
           </div>
           <div style={columns}>
-           <div style={column}>
+           <div style={column1}>
             7901 4th St N STE 300,<br />
             St. Petersburg, FL 33702<br />
            </div>
-           <div style={column}>
+           <div style={column2}>
             Phone: +1 (813) 501-5756<br />
             <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
            </div>
-           <div style={column}>
+           <div style={column3}>
             School Code: 650<br />
             President: Shiyu Zhang, Ph.D.<br />
            </div>
