@@ -430,13 +430,13 @@ const exportToPDF = () => {
         <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
          <tbody>
           <tr>
-           <td colSpan={3} style={{ textAlign: "right", padding: "10px 0", fontWeight: "bold",fontFamily: "Times New Roman, Times, serif"  }}>
+           <td colSpan={3} style={{ textAlign: "right", padding: "10px 0",fontFamily: "Times New Roman, Times, serif", fontSize: "20px"  }}>
             <span style={{ whiteSpace: "nowrap" }}>Official(s) Certifying Transcript:</span>
             <span
              style={{
               display: "inline-block",
               height: "1px",
-              width: "30%", // 調整橫槓寬度，減小到 30%
+              width: "40%", // 調整橫槓寬度，減小到 30%
               backgroundColor: "black",
               marginLeft: "20px", // 增加文字與橫槓間距
               verticalAlign: "-5px",  // 讓橫槓底部和文字底部貼齊
