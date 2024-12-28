@@ -445,22 +445,32 @@ const exportToPDF = () => {
                </td>
               </tr>
                
-          <tr>
-           <td style={{ textAlign:"right", padding: "20px 0", position:"relative"}}>
-            <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-            <span style={{ whiteSpace: "nowrap" }}>President</span>
-            <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
-            <div>
-              style={{
-               position: "absolute",
-               borderBottom: "2px solid black",
-               width: "40%",
-               right: 0, // 將右對齊
-               marginTop: "1.5%", 
-              }}
-             ></div>
-            </td>
-           </tr>
+ <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "auto auto auto", // 定義三個列
+      columnGap: "20px", // 每列之間固定 20px 的間距
+      alignItems: "center", // 垂直居中
+    }}
+  >
+    <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
+    <span style={{ whiteSpace: "nowrap" }}>President</span>
+    <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+  </div>
+
+  {/* 下方的橫槓 */}
+  <div
+    style={{
+      position: "absolute",
+      borderBottom: "2px solid black",
+      width: "40%",
+      right: 0,
+      marginTop: "1.5%",
+    }}
+  ></div>
+</td>
+
 
              </tbody>
            </table>         
