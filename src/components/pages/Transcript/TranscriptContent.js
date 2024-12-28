@@ -431,11 +431,20 @@ const exportToPDF = () => {
          <tbody>
           <tr>
            <td colSpan={3} style={{ textAlign: "right", padding: "10px 0", fontWeight: "bold" }}>
-            <span>Official(s) Certifying Transcript:</span>
-            <span style={{ display: "inline-block", height: "1px", width: "50%", backgroundColor: "black", marginLeft: "10px" }}></span>
+            <span style={{ whiteSpace: "nowrap" }}>Official(s) Certifying Transcript:</span>
+            <span
+             style={{
+              display: "inline-block",
+              height: "1px",
+              width: "30%", // 調整橫槓寬度，減小到 30%
+              backgroundColor: "black",
+              marginLeft: "20px", // 增加文字與橫槓間距
+              verticalAlign: "middle", // 讓橫槓和文字對齊
+             }}
+            ></span>
            </td>
           </tr>
-          
+              
           <tr>
            <td style={{ width: "50%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif" }}>
             <div>Shiyu Zhang, Ph.D.</div>
