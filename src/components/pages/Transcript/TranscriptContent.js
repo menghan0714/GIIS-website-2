@@ -446,27 +446,31 @@ const exportToPDF = () => {
           </tr>
               
           <tr>
-           <td style={{ width: "50%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif" }}>
-            <div>Shiyu Zhang, Ph.D.</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Printed Name</div>
-           </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif"  }}>
-            <div>President</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Title</div>
-           </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%", fontFamily: "Times New Roman, Times, serif"  }}>
-            <div>{usDate}</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Date</div>
-           </td>
-          </tr>
+           <td colSpan={3} style={{ padding: "20px 0" }}>
+            <div
+             style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              }}
+             >
+              <div style={{ textAlign: "center", fontFamily: "Times New Roman, Times, serif" }}>
+               Shiyu Zhang, Ph.D.
+               <div>Printed Name</div>
+              </div>
+              <div style={{ textAlign: "center", fontFamily: "Times New Roman, Times, serif" }}>
+               President
+               <div>Title</div>
+              </div>
+              <div style={{ textAlign: "center", fontFamily: "Times New Roman, Times, serif" }}>
+              {usDate}
+               <div>Date</div>
+             </div>
+            </td>
+           </tr>
         </tbody>
        </table>
-      </div>
-
-                  
+      </div>          
      </div>
     </div>
     );
