@@ -430,7 +430,7 @@ const exportToPDF = () => {
            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
             <tbody>
              <tr>
-              <td colSpan={3} style={{ textAlign: "right", padding: "10px 0",fontFamily: "Times New Roman, Times, serif", fontSize: "14px"  }}>
+              <td colSpan={3} style={{ textAlign: "right", padding: "10px 0",fontFamily: "Times New Roman, Times, serif", fontSize: "16px"  }}>
                <span style={{ whiteSpace: "nowrap" }}>Official(s) Certifying Transcript:</span>
                <span
                 style={{
@@ -450,9 +450,10 @@ const exportToPDF = () => {
                  style={{
                   display: "grid",
                   gridTemplateColumns: "13% 13% 13%", // 定義三個列
-                  columnGap: "15px", // 每列之間固定 20px 的間距
+                  columnGap: "35px", // 每列之間固定 20px 的間距
                   alignItems: "center", // 垂直居中
                   justifyContent: "end",
+                  fontSize: "14px",
                  }}
                  >
                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "left" }}>Shiyu Zhang, Ph.D.</span>
@@ -464,7 +465,7 @@ const exportToPDF = () => {
                  style={{
                   position: "absolute",
                   borderBottom: "2px solid black",
-                  width: "43%",
+                  width: "50%",
                   right: 0,
                   marginTop: "0.5%", 
                   }}
@@ -474,10 +475,11 @@ const exportToPDF = () => {
                   style={{
                    display: "grid",
                    gridTemplateColumns: "13% 13% 13%", // 定義三個列
-                   columnGap: "20px", // 每列之間固定 20px 的間距
+                   columnGap: "35px", // 每列之間固定 20px 的間距
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
                    marginTop: "1%",
+                   fontSize: "14px",
                   }}
                   >
                    <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "left" }}>Printed Name</span>
