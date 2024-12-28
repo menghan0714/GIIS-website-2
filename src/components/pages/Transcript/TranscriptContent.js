@@ -436,7 +436,7 @@ const exportToPDF = () => {
                 style={{
                 display: "inline-block",
                 height: "1px",
-                width: "40%", // 調整橫槓寬度，減小到 30%
+                width: "43%", // 調整橫槓寬度，減小到 30%
                 backgroundColor: "black",
                 marginLeft: "20px", // 增加文字與橫槓間距
                 verticalAlign: "-5px",  // 讓橫槓底部和文字底部貼齊
@@ -464,7 +464,7 @@ const exportToPDF = () => {
                  style={{
                   position: "absolute",
                   borderBottom: "2px solid black",
-                  width: "40%",
+                  width: "43%",
                   right: 0,
                   marginTop: "1%", 
                   marginBottom: "1%",
@@ -478,6 +478,7 @@ const exportToPDF = () => {
                    columnGap: "15px", // 每列之間固定 20px 的間距
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
+                   marginTop: "2%",
                   }}
                   >
                    <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Printed Name</span>
