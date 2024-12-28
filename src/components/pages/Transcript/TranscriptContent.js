@@ -62,9 +62,8 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
   const title = {
      marginTop: '5%',
-     fontFamily: 'Inter, sans-serif',
-     fontSize: '20px',
-     fontWeight: 'bold',
+     fontFamily: 'Times New Roman, Times, serif',
+     fontSize: '25px',
   }
 
  const columns ={
@@ -72,44 +71,65 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
-     padding: '5px',
-     border: '1px solid #ccc',
      margin: '0 auto',
    }
 
-  const column ={
+  const column1 ={
+     flex: '1',
+     textAlign: 'left',
+     padding: '10px',
+     boxSizing: 'border-box',
+     fontSize: '12px',
+     fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
+   }
+
+   const column2 ={
      flex: '1',
      textAlign: 'center',
-     padding: '5px',
+     padding: '10px',
      boxSizing: 'border-box',
-     fontSize: '10px',
+     fontSize: '12px',
+     fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
+   }
+
+    const column3 ={
+     flex: '1',
+     textAlign: 'right',
+     padding: '10px',
+     boxSizing: 'border-box',
+     fontSize: '12px',
+     fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
   
    const thTd ={
      padding: '2px',
      border: '1px solid black',
      textAlign: 'left',
-     fontSize: '8px',
+     fontSize: '10px',
      width: '25%',
      wordWrap: 'break-word',
+     fontFamily: 'Times New Roman, Times, serif',
    }
 
    const table ={
      width: '100%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-     fontSize: '8px',
+     fontSize: '10px',
     }
 
    const table2 ={
      width: '100%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
      tableLayout: 'fixed', 
-     fontSize: '6px',
+     fontSize: '8px',
 
     }
 
@@ -117,9 +137,9 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      flex: '1',
      width: '95%',
      borderCollapse: 'collapse',
-     fontFamily: 'Inter, sans-serif',
+     fontFamily: 'Times New Roman, Times, serif',
      margin: '0 auto',
-     fontSize: '6px',
+     fontSize: '8px',
    }
 
 
@@ -130,7 +150,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
 
     const input ={
      width: '50%',
-     fontSize: '8px',
+     fontSize: '10px',
      boxSizing: 'border-box',
      border: 'none', 
      borderBottom: '2px solid black',
@@ -139,6 +159,8 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      overflowWrap: 'break-word',
      whiteSpace: 'normal',
      wordWrap: 'break-word',
+     fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
 
 
@@ -178,7 +200,7 @@ const exportToPDF = () => {
         span.textContent = selectedOption ? selectedOption.text : "";
       } else {
         // 使用輸入值或預設值
-        span.textContent = input.value || input.placeholder || "";
+        span.textContent = input.value || ""; 
       }
       input.parentNode.replaceChild(span, input); // 替換節點
     });
@@ -257,18 +279,18 @@ const exportToPDF = () => {
          
          <div id="content" ref={formRef}>
           <div style={title}>
-           <p>Genesis of Ideas International School</p>
+           <p style={{marginBottom:"0"}}>Genesis of Ideas International School</p>
           </div>
           <div style={columns}>
-           <div style={column}>
+           <div style={column1}>
             7901 4th St N STE 300,<br />
             St. Petersburg, FL 33702<br />
            </div>
-           <div style={column}>
+           <div style={column2}>
             Phone: +1 (813) 501-5756<br />
             <a href="https://genesisideas.school/">https://genesisideas.school/</a><br />
            </div>
-           <div style={column}>
+           <div style={column3}>
             School Code: 650<br />
             President: Shiyu Zhang, Ph.D.<br />
            </div>
@@ -421,43 +443,76 @@ const exportToPDF = () => {
               <td style={thTd}>
                 <strong>Cumulative Credits:</strong>  {cumulativeCredits.toFixed(1)}
               </td>
-          </tr>
-        </tbody>
-       </table>
-       <div style={{ marginTop: "3%", textAlign: "center" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
-         <tbody>
-          <tr>
-           <td colSpan={3} style={{ textAlign: "right", padding: "10px 0", fontWeight: "bold" }}>
-            <span>Official(s) Certifying Transcript:</span>
-            <span style={{ display: "inline-block", height: "1px", width: "50%", backgroundColor: "black", marginLeft: "10px" }}></span>
-           </td>
-          </tr>
-          
-          <tr>
-           <td style={{ width: "50%", textAlign: "center", paddingTop: "3%" }}>
-            <div>Shiyu Zhang, Ph.D.</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Printed Name</div>
-           </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
-            <div>President</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Title</div>
-           </td>
-           <td style={{ width: "25%", textAlign: "center", paddingTop: "3%" }}>
-            <div>{usDate}</div>
-            <div style={{ borderBottom: "1px solid black", width: "80%", margin: "0 auto" }}></div>
-            <div>Date</div>
-           </td>
-          </tr>
-        </tbody>
-       </table>
-      </div>
+             </tr>
+           </tbody>
+          </table>
+          <div style={{ marginTop: "3%", textAlign: "center" }}>
+           <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+            <tbody>
+             <tr>
+              <td colSpan={3} style={{ textAlign: "right", padding: "10px 0",fontFamily: "Times New Roman, Times, serif", fontSize: "16px"  }}>
+               <span style={{ whiteSpace: "nowrap" }}>Official(s) Certifying Transcript:</span>
+               <span
+                style={{
+                display: "inline-block",
+                height: "1px",
+                width: "50%", // 調整橫槓寬度，減小到 30%
+                backgroundColor: "black",
+                marginLeft: "20px", // 增加文字與橫槓間距
+                verticalAlign: "-8px",  // 讓橫槓底部和文字底部貼齊
+                }}
+                ></span>
+               </td>
+              </tr>
+              <tr>              
+               <td colSpan={3} style={{ textAlign: "right",padding: "20px 0", position: "relative" }}>
+                <div
+                 style={{
+                  display: "grid",
+                  gridTemplateColumns: "13% 13% 13%", // 定義三個列
+                  columnGap: "35px", // 每列之間固定 20px 的間距
+                  alignItems: "center", // 垂直居中
+                  justifyContent: "end",
+                  fontSize: "14px",
+                 }}
+                 >
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>{usDate}</span>
+                </div>
+                   
+                <div
+                 style={{
+                  position: "absolute",
+                  borderBottom: "2px solid black",
+                  width: "50%",
+                  right: 0,
+                  marginTop: "0.5%", 
+                  }}
+                 ></div>
 
-                  
-     </div>
-    </div>
+                 <div
+                  style={{
+                   display: "grid",
+                   gridTemplateColumns: "13% 13% 13%", // 定義三個列
+                   columnGap: "35px", // 每列之間固定 20px 的間距
+                   alignItems: "center", // 垂直居中
+                   justifyContent: "end",
+                   marginTop: "1%",
+                   fontSize: "14px",
+                  }}
+                  >
+                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Title</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , textAlign: "center" }}>Date</span>
+                 </div>
+               </td>
+              </tr>
+             </tbody>
+           </table>         
+          </div>
+         </div>
+        </div>
     );
 }
 

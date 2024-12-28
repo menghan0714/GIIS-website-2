@@ -6,7 +6,6 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
-    { name: "", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
     { name: "Semester Totals", type: "", credits:"" , grade: "", weightedGPA: "-", unweightedGPA: "-" },
   ]);
 
@@ -26,7 +25,7 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
     'F': { weighted: 0.0, unweighted: 0.0 },
   };
   
-const calculateTotals = (updatedRows) => {
+  const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
@@ -51,7 +50,8 @@ const calculateTotals = (updatedRows) => {
 
 
 
-const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => {
+  
   setRows((prevRows) => {
     const newRows = [...prevRows];
 
@@ -99,45 +99,71 @@ const handleGradeChange = (index, field, value) => {
     return newRows;
   });
 };
- 
 
+  const addRow = () => {
+  setRows((prevRows) => {
+    const newRow = { name: "", type: "", credits: "", grade: "", weightedGPA: "-", unweightedGPA: "-" };
+
+    // 確保新增行在 "Semester Totals" 之前
+    const totalsIndex = prevRows.findIndex((row) => row.name === "Semester Totals");
+    const beforeTotals = prevRows.slice(0, totalsIndex);
+    const afterTotals = prevRows.slice(totalsIndex);
+
+    return [...beforeTotals, newRow, ...afterTotals];
+  });
+};
+
+ const addButtonStyle = {
+  border: "none", 
+  backgroundColor: "rgba(43, 61, 109, 0.8)",
+  color: "white", 
+  borderRadius: "50%", 
+  width: "20px", 
+  height: "20px",
+  fontSize: "20px", 
+  cursor: "pointer", 
+  display: "flex", 
+  justifyContent: "center",
+  alignItems: "center", 
+};
 
 
   return (
+   <>
     <table style={{ width: "100%", borderCollapse: "collapse" }}>
       <thead>
         <tr>
-          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "10px" }}>
+          <td colSpan="6" style={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" , fontFamily: "Times New Roman, Times, serif"}}>
             Grade 9 - Fall Semester
           </td>
         </tr>
         <tr>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Course Name</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Type</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Credits</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Grade</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Weighted GPA</th>
-          <th style={{ border: "1px solid black", fontSize: "8px" }}>Unweighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px" , fontFamily: "Times New Roman, Times, serif"}}>Course Name</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Type</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Credits</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Grade</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Weighted GPA</th>
+          <th style={{ border: "1px solid black", fontSize: "10px", fontFamily: "Times New Roman, Times, serif" }}>Unweighted GPA</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row, index) => (
         <tr key={index}>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "30%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "30%", fontFamily: "Times New Roman, Times, serif" }}>
              {row.name === "Semester Totals" ? (
               <span>Semester Totals</span>
               ) : (
               <input
                 type="text"
                 value={row.name}
-                onChange={(e) => handleGradeChange(index, "name", e.target.value)}
+                onChange={(e) => handleGradeChange(index, "name", e.target.value) }
                 style={{ width: "100%", border: isStatic ? "1px solid black" : "none", borderRadius: "4px" }}
                 disabled={row.name === "Semester Totals"}
               />
              )}
             </td>
                   
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "15%", fontFamily: "Times New Roman, Times, serif" }}>
              {row.name === "Semester Totals" ? (
                ""
               ) : (
@@ -155,7 +181,7 @@ const handleGradeChange = (index, field, value) => {
              )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%" , fontFamily: "Times New Roman, Times, serif"}}>
              {row.name === "Semester Totals" ? (
               row.totalCredits // 顯示加總結果
               ) : (
@@ -176,7 +202,7 @@ const handleGradeChange = (index, field, value) => {
               )}
             </td>
                 
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>
               {row.name === "Semester Totals" ? (
                 ""
               ) : (
@@ -205,12 +231,16 @@ const handleGradeChange = (index, field, value) => {
                 </select>
               )}
             </td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.weightedGPA}</td>
-            <td style={{ border: "1px solid black", fontSize: "6px", width: "10%" }}>{row.unweightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.weightedGPA}</td>
+            <td style={{ border: "1px solid black", fontSize: "8px", width: "10%", fontFamily: "Times New Roman, Times, serif" }}>{row.unweightedGPA}</td>
           </tr>
         ))}
       </tbody>
     </table>
+    <button style={addButtonStyle} onClick={addRow}>
+      +
+    </button>
+   </>
   );
 }
 
