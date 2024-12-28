@@ -449,8 +449,8 @@ const exportToPDF = () => {
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "100px 150px 200px", // 定義三個列
-      columnGap: "20px", // 每列之間固定 20px 的間距
+      gridTemplateColumns: "180px 180px 180px", // 定義三個列
+      columnGap: "15px", // 每列之間固定 20px 的間距
       alignItems: "center", // 垂直居中
       justifyContent: "end",
     }}
