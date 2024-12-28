@@ -453,7 +453,7 @@ const exportToPDF = () => {
               borderBottom: "1px solid black",
               width: "40%",
               right: 0, // 將右對齊
-              marginTop: "5%",
+              marginTop: "2%",
               }}
              ></div>
             </td>
