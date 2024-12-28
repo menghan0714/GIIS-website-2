@@ -77,28 +77,31 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
   const column1 ={
      flex: '1',
      textAlign: 'left',
-     padding: '5px',
+     padding: '10px',
      boxSizing: 'border-box',
      fontSize: '12px',
      fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
 
    const column2 ={
      flex: '1',
      textAlign: 'center',
-     padding: '5px',
+     padding: '10px',
      boxSizing: 'border-box',
      fontSize: '12px',
      fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
 
     const column3 ={
      flex: '1',
      textAlign: 'right',
-     padding: '5px',
+     padding: '10px',
      boxSizing: 'border-box',
      fontSize: '12px',
      fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
   
    const thTd ={
@@ -157,6 +160,7 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      whiteSpace: 'normal',
      wordWrap: 'break-word',
      fontFamily: 'Times New Roman, Times, serif',
+     lineHeight: '1.2',
    }
 
 
