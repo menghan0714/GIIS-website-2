@@ -455,9 +455,9 @@ const exportToPDF = () => {
                   justifyContent: "end",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Shiyu Zhang, Ph.D.</span>
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>{usDate}</span>
                 </div>
                    
                 <div
@@ -467,6 +467,7 @@ const exportToPDF = () => {
                   width: "40%",
                   right: 0,
                   marginTop: "1%", 
+                  marginBottom: "1%",
                   }}
                  ></div>
 
@@ -479,9 +480,9 @@ const exportToPDF = () => {
                    justifyContent: "end",
                   }}
                   >
-                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Printed Name</span>
-                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Title</span>
-                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Date</span>
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Title</span>
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Date</span>
                  </div>
                </td>
               </tr>
