@@ -71,7 +71,6 @@ const calculateCumulativeGPA = (type = "weightedGPA") => {
      display: 'flex',
      justifyContent: 'space-between',
      backgroundColor: 'rgba(255, 255, 255, 1)', 
-     padding: '5px',
      margin: '0 auto',
    }
 
