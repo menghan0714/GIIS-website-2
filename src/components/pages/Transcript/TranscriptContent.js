@@ -446,29 +446,33 @@ const exportToPDF = () => {
           </tr>
               
           <tr>
-           <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
-            <div
-             style={{
-              display: "flex",
-              justifyContent: "space-between", // 水平平均分配
-              alignItems: "flex-end",          // 文字基準與橫槓對齊
-              position: "relative",
-              }}
-             >
-              <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
-              <span style={{ whiteSpace: "nowrap" }}>President</span>
-              <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
-             </div>
-             <div
-              style={{
-               position: "absolute",
-               borderBottom: "2px solid black",
-               width: "40%",
-               right: 0,
-               marginTop: "1.5%", // 控制橫槓與文字之間的距離
-               }}
-              ></div>
-           </td>
+  <td style={{ textAlign: "right", padding: "20px 0", position: "relative" }}>
+    {/* 加入文字容器 */}
+    <div
+      style={{
+        display: "flex", // 使用 Flexbox 排版
+        justifyContent: "space-between", // 水平平均分配
+        alignItems: "flex-end", // 文字基準對齊下方的橫槓
+        position: "relative", // 確保橫槓基於此容器定位
+      }}
+    >
+      <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
+      <span style={{ whiteSpace: "nowrap" }}>President</span>
+      <span style={{ whiteSpace: "nowrap" }}>{usDate}</span>
+    </div>
+    {/* 下方的橫槓 */}
+    <div
+      style={{
+        position: "absolute",
+        borderBottom: "2px solid black",
+        width: "40%", // 調整橫槓的寬度
+        right: 0, // 橫槓對齊右邊
+        marginTop: "10px", // 控制橫槓與文字之間的距離
+      }}
+    ></div>
+  </td>
+
+
           </tr>
         </tbody>
        </table>
