@@ -455,9 +455,9 @@ const exportToPDF = () => {
                   justifyContent: "end",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Shiyu Zhang, Ph.D.</span>
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>{usDate}</span>
                 </div>
                    
                 <div
@@ -480,9 +480,9 @@ const exportToPDF = () => {
                    marginTop: "1%",
                   }}
                   >
-                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Printed Name</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Title</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" }}>Date</span>
+                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px",textAlign: "left" }}>Title</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", fontSize:"20px" ,textAlign: "left"}}>Date</span>
                  </div>
                </td>
               </tr>
