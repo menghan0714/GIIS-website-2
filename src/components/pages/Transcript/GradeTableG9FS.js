@@ -114,15 +114,17 @@ function GradeTableG9FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isStat
 };
 
  const addButtonStyle = {
-  border: "none", // 移除按鈕的外框
-  backgroundColor: "#007bff", // 按鈕背景顏色
-  color: "white", // 按鈕文字顏色
-  borderRadius: "50%", // 讓按鈕變成圓形
-  width: "40px", // 設定按鈕寬度
-  height: "40px", // 設定按鈕高度
-  fontSize: "20px", // 文字大小
-  cursor: "pointer", // 滑鼠移上去顯示為可點擊的樣式
-  display: "flex", // 讓內容居中對齊
+  border: "none", 
+  backgroundColor: "rgba(43, 61, 109, 0.8)",
+  color: "white", 
+  borderRadius: "50%", 
+  width: "40px", 
+  height: "40px",
+  fontSize: "20px", 
+  cursor: "pointer", 
+  display: "flex", 
+  justifyContent: "center",
+  alignItems: "center", 
 };
 
 
