@@ -112,7 +112,20 @@ const handleGradeChange = (index, field, value) => {
     return [...beforeTotals, newRow, ...afterTotals];
   });
 };
-
+  
+  const addButtonStyle = {
+   border: "none", 
+   backgroundColor: "rgba(43, 61, 109, 0.8)",
+   color: "white", 
+   borderRadius: "50%", 
+   width: "20px", 
+   height: "20px",
+   fontSize: "20px", 
+   cursor: "pointer", 
+   display: "flex", 
+   justifyContent: "center",
+   alignItems: "center", 
+  };
 
 
   return (
@@ -224,7 +237,9 @@ const handleGradeChange = (index, field, value) => {
         ))}
       </tbody>
     </table>
-    <button onClick={addRow}>Add Row</button>
+    <button style={addButtonStyle} onClick={addRow}>
+      +
+    </button>
    </>
   );
 }
