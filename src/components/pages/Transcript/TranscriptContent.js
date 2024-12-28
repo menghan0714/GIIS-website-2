@@ -455,9 +455,9 @@ const exportToPDF = () => {
                   justifyContent: "end",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>Shiyu Zhang, Ph.D.</span>
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>President</span>
+                  <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>{usDate}</span>
                 </div>
                    
                 <div
@@ -469,6 +469,20 @@ const exportToPDF = () => {
                   marginTop: "1%", 
                   }}
                  ></div>
+
+                 <div
+                  style={{
+                   display: "grid",
+                   gridTemplateColumns: "170px 170px 170px", // 定義三個列
+                   columnGap: "15px", // 每列之間固定 20px 的間距
+                   alignItems: "center", // 垂直居中
+                   justifyContent: "end",
+                  }}
+                  >
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Title</span>
+                   <span style={{ whiteSpace: "nowrap", fontWeight: "bold", fontFamily: "Times New Roman, Times, serif" }}>Date</span>
+                 </div>
                </td>
               </tr>
              </tbody>
