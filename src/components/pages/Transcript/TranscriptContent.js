@@ -449,9 +449,10 @@ const exportToPDF = () => {
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "auto auto auto", // 定義三個列
+      gridTemplateColumns: "100px 150px 200px", // 定義三個列
       columnGap: "20px", // 每列之間固定 20px 的間距
       alignItems: "center", // 垂直居中
+      justifyContent: "end",
     }}
   >
     <span style={{ whiteSpace: "nowrap" }}>Shiyu Zhang, Ph.D.</span>
