@@ -456,9 +456,9 @@ const exportToPDF = () => {
                   fontSize: "14px",
                  }}
                  >
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "left" }}>Shiyu Zhang, Ph.D.</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>Shiyu Zhang, Ph.D.</span>
                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>President</span>
-                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "right" }}>{usDate}</span>
+                  <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>{usDate}</span>
                 </div>
                    
                 <div
@@ -482,9 +482,9 @@ const exportToPDF = () => {
                    fontSize: "14px",
                   }}
                   >
-                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "left" }}>Printed Name</span>
+                   <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Printed Name</span>
                    <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Title</span>
-                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , textAlign: "right" }}>Date</span>
+                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif" , textAlign: "center" }}>Date</span>
                  </div>
                </td>
               </tr>
