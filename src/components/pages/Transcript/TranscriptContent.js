@@ -453,7 +453,7 @@ const exportToPDF = () => {
                   columnGap: "35px", // 每列之間固定 20px 的間距
                   alignItems: "center", // 垂直居中
                   justifyContent: "end",
-                  fontSize: "14px",
+                  fontSize: "12px",
                  }}
                  >
                   <span style={{ whiteSpace: "nowrap",fontFamily: "Times New Roman, Times, serif", textAlign: "center" }}>Shiyu Zhang, Ph.D.</span>
@@ -479,7 +479,7 @@ const exportToPDF = () => {
                    alignItems: "center", // 垂直居中
                    justifyContent: "end",
                    marginTop: "1%",
-                   fontSize: "14px",
+                   fontSize: "12px",
                   }}
                   >
                    <span style={{ whiteSpace: "nowrap", fontFamily: "Times New Roman, Times, serif",textAlign: "center" }}>Printed Name</span>
