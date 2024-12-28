@@ -440,6 +440,7 @@ const exportToPDF = () => {
               backgroundColor: "black",
               marginLeft: "20px", // 增加文字與橫槓間距
               verticalAlign: "-5px",  // 讓橫槓底部和文字底部貼齊
+              position: "relative",
              }}
             ></span>
            </td>
@@ -449,9 +450,7 @@ const exportToPDF = () => {
            <td colSpan={3} style={{ textAlign: "right", padding: "20px 0" }}>
             <div
             style={{
-             display: "flex",
-             justifyContent: "flex-end", // 和上方右對齊保持一致
-             alignItems: "center",
+             position: "absolute",
              borderBottom: "1px solid black",
              width: "40%",
              }}
