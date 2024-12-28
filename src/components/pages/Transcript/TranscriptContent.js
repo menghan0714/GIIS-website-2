@@ -466,6 +466,7 @@ const exportToPDF = () => {
                   borderBottom: "2px solid black",
                   width: "40%",
                   right: 0,
+                  marginTop: "1%", 
                   }}
                  ></div>
                </td>
