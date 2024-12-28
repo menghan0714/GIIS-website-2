@@ -423,11 +423,31 @@ const exportToPDF = () => {
               <td style={thTd}>
                 <strong>Cumulative Credits:</strong>  {cumulativeCredits.toFixed(1)}
               </td>
-          </tr>
-        </tbody>
-       </table>         
-     </div>
-    </div>
+             </tr>
+           </tbody>
+          </table>
+          <div style={{ marginTop: "3%", textAlign: "center" }}>
+           <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+            <tbody>
+             <tr>
+              <td colSpan={3} style={{ textAlign: "right", padding: "10px 0",fontFamily: "Times New Roman, Times, serif", fontSize: "20px"  }}>
+               <span style={{ whiteSpace: "nowrap" }}>Official(s) Certifying Transcript:</span>
+               <span
+                style={{
+                display: "inline-block",
+                height: "1px",
+                width: "40%", // 調整橫槓寬度，減小到 30%
+                backgroundColor: "black",
+                marginLeft: "20px", // 增加文字與橫槓間距
+                verticalAlign: "-5px",  // 讓橫槓底部和文字底部貼齊
+                }}
+                ></span>
+               </td>
+              </tr>
+             </tbody>
+           </table>         
+          </div>
+        </div>
     );
 }
 
