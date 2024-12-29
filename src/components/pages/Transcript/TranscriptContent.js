@@ -306,7 +306,7 @@ const exportToPDF = () => {
               </td>
 
              <td style={thTd}>
-               Birth Date: <input type="date" style={input} placeholder="Date/Month/Year" onFocus={(e) => e.target.blur()} onClick={(e) => e.target.showPicker()} /> <!-- 顯示靜態日約-->
+               Birth Date: <input type="date" style={input} lang="en-GB" /> <!-- 顯示靜態日約-->
              </td>
              
               <td style={thTd}>
