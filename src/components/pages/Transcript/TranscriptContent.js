@@ -306,7 +306,7 @@ const exportToPDF = () => {
               </td>
 
              <td style={thTd}>
-               Birth Date: <input type="date" style={input} lang="en-GB" /> 
+               Birth Date: <input type="date" style={input}  /> 
              </td>
              
               <td style={thTd}>
