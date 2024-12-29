@@ -82,9 +82,17 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
-      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
+      if (newRows.some((row) => row.name !== "Semester Totals" && row.name.trim() !== "")) {
+        // 如果有其他有效課程，更新總學分
+        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+        newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
+      } else {
+        // 如果所有課程名稱都被清空，將學分設為空白
+        newRows[totalsIndex].weightedGPA = "-";
+        newRows[totalsIndex].unweightedGPA = "-";
+        newRows[totalsIndex].totalCredits = "";
+      }
     }
 
     // 將兩個 GPA 傳遞給父元件
