@@ -25,7 +25,7 @@ function GradeTableG12FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     'F': { weighted: 0.0, unweighted: 0.0 },
   };
   
-const calculateTotals = (updatedRows) => {
+  const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
@@ -50,7 +50,7 @@ const calculateTotals = (updatedRows) => {
 
 
 
-const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => {
   
   setRows((prevRows) => {
     const newRows = [...prevRows];
@@ -58,21 +58,30 @@ const handleGradeChange = (index, field, value) => {
     // 更新欄位值
     newRows[index][field] = value;
 
-    // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
-    if (field === "grade" || field === "name" || field === "credits" || field === "type") {
+    if (field === "name" && value.trim() === "") {
+      // 當 Course Name 被清空時，重置該列的其他欄位為初始值
+      newRows[index] = {
+        name: "",
+        type: "",
+        credits: "",
+        grade: "",
+        weightedGPA: "-",
+        unweightedGPA: "-"
+      };
+    } else if (field === "grade" || field === "credits" || field === "type") {
+      // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
       const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 判斷 Type 和 Course name 是否包含 "AP"
+      // 判斷 Type 和 Course Name 是否包含 "AP"
       const typeHasAP = newRows[index].type?.includes("AP") || false;
       const nameHasAP = newRows[index].name?.includes("AP") || false;
 
       if (typeHasAP && nameHasAP) {
-        // 當 Type 和 Course name 都包含 "AP"
+        // 當 Type 和 Course Name 都包含 "AP"
         newRows[index].unweightedGPA = gpa.unweighted;
-        newRows[index].weightedGPA =
-          gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
       } else {
-        // 當 Type 或 Course name 中有任意一個不包含 "AP"
+        // 當 Type 或 Course Name 中有任意一個不包含 "AP"
         newRows[index].unweightedGPA = gpa.unweighted;
         newRows[index].weightedGPA = gpa.unweighted;
       }
@@ -82,9 +91,17 @@ const handleGradeChange = (index, field, value) => {
     const totals = calculateTotals(newRows);
     const totalsIndex = newRows.findIndex((row) => row.name === "Semester Totals");
     if (totalsIndex !== -1) {
-      newRows[totalsIndex].weightedGPA = totals.weightedGPA;
-      newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
+      if (newRows.some((row) => row.name !== "Semester Totals" && row.name.trim() !== "")) {
+        // 如果有其他有效課程，更新總學分
+        newRows[totalsIndex].weightedGPA = totals.weightedGPA;
+        newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+        newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
+      } else {
+        // 如果所有課程名稱都被清空，將學分設為空白
+        newRows[totalsIndex].weightedGPA = "-";
+        newRows[totalsIndex].unweightedGPA = "-";
+        newRows[totalsIndex].totalCredits = "";
+      }
     }
 
     // 將兩個 GPA 傳遞給父元件
@@ -112,20 +129,20 @@ const handleGradeChange = (index, field, value) => {
     return [...beforeTotals, newRow, ...afterTotals];
   });
 };
-  
-  const addButtonStyle = {
-   border: "none", 
-   backgroundColor: "rgba(43, 61, 109, 0.8)",
-   color: "white", 
-   borderRadius: "50%", 
-   width: "20px", 
-   height: "20px",
-   fontSize: "20px", 
-   cursor: "pointer", 
-   display: "flex", 
-   justifyContent: "center",
-   alignItems: "center", 
-  };
+
+ const addButtonStyle = {
+  border: "none", 
+  backgroundColor: "rgba(43, 61, 109, 0.8)",
+  color: "white", 
+  borderRadius: "50%", 
+  width: "20px", 
+  height: "20px",
+  fontSize: "20px", 
+  cursor: "pointer", 
+  display: "flex", 
+  justifyContent: "center",
+  alignItems: "center", 
+};
 
 
   return (
