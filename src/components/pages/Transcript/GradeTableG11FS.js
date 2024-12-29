@@ -29,11 +29,15 @@ const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
+    let hasValidCredits = false;
 
     updatedRows.forEach((row) => {
     if (row.name !== "Semester Totals") {
       const credits = parseFloat(row.credits) || 0; // 檢查 Credits 是否有效，無效時設為 0
       totalCredits += credits;
+      if (credits > 0) {
+       hasValidCredits = true; // 確認是否有有效學分
+      }
 
       if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
         totalWeightedGPA += row.weightedGPA * credits;
@@ -44,8 +48,9 @@ const calculateTotals = (updatedRows) => {
 
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
     const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
+    const totalCreditsDisplay = hasValidCredits ? totalCredits.toFixed(1) : "";
 
-    return { weightedGPA, unweightedGPA, totalCredits };
+    return { weightedGPA, unweightedGPA, totalCredits: totalCreditsDisplay };
   }; 
 
 
@@ -58,8 +63,10 @@ const handleGradeChange = (index, field, value) => {
     // 更新欄位值
     newRows[index][field] = value;
 
-   if (field === "name" && value.trim() === "") {
+    if (field === "name" && value.trim() === "") {
       newRows[index].credits = ""; // 將學分欄位清空
+      newRows[index].weightedGPA = "-"; // 清空 Weighted GPA
+      newRows[index].unweightedGPA = "-"; // 清空 Unweighted GPA
     }
 
     // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
