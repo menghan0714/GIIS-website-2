@@ -95,7 +95,7 @@ const handleGradeChange = (index, field, value) => {
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
-      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
+      newRows[totalsIndex].credits = totals.totalCredits;
     }
 
     // 將兩個 GPA 傳遞給父元件
