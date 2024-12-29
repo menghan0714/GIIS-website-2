@@ -25,7 +25,7 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     'F': { weighted: 0.0, unweighted: 0.0 },
   };
   
-const calculateTotals = (updatedRows) => {
+  const calculateTotals = (updatedRows) => {
     let totalWeightedGPA = 0;
     let totalUnweightedGPA = 0;
     let totalCredits = 0;
@@ -34,7 +34,6 @@ const calculateTotals = (updatedRows) => {
     if (row.name !== "Semester Totals") {
       const credits = parseFloat(row.credits) || 0; // 檢查 Credits 是否有效，無效時設為 0
       totalCredits += credits;
-
 
       if (row.weightedGPA !== "-" && row.unweightedGPA !== "-") {
         totalWeightedGPA += row.weightedGPA * credits;
@@ -46,12 +45,12 @@ const calculateTotals = (updatedRows) => {
     const weightedGPA = totalCredits > 0 ? (totalWeightedGPA / totalCredits).toFixed(2) : "-";
     const unweightedGPA = totalCredits > 0 ? (totalUnweightedGPA / totalCredits).toFixed(2) : "-";
 
-    return { weightedGPA, unweightedGPA, totalCredits};
+    return { weightedGPA, unweightedGPA, totalCredits };
   }; 
 
 
 
-const handleGradeChange = (index, field, value) => {
+ const handleGradeChange = (index, field, value) => {
   
   setRows((prevRows) => {
     const newRows = [...prevRows];
@@ -85,6 +84,7 @@ const handleGradeChange = (index, field, value) => {
     if (totalsIndex !== -1) {
       newRows[totalsIndex].weightedGPA = totals.weightedGPA;
       newRows[totalsIndex].unweightedGPA = totals.unweightedGPA;
+      newRows[totalsIndex].totalCredits = totals.totalCredits.toFixed(1);
     }
 
     // 將兩個 GPA 傳遞給父元件
@@ -112,20 +112,20 @@ const handleGradeChange = (index, field, value) => {
     return [...beforeTotals, newRow, ...afterTotals];
   });
 };
-  
-  const addButtonStyle = {
-   border: "none", 
-   backgroundColor: "rgba(43, 61, 109, 0.8)",
-   color: "white", 
-   borderRadius: "50%", 
-   width: "20px", 
-   height: "20px",
-   fontSize: "20px", 
-   cursor: "pointer", 
-   display: "flex", 
-   justifyContent: "center",
-   alignItems: "center", 
- };
+
+ const addButtonStyle = {
+  border: "none", 
+  backgroundColor: "rgba(43, 61, 109, 0.8)",
+  color: "white", 
+  borderRadius: "50%", 
+  width: "20px", 
+  height: "20px",
+  fontSize: "20px", 
+  cursor: "pointer", 
+  display: "flex", 
+  justifyContent: "center",
+  alignItems: "center", 
+};
 
 
   return (
@@ -245,3 +245,4 @@ const handleGradeChange = (index, field, value) => {
 }
 
 export default GradeTableG11FS;
+
