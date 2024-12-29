@@ -58,21 +58,30 @@ function GradeTableG11FS({ semesterName, onTotalsUpdate, onSemesterUpdate, isSta
     // 更新欄位值
     newRows[index][field] = value;
 
-    // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
-    if (field === "grade" || field === "name" || field === "credits" || field === "type") {
+    if (field === "name" && value.trim() === "") {
+      // 當 Course Name 被清空時，重置該列的其他欄位為初始值
+      newRows[index] = {
+        name: "",
+        type: "",
+        credits: "",
+        grade: "",
+        weightedGPA: "-",
+        unweightedGPA: "-"
+      };
+    } else if (field === "grade" || field === "credits" || field === "type") {
+      // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
       const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
 
-      // 判斷 Type 和 Course name 是否包含 "AP"
+      // 判斷 Type 和 Course Name 是否包含 "AP"
       const typeHasAP = newRows[index].type?.includes("AP") || false;
       const nameHasAP = newRows[index].name?.includes("AP") || false;
 
       if (typeHasAP && nameHasAP) {
-        // 當 Type 和 Course name 都包含 "AP"
+        // 當 Type 和 Course Name 都包含 "AP"
         newRows[index].unweightedGPA = gpa.unweighted;
-        newRows[index].weightedGPA =
-          gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
+        newRows[index].weightedGPA = gpa.unweighted !== "-" ? gpa.unweighted + 1 : "-";
       } else {
-        // 當 Type 或 Course name 中有任意一個不包含 "AP"
+        // 當 Type 或 Course Name 中有任意一個不包含 "AP"
         newRows[index].unweightedGPA = gpa.unweighted;
         newRows[index].weightedGPA = gpa.unweighted;
       }
