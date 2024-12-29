@@ -58,6 +58,10 @@ const handleGradeChange = (index, field, value) => {
     // 更新欄位值
     newRows[index][field] = value;
 
+   if (field === "name" && value.trim() === "") {
+      newRows[index].credits = ""; // 將學分欄位清空
+    }
+
     // 如果欄位是成績、課程名稱、學分或類型，重新計算 GPA
     if (field === "grade" || field === "name" || field === "credits" || field === "type") {
       const gpa = gradeToGpa[newRows[index].grade?.toUpperCase()] || { weighted: "-", unweighted: "-" };
