@@ -196,6 +196,12 @@ li {
     height: 100%; 
 }
 
+@media (max-width: 1024px) {
+ .dropdownMenu2 {
+    min-height: 130px !important;
+  }
+}
+
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
