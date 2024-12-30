@@ -42,6 +42,7 @@ li {
     position: relative;
     font-size: 30px;
     font-family: Inter, sans-serif;
+    font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
 }
@@ -102,6 +103,7 @@ li {
   align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif;
+  font-weight: bold;
   font-size: 30px !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
@@ -168,6 +170,7 @@ li {
     justify-content: space-between; 
     height: 100%; 
     font-family: Inter, sans-serif;
+    font-weight: bold;
 }
 
 .dropdownMenu2{
@@ -194,6 +197,7 @@ li {
     justify-content: space-between; 
     height: 100%; 
     font-family: Inter, sans-serif;
+    font-weight: bold;
 }
 
 @media (max-width: 1024px) {
