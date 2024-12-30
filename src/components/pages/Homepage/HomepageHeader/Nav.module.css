@@ -90,7 +90,7 @@ li {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  width: 100% !important; 
+  width: 90% !important; 
   margin: 0 auto !important;
 }
 
@@ -108,6 +108,19 @@ li {
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
+}
+
+@media (min-width: 1920px) {
+  .navitem {
+    width: 295.02px !important;
+  }
+}
+
+/* 當螢幕寬度為1024px時，調整寬度 */
+@media (max-width: 1024px) {
+  .navitem {
+    width: 200px !important;
+  }
 }
 
 .navLink{
