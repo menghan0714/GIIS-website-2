@@ -155,10 +155,10 @@
 /* 當螢幕寬度為1024px時，調整寬度 */
 @media (max-width: 1024px) {
   .navitem {
-    width: 100px !important;
+    width: 300px !important;
   }
   .navitem2 {
-    width: 100px !important;
+    width: 300px !important;
   }
 }
 
