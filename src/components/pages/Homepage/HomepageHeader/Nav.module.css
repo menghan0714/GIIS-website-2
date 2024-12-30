@@ -42,7 +42,6 @@ li {
     position: relative;
     font-size: 30px;
     font-family: Times New Roman, Times, serif;
-    font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
 }
@@ -104,7 +103,6 @@ li {
   text-align: center !important;
   font-family: Times New Roman, Times, serif !important;
   font-size: 30px !important;
-  font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
