@@ -157,6 +157,13 @@
     width: 65% !important;
   }
 }
+  .navitem {
+    width: 200px !important;
+  }
+  .navitem2 {
+    width: 200px !important;
+  }
+}
 
 
 .navitem2 {
