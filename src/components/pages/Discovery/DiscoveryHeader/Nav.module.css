@@ -120,7 +120,7 @@
 
 .customnavbar {
   display: flex !important;
-  justify-content: flex-end; !important;
+  justify-content: flex-end !important;
   align-items: center !important;
   width: 55% !important;
   margin: 0 20px 0 auto;
