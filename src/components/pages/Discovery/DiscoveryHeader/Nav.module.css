@@ -143,6 +143,25 @@
   text-overflow: ellipsis;
 }
 
+@media (min-width: 1920px) {
+  .navitem {
+    width: 295.02px !important;
+  }
+  .navitem2 {
+    width: 295.02px !important;
+  }
+}
+
+/* 當螢幕寬度為1024px時，調整寬度 */
+@media (max-width: 1024px) {
+  .navitem {
+    width: 200px !important;
+  }
+  .navitem2 {
+    width: 200px !important;
+  }
+}
+
 .navitem2 {
   position: relative;
   width: 295.02px !important; /* 固定寬度 */
