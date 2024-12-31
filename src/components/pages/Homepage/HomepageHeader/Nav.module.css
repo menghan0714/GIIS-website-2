@@ -170,7 +170,7 @@ html[lang="en"] .navitem {
     z-index: 300;
     position: absolute;
     top: 75px;
-    left: 0 !important;
+    left: 0 ;
     min-width: 300px; /* 設置最小寬度 */
     min-height: 160px;
     background-color: rgba(43, 61, 109, 1);
@@ -197,7 +197,7 @@ html[lang="en"] .navitem {
     z-index: 300;
     position: absolute;
     top: 75px;
-    left: 0 !important;
+    left: 0 ;
     min-width: 300px; /* 設置最小寬度 */
     min-height: 135px;
     background-color: rgba(43, 61, 109, 1);
