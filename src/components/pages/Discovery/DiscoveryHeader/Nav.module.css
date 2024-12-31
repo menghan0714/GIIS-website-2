@@ -212,37 +212,47 @@ li {
   text-overflow: ellipsis;
 }
 
+.navitem2 {
+  position: relative;
+  width: 295.02px !important; /* 固定寬度 */
+  height: 70px !important; /* 固定高度 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: bold !important;
+  white-space: nowrap; /* 防止換行 */
+  overflow: visible !important; /* 隱藏超出的文字 */
+  text-overflow: ellipsis;
+  top: 10px;
+}
+
 html[lang="zh"] .navitem {
-  font-size: 30px; /* 中文的字體大小 */
+  font-size: 26px !important; /* 中文的字體大小 */
 }
 
-html[lang="en"] .navitem {
-  font-size: 30px; /* 中文的字體大小 */
+html[lang="zh"] .navitem2 {
+  font-size: 28px !important; /* 中文的字體大小 */
 }
 
-@media (min-width: 1920px) {
-  .navitem {
-    width: 295.02px !important;
-  }
-}
-
-/* 當螢幕寬度為1024px時，調整寬度 */
 @media (max-width: 1024px) {
+  .customnavbar {
+    width: 75% !important;
+  }
+
   .navitem {
     width: 200px !important;
   }
-    
+  .navitem2 {
+    width: 200px !important;
+  }
   html[lang="en"] .navitem {
-    font-size: 26px  !important; /* 中文的字體大小 */
+    font-size: 22px !important; /* 中文的字體大小 */
   }
-
-  .dropdownMenu{
-    font-size: 23px  !important;
-  }
-
- .dropdownMenu2{
-    font-size: 23px  !important;
-    left: -30px !important;
+  html[lang="en"] .navitem2 {
+    font-size: 24px !important; /* 中文的字體大小 */
   }
 }
 
@@ -251,7 +261,25 @@ html[lang="en"] .navitem {
     color: #ffffff ;
     text-decoration: none ;
     padding-bottom: 6px ;
-}     
+}    
+
+.navText{
+    position: relative;
+    color: #ffffff ;
+    text-decoration: none ;
+    padding-bottom: 10px ;
+} 
+
+.navText::after {
+  content: ''; /* 生成底槓的虛擬元素 */
+  position: absolute;
+  left: 50%;             /* 左邊對齊中心點 */
+  transform: translateX(-50%);  /* 將元素水平居中 */
+  bottom: 10px;
+  width: 60%;            /* 設置底槓的寬度為 80% */
+  height: 4px;
+  background-color: #ffffff;
+}
 
 .navLink::after {
   content: ''; /* 生成底槓的虛擬元素 */
@@ -323,11 +351,6 @@ html[lang="en"] .navitem {
     font-weight: bold;
 }
 
-@media (max-width: 1024px) {
- .dropdownMenu2 {
-    min-height: 125px !important;
-  }
-}
 
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
