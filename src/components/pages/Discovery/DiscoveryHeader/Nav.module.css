@@ -132,6 +132,12 @@
   margin: 0 20px 0 auto;
 }
 
+@media (min-width: 1024px) {
+  .customnavbar {
+    left: 50%;
+  }
+}
+
 .navitem {
   position: relative;
   width: 295.02px !important; /* 固定寬度 */
