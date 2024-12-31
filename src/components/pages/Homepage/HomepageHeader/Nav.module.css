@@ -88,7 +88,7 @@ li {
 
 .customnavbar {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: flex-start;
   align-items: center !important;
   width: 90% !important; 
   margin: 0 auto !important;
