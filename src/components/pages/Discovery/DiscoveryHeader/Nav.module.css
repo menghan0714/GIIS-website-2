@@ -176,10 +176,10 @@ html[lang="zh"] .navitem2 {
 
 @media (min-width: 1024px) {
   .navitem {
-    width: 100px !important;
+    width: 300px !important;
   }
   .navitem2 {
-    width: 100px !important;
+    width: 300px !important;
   }
 }
 
