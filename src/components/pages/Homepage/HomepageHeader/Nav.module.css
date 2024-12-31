@@ -28,6 +28,13 @@ li {
     border-bottom: 20px solid rgba(43, 61, 109, 1);
 }
 
+@media (max-width: 768px) {
+  .leftSlideMenu {
+    height: 500px;
+    width: 300px;  
+  }
+}
+
 
 .leftSlideItems {
     list-style: none;
@@ -51,6 +58,7 @@ li {
   .leftSlideItems li {
     font-size: 30px
   }
+}
 
 .leftSlideItems li a {
     text-decoration: none; /* 移除下划线 */
@@ -74,6 +82,7 @@ li {
   .leftSlideItems li::before {
     font-size: 30px
   }
+}
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
