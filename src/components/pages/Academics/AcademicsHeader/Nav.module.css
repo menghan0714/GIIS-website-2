@@ -10,18 +10,22 @@
     height: 70px;
 }
 
+li {
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+}
 
 .leftSlideMenu {
     position: absolute;
     top: 70px;
     left: 0;
     height: 400px;
-    width: 200px;
+    width: 200px; 
     background-color: #ffffff; /* 左拉選單背景顏色 */
-    transform: translateX(-1000％);
+    transform: translateX(-100％);
+    opacity: 1;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 200;
-    border-bottom: 10px solid rgba(43, 61, 109, 1);
+    border-bottom: 20px solid rgba(43, 61, 109, 1);
 }
 
 @media (max-width: 768px) {
@@ -38,10 +42,6 @@
   }
 }
 
-.leftSlideMenu.show {
-    transform: translateX(0); 
-    opacity: 1;
-}
 
 .leftSlideItems {
     list-style: none;
@@ -53,14 +53,14 @@
     position: relative;
     padding: 30px;
     top: 50%;
-    position: relative;
     font-size: 16px;
+    position: relative;
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
-    cursor: pointer;
 }
+
 
 @media (max-width: 768px) {
   .leftSlideItems li {
@@ -70,42 +70,35 @@
 
 @media (max-width: 736px) {
   .leftSlideItems li {
+    font-size: 16px
+  }
+}
+
+.leftSlideItems p  {
+    position: relative;
+    top: 50%;
+    font-size: 16px;
+    padding: 30px;
+    position: relative;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .leftSlideItems p {
+    font-size: 30px
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems p {
     font-size: 16px
   }
 }
 
 .leftSlideItems li a {
-    text-decoration: none; /* 移除下划线 */
-    color: inherit; /* 保持与 li 一致的颜色 */
-    display: block;
-    width: 100%;
-}
-
-.leftSlideItems p {
-    position: relative;
-    padding: 30px;
-    top: 50%;
-    position: relative;
-    font-size: 30px;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.6);
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .leftSlideItems p {
-    font-size: 30px
-  }
-}
-
-@media (max-width: 736px) {
-  .leftSlideItems p {
-    font-size: 16px
-  }
-}
-
-.leftSlideItems p a {
     text-decoration: none; /* 移除下划线 */
     color: inherit; /* 保持与 li 一致的颜色 */
     display: block;
@@ -118,7 +111,7 @@
     content: '>';
     position: absolute;
     top: 50%;
-    left: 250px; /* 控制箭頭距離右邊的距離 */
+    left: 160px; /* 控制箭頭距離右邊的距離 */
     font-size: 20px;
     font-weight: bold;
     color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
@@ -143,10 +136,10 @@
     content: '>';
     position: absolute;
     top: 50%;
-    left: 250px; /* 控制箭頭距離右邊的距離 */
-    font-size: 30px;
+    left: 160px; /* 控制箭頭距離右邊的距離 */
+    font-size: 20px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.6); /* 箭頭顏色 */
+    color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
@@ -173,6 +166,7 @@
     width: 25%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
     background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
+    opacity: 0.6; /* 底線的透明度 */
 }
 
 .leftSlideItems p::after {
@@ -183,9 +177,17 @@
     bottom: 10px; /* 與文字的間距，可自行調整 */
     width: 25%; /* 底線的寬度，可根據需求調整 */
     height: 2px; /* 底線的高度 */
-    background-color: rgba(43, 61, 109, 0.6); /* 底線的顏色 */
+    background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
+    opacity: 0.6; /* 底線的透明度 */
 }
 
+.leftSlideItems li:hover {
+    color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
+}
+
+.leftSlideItems li:hover::before {
+    color: rgba(0, 0, 0, 0.6); /* 改变箭头颜色 */
+}
 
 .customnavbar {
   display: flex !important;
@@ -256,6 +258,12 @@ html[lang="zh"] .navitem2 {
   }
 }
 
+.navLink{
+    position: relative;
+    color: #ffffff ;
+    text-decoration: none ;
+    padding-bottom: 6px ;
+}    
 
 .navText{
     position: relative;
@@ -263,29 +271,6 @@ html[lang="zh"] .navitem2 {
     text-decoration: none ;
     padding-bottom: 10px ;
 } 
-    
-.navLink{
-    position: relative;
-    color: #ffffff ;
-    text-decoration: none ;
-    padding-bottom: 6px ;
-} 
-
-.navLink::after {
-  content: ''; /* 生成底槓的虛擬元素 */
-  position: absolute;
-  left: 50%;             /* 左邊對齊中心點 */
-  transform: translateX(-50%);  /* 將元素水平居中 */
-  bottom: 0;
-  width: 60%;            /* 設置底槓的寬度為 80% */
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
-  transition: width 0.3s ease;
-}
-
-.navLink:hover::after {
-  width: 100%; /* 使底槓在懸停時保持全寬 */
-}
 
 .navText::after {
   content: ''; /* 生成底槓的虛擬元素 */
@@ -298,11 +283,27 @@ html[lang="zh"] .navitem2 {
   background-color: #ffffff;
 }
 
+.navLink::after {
+  content: ''; /* 生成底槓的虛擬元素 */
+  position: absolute;
+  left: 50%;             /* 左邊對齊中心點 */
+  transform: translateX(-50%);  /* 將元素水平居中 */
+  bottom: 0;
+  width: 60%;            /* 設置底槓的寬度為 80% */
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.35); /* 灰色的底槓 */
+  transition: width 0.3s ease; /* 增加動畫效果 */
+}
+
+.navLink:hover::after {
+  width: 100%; /* 使底槓在懸停時保持全寬 */
+}
+
 .dropdownMenu{
     z-index: 300;
     position: absolute;
     top: 75px;
-    left: 0;
+    left: 0 ;
     min-width: 250px; /* 設置最小寬度 */
     min-height: 135px;
     background-color: rgba(43, 61, 109, 1);
@@ -315,19 +316,21 @@ html[lang="zh"] .navitem2 {
     list-style: none;
     color: #FFFFFF;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;  
     justify-content: space-between; 
     height: 100%; 
+    font-family: Inter, sans-serif;
+    font-weight: bold;
 }
 
 .dropdownMenu2{
     z-index: 300;
     position: absolute;
     top: 75px;
-    left: 0;
+    left: 0 ;
     min-width: 260px; /* 設置最小寬度 */
     min-height: 110px;
     background-color: rgba(43, 61, 109, 1);
@@ -340,7 +343,7 @@ html[lang="zh"] .navitem2 {
     list-style: none;
     color: #FFFFFF;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;  
@@ -349,6 +352,7 @@ html[lang="zh"] .navitem2 {
     font-family: Inter, sans-serif;
     font-weight: bold;
 }
+
 
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
