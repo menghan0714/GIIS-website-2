@@ -139,10 +139,11 @@
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
+  font-size: 22px ;
 }
 
 @media (min-width: 1920px) {
-  .Discoverynavitem {
+  .navitem {
     width: 295.02px !important;
   }
   .navitem2 {
@@ -162,22 +163,31 @@
   .navitem2 {
     width: 200px ;
   }
+
+  html[lang="en"] .navitem {
+  font-size: 20px; /* 中文的字體大小 */
+ }
+
+  html[lang="en"] .navitem2 {
+  font-size: 22px; /* 中文的字體大小 */
+ }
+
+  html[lang="zh"] .navitem {
+  font-size: 18px; /* 中文的字體大小 */
+  }
+
+   html[lang="zh"] .navitem2 {
+  font-size: 20px; /* 中文的字體大小 */
+  }
 }
 
 html[lang="zh"] .navitem {
   font-size: 26px; /* 中文的字體大小 */
 }
 
-html[lang="en"] .navitem {
-  font-size: 22px ; /* 中文的字體大小 */
-}
 
 html[lang="zh"] .navitem2 {
   font-size: 28px; /* 中文的字體大小 */
-}
-
-html[lang="en"] .navitem2 {
-  font-size: 24px; /* 中文的字體大小 */
 }
 
 .navitem2 {
@@ -194,6 +204,7 @@ html[lang="en"] .navitem2 {
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
   top: 10px;
+  font-size: 24px;
 }
 
 .navText{
