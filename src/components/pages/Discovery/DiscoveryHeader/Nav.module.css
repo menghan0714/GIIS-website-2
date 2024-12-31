@@ -125,10 +125,9 @@
 
 .customnavbar {
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: space-between !important;
   align-items: center !important;
   width: 55% !important;
-  left: 40% !important;
   margin: 0 20px 0 auto;
 }
 
@@ -177,7 +176,7 @@ html[lang="zh"] .navitem2 {
 
 @media (min-width: 1024px) {
   .customnavbar{
-    left: 35% !important;
+    width: 30%  !important;
   }
   .navitem {
     width: 200px !important;
