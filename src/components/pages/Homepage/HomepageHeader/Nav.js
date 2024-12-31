@@ -6,7 +6,7 @@ function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 834);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 876);
 
     useEffect(() => {
         document.documentElement.lang = language === 'en' ? 'en' : 'zh';
@@ -19,7 +19,7 @@ function Nav({ language }) {
         };
 
          const handleResize = () => {
-        setIsMobile(window.innerWidth <= 834);
+        setIsMobile(window.innerWidth <= 876);
        };
 
 
