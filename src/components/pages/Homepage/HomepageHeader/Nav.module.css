@@ -130,9 +130,16 @@ html[lang="en"] .navitem {
   }
     
   html[lang="en"] .navitem {
-  font-size: 26px !important; /* 中文的字體大小 */
+    font-size: 26px  !important; /* 中文的字體大小 */
   }
-}
+
+  .dropdownMenu{
+    font-size: 23px  !important;
+  }
+
+ .dropdownMenu2{
+    font-size: 23px  !important;
+  }
 
 .navLink{
     position: relative;
