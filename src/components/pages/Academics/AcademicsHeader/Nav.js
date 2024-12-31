@@ -9,6 +9,10 @@ function Nav({ language }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh';
+    }, [language]);
+
+    useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
             setIsNavSticky(currentScrollPosition > 150);
