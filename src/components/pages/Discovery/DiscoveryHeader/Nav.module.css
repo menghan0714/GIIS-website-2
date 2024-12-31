@@ -264,7 +264,7 @@ html[lang="zh"] .navitem2 {
     position: absolute;
     top: 75px;
     left: 0;
-    min-width: 225px; /* 設置最小寬度 */
+    min-width: 250px; /* 設置最小寬度 */
     min-height: 110px;
     background-color: rgba(43, 61, 109, 1);
     padding: 10px 0;
