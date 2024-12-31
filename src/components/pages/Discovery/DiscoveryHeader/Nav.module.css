@@ -165,6 +165,13 @@
   }
 }
 
+html[lang="zh"] .navitem {
+  font-size: 28px !important; /* 中文的字體大小 */
+}
+
+html[lang="zh"] .navitem2 {
+  font-size: 30px !important; /* 中文的字體大小 */
+}
 
 .navitem2 {
   position: relative;
