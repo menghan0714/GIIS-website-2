@@ -132,11 +132,7 @@
   margin: 0 20px 0 auto;
 }
 
-@media (min-width: 1024px) {
-  .customnavbar {
-    width: 70% !important;
-  }
-}
+
 
 .navitem {
   position: relative;
@@ -178,6 +174,7 @@ html[lang="zh"] .navitem {
 html[lang="zh"] .navitem2 {
   font-size: 28px; /* 中文的字體大小 */
 }
+
 
 .navText{
     position: relative;
