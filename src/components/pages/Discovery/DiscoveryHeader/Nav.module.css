@@ -154,7 +154,7 @@
 /* 當螢幕寬度為1024px時，調整寬度 */
 @media (max-width: 1024px) {
   .customnavbar {
-    width: 60% !important;
+    width: 80% !important;
   }
 
   .navitem {
