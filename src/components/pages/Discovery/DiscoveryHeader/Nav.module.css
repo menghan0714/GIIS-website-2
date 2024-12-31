@@ -135,7 +135,6 @@
   align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif !important;
-  font-size: 22px !important;
   font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
@@ -169,8 +168,16 @@ html[lang="zh"] .navitem {
   font-size: 28px !important; /* 中文的字體大小 */
 }
 
+html[lang="en"] .navitem {
+  font-size: 22px !important; /* 中文的字體大小 */
+}
+
 html[lang="zh"] .navitem2 {
   font-size: 30px !important; /* 中文的字體大小 */
+}
+
+html[lang="en"] .navitem2 {
+  font-size: 25px !important; /* 中文的字體大小 */
 }
 
 .navitem2 {
@@ -182,7 +189,6 @@ html[lang="zh"] .navitem2 {
   align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif !important;
-  font-size: 25px !important;
   font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
