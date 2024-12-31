@@ -15,8 +15,8 @@
     position: absolute;
     top: 70px;
     left: 0;
-    height: 500px;
-    width: 300px;
+    height: 400px;
+    width: 200px;
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-1000％);
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -27,6 +27,20 @@
 .leftSlideMenu.show {
     transform: translateX(0); 
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .leftSlideMenu {
+    height: 500px;
+    width: 300px;  
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideMenu {
+    height: 400px;
+    width: 200px;  
+  }
 }
 
 .leftSlideItems {
@@ -40,12 +54,24 @@
     padding: 30px;
     top: 50%;
     position: relative;
-    font-size: 30px;
+    font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .leftSlideItems li {
+    font-size: 30px
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems li {
+    font-size: 16px
+  }
 }
 
 .leftSlideItems li a {
@@ -60,11 +86,23 @@
     padding: 30px;
     top: 50%;
     position: relative;
-    font-size: 30px;
+    font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .leftSlideItems p {
+    font-size: 30px
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems p {
+    font-size: 16px
+  }
 }
 
 .leftSlideItems p a {
@@ -75,29 +113,55 @@
 }
 
 
-
 .leftSlideItems li::before {
     content: '>';
     position: absolute;
     top: 50%;
     left: 250px; /* 控制箭頭距離右邊的距離 */
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
+
+@media (max-width: 768px) {
+  .leftSlideItems li::before {
+    font-size: 30px;
+    left: 250px;
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems li::before {
+    font-size: 20px;
+    left: 160px;
+  }
+}
 
 .leftSlideItems p::before {
     content: '>';
     position: absolute;
     top: 50%;
     left: 250px; /* 控制箭頭距離右邊的距離 */
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
+@media (max-width: 768px) {
+  .leftSlideItems p::before {
+    font-size: 30px;
+    left: 250px;
+  }
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems p::before {
+    font-size: 20px;
+    left: 160px;
+  }
+}
 
 
 .leftSlideItems li::after {
