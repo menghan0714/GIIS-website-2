@@ -81,37 +81,6 @@
     width: 100%;
 }
 
-.leftSlideItems p {
-    position: relative;
-    padding: 30px;
-    top: 50%;
-    position: relative;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.6);
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .leftSlideItems p {
-    font-size: 30px
-  }
-}
-
-@media (max-width: 736px) {
-  .leftSlideItems p {
-    font-size: 16px
-  }
-}
-
-.leftSlideItems p a {
-    text-decoration: none; /* 移除下划线 */
-    color: inherit; /* 保持与 li 一致的颜色 */
-    display: block;
-    width: 100%;
-}
-
 
 .leftSlideItems li::before {
     content: '>';
@@ -138,31 +107,6 @@
   }
 }
 
-.leftSlideItems p::before {
-    content: '>';
-    position: absolute;
-    top: 50%;
-    left: 250px; /* 控制箭頭距離右邊的距離 */
-    font-size: 20px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.6); /* 箭頭顏色 */
-    transform: translateY(-50%);
-} 
-
-@media (max-width: 768px) {
-  .leftSlideItems p::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
-
-@media (max-width: 736px) {
-  .leftSlideItems p::before {
-    font-size: 20px;
-    left: 160px;
-  }
-}
-
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
@@ -175,16 +119,6 @@
     background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
 }
 
-.leftSlideItems p::after {
-    content: ""; /* 用空白內容來生成底線 */
-    position: absolute;
-    transform: translateX(-50%);
-    left: 25%;
-    bottom: 10px; /* 與文字的間距，可自行調整 */
-    width: 25%; /* 底線的寬度，可根據需求調整 */
-    height: 2px; /* 底線的高度 */
-    background-color: rgba(43, 61, 109, 0.6); /* 底線的顏色 */
-}
 
 
 .customnavbar {
