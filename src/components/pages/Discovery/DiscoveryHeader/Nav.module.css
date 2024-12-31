@@ -177,7 +177,7 @@ html[lang="zh"] .navitem2 {
 
 @media (min-width: 1024px) {
   .customnavbar{
-   width: 65% !important;
+    left: 35%;
   }
   .navitem {
     width: 200px !important;
