@@ -46,7 +46,11 @@ function Nav({ language }) {
              {isMobile && (
              <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
               <ul className={styles.leftSlideItems}>
-                <p>{language === 'en' ? 'DISCOVERY' : '发现我们'}</p>
+                <li onClick={() => navigate("/discovery")}>
+                 <Link to="/discovery" onClick={(e) => e.preventDefault()}>
+                  {language === 'en' ? 'DISCOVERY' : '发现我们'}
+                 </Link>
+                </li>
                 <li onClick={() => navigate("/academics")}>
                     <Link to="/academics" onClick={(e) => e.preventDefault()}>
                         {language === 'en' ? 'ACADEMICS' : '学术'}
