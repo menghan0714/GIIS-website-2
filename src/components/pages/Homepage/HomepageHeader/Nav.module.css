@@ -58,7 +58,7 @@ li {
     content: '>';
     position: absolute;
     top: 50%;
-    left: 100px; /* 控制箭頭距離右邊的距離 */
+    left: 160px; /* 控制箭頭距離右邊的距離 */
     font-size: 16px;
     font-weight: bold;
     color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
