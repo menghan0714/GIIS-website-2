@@ -128,33 +128,33 @@
 
 .navitem {
   position: relative;
-  width: 295.02px !important; /* 固定寬度 */
-  height: 70px !important; /* 固定高度 */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  font-family: Inter, sans-serif !important;
-  font-weight: bold !important;
+  width: 295.02px ; /* 固定寬度 */
+  height: 70px ; /* 固定高度 */
+  display: flex ;
+  justify-content: center ;
+  align-items: centert;
+  text-align: center ;
+  font-family: Inter, sans-serif ;
+  font-weight: bold ;
   white-space: nowrap; /* 防止換行 */
-  overflow: visible !important; /* 隱藏超出的文字 */
+  overflow: visible ; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
   font-size: 22px ;
 }
 
 @media (min-width: 1920px) {
   .navitem {
-    width: 295.02px !important;
+    width: 295.02px ;
   }
   .navitem2 {
-    width: 295.02px !important;
+    width: 295.02px ;
   }
 }
 
 /* 當螢幕寬度為1024px時，調整寬度 */
 @media (max-width: 1024px) {
   .customnavbar {
-    width: 75% !important;
+    width: 75% ;
   }
 
   .navitem {
@@ -192,16 +192,16 @@ html[lang="zh"] .navitem2 {
 
 .navitem2 {
   position: relative;
-  width: 295.02px !important; /* 固定寬度 */
-  height: 70px !important; /* 固定高度 */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  font-family: Inter, sans-serif !important;
-  font-weight: bold !important;
+  width: 295.02px; /* 固定寬度 */
+  height: 70px ; /* 固定高度 */
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  text-align: center ;
+  font-family: Inter, sans-serif ;
+  font-weight: bold;
   white-space: nowrap; /* 防止換行 */
-  overflow: visible !important; /* 隱藏超出的文字 */
+  overflow: visible; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
   top: 10px;
   font-size: 24px;
