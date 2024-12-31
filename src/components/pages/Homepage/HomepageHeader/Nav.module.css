@@ -91,7 +91,7 @@ li {
     transform: translateY(-50%);
 } 
 
-@media (max-width: 834px) {
+@media (max-width: 876px) {
   .leftSlideItems li::before {
     font-size: 30px;
     left: 250px;
