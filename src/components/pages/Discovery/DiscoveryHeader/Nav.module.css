@@ -119,27 +119,27 @@
 }
 
 .customnavbar {
-  display: flex ;
-  justify-content: flex-end ;
-  align-items: center ;
-  width: 55% ;
-  margin: 0 20px 0 auto;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: 55% !important;
+  margin: 0 20px 0 auto !important;
 }
 
 .navitem {
   position: relative;
-  width: 295.02px ; /* 固定寬度 */
-  height: 70px ; /* 固定高度 */
-  display: flex ;
-  justify-content: center ;
-  align-items: centert ;
-  text-align: center ;
-  font-family: Inter, sans-serif;
-  font-weight: bold ;
-  white-space: nowrap ; /* 防止換行 */
-  overflow: visible ; /* 隱藏超出的文字 */
-  text-overflow: ellipsis;
-  font-size: 22px ;
+  width: 295.02px !important; /* 固定寬度 */
+  height: 70px !important; /* 固定高度 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: centert !important;
+  text-align: center !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: bold !important;
+  white-space: nowrap !important; /* 防止換行 */
+  overflow: visible !important; /* 隱藏超出的文字 */
+  text-overflow: ellipsis !important;
+  font-size: 22px;
 }
 
 @media (min-width: 1920px) {
@@ -191,19 +191,19 @@ html[lang="zh"] .navitem2 {
 }
 
 .navitem2 {
-  position: relative;
-  width: 295.02px; /* 固定寬度 */
-  height: 70px ; /* 固定高度 */
-  display: flex ;
-  justify-content: center ;
-  align-items: center ;
-  text-align: center ;
-  font-family: Inter, sans-serif ;
-  font-weight: bold;
-  white-space: nowrap; /* 防止換行 */
-  overflow: visible; /* 隱藏超出的文字 */
-  text-overflow: ellipsis;
-  top: 10px;
+  position: relative !important;
+  width: 295.02px !important; /* 固定寬度 */
+  height: 70px  !important; /* 固定高度 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: bold !important;
+  white-space: nowrap !important; /* 防止換行 */
+  overflow: visible !important; /* 隱藏超出的文字 */
+  text-overflow: ellipsis !important;
+  top: 10px ;
   font-size: 24px;
 }
 
