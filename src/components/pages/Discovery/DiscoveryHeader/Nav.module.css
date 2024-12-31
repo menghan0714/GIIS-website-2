@@ -44,6 +44,7 @@
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -63,6 +64,7 @@
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
 }
 
 .leftSlideItems p a {
@@ -71,6 +73,8 @@
     display: block;
     width: 100%;
 }
+
+
 
 .leftSlideItems li::before {
     content: '>';
@@ -118,12 +122,14 @@
     background-color: rgba(43, 61, 109, 0.6); /* 底線的顏色 */
 }
 
+
 .customnavbar {
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: space-between !important;
   align-items: center !important;
   width: 55% !important;
-  margin: 0 20px 0 auto !important;
+  left: 40%;
+  margin: 0 20px 0 auto;
 }
 
 .navitem {
@@ -132,79 +138,31 @@
   height: 70px !important; /* 固定高度 */
   display: flex !important;
   justify-content: center !important;
-  align-items: centert !important;
+  align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif !important;
+  font-size: 22px !important;
   font-weight: bold !important;
-  white-space: nowrap !important; /* 防止換行 */
+  white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
-  text-overflow: ellipsis !important;
-  font-size: 22px;
-}
-
-@media (min-width: 1920px) {
-  .navitem {
-    width: 295.02px ;
-  }
-  .navitem2 {
-    width: 295.02px ;
-  }
-}
-
-/* 當螢幕寬度為1024px時，調整寬度 */
-@media (max-width: 1024px) {
-  .customnavbar {
-    width: 75% ;
-  }
-
-  .navitem {
-    width: 150px ;
-  }
-  .navitem2 {
-    width: 150px ;
-  }
-
-  html[lang="en"] .navitem {
-  font-size: 20px; /* 中文的字體大小 */
- }
-
-  html[lang="en"] .navitem2 {
-  font-size: 22px; /* 中文的字體大小 */
- }
-
-  html[lang="zh"] .navitem {
-  font-size: 18px; /* 中文的字體大小 */
-  }
-
-   html[lang="zh"] .navitem2 {
-  font-size: 20px; /* 中文的字體大小 */
-  }
-}
-
-html[lang="zh"] .navitem {
-  font-size: 26px; /* 中文的字體大小 */
-}
-
-
-html[lang="zh"] .navitem2 {
-  font-size: 28px; /* 中文的字體大小 */
+  text-overflow: ellipsis;
 }
 
 .navitem2 {
-  position: relative !important;
+  position: relative;
   width: 295.02px !important; /* 固定寬度 */
-  height: 70px  !important; /* 固定高度 */
+  height: 70px !important; /* 固定高度 */
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   text-align: center !important;
   font-family: Inter, sans-serif !important;
+  font-size: 25px !important;
   font-weight: bold !important;
-  white-space: nowrap !important; /* 防止換行 */
+  white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
-  text-overflow: ellipsis !important;
-  top: 10px ;
-  font-size: 24px;
+  text-overflow: ellipsis;
+  top: 10px;
 }
 
 .navText{
@@ -273,44 +231,12 @@ html[lang="zh"] .navitem2 {
     height: 100%; 
 }
 
-.dropdownMenu2{
-    z-index: 300;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    min-width: 250px; /* 設置最小寬度 */
-    min-height: 135px;
-    background-color: rgba(43, 61, 109, 1);
-    padding: 10px 0;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    opacity: 0; 
-    visibility: hidden; 
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    border-left: 6px solid rgba(213, 168, 54, 1);
-    list-style: none;
-    color: #FFFFFF;
-    text-align: left;
-    font-size: 20px;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;  
-    justify-content: space-between; 
-    height: 100%; 
-}
-
-
-@media (max-width: 1024px) {
- .dropdownMenu2 {
-    min-height: 125px ;
-  }
-}
-
 .navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
 }
 
-.navitem:hover .dropdownMenu2 { 
+.navitem:hover .dropdownMenu { 
     opacity: 1; 
     visibility: visible; 
 }
