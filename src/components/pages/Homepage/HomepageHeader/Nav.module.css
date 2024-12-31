@@ -129,7 +129,7 @@ html[lang="en"] .navitem {
     width: 200px !important;
   }
     
-  html[lang="en"] .homepage .navitem {
+  html[lang="en"] .navitem {
   font-size: 26px !important; /* 中文的字體大小 */
   }
 }
