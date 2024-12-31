@@ -8,6 +8,6 @@
 
 @media (max-width: 1024px) { /* 手機或平板等小螢幕 */
   .button {
-    font-size: 14px; /* 調整字體大小 */
+    font-size: 15px; /* 調整字體大小 */
   }
 }
