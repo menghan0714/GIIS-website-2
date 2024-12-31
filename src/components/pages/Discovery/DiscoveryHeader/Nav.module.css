@@ -157,27 +157,27 @@
   }
 
   .Discoverynavitem {
-    width: 200px !important;
+    width: 200px ;
   }
   .Discoverynavitem2 {
-    width: 200px !important;
+    width: 200px ;
   }
 }
 
 html[lang="zh"] .Discoverynavitem {
-  font-size: 28px !important; /* 中文的字體大小 */
+  font-size: 28px; /* 中文的字體大小 */
 }
 
 html[lang="en"] .Discoverynavitem {
-  font-size: 22px !important; /* 中文的字體大小 */
+  font-size: 22px ; /* 中文的字體大小 */
 }
 
 html[lang="zh"] .Discoverynavitem2 {
-  font-size: 30px !important; /* 中文的字體大小 */
+  font-size: 30px; /* 中文的字體大小 */
 }
 
 html[lang="en"] .Discoverynavitem2 {
-  font-size: 25px !important; /* 中文的字體大小 */
+  font-size: 25px; /* 中文的字體大小 */
 }
 
 .Discoverynavitem2 {
