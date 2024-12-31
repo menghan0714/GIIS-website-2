@@ -111,6 +111,12 @@ li {
 }
 
 @media (min-width: 1920px) {
+  .customnavbar {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1920px) {
   .navitem {
     width: 295.02px !important;
   }
