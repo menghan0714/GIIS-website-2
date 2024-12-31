@@ -110,10 +110,6 @@ li {
   text-overflow: ellipsis;
 }
 
-html[lang="zh"] .navitem {
-  font-size: 30px !important; /* 中文的字體大小 */
-}
-
 
 @media (min-width: 1920px) {
   .navitem {
