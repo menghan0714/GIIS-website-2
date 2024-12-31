@@ -175,6 +175,14 @@ html[lang="zh"] .navitem2 {
   font-size: 28px; /* 中文的字體大小 */
 }
 
+@media (min-width: 1024px) {
+  .navitem {
+    width: 200px !important;
+  }
+  .navitem2 {
+    width: 200px !important;
+  }
+}
 
 .navText{
     position: relative;
