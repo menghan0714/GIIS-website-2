@@ -82,7 +82,7 @@ li {
     position: relative;
     font-family: Inter, sans-serif;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
 }
 
@@ -139,7 +139,7 @@ li {
     left: 160px; /* 控制箭頭距離右邊的距離 */
     font-size: 20px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.7); /* 箭頭顏色 */
+    color: rgba(0, 0, 0, 0.5); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
