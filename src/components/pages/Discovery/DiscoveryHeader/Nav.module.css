@@ -206,8 +206,9 @@ li {
   justify-content: center !important;
   align-items: center !important;
   text-align: center !important;
-  font-family: Inter, sans-serif;
-  font-weight: bold;
+  font-family: Inter, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
