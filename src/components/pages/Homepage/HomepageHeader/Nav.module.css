@@ -47,6 +47,11 @@ li {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .leftSlideItems li {
+    font-size: 30px
+  }
+
 .leftSlideItems li a {
     text-decoration: none; /* 移除下划线 */
     color: inherit; /* 保持与 li 一致的颜色 */
@@ -65,6 +70,10 @@ li {
     transform: translateY(-50%);
 } 
 
+@media (max-width: 768px) {
+  .leftSlideItems li::before {
+    font-size: 30px
+  }
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
