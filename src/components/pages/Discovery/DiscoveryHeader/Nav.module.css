@@ -281,8 +281,12 @@
   }
 }
 
-
 .navitem:hover .dropdownMenu { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+.navitem:hover .dropdownMenu2 { 
     opacity: 1; 
     visibility: visible; 
 }
