@@ -104,7 +104,7 @@ li {
   text-align: center !important;
   font-family: Inter, sans-serif;
   font-weight: bold;
-  font-size: 26px !important;
+  font-size: 30px !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
@@ -114,11 +114,6 @@ html[lang="zh"] .navitem {
   font-size: 30px !important; /* 中文的字體大小 */
 }
 
-@media (min-width: 1920px) {
-  .customnavbar {
-    width: 80%;
-  }
-}
 
 @media (min-width: 1920px) {
   .navitem {
@@ -131,6 +126,10 @@ html[lang="zh"] .navitem {
   .navitem {
     width: 200px !important;
   }
+    
+  html[lang="en"] .navitem {
+  font-size: 26px !important; /* 中文的字體大小 */
+}
 }
 
 .navLink{
