@@ -9,6 +9,10 @@ function Nav({ language }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh';
+    }, [language]);
+
+    useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
             setIsNavSticky(currentScrollPosition > 150);
@@ -84,7 +88,7 @@ function Nav({ language }) {
                 </li>
                 <li className={styles.navitem}>
                    <Link className={styles.navLink} to="/support">{language === 'en' ? 'STUDENT SUPPORT' : '学生支持'}</Link>
-                   <ul className={styles.dropdownMenu}>
+                   <ul className={styles.dropdownMenu2}>
                      <li>Academic Advising</li>
                      <li>Life Counseling</li>
                    </ul>

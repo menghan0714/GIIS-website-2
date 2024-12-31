@@ -304,10 +304,10 @@ const exportToPDF = () => {
                 Name:<input type="text" style={input} placeholder="Enter Name" />
               </div>
               </td>
-             
-              <td style={thTd}>
-               Birth Date: <input type="date" style={input} />
-              </td>
+
+             <td style={thTd}>
+               Birth Date: <input type="date" style={input}  /> 
+             </td>
              
               <td style={thTd}>
                Gender: 
