@@ -174,12 +174,16 @@ html[lang="zh"] .navitem2 {
   font-size: 28px; /* 中文的字體大小 */
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
+  .customnavbar {
+    width: 75% !important;
+  }
+
   .navitem {
-    width: 300px !important;
+    width: 200px !important;
   }
   .navitem2 {
-    width: 300px !important;
+    width: 200px !important;
   }
 }
 
