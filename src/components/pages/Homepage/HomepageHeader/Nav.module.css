@@ -104,12 +104,18 @@ li {
   text-align: center !important;
   font-family: Inter, sans-serif;
   font-weight: bold;
-  font-size: 30px !important;
   white-space: nowrap; /* 防止換行 */
   overflow: visible !important; /* 隱藏超出的文字 */
   text-overflow: ellipsis;
 }
 
+html[lang="zh"] .navitem {
+  font-size: 30px; /* 中文的字體大小 */
+}
+
+html[lang="en"] .navitem {
+  font-size: 30px; /* 中文的字體大小 */
+}
 
 @media (min-width: 1920px) {
   .navitem {
@@ -125,7 +131,7 @@ li {
     
   html[lang="en"] .homepage .navitem {
   font-size: 26px !important; /* 中文的字體大小 */
-}
+  }
 }
 
 .navLink{
