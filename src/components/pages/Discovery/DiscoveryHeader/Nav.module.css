@@ -61,6 +61,7 @@ li {
     text-decoration: none;
 }
 
+
 @media (max-width: 768px) {
   .leftSlideItems li {
     font-size: 30px
@@ -71,6 +72,18 @@ li {
   .leftSlideItems li {
     font-size: 16px
   }
+}
+
+.leftSlideItems p {
+    position: relative;
+    padding: 30px;
+    top: 50%;
+    position: relative;
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
 }
 
 .leftSlideItems li a {
