@@ -134,7 +134,7 @@
 
 @media (min-width: 1024px) {
   .customnavbar {
-    left: 50% !important;
+    width: 50% !important;
   }
 }
 
