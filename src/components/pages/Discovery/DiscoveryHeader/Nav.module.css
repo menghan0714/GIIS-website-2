@@ -126,7 +126,7 @@
   margin: 0 20px 0 auto;
 }
 
-.Discoverynavitem {
+.navitem {
   position: relative;
   width: 295.02px !important; /* 固定寬度 */
   height: 70px !important; /* 固定高度 */
@@ -145,7 +145,7 @@
   .Discoverynavitem {
     width: 295.02px !important;
   }
-  .Discoverynavitem2 {
+  .navitem2 {
     width: 295.02px !important;
   }
 }
@@ -156,31 +156,31 @@
     width: 75% !important;
   }
 
-  .Discoverynavitem {
+  .navitem {
     width: 200px ;
   }
-  .Discoverynavitem2 {
+  .navitem2 {
     width: 200px ;
   }
 }
 
-html[lang="zh"] .Discoverynavitem {
-  font-size: 28px; /* 中文的字體大小 */
+html[lang="zh"] .navitem {
+  font-size: 26px; /* 中文的字體大小 */
 }
 
-html[lang="en"] .Discoverynavitem {
+html[lang="en"] .navitem {
   font-size: 22px ; /* 中文的字體大小 */
 }
 
-html[lang="zh"] .Discoverynavitem2 {
-  font-size: 30px; /* 中文的字體大小 */
+html[lang="zh"] .navitem2 {
+  font-size: 28px; /* 中文的字體大小 */
 }
 
-html[lang="en"] .Discoverynavitem2 {
-  font-size: 25px; /* 中文的字體大小 */
+html[lang="en"] .navitem2 {
+  font-size: 24px; /* 中文的字體大小 */
 }
 
-.Discoverynavitem2 {
+.navitem2 {
   position: relative;
   width: 295.02px !important; /* 固定寬度 */
   height: 70px !important; /* 固定高度 */
