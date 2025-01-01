@@ -7,6 +7,7 @@ function Nav({ language }) {
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+    const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
 
     useEffect(() => {
         document.documentElement.lang = language === 'en' ? 'en' : 'zh';
@@ -32,6 +33,18 @@ function Nav({ language }) {
         };
     }, []);
 
+    useEffect(() => {
+    const handleOrientationChange = () => {
+      setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
+    };
+
+    window.addEventListener('resize', handleOrientationChange);
+
+    return () => {
+      window.removeEventListener('resize', handleOrientationChange);
+    };
+  }, []);
+
     
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
@@ -46,7 +59,13 @@ function Nav({ language }) {
 
             {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
-                <ul className={styles.leftSlideItems}>
+             <ul
+               className={styles.leftSlideItems}
+               style={{
+                 flexDirection: isLandscape ? 'row' : 'column', // 動態改變方向
+                 justifyContent: isLandscape ? 'space-around' : 'flex-start',
+               }}
+               >
                   <li onClick={() => navigate("/discovery")}>
                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
                     {language === 'en' ? 'DISCOVERY' : '发现我们'}
