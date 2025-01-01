@@ -31,7 +31,7 @@ li {
 
 @media (max-width: 900px) {
   .leftSlideMenu {
-    height: 525px;
+    height: 100%;
     width: 300px;  
   }
 }
