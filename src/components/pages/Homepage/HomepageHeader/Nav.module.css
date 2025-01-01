@@ -48,7 +48,6 @@ li {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-direction: column;
 }
 
 .leftSlideItems li  {
@@ -61,14 +60,6 @@ li {
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
     
-}
-
-@media (orientation: landscape) {
-    .leftSlideItems  {
-        margin: 0 10px; /* 添加項目之間的間距 */
-        flex-direction: row; /* 水平排列 */
-        justify-content: space-around;
-    }
 }
 
 @media (max-width: 900px) {
