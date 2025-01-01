@@ -163,7 +163,7 @@ html[lang="en"] .navitem {
 }
 
 /* 當螢幕寬度為1024px時，調整寬度 */
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .navitem {
     width: 200px !important;
   }
@@ -259,7 +259,7 @@ html[lang="en"] .navitem {
     font-weight: bold;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
  .dropdownMenu2 {
     min-height: 125px !important;
   }
