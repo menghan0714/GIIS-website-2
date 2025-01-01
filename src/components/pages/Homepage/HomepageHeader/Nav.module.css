@@ -28,7 +28,7 @@ li {
     border-bottom: 20px solid rgba(43, 61, 109, 1);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 876px) {
   .leftSlideMenu {
     height: 525px;
     width: 300px;  
@@ -61,7 +61,7 @@ li {
     text-decoration: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 876px) {
   .leftSlideItems li {
     font-size: 30px
   }
@@ -91,7 +91,7 @@ li {
     transform: translateY(-50%);
 } 
 
-@media (max-width: 900px) {
+@media (max-width: 876px) {
   .leftSlideItems li::before {
     font-size: 30px;
     left: 250px;
