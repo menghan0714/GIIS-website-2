@@ -121,7 +121,7 @@ li {
 }
 
 @media (max-width: 736px) {
-  .leftSlideItems li::before {
+  .leftSlideItems li::after {
      left: 15px
   }
 }
