@@ -120,6 +120,12 @@ li {
     opacity: 0.6; /* 底線的透明度 */
 }
 
+@media (max-width: 736px) {
+  .leftSlideItems li::before {
+     left: 15px
+  }
+}
+
 .leftSlideItems li:hover {
     color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
 }
