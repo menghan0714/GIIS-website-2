@@ -11,6 +11,12 @@
     position: fixed;
 }
 
+@media (max-width: 736px) {
+  .customBackground {
+    background-color: rgba(1, 1, 1, 0.8);
+  }
+}
+
 li {
   cursor: pointer; /* 鼠标悬停时显示手型 */
 }
@@ -40,6 +46,7 @@ li {
   .leftSlideMenu {
     height: 1000px;
     width: 100%;  
+    background-color: rgba(43, 61, 109, 1);
   }
 }
 
@@ -70,7 +77,8 @@ li {
 
 @media (max-width: 736px) {
   .leftSlideItems li {
-    font-size: 16px
+    font-size: 16px;
+    color: rgba(1, 1, 1, 1);
   }
 }
 
