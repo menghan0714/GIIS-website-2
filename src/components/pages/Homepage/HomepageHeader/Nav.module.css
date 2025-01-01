@@ -63,6 +63,14 @@ li {
     
 }
 
+@media (orientation: landscape) {
+    .leftSlideItems li {
+        margin: 0 10px; /* 添加項目之間的間距 */
+        flex-direction: row; /* 水平排列 */
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 900px) {
   .leftSlideItems li {
     font-size: 30px
