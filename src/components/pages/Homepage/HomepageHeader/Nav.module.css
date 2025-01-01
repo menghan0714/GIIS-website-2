@@ -8,6 +8,7 @@
 .customBackground {
     background-color: rgba(43, 61, 109, 0.8);
     height: 70px;
+    position: fixed;
 }
 
 li {
