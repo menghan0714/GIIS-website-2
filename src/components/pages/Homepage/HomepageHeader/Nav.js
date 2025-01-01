@@ -59,14 +59,11 @@ function Nav({ language }) {
 
             {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`} id="navbarLeftMenu">
-             <ul
-               className={styles.leftSlideItems}
-               style={{
+             <ul className={styles.leftSlideItems}>
+                  <li onClick={() => navigate("/discovery")} style={{
                  flexDirection: isLandscape ? 'row' : 'column', // 動態改變方向
                  justifyContent: isLandscape ? 'space-around' : 'flex-start',
-               }}
-               >
-                  <li onClick={() => navigate("/discovery")}>
+               }}>
                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
                     {language === 'en' ? 'DISCOVERY' : '发现我们'}
                    </Link>
