@@ -156,11 +156,6 @@ html[lang="en"] .navitem {
   font-size: 30px; /* 中文的字體大小 */
 }
 
-@media (min-width: 1920px) {
-  .navitem {
-    width: 295.02px !important;
-  }
-}
 
 /* 當螢幕寬度為1024px時，調整寬度 */
 @media (max-width: 1080px) {
