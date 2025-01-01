@@ -31,14 +31,14 @@ li {
 
 @media (max-width: 900px) {
   .leftSlideMenu {
-    height: 100%;
+    height: 525px;
     width: 300px;  
   }
 }
 
 @media (max-width: 736px) {
   .leftSlideMenu {
-    height: 100%;
+    height: 1000px;
     width: 100%;  
   }
 }
