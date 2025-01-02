@@ -6,7 +6,7 @@ function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
     const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
     
 
@@ -21,7 +21,7 @@ function Nav({ language }) {
         };
 
         const handleResize = () => {
-        setIsMobile(window.innerWidth <= 900);
+        setIsMobile(window.innerWidth <= 1000);
        };
 
         const handleOrientationChange = () => {
