@@ -71,7 +71,7 @@ li {
 }
 
 @media (orientation: landscape) and (max-width: 1000px) {
-    .leftSlideMenu {
+    .leftSlideMenu2 {
      top: 50px
    }
     .customBackground {
