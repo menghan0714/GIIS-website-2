@@ -33,6 +33,10 @@ li {
 
 
 @media (max-width: 736px) {
+    .buttonstyle{
+      width: 40px;
+      height: 40px
+    }
    .customBackground {
      background-color: rgba(43, 61, 109, 0.8);
      height: 50px;
@@ -71,6 +75,10 @@ li {
 }
 
 @media (orientation: landscape) and (max-width: 1000px) {
+    .buttonstyle{
+      width: 40px;
+      height: 40px
+    }
     .leftSlideMenu2 {
      top: 50px
    }
