@@ -76,8 +76,12 @@ li {
     }
 
     .leftSlideItems li::before {
-     display: none
-  }
+        display: none
+    }
+
+    .leftSlideItems li::after {
+        left:20%
+    }
 }
 
 .leftSlideItems li  {
