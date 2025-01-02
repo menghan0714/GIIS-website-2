@@ -55,7 +55,8 @@ function Nav({ language }) {
 
             {isMobile && (
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`}  id="navbarLeftMenu">
-             <ul className={styles.leftSlideItems} >
+             <ul className={styles.leftSlideItems}  style={{flexDirection: isLandscape ? 'row' : 'column', // 動態切換水平或垂直排列
+              justifyContent: isLandscape ? 'space-around' : 'flex-start'}}>
                   <li onClick={() => navigate("/discovery")} >
                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
                     {language === 'en' ? 'DISCOVERY' : '发现我们'}
