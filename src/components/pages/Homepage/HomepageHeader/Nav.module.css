@@ -62,7 +62,7 @@ li {
     margin: 0;
 }
 
-@media (orientation: landscape) and (max-width: 736px) {
+@media (orientation: landscape) and (max-width: 1000px) {
     .leftSlideItems {
         display: flex;
         flex-direction: row;
