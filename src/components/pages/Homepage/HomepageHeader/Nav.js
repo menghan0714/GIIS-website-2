@@ -7,6 +7,7 @@ function Nav({ language }) {
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+    const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
     
 
     useEffect(() => {
@@ -19,22 +20,28 @@ function Nav({ language }) {
             setIsNavSticky(currentScrollPosition > 150);
         };
 
-         const handleResize = () => {
+        const handleResize = () => {
         setIsMobile(window.innerWidth <= 900);
        };
 
+        const handleOrientationChange = () => {
+         setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
+        };
 
+        
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleOrientationChange);
        
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleOrientationChange);
  
         };
     }, []);
 
-  
+
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
     };
@@ -47,7 +54,7 @@ function Nav({ language }) {
             </button>
 
             {isMobile && (
-            <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`}  id="navbarLeftMenu">
+            <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`}  id="navbarLeftMenu">
              <ul className={styles.leftSlideItems} >
                   <li onClick={() => navigate("/discovery")} >
                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
