@@ -32,14 +32,6 @@ li {
 }
 
 
-
-@media (max-width: 900px) {
-  .leftSlideMenu {
-    height: 525px;
-    width: 300px;  
-  }
-}
-
 @media (max-width: 736px) {
   .leftSlideMenu {
     height: 300px;
@@ -52,7 +44,7 @@ li {
     justify-content: space-between;
     top: 70px;
     left: 0;
-    height: 200px;
+    height: 100px;
     width: 100%; 
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-100％);
@@ -69,7 +61,7 @@ li {
     margin: 0;
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 736px) {
     .leftSlideItems {
         display: flex;
         flex-direction: row;
