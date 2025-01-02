@@ -33,6 +33,10 @@ li {
 
 
 @media (max-width: 736px) {
+   .customBackground {
+     background-color: rgba(43, 61, 109, 0.8);
+     height: 50px;
+    }
   .leftSlideMenu {
     height: 300px;
     width: 100%;  
@@ -63,6 +67,10 @@ li {
 }
 
 @media (orientation: landscape) and (max-width: 1000px) {
+    .customBackground {
+       background-color: rgba(43, 61, 109, 0.8);
+       height: 50px;
+    }
     .leftSlideItems {
         display: flex;
         flex-direction: row;
