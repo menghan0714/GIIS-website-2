@@ -151,7 +151,8 @@ li {
 
 @media (max-width: 736px) {
   .leftSlideItems li::after {
-     left: 18%
+     left: 18%;
+     width: 15%;
   }
 }
 
