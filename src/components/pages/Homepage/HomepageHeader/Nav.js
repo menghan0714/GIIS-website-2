@@ -47,7 +47,7 @@ function Nav({ language }) {
             </button>
 
             {isMobile && (
-            <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''}}  id="navbarLeftMenu">
+            <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${styles.leftSlideMenu}`}  id="navbarLeftMenu">
              <ul className={styles.leftSlideItems} >
                   <li onClick={() => navigate("/discovery")} >
                    <Link to="/discovery" onClick={(e) => e.preventDefault()}>
