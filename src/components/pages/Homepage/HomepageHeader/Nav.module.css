@@ -71,6 +71,8 @@ li {
 
     .leftSlideItems li {
         margin: 0 10px; /* 添加項目之間的間距 */
+        font-size: 16px;
+        padding: 20px;
     }
 }
 
