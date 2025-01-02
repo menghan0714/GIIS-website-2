@@ -76,11 +76,11 @@ li {
     }
 
     .leftSlideItems li::before {
-        display: none
+        display: none !important;
     }
 
     .leftSlideItems li::after {
-        left:20%
+        left:20% !important;
     }
 }
 
@@ -128,6 +128,13 @@ li {
     left: 250px;
   }
 }
+
+@media (max-width: 736px) {
+  .leftSlideItems li::before {
+     display: none
+  }
+}
+
 
 
 .leftSlideItems li::after {
