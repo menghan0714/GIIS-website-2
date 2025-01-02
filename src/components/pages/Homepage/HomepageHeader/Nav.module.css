@@ -70,9 +70,9 @@ li {
     }
 
     .leftSlideItems li {
-        margin: 0 10px; /* 添加項目之間的間距 */
-        font-size: 16px;
-        padding: 20px;
+        margin: 0 10px !important; /* 添加項目之間的間距 */
+        font-size: 16px !important;
+        padding: 20px !important;
     }
 }
 
@@ -80,7 +80,7 @@ li {
     position: relative;
     padding: 30px;
     top: 50%;
-    font-size: 16px;
+    font-size: 30px;
     font-family: Inter, sans-serif;
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
@@ -88,11 +88,6 @@ li {
     
 }
 
-@media (max-width: 1000px) {
-  .leftSlideItems li {
-    font-size: 30px
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems li {
