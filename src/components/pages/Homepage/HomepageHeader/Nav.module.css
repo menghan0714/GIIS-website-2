@@ -46,6 +46,19 @@ li {
   }
 }
 
+.leftSlideMenu2 {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: 200px;
+    width: 100%; 
+    background-color: #ffffff; /* 左拉選單背景顏色 */
+    transform: translateX(-100％);
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 200;
+    border-bottom: 20px solid rgba(43, 61, 109, 1);
+}
 
 .leftSlideItems {
     list-style: none;
