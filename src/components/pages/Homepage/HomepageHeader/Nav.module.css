@@ -81,6 +81,7 @@ li {
 
     .leftSlideItems li::after {
         left:20% !important;
+        width: 25% !important;
     }
 }
 
