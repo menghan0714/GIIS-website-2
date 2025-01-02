@@ -125,11 +125,6 @@ li {
   }
 }
 
-@media (max-width: 736px) {
-  .leftSlideItems li::before {
-     display: none
-  }
-}
 
 .leftSlideItems li::after {
     content: ""; /* 用空白內容來生成底線 */
@@ -148,6 +143,8 @@ li {
      left: 18%
   }
 }
+
+
 
 .leftSlideItems li:hover {
     color: rgba(0, 0, 0, 0.6); /* 改变文字颜色 */
