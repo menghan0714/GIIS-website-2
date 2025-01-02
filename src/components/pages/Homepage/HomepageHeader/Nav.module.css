@@ -9,7 +9,6 @@
     background-color: rgba(43, 61, 109, 0.8);
     height: 70px;
     position: fixed;
-    z-index: 200;
 }
 
 
@@ -155,6 +154,7 @@ li {
   align-items: center !important;
   width: 90% !important; 
   margin: 0 auto !important;
+  z-index: 200;
 }
 
 .navitem {
