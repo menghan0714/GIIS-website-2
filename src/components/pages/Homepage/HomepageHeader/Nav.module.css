@@ -65,7 +65,21 @@ li {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-direction: column;
 }
+
+@media (orientation: landscape) {
+    .leftSlideItems {
+        flex-direction: row; /* 水平排列 */
+        justify-content: space-around;
+    }
+
+    .leftSlideItems li {
+        margin: 0 10px; /* 添加項目之間的間距 */
+    }
+}
+
+
 
 .leftSlideItems li  {
     position: relative;
