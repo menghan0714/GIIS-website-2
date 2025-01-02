@@ -125,12 +125,6 @@ li {
     transform: translateY(-50%);
 } 
 
-@media (max-width: 1000px) {
-  .leftSlideItems li::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems li::before {
