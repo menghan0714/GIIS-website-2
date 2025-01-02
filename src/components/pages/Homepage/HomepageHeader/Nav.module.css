@@ -48,6 +48,7 @@ li {
 
 .leftSlideMenu2 {
     position: absolute;
+    justify-content: space-between;
     top: 70px;
     left: 0;
     height: 200px;
