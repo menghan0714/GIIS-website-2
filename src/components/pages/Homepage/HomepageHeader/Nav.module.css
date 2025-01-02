@@ -118,8 +118,8 @@ li {
     content: '>';
     position: absolute;
     top: 50%;
-    left: 160px; /* 控制箭頭距離右邊的距離 */
-    font-size: 20px;
+    left: 250px; /* 控制箭頭距離右邊的距離 */
+    font-size: 30px;
     font-weight: bold;
     color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
