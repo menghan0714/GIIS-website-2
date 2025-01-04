@@ -9,13 +9,13 @@
 
 @media (max-width: 1000px) {
   .button {
-    font-size: 11.5px
+    font-size: 11px
   }
 }
 
 @media (max-width: 736px) {
   .button {
-    font-size: 12x
+    font-size: 8x
   }
 }
 
