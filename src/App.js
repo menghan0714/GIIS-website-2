@@ -33,7 +33,7 @@ function App() {
       {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
       <main className="container-fluid">
        <Routes>
-         <Route path="/" element={<Homepage language={language} />} />
+         <Route path="/" element={<Homepage language={language} toggleLanguage={toggleLanguage} />} />
          <Route path="/discovery" element={<Discovery language={language} />} />
          <Route path="/academics" element={<Academics language={language} />} />
          <Route path="/admission" element={<Admission language={language} />} />
