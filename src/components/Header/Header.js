@@ -4,20 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
 
 function Header({ language, toggleLanguage }) {
-    const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
 
-    useEffect(() => {
-         const handleOrientationChange = () => {
-         setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
-        };
-
-         window.addEventListener('resize', handleOrientationChange);
-
-        return () => {
-            window.removeEventListener('resize', handleOrientationChange);
-            
-            };
-    }, []);
     
     return (
         <header className={`${styles.header}`}>
@@ -30,8 +17,8 @@ function Header({ language, toggleLanguage }) {
                 </div>
                 <div className= "col-3 col-md-2 col-lg-2 d-flex justify-content-center" >
                     {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
-                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${isLandscape ? styles.button : styles.button2}`} >Moodles</a>
-                    <button className={`btn btn-link px-2 ${isLandscape ? styles.button : styles.button2}`} onClick={toggleLanguage}>
+                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`} >Moodles</a>
+                    <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
                         {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
                     </button>
                 </div>
