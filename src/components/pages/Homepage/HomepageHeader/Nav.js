@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
 
-function Nav() {
-    const [language, setLanguage] = useState('en');
+function Nav({ language }) {
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
@@ -29,11 +28,6 @@ function Nav() {
          setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
         };
 
-       const browserLanguage = navigator.language || navigator.userLanguage;
-          if (browserLanguage.includes('zh')) {
-         setLanguage('zh');
-        }
-    
 
      
         window.addEventListener('scroll', handleScroll);
@@ -53,9 +47,6 @@ function Nav() {
         setIsCollapsed(!isCollapsed);
     };
 
-    const toggleLanguage = () => {
-         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-    };
 
    return (
     <nav className={`navbar navbar-expand-lg ${isNavSticky ? 'fixed-top' : ''}  ${styles.customBackground}`}>
@@ -65,7 +56,6 @@ function Nav() {
             </button>
 
             {isMobile && (
-           <>
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`}  id="navbarLeftMenu">
              <ul className={styles.leftSlideItems} >
                   <li onClick={() => navigate("/discovery")} >
@@ -90,14 +80,6 @@ function Nav() {
                   </li>
                 </ul>
             </div>
-            <div className= "justify-content-center" style={{ display:"flex", justifyContent: "flex-end" }}>
-             {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
-              <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`} >Moodles</a>
-              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
-                {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
-              </button>
-             </div>
-          </>
              )}
 
             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
