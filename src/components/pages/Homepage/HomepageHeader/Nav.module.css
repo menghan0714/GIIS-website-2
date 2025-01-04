@@ -10,15 +10,6 @@
     height: 70px;
 }
 
-.button {
-    font-size: 14px;
-    color: rgba(1, 1, 1, 1)
-}
-
-.button2 {
-    font-size: 14px;
-    color: rgba(1, 1, 1, 1)
-}
 
 li {
   cursor: pointer; /* 鼠标悬停时显示手型 */
