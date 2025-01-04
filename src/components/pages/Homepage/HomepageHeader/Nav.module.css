@@ -16,12 +16,21 @@
     color: rgba(255, 255, 255, 1) 
  }
 
+.button:hover {
+    color: rgba(255, 255, 255, 1); /* 保持白色文字 */
+    text-decoration: none; /* 防止出現下劃線 */
+}
+
 .button2 {
     font-size: 14px;
     align-items:center;
     color: rgba(255, 255, 255, 1)
 }
 
+.button2:hover {
+    color: rgba(255, 255, 255, 1); /* 保持白色文字 */
+    text-decoration: none; /* 防止出現下劃線 */
+}
 
 li {
   cursor: pointer; /* 鼠标悬停时显示手型 */
