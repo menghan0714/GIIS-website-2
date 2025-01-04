@@ -31,7 +31,6 @@ function App() {
 
   return (
      <>
-      {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
       <main className="container-fluid">
        <Routes>
          <Route path="/" />} />
