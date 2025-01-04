@@ -2,15 +2,16 @@
     max-width: 100%
 }
 
-
+@media (min-width: 1000px) {
 .button {
     font-size: 16px;
     align-items:center
-}
+ }
 
 .button2 {
     font-size: 16px;
     align-items:center
+ }
 }
 
 @media (max-width: 1000px) {
@@ -22,11 +23,4 @@
   }
 }
 
-@media (max-width: 736px) {
-  .button {
-    display: none
-}
-  .button2 {
-    display: none
-  }
-}
+
