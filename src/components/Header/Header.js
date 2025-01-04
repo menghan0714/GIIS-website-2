@@ -3,19 +3,7 @@ import logo_slogan from '../../img/logo_slogan.png';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
 
-function Header() {
-    const [language, setLanguage] = useState('en');
-    
-    useEffect(() => {
-       const browserLanguage = navigator.language || navigator.userLanguage;
-          if (browserLanguage.includes('zh')) {
-         setLanguage('zh');
-        }
-    })
-    const toggleLanguage = () => {
-         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-    };
-
+function Header({ language,toggleLanguage }) {
 
     return (
         <header className={`${styles.header}`}>
