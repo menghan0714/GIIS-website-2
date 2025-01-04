@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
 
-function Nav() {
+function Nav({ language, toggleLanguage }) {
     const [language, setLanguage] = useState('en');
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
