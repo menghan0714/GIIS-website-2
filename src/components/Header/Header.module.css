@@ -6,5 +6,15 @@
     font-size: 16px
 }
 
+@media (max-width: 1000px) {
+  .leftSlideItems li {
+    font-size: 14px
+  }
+}
 
+@media (max-width: 736px) {
+  .leftSlideItems li {
+    font-size: 12px
+  }
+}
 
