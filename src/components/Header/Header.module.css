@@ -15,11 +15,11 @@
 
 @media (max-width: 1000px) {
   .button {
-    font-size: 12px;
+    font-size: 10px;
     align-items:center
 }
   .button2 {
-    font-size: 12px;
+    font-size: 10px;
     align-items:center
   }
 }
