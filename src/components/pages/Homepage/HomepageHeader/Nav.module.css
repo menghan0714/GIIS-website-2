@@ -10,15 +10,7 @@
     height: 70px;
 }
 
-.button {
-    font-size: 14px;
-    align-items:center
- }
 
-.button2 {
-    font-size: 14px;
-    align-items:center
-}
 
 li {
   cursor: pointer; /* 鼠标悬停时显示手型 */
