@@ -34,9 +34,6 @@ function Nav() {
          setLanguage('zh');
         }
     
-        const toggleLanguage = () => {
-         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-        };
 
      
         window.addEventListener('scroll', handleScroll);
@@ -54,6 +51,10 @@ function Nav() {
     
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
+    };
+
+    const toggleLanguage = () => {
+         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
     };
 
    return (
