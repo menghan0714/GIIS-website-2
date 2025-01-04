@@ -17,8 +17,8 @@ function Header({ language, toggleLanguage }) {
                 </div>
                 <div className="col-3 col-md-2 col-lg-2 d-flex  justify-content-center">
                     {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
-                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className=`btn btn-link px-2 ${styles.button}`>Moodles</a>
-                    <button className=`btn btn-link px-2 ${styles.button}` onClick={toggleLanguage}>
+                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`}>Moodles</a>
+                    <button className={`btn btn-link px-2 ${styles.button}`} onClick={toggleLanguage}>
                         {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
                     </button>
                 </div>
