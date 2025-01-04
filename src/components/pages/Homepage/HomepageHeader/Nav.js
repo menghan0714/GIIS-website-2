@@ -3,19 +3,12 @@ import styles from './Nav.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ language, toggleLanguage }) {
-    const [language2, setLanguage2] = useState('en');
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
     const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
     
-  useEffect(() => {
-    const browserLanguage = navigator.language || navigator.userLanguage;
-    if (browserLanguage.includes('zh')) {
-      setLanguage2('zh');
-    }
-  }, []);
     
     useEffect(() => {
         document.documentElement.lang = language2 === 'en' ? 'en' : 'zh';
@@ -48,10 +41,6 @@ function Nav({ language, toggleLanguage }) {
         };
     }, []);
 
-  const toggleLanguage2 = () => {
-    setLanguage2((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-    if (toggleLanguage) toggleLanguage();
-  };
     
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
@@ -94,7 +83,7 @@ function Nav({ language, toggleLanguage }) {
             <div className= "justify-content-center" style={{ display:"flex", justifyContent: "flex-end" }}>
              {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
               <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`} >Moodles</a>
-              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage2}>
+              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
                 {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
               </button>
              </div>
