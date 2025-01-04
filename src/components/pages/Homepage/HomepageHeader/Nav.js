@@ -3,7 +3,7 @@ import styles from './Nav.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ language, toggleLanguage }) {
-    const [language, setLanguage] = useState('en');
+    const [language2, setLanguage2] = useState('en');
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
@@ -13,13 +13,13 @@ function Nav({ language, toggleLanguage }) {
   useEffect(() => {
     const browserLanguage = navigator.language || navigator.userLanguage;
     if (browserLanguage.includes('zh')) {
-      setLanguage('zh');
+      setLanguage2('zh');
     }
   }, []);
     
     useEffect(() => {
-        document.documentElement.lang = language === 'en' ? 'en' : 'zh';
-    }, [language]);
+        document.documentElement.lang = language2 === 'en' ? 'en' : 'zh';
+    }, [language2]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,7 +49,7 @@ function Nav({ language, toggleLanguage }) {
     }, []);
 
   const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
+    setLanguage2((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
   };
     
     const toggleNavbar = () => {
