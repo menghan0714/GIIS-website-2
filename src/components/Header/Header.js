@@ -15,7 +15,7 @@ function Header({ language, toggleLanguage }) {
                         <img src={logo_slogan} alt='Excel High School Logo' className={`img-fluid ${styles.logoImage}`} />
                     </Link>
                 </div>
-                <div className= "col-3 col-md-2 col-lg-2 d-flex justify-content-center" ${isLandscape ? styles.button : styles.button2} >
+                <div className= {`col-3 col-md-2 col-lg-2 d-flex justify-content-center ${isLandscape ? styles.button : styles.button2}`} >
                     {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
                     <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2 " >Moodles</a>
                     <button className="btn btn-link px-2" onClick={toggleLanguage}>
