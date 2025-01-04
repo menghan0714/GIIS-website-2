@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
 
-function Nav({ language, toggleLanguage }) {
+function Nav() {
+    const [language, setLanguage] = useState('en');
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
     const navigate = useNavigate();
@@ -28,6 +29,12 @@ function Nav({ language, toggleLanguage }) {
          setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
         };
 
+       const browserLanguage = navigator.language || navigator.userLanguage;
+          if (browserLanguage.includes('zh')) {
+         setLanguage('zh');
+        }
+        }, []);
+    
         const toggleLanguage = () => {
          setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
         };
