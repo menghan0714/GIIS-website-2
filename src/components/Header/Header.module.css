@@ -13,9 +13,9 @@
     align-items:center
 }
 
-@media (max-width: 1000px) {
+@media (orientation: vertical) and  (max-width: 1000px) {
   .button2 {
-    font-size: 12px;
+    font-size: 14px;
     align-items:center
   }
 }
