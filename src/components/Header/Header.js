@@ -13,13 +13,6 @@ function Header({ language, toggleLanguage }) {
                         <img src={logo_slogan} alt='Excel High School Logo' className={`img-fluid ${styles.logoImage}`} />
                     </Link>
                 </div>
-                <div className="col-2 d-flex justify-content-center">
-                    {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
-                    <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2">Moodles</a>
-                    <button className={`btn btn-link px-2 ${styles.button}`} onClick={toggleLanguage}>
-                        {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
-                    </button>
-                </div>
             </div> 
         </header>
     );
