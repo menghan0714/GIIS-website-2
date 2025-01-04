@@ -33,7 +33,6 @@ function Nav() {
           if (browserLanguage.includes('zh')) {
          setLanguage('zh');
         }
-        }, []);
     
         const toggleLanguage = () => {
          setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
