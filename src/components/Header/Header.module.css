@@ -32,3 +32,17 @@
   }
 }
 
+@media (max-width: 736px) {
+  .button {
+    font-size: 10px;
+    align-items:center
+  }
+}
+
+@media (max-width:  736px) {
+  .button2 {
+    font-size: 9px;
+    align-items:center
+  }
+}
+
