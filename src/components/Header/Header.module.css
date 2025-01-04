@@ -1,16 +1,7 @@
-.custom_col {
-    max-width: 80%
+.logoImage {
+    max-width: 100%
 }
 
-.custom_col2 {
-    max-width: 20%
-}
-
-@media (max-width: 1000px) {
-  .logoImage {
-    max-width: 90%
-  }
-}
 
 .button {
     font-size: 16px;
