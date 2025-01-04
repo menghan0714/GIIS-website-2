@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
 
 function Header({ language, toggleLanguage }) {
+
+    
     return (
         <header className={`${styles.header}`}>
             {/* First row for logo and buttons */}
@@ -13,7 +15,7 @@ function Header({ language, toggleLanguage }) {
                         <img src={logo_slogan} alt='Excel High School Logo' className={`img-fluid ${styles.logoImage}`} />
                     </Link>
                 </div>
-                <div className="col-1 col-md-1 col-lg-2 d-flex justify-content-center">
+                <div className="custom-col d-flex flex-column flex-md-row justify-content-center">
                     {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
                     <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2">Moodles</a>
                     <button className={`btn btn-link px-2 ${styles.button}`} onClick={toggleLanguage}>
