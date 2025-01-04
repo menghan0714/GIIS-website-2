@@ -12,5 +12,13 @@
     align-items:center
 }
 
+@media (max-width: 1000px) {
+  .button {
+    display: none
+  }
 
+  .button2 {
+    display: none
+  }
+}
 
