@@ -12,18 +12,6 @@ import Support from './components/pages/Support/SupportMain';
 import Transcript from './components/pages/Transcript/TranscriptMain';
 
 function App() {
-   const [language, setLanguage] = useState('en');
-
-  useEffect(() => {
-    const browserLanguage = navigator.language || navigator.userLanguage;
-    if (browserLanguage.includes('zh')) {
-      setLanguage('zh');
-    }
-  }, []);
-
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-  };
 
   const location = useLocation();
   const isTranscript = location.pathname === '/transcript';
