@@ -10,7 +10,13 @@ function Nav({ language, toggleLanguage }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
     const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
     
-
+  useEffect(() => {
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    if (browserLanguage.includes('zh')) {
+      setLanguage('zh');
+    }
+  }, []);
+    
     useEffect(() => {
         document.documentElement.lang = language === 'en' ? 'en' : 'zh';
     }, [language]);
@@ -29,17 +35,7 @@ function Nav({ language, toggleLanguage }) {
          setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
         };
 
-        const browserLanguage = navigator.language || navigator.userLanguage;
-         if (browserLanguage.includes('zh')) {
-         setLanguage('zh');
-         }
-       }, []);
-
-       const toggleLanguage = () => {
-         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-        };
-
-        
+     
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
         window.addEventListener('resize', handleOrientationChange);
@@ -52,7 +48,10 @@ function Nav({ language, toggleLanguage }) {
         };
     }, []);
 
-
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
+  };
+    
     const toggleNavbar = () => {
         setIsCollapsed(!isCollapsed);
     };
