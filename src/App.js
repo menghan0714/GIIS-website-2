@@ -12,21 +12,34 @@ import Support from './components/pages/Support/SupportMain';
 import Transcript from './components/pages/Transcript/TranscriptMain';
 
 function App() {
-
+  const [language, setLanguage] = useState('en');
+    
+  useEffect(() => {
+    const browserLanguage = navigator.language || navigator.userLanguage;
+      if (browserLanguage.includes('zh')) {
+      setLanguage('zh');
+    }
+    
+    const toggleLanguage = () => {
+      setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
+    };
+  })
+  
   const location = useLocation();
   const isTranscript = location.pathname === '/transcript';
+
 
   return (
      <>
       {!isTranscript && <Header language={language} toggleLanguage={toggleLanguage} />}
       <main className="container-fluid">
        <Routes>
-         <Route path="/" element={<Homepage language={language} />} />
-         <Route path="/discovery" element={<Discovery language={language} />} />
-         <Route path="/academics" element={<Academics language={language} />} />
-         <Route path="/admission" element={<Admission language={language} />} />
-         <Route path="/support" element={<Support language={language} />} />
-         <Route path="/transcript" element={<Transcript language={language} />} />
+         <Route path="/" />} />
+         <Route path="/discovery"/>} />
+         <Route path="/academics"/>} />
+         <Route path="/admission"/>} />
+         <Route path="/support"/>} />
+         <Route path="/transcript"/>} />
        </Routes>
       </main>
       {!isTranscript && <Footer />}
