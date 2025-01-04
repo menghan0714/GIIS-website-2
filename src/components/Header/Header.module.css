@@ -13,7 +13,11 @@
     align-items:center
 }
 
-@media (orientation: portrait ) and  (max-width: 1000px) {
+@media (max-width: 1000px) {
+  .button {
+    font-size: 14px;
+    align-items:center
+}
   .button2 {
     font-size: 14px;
     align-items:center
