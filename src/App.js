@@ -19,11 +19,12 @@ function App() {
     if (browserLanguage.includes('zh')) {
       setLanguage('zh');
     }
+
+    const toggleLanguage = () => {
+     setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
+   };
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-  };
 
   const location = useLocation();
   const isTranscript = location.pathname === '/transcript';
