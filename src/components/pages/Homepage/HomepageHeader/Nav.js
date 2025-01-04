@@ -54,6 +54,7 @@ function Nav({ language }) {
             </button>
 
             {isMobile && (
+            <>
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`}  id="navbarLeftMenu">
              <ul className={styles.leftSlideItems} >
                   <li onClick={() => navigate("/discovery")} >
@@ -85,7 +86,8 @@ function Nav({ language }) {
               <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
                 {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
               </button>
-              </div>
+             </div>
+            </>
             )}
 
             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
