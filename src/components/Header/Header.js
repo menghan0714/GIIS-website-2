@@ -4,7 +4,20 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Custom styles for specific adjustments
 
 function Header({ language, toggleLanguage }) {
+    const [isLandscape, setIsLandscape] = useState(window.matchMedia('(orientation: landscape)').matches);
 
+    useEffect(() => {
+         const handleOrientationChange = () => {
+         setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
+        };
+
+         window.addEventListener('resize', handleOrientationChange);
+
+        return () => {
+            window.removeEventListener('resize', handleOrientationChange);
+            
+            };
+    }, []);
     
     return (
         <header className={`${styles.header}`}>
