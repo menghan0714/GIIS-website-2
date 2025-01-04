@@ -11,8 +11,8 @@ function Nav({ language, toggleLanguage }) {
     
     
     useEffect(() => {
-        document.documentElement.lang = language2 === 'en' ? 'en' : 'zh';
-    }, [language2]);
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh';
+    }, [language]);
 
     useEffect(() => {
         const handleScroll = () => {
