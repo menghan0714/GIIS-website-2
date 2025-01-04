@@ -28,6 +28,10 @@ function Nav({ language, toggleLanguage }) {
          setIsLandscape(window.matchMedia('(orientation: landscape)').matches);
         };
 
+        const toggleLanguage = () => {
+         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
+        };
+
      
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
@@ -54,6 +58,7 @@ function Nav({ language, toggleLanguage }) {
             </button>
 
             {isMobile && (
+           <>
             <div className={`collapse navbar-collapse ${!isCollapsed ? 'show' : ''} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`}  id="navbarLeftMenu">
              <ul className={styles.leftSlideItems} >
                   <li onClick={() => navigate("/discovery")} >
@@ -78,7 +83,15 @@ function Nav({ language, toggleLanguage }) {
                   </li>
                 </ul>
             </div>
-            )}
+            <div className= "justify-content-center" style={{ display:"flex", justifyContent: "flex-end" }}>
+             {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
+              <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`} >Moodles</a>
+              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
+                {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
+              </button>
+             </div>
+          </>
+             )}
 
             <div className={`collapse navbar-collapse ${isCollapsed ? '' : ''}`}>
                 <ul className={`navbar-nav ${styles.customnavbar}`}>
