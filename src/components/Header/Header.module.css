@@ -8,13 +8,13 @@
 
 @media (max-width: 1000px) {
   .leftSlideItems li {
-    font-size: 14px
+    font-size: 12px
   }
 }
 
 @media (max-width: 736px) {
   .leftSlideItems li {
-    font-size: 12px
+    font-size: 10px
   }
 }
 
