@@ -3,8 +3,8 @@
 }
 
 @media (max-width: 1000px) {
-  .logoImage {
-    max-width: 100%
+  .button {
+    max-width: 90%
   }
 }
 
