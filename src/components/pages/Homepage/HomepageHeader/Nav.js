@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
 
-function Nav({ language, toggleLanguage2 }) {
+function Nav({ language, toggleLanguage }) {
     const [language2, setLanguage2] = useState('en');
     const [isNavSticky, setIsNavSticky] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(true); 
@@ -48,9 +48,9 @@ function Nav({ language, toggleLanguage2 }) {
         };
     }, []);
 
-  const toggleLanguage = () => {
+  const toggleLanguage2 = () => {
     setLanguage2((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
-    if (toggleLanguage2) toggleLanguage();
+    if (toggleLanguage) toggleLanguage();
   };
     
     const toggleNavbar = () => {
@@ -94,7 +94,7 @@ function Nav({ language, toggleLanguage2 }) {
             <div className= "justify-content-center" style={{ display:"flex", justifyContent: "flex-end" }}>
              {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
               <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className={`btn btn-link px-2 ${styles.button}`} >Moodles</a>
-              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage}>
+              <button className={`btn btn-link px-2 ${styles.button2}`} onClick={toggleLanguage2}>
                 {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
               </button>
              </div>
