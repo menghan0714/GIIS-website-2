@@ -18,7 +18,7 @@ function Header({ language, toggleLanguage }) {
                 <div className="col-3 col-md-2 col-lg-2 d-flex  justify-content-center">
                     {/* <Link to="/contact" className="btn btn-link px-2">Contact Us</Link> */}
                     <a href="https://moodles.genesisideas.school" target="_blank" rel="noopener noreferrer" className="btn btn-link px-2"  style={{ fontSize: '10px' }}>Moodles</a>
-                    <button className={`btn btn-link px-2 ${styles.button}`} onClick={toggleLanguage}>
+                    <button className={`btn btn-link px-2 ${styles.button}`} onClick={toggleLanguage} style={{ fontSize: '10px' }}>
                         {language === 'en' ? 'Switch to Chinese' : '切换到英文'}
                     </button>
                 </div>
