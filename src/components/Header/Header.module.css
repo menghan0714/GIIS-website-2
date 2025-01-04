@@ -13,7 +13,7 @@
     align-items:center
 }
 
-@media (orientation: portrait) and  (max-width: 1000px) {
+@media (orientation: landscape ) and  (max-width: 1000px) {
   .button2 {
     font-size: 12px;
     align-items:center
