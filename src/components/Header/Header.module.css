@@ -13,13 +13,4 @@
 }
 
 
-@media (max-width: 1000px) {
-  .button {
-    display: none !important
-}
-  .button2 {
-    display: none !important
-  }
-}
-
 
