@@ -14,11 +14,11 @@
 
 @media (max-width: 1000px) {
   .button {
-    display: none
+    display: none !important
   }
 
   .button2 {
-    display: none
+    display: none !important
   }
 }
 
