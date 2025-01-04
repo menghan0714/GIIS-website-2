@@ -4,12 +4,14 @@
 
 .button {
     font-size: 16px;
-    align-items:center
+    align-items:center;
+    text-decoration: none
  }
 
 .button2 {
     font-size: 16px;
-    align-items:center
+    align-items:center;
+    text-decoration: none
 }
 
 @media (max-width: 1000px) {
