@@ -2,11 +2,6 @@
     max-width: 100%
 }
 
-@media (max-width: 1000px) {
-  .logoImage {
-    max-width: 95%
-  }
-}
 
 .button {
     font-size: 16px;
@@ -19,29 +14,8 @@
 }
 
 @media (max-width: 1000px) {
-  .button {
+  .button2 {
     font-size: 11px;
-    align-items:center
-  }
-}
-
-@media (max-width: 1000px) {
-  .button2 {
-    font-size: 10px;
-    align-items:center
-  }
-}
-
-@media (max-width: 736px) {
-  .button {
-    font-size: 10px;
-    align-items:center
-  }
-}
-
-@media (max-width:  736px) {
-  .button2 {
-    font-size: 9px;
     align-items:center
   }
 }
