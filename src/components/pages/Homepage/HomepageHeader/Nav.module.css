@@ -10,6 +10,17 @@
     height: 70px;
 }
 
+.button {
+    font-size: 14px;
+    align-items:center;
+    color: rgba(1, 1, 1, 1)
+ }
+
+.button2 {
+    font-size: 14px;
+    align-items:center;
+    color: rgba(1, 1, 1, 1)
+}
 
 
 li {
