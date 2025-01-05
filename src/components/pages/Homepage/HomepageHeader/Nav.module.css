@@ -29,7 +29,7 @@
 
 @media (orientation: portrait) and (max-width: 736px) {
  .button{
-    font-size: 8px !important; 
+    font-size: 9px !important; 
  }
 }
     
