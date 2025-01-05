@@ -36,7 +36,7 @@ function App() {
        <Routes>
          <Route path="/" element={<Homepage language={language} toggleLanguage={toggleLanguage} />} />
          <Route path="/discovery" element={<Discovery language={language} toggleLanguage={toggleLanguage}  />} />
-         <Route path="/academics" element={<Academics language={language} toggleLanguage={toggleLanguage}  />} />
+         <Route path="/academics" element={<Academics language={language}/>} />
          <Route path="/admission" element={<Admission language={language} />} />
          <Route path="/support" element={<Support language={language} />} />
          <Route path="/transcript" element={<Transcript language={language}/>}/>
