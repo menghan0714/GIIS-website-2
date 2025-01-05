@@ -4,7 +4,7 @@ import img from '../../../img/Homepage/homepage8.png';
 import AcademicsIntroduction from'./Academics/Academicsintroduction.js';
 import AcademicsIntroduction2 from'./Academics/Academicsintroduction2.js';
 
-function AcademicsMain({ language }) {
+function AcademicsMain({ language , toggleLanguage }) {
 
    const containerStyle = {
         position: 'relative',
@@ -53,7 +53,7 @@ function AcademicsMain({ language }) {
    return (
     <>
         <div className="row">
-            <Nav language={language} />
+            <Nav language={language} toggleLanguage={toggleLangugae} />
         </div>
       
         <div style={containerStyle}>
