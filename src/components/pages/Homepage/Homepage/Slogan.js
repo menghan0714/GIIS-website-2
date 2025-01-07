@@ -36,7 +36,7 @@ function Slogan() {
         ? { fontSize: '13px', 
             fontFamily: 'Lato, sans-serif',
             display: 'flex',
-            textAlign: 'flex-start',
+            textAlign: 'left',
             lineHeight: '1.3', // 調整行高
         }
         : { fontSize: '1.5rem', fontFamily: '"Lato", sans-serif' };
