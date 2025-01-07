@@ -1,17 +1,17 @@
 .custom-card {
-  background-color: rgba(213, 168, 54, 1)
+  background-color: rgba(213, 168, 54, 1) !important
 }
 
 @media (max-width: 736px) {
     .custom-card { 
-        padding: 2rem; /* 減少內距 */
+        padding: 2rem !important;
     }
 
     .custom-card p {
-        font-size: 1rem; /* 縮小字體 */
+        font-size: 1rem !important; 
     }
 
     .custom-card button {
-        font-size: 0.9rem; /* 縮小按鈕字體 */
+        font-size: 0.9rem !important; /* 縮小按鈕字體 */
     }
 }
