@@ -25,7 +25,7 @@ function Slogan() {
               justifyContent: 'flex-start',
               alignItems: 'center', 
               textAlign: 'flex-start', 
-              fontSize: '10px', // 調整字體大小
+              fontSize: '13px', // 調整字體大小
               lineHeight: '1.3', // 調整行高
           }
         : {
@@ -37,7 +37,7 @@ function Slogan() {
           };
 
     const paragraphStyle = isMobile
-        ? { fontSize: '10px', fontFamily: '"Lato", sans-serif' }
+        ? { fontSize: '13px', fontFamily: '"Lato", sans-serif' }
         : { fontSize: '1.5rem', fontFamily: '"Lato", sans-serif' };
         
 
