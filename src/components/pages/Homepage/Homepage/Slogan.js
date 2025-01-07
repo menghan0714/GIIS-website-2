@@ -17,12 +17,18 @@ function Slogan() {
 
     const cardStyle = isMobile
         ? {
+              width: '90%', // 小於736px時的寬度
+              height: 'auto', // 高度可以自適應內容
               padding: '2rem',
               backgroundColor: 'rgba(213, 168, 54, 1)',
+              margin: '0 auto', // 居中
           }
         : {
+              width: '50%', // 大於736px時的寬度
+              height: 'auto',
               padding: '4rem',
               backgroundColor: 'rgba(213, 168, 54, 1)',
+              margin: '0 auto', // 居中
           };
 
     const paragraphStyle = isMobile
