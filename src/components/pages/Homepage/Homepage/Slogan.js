@@ -52,11 +52,13 @@ function Slogan() {
           };
 
     return (
+      <>
         <div className="text-white text-center p-3 my-3 rounded" style={cardStyle} >
             <p className="lead" style={paragraphStyle} >Empowering the next generation of innovators and thinkers</p>
             {/* Replace button text and class based on the action you choose */}
         </div>
         <button className="btn btn-light mt-3" style={buttonStyle} >Learn More</button>
+      </>
     );
 }
 
