@@ -1,6 +1,9 @@
-@media (max-width: 736px) {
     .custom-card {
-        background-color: rgba(54, 168, 213, 1); /* 在小螢幕改為藍色 */
+       backgroundColor: rgba(213, 168, 54, 1)
+    }
+
+@media (max-width: 736px) {
+    .custom-card { 
         padding: 2rem; /* 減少內距 */
     }
 
