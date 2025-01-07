@@ -1,10 +1,14 @@
 @media (max-width: 736px) {
+    .custom-card {
+        background-color: rgba(54, 168, 213, 1); /* 在小螢幕改為藍色 */
+        padding: 2rem; /* 減少內距 */
+    }
 
-.custom-card {
-  height:  200px;
-}
+    .custom-card p {
+        font-size: 1rem; /* 縮小字體 */
+    }
 
-  .custom-card p {
-    font-size: 9px; /* 減小文字大小 */
-  }
+    .custom-card button {
+        font-size: 0.9rem; /* 縮小按鈕字體 */
+    }
 }
