@@ -21,12 +21,6 @@ function Slogan() {
               width: '100%', // 小於736px時的寬度
               height: '100px', // 高度可以自適應內容
               backgroundColor: 'rgba(213, 168, 54, 1)',
-              display: 'flex', // 使用 flex 進行布局
-              justifyContent: 'flex-start',
-              alignItems: 'center', 
-              textAlign: 'flex-start', 
-              fontSize: '13px', // 調整字體大小
-              lineHeight: '1.3', // 調整行高
           }
         : {
               width: '100%', // 大於736px時的寬度
@@ -37,7 +31,14 @@ function Slogan() {
           };
 
     const paragraphStyle = isMobile
-        ? { fontSize: '13px', fontFamily: '"Lato", sans-serif' }
+        ? { fontSize: '13px', 
+           fontFamily: '"Lato", sans-serif'
+           display: 'flex', // 使用 flex 進行布局
+           justifyContent: 'flex-start',
+           alignItems: 'center', 
+           textAlign: 'flex-end', 
+           lineHeight: '1.3', // 調整行高
+        }
         : { fontSize: '1.5rem', fontFamily: '"Lato", sans-serif' };
         
 
