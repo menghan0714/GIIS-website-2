@@ -21,13 +21,12 @@ function Slogan() {
               width: '100%', // 小於736px時的寬度
               height: '100px', // 高度可以自適應內容
               backgroundColor: 'rgba(213, 168, 54, 1)',
-              margin: '0 auto', // 居中
               display: 'flex', // 使用 flex 進行布局
-              justifyContent: 'flex-start', // 水平居中
-              alignItems: 'center', // 垂直居中
-              textAlign: 'flex-start', // 文字居中對齊
-              fontSize: '1.5em', // 調整字體大小
-              lineHeight: '1.5', // 調整行高
+              justifyContent: 'flex-start',
+              alignItems: 'center', 
+              textAlign: 'flex-start', 
+              fontSize: '10px', // 調整字體大小
+              lineHeight: '1.2', // 調整行高
           }
         : {
               width: '100%', // 大於736px時的寬度
