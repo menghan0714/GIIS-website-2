@@ -20,7 +20,6 @@ function Slogan() {
         ? {
               width: '100%', // 小於736px時的寬度
               height: '100px', // 高度可以自適應內容
-              padding: '1rem',
               backgroundColor: 'rgba(213, 168, 54, 1)',
               margin: '0 auto', // 居中
           }
