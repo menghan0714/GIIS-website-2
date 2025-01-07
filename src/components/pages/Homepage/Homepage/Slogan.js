@@ -60,7 +60,7 @@ function Slogan() {
           };
 
     return (
-        <div className="text-white text-center p-4 my-4 rounded" style={cardStyle} >
+        <div className="text-white text-center rounded" style={cardStyle} >
             <p className="lead" style={paragraphStyle} >Empowering the next generation of innovators and thinkers</p>
             {/* Replace button text and class based on the action you choose */}
             <button className="btn btn-light mt-3" style={buttonStyle} >Learn More</button>
