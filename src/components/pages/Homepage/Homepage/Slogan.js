@@ -17,8 +17,8 @@ function Slogan() {
 
     const cardStyle = isMobile
         ? {
-              width: '50%', // 小於736px時的寬度
-              height: 'auto', // 高度可以自適應內容
+              width: '100%', // 小於736px時的寬度
+              height: '200px', // 高度可以自適應內容
               padding: '2rem',
               backgroundColor: 'rgba(213, 168, 54, 1)',
               margin: '0 auto', // 居中
