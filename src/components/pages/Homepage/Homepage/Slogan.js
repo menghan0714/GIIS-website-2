@@ -18,7 +18,6 @@ function Slogan() {
 
     const cardStyle = isMobile
         ? {
-              position: 'relative',
               width: '100%', // 小於736px時的寬度
               height: '100px', // 高度可以自適應內容
               backgroundColor: 'rgba(213, 168, 54, 1)',
@@ -44,14 +43,7 @@ function Slogan() {
         
 
     const buttonStyle = isMobile
-        ? { position: 'absolute',
-            bottom: '10px', 
-            right: '10px', // 距離容器右側 10px
-            backgroundColor: 'white', // 按鈕背景顏色
-            border: 'none', // 移除邊框
-            borderRadius: '4px', // 圓角
-            padding: '10px 20px', // 調整按鈕內邊距
-            cursor: 'pointer', // 鼠標樣式
+        ? { marginTop: '1rem'
             fontSize: '0.9rem', 
           }
         : {
@@ -63,8 +55,8 @@ function Slogan() {
         <div className="text-white text-center p-3 my-3 rounded" style={cardStyle} >
             <p className="lead" style={paragraphStyle} >Empowering the next generation of innovators and thinkers</p>
             {/* Replace button text and class based on the action you choose */}
-            <button className="btn btn-light mt-3" style={buttonStyle} >Learn More</button>
         </div>
+        <button className="btn btn-light mt-3" style={buttonStyle} >Learn More</button>
     );
 }
 
