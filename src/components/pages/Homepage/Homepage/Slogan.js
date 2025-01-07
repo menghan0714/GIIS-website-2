@@ -23,8 +23,6 @@ function Slogan() {
               backgroundColor: 'rgba(213, 168, 54, 1)',
               justifyContent: 'flex-start',
               alignItems: 'center', 
-              textAlign: 'flex-start', 
-              lineHeight: '1.3', // 調整行高
           }
         : {
               width: '100%', // 大於736px時的寬度
@@ -36,7 +34,9 @@ function Slogan() {
 
     const paragraphStyle = isMobile
         ? { fontSize: '13px', 
-           fontFamily: 'Lato, sans-serif'
+            fontFamily: 'Lato, sans-serif',
+            textAlign: 'flex-start',
+            lineHeight: '1.3', // 調整行高
         }
         : { fontSize: '1.5rem', fontFamily: '"Lato", sans-serif' };
         
