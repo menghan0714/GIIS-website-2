@@ -35,6 +35,7 @@ function Slogan() {
     const paragraphStyle = isMobile
         ? { fontSize: '13px', 
             fontFamily: 'Lato, sans-serif',
+            display: 'flex',
             textAlign: 'flex-start',
             lineHeight: '1.3', // 調整行高
         }
