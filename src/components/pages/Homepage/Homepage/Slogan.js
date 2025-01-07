@@ -18,6 +18,7 @@ function Slogan() {
 
     const cardStyle = isMobile
         ? {
+              position: 'relative',
               width: '100%', // 小於736px時的寬度
               height: '100px', // 高度可以自適應內容
               backgroundColor: 'rgba(213, 168, 54, 1)',
@@ -43,8 +44,20 @@ function Slogan() {
         
 
     const buttonStyle = isMobile
-        ? { fontSize: '0.9rem', marginTop: '1rem' }
-        : { fontSize: '1rem', marginTop: '1.5rem' };
+        ? { position: 'absolute',
+            bottom: '10px', 
+            right: '10px', // 距離容器右側 10px
+            backgroundColor: 'white', // 按鈕背景顏色
+            border: 'none', // 移除邊框
+            borderRadius: '4px', // 圓角
+            padding: '10px 20px', // 調整按鈕內邊距
+            cursor: 'pointer', // 鼠標樣式
+            fontSize: '0.9rem', 
+          }
+        : {
+            fontSize: '1rem', 
+            marginTop: '1.5rem' 
+          };
 
     return (
         <div className="text-white text-center p-4 my-4 rounded" style={cardStyle} >
