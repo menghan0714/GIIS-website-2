@@ -1,4 +1,4 @@
-import React,{ useEffect, useEffect } from 'react';
+import React,{ useEffect, useState } from 'react';
 
 function Slogan() {
     const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 736px)").matches);
