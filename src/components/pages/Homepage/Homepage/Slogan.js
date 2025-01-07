@@ -26,7 +26,7 @@ function Slogan() {
               alignItems: 'center', 
               textAlign: 'flex-start', 
               fontSize: '10px', // 調整字體大小
-              lineHeight: '1.2', // 調整行高
+              lineHeight: '1.3', // 調整行高
           }
         : {
               width: '100%', // 大於736px時的寬度
@@ -37,7 +37,7 @@ function Slogan() {
           };
 
     const paragraphStyle = isMobile
-        ? { fontSize: '1rem', fontFamily: '"Lato", sans-serif' }
+        ? { fontSize: '10px', fontFamily: '"Lato", sans-serif' }
         : { fontSize: '1.5rem', fontFamily: '"Lato", sans-serif' };
         
 
