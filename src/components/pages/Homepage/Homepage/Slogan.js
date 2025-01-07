@@ -33,7 +33,7 @@ function Slogan() {
           };
 
     const paragraphStyle = isMobile
-        ? { fontSize: '13px', 
+        ? { fontSize: '15px', 
             fontFamily: 'Lato, sans-serif',
             display: 'flex',
             textAlign: 'left',
