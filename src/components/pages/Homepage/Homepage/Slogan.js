@@ -77,7 +77,7 @@ function Slogan() {
                             Empowering the next generation of innovators and thinkers
                         </p>
                         <button
-                            className="btn btn-light mt-3"
+                            className="btn btn-light"
                             style={buttonStyle}
                         >
                             Learn More
