@@ -32,7 +32,7 @@ function Slogan() {
 
     const paragraphStyle = isMobile
         ? { fontSize: '13px', 
-           fontFamily: '"Lato", sans-serif'
+           fontFamily: 'Lato, sans-serif',
            display: 'flex', // 使用 flex 進行布局
            justifyContent: 'flex-start',
            alignItems: 'center', 
