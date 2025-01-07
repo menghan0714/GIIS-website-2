@@ -38,7 +38,7 @@ function Slogan() {
         
 
     const buttonStyle = isMobile
-        ? { marginTop: '1rem',
+        ? { 
             fontSize: '0.9rem', 
           }
         : {
