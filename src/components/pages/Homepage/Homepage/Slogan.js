@@ -1,3 +1,4 @@
+
 import React,{ useEffect, useState } from 'react';
 
 function Slogan() {
@@ -18,7 +19,7 @@ function Slogan() {
     const cardStyle = isMobile
         ? {
               width: '100%', // 小於736px時的寬度
-              height: '200px', // 高度可以自適應內容
+              height: '100px', // 高度可以自適應內容
               padding: '2rem',
               backgroundColor: 'rgba(213, 168, 54, 1)',
               margin: '0 auto', // 居中
