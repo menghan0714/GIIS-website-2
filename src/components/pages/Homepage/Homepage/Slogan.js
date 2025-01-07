@@ -38,7 +38,8 @@ function Slogan() {
         
 
     const buttonStyle = isMobile
-        ? { 
+        ? { display: 'flex',
+            justifyContent: 'center',
             fontSize: '0.9rem', 
           }
         : {
