@@ -2,18 +2,13 @@
 import React,{ useEffect, useState } from 'react';
 
 function Slogan() {
-    const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 736px)").matches);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 736);
 
     useEffect(() => {
-        // 建立媒體查詢監聽器
-        const mediaQuery = window.matchMedia("(max-width: 736px)");
-        const handleMediaQueryChange = (e) => setIsMobile(e.matches);
+        const handleResize = () => setIsMobile(window.innerWidth <= 736);
+        window.addEventListener('resize', handleResize);
 
-        // 偵測媒體查詢變化
-        mediaQuery.addEventListener('change', handleMediaQueryChange);
-
-        // 清理監聽器
-        return () => mediaQuery.removeEventListener('change', handleMediaQueryChange);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const cardStyle = isMobile
@@ -52,13 +47,45 @@ function Slogan() {
           };
 
     return (
-      <>
-        <div className="text-white text-center p-3 my-3 rounded" style={cardStyle} >
-            <p className="lead" style={paragraphStyle} >Empowering the next generation of innovators and thinkers</p>
-            {/* Replace button text and class based on the action you choose */}
-        </div>
-        <button className="btn btn-light mt-3" style={buttonStyle} >Learn More</button>
-      </>
+        <>
+            {isMobile ? (
+                <>
+                    {/* 小於 736px 時的結構 */}
+                    <div
+                        className="text-white text-center p-3 my-3 rounded"
+                        style={cardStyle}
+                    >
+                        <p className="lead" style={paragraphStyle}>
+                            Empowering the next generation of innovators and thinkers
+                        </p>
+                    </div>
+                    <button
+                        className="btn btn-light mt-3"
+                        style={buttonStyle}
+                    >
+                        Learn More
+                    </button>
+                </>
+            ) : (
+                <>
+                    {/* 大於 736px 時的結構 */}
+                    <div
+                        className="text-white text-center p-3 my-3 rounded"
+                        style={cardStyle}
+                    >
+                        <p className="lead" style={paragraphStyle}>
+                            Empowering the next generation of innovators and thinkers
+                        </p>
+                        <button
+                            className="btn btn-light mt-3"
+                            style={buttonStyle}
+                        >
+                            Learn More
+                        </button>
+                    </div>
+                </>
+            )}
+        </>
     );
 }
 
