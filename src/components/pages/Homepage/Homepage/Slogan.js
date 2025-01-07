@@ -27,7 +27,7 @@ function Slogan() {
               alignItems: 'center', // 垂直居中
               textAlign: 'flex-start', // 文字居中對齊
               fontSize: '1.5em', // 調整字體大小
-              lineHeight: '1', // 調整行高
+              lineHeight: '1.2', // 調整行高
           }
         : {
               width: '100%', // 大於736px時的寬度
