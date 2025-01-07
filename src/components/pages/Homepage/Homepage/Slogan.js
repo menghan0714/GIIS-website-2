@@ -1,4 +1,5 @@
 import React from 'react';
+import './Slogan.module.css';
 
 function Slogan() {
     return (
