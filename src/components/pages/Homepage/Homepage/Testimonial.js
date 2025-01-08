@@ -1,11 +1,10 @@
-import React, { useRef } from 'react'; // Make sure useRef is included here
+import React, { useRef ,useState } from 'react'; // Make sure useRef is included here
 import styles from './Testimonial.module.css';
 
 import student1 from '../../../../img/Homepage/StuPhoto/student1.png';
 import student2 from '../../../../img/Homepage/StuPhoto/student2.png';
 import student3 from '../../../../img/Homepage/StuPhoto/student3.png';
-import student4 from '../../../../img/Homepage/StuPhoto/student4.png';
-import student5 from '../../../../img/Homepage/StuPhoto/student5.png';
+
 
 function Testimonial() {
     const [activeTestimonial, setActiveTestimonial] = useState(null);
@@ -21,13 +20,13 @@ function Testimonial() {
             id: 2,
             name: "Chen Yu Yan",
             feedback: "The knowledge and support I received from the teaching staff were phenomenal. Their expertise in diverse fields provided a well-rounded education and they were always available to provide guidance, ensuring that I was never lost during my studies.",
-            image: studen2
+            image: student2
         },
         {
             id: 3,
             name: "Haruto Takahashi",
             feedback: "The skills I've developed here, especially in innovative problem-solving and strategic planning, have greatly propelled my career in technology management. The learning environment is unparalleled in its commitment to student success and professional development.",
-            image: studen3
+            image: student3
         },
     ];
 
