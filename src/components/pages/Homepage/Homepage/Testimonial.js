@@ -1,7 +1,4 @@
 import React, { useRef } from 'react'; // Make sure useRef is included here
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from './Testimonial.module.css';
 
 import student1 from '../../../../img/Homepage/StuPhoto/student1.png';
