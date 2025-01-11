@@ -109,7 +109,7 @@ const Testimonial = () => {
             {selectedTestimonial && (
                 <div className={styles.modal} onClick={handleClose}>
                     <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                        <h3 style={{fontWeight:bold}}>{selectedTestimonial.name}</h3>
+                        <h3 style={{fontWeight:'bold' }}>{selectedTestimonial.name}</h3>
                         <p classname={styles.commentStyle}>{selectedTestimonial.comment}</p>
                         <button className={styles.closeButton} onClick={handleClose}>
                             Close
