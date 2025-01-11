@@ -89,6 +89,7 @@ const Testimonial = () => {
                 ))}
             </Slider>
              ) : (
+                <p style={{ fontSize:'14px'}}>Tap the photo to see their testimonial.</p>
                 <div className={styles.staticList} >
                     {testimonials.map((testimonial) => (
                         <div
