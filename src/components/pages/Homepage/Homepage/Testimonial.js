@@ -89,6 +89,7 @@ const Testimonial = () => {
                 ))}
             </Slider>
              ) : (
+              <>
                 <p style={{ fontSize:'14px'}}>Tap the photo to see their testimonial.</p>
                 <div className={styles.staticList} >
                     {testimonials.map((testimonial) => (
@@ -105,7 +106,8 @@ const Testimonial = () => {
                              <p className={styles.nameStyle}>{testimonial.name}</p>
                         </div>
                     ))}
-                </div>
+                </div> 
+              </>
             )}
             {selectedTestimonial && (
                 <div className={styles.modal} onClick={handleClose}>
