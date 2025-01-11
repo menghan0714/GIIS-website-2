@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'; // Make sure useRef is included here
+import React, { useRef , useState } from 'react'; // Make sure useRef is included here
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
