@@ -89,7 +89,7 @@ const Testimonial = () => {
                 ))}
             </Slider>
              ) : (
-                <div className={styles.staticList} style={{ display:"flex", justifyContent: "flex-start"}}>
+                <div className={styles.staticList} >
                     {testimonials.map((testimonial) => (
                         <div
                             key={testimonial.id}
