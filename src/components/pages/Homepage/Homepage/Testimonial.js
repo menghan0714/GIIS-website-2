@@ -95,6 +95,7 @@ const Testimonial = () => {
                             key={testimonial.id}
                             className={styles.listItem}
                             onClick={() => handleClick(testimonial)}
+                            style={{ display:"flex", justifyContent: "flex-start"}}
                         >
                             <img
                                 src={testimonial.photoUrl}
