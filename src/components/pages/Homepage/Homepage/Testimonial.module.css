@@ -21,13 +21,12 @@
 
 .staticList {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .listItem {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
@@ -63,7 +62,6 @@
     text-align: center;
     max-width: 400px;
     width: 80%;
-    z-index: 200
 }
 
 .closeButton {
