@@ -101,7 +101,7 @@ const Testimonial = () => {
                                 alt={testimonial.name}
                                 className={styles.photo}
                             />
-                            <h3>{testimonial.name}</h3>
+                             <p className={styles.nameStyle}>{testimonial.name}</p>
                         </div>
                     ))}
                 </div>
