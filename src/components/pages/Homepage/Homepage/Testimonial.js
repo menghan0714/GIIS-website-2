@@ -89,13 +89,12 @@ const Testimonial = () => {
                 ))}
             </Slider>
              ) : (
-                <div className={styles.staticList}>
+                <div className={styles.staticList} style={{ display:"flex", justifyContent: "flex-start"}}>
                     {testimonials.map((testimonial) => (
                         <div
                             key={testimonial.id}
                             className={styles.listItem}
                             onClick={() => handleClick(testimonial)}
-                            style={{ display:"flex", justifyContent: "flex-start"}}
                         >
                             <img
                                 src={testimonial.photoUrl}
