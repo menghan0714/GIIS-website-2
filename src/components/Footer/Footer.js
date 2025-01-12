@@ -18,7 +18,7 @@ function Footer() {
    }, []);
     
     return (
-        <footer className={`${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu} ${isLandscape ? styles.leftSlideMenu2 : styles.leftSlideMenu}`>
+        <footer className={styles.pageFooter}>
             Copyright&copy; {new Date().getFullYear()} Genesis of Ideas International School. All rights reserved.
         </footer>
     )
