@@ -149,7 +149,7 @@ li {
    html[lang="en"] .leftSlideItems li{
     display: flex; 
     align-items: flex-start !important;
-    font-size:12px !important;
+    font-size:14px !important;
   }  
 }
     
