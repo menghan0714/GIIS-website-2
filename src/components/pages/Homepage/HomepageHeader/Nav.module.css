@@ -145,6 +145,17 @@ li {
     }
 }
 
+@media (orientation: landscape) and (max-width: 736px) {
+  html[lang="en"] .leftSlideItems li {
+    font-size: 12px !important;
+  }  
+}
+
+
+html[lang="en"] .navitem {
+  font-size: 30px; /* 中文的字體大小 */
+}
+
 
 
 .leftSlideItems li  {
@@ -156,7 +167,6 @@ li {
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
-    
 }
 
 
