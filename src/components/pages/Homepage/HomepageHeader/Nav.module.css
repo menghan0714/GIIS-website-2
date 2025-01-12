@@ -146,12 +146,13 @@ li {
 }
 
 @media (orientation: landscape) and (max-width: 736px) {
-  html[lang="en"] .leftSlideItems{
-    display: flex;
-    justify-content: flex-start
+   html[lang="en"] .leftSlideItems li{
+    display: flex; 
+    justify-content: flex-start !important;
+    font-size:12px !important;
   }  
 }
-
+    
 
 .leftSlideItems li  {
     position: relative;
