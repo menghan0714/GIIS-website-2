@@ -148,8 +148,8 @@ li {
 @media (orientation: landscape) and (max-width: 736px) {
    html[lang="en"] .leftSlideItems li{
     font-size:14px !important;
-    margin: 0; /* 清除上下或左右的多餘間距 */
-    padding: 0; /* 清除內部間距 */
+    margin: 0 !important;
+    padding: 0 !important; 
   }  
 }
     
