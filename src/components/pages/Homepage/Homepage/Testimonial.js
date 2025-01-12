@@ -10,7 +10,7 @@ import student3 from '../../../../img/Homepage/StuPhoto/student3.png';
 import student4 from '../../../../img/Homepage/StuPhoto/student4.png';
 import student5 from '../../../../img/Homepage/StuPhoto/student5.png';
 
-const Testimonial = () => {
+function Testimonial = () => {
     const sliderRef = useRef();  // useRef is now correctly imported and used
     const [selectedTestimonial, setSelectedTestimonial] = useState(null); // 控制顯示心得分享
     const [isMobile, setIsMobile] = useState(window.innerWidth < 736); // 判斷螢幕寬度
