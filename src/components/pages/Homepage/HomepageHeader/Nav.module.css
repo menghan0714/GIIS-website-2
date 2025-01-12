@@ -148,7 +148,7 @@ li {
 @media (orientation: landscape) and (max-width: 736px) {
    html[lang="en"] .leftSlideItems li{
     display: flex; 
-    justify-content: flex-start !important;
+    align-items: flex-start !important;
     font-size:12px !important;
   }  
 }
