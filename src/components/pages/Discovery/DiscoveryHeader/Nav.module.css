@@ -90,12 +90,69 @@ li {
   }
 }
 
+.leftSlideMenu2 {
+    position: absolute;
+    justify-content: space-between;
+    top: 70px;
+    left: 0;
+    height: 100px;
+    width: 100%; 
+    background-color: #ffffff; /* 左拉選單背景顏色 */
+    transform: translateX(-100％);
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 200;
+    border-bottom: 20px solid rgba(43, 61, 109, 1);
+}
+
 
 .leftSlideItems {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
+@media (orientation: landscape) and (max-width: 1000px) {
+    .leftSlideMenu2 {
+     top: 50px
+   }
+    .customBackground {
+       background-color: rgba(43, 61, 109, 0.8);
+       height: 50px;
+    }
+    .leftSlideItems {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .leftSlideItems li {
+        margin: 0 10px !important; /* 添加項目之間的間距 */
+        font-size: 16px !important;
+        padding: 20px !important;
+    }
+
+    .leftSlideItems li::before {
+        display: none !important;
+    }
+
+    .leftSlideItems li::after {
+        left:45px !important;
+        width: 50px  !important;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 736px) {
+   html[lang="en"] .leftSlideItems li {
+    font-size:14px !important;
+    margin-left: 0 !important; 
+    padding-left: 10px !important;
+    margin-reight: 0 !important; 
+  }  
+}
+    
 
 .leftSlideItems li  {
     position: relative;
