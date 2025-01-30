@@ -31,6 +31,8 @@
     margin-bottom: 20px;
     cursor: pointer;
     display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .photo {
