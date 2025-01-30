@@ -148,9 +148,6 @@ li {
 @media (orientation: landscape) and (max-width: 736px) {
    html[lang="en"] .leftSlideItems li {
     font-size:14px !important;
-    margin-left: 10px !important; 
-    padding-left: 10px !important;
-    margin-reight: 0 !important; 
   }  
 }
     
