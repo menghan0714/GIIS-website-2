@@ -30,6 +30,7 @@
 .listItem {
     margin-bottom: 20px;
     cursor: pointer;
+    display: flex;
 }
 
 .photo {
