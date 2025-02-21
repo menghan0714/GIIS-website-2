@@ -343,7 +343,7 @@ html[lang="zh"] .navitem2 {
   font-size: 28px !important; /* 中文的字體大小 */
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .customnavbar{
     width: 60% !important;
   }
