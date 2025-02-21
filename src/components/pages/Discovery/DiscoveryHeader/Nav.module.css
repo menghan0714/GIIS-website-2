@@ -299,7 +299,6 @@ li {
   justify-content: space-between !important;
   align-items: center !important;
   width: 55% !important;
-  left: 40%;
   margin: 0 20px 0 auto;
 }
 
@@ -345,10 +344,6 @@ html[lang="zh"] .navitem2 {
 }
 
 @media (max-width: 1024px) {
-  .customnavbar {
-    width: 75% !important;
-  }
-
   .navitem {
     width: 200px !important;
   }
