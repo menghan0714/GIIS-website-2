@@ -335,6 +335,16 @@ li {
   top: 10px;
 }
 
+@media (max-width: 1300px) {
+ html[lang="en"] .navitem{ 
+  font-size: 30px; /* 中文的字體大小 */
+}
+}
+
+html[lang="en"] .navitem{ 
+  font-size: 30px; /* 中文的字體大小 */
+}
+
 html[lang="zh"] .navitem {
   font-size: 26px !important; /* 中文的字體大小 */
 }
@@ -344,10 +354,6 @@ html[lang="zh"] .navitem2 {
 }
 
 @media (max-width: 1024px) {
-  .customnavbar {
-    width: 75% !important;
-  }
-
   .navitem {
     width: 200px !important;
   }
