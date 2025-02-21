@@ -298,8 +298,7 @@ li {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  width: 55% !important;
-  left: 25%;
+  width: 70% !important;
   margin: 0 20px 0 auto;
 }
 
