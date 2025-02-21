@@ -411,7 +411,7 @@ html[lang="zh"] .navitem2 {
     position: absolute;
     top: 75px;
     left: 0 ;
-    min-width: 250px; /* 設置最小寬度 */
+    max-width: 250px; /* 設置最小寬度 */
     min-height: 135px;
     background-color: rgba(43, 61, 109, 1);
     padding: 10px 0;
@@ -438,7 +438,7 @@ html[lang="zh"] .navitem2 {
     position: absolute;
     top: 75px;
     left: 0 ;
-    min-width: 260px; /* 設置最小寬度 */
+    max-width: 260px; /* 設置最小寬度 */
     min-height: 110px;
     background-color: rgba(43, 61, 109, 1);
     padding: 10px 0;
