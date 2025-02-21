@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import img from '../../../../img/cognia.png';
 
-function discoveryIntroduction({ language }) {
+function DiscoveryIntroduction({ language }) {
     const [fontSize, setFontSize] = useState(window.innerWidth < 1100 ? "60px" : "70px");
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function discoveryIntroduction({ language }) {
         paddingLeft: '15%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'bold',
-        fontSize: fontsize,
+        fontSize: fontSize,
         lineHeight: '1',
     };
 
@@ -149,4 +149,4 @@ function discoveryIntroduction({ language }) {
    );
 }
 
-export default discoveryIntroduction;
+export default DiscoveryIntroduction;
