@@ -354,10 +354,10 @@ html[lang="zh"] .navitem2 {
     width: 200px !important;
   }
   html[lang="en"] .navitem {
-    font-size: 20px !important; /* 中文的字體大小 */
+    font-size: 22px !important; /* 中文的字體大小 */
   }
   html[lang="en"] .navitem2 {
-    font-size: 22px !important; /* 中文的字體大小 */
+    font-size: 24px !important; /* 中文的字體大小 */
   }
 }
 
