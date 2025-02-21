@@ -355,7 +355,7 @@ html[lang="zh"] .navitem2 {
   }
 
 .dropdownMenu2{
-    width: 210px !important;
+    width: 210px ;
     padding-left: 5px !important;
  }
   html[lang="en"] .navitem {
@@ -439,7 +439,7 @@ html[lang="zh"] .navitem2 {
     position: absolute;
     top: 75px;
     left: 0 ;
-    max-width: 260px; /* 設置最小寬度 */
+    max-width: 230px; /* 設置最小寬度 */
     min-height: 110px;
     background-color: rgba(43, 61, 109, 1);
     padding: 10px 0;
