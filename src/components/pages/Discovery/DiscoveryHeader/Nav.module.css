@@ -344,6 +344,9 @@ html[lang="zh"] .navitem2 {
 }
 
 @media (max-width: 1024px) {
+  .customnavbar{
+    width: 40% !important;
+  }
   .navitem {
     width: 200px !important;
   }
