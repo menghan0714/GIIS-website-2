@@ -6,7 +6,7 @@ function DiscoveryIntroduction({ language }) {
 
     useEffect(() => {
     const handleResize = () => {
-      setFontSize(window.innerWidth < 110 ? "60px" : "70px");
+      setFontSize(window.innerWidth < 1100 ? "60px" : "70px");
     };
 
     window.addEventListener("resize", handleResize);
