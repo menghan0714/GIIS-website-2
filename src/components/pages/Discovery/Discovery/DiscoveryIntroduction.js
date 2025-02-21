@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import img from '../../../../img/cognia.png';
 
 function DiscoveryIntroduction({ language }) {
-    const [fontSize, setFontSize] = useState(window.innerWidth < 1100 ? "60px" : "70px");
+    const [fontSize, setFontSize] = useState(window.innerWidth < 1100 ? "50px" : "70px");
 
     useEffect(() => {
     const handleResize = () => {
-      setFontSize(window.innerWidth < 1100 ? "60px" : "70px");
+      setFontSize(window.innerWidth < 1100 ? "50px" : "70px");
     };
 
     window.addEventListener("resize", handleResize);
