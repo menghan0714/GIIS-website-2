@@ -353,6 +353,10 @@ html[lang="zh"] .navitem2 {
   .navitem2 {
     width: 200px !important;
   }
+
+.dropdownMenu2{
+    max-width: 250px;
+ }
   html[lang="en"] .navitem {
     font-size: 20px !important; /* 中文的字體大小 */
   }
@@ -455,6 +459,8 @@ html[lang="zh"] .navitem2 {
     font-family: Inter, sans-serif;
     font-weight: bold;
 }
+
+
 
 
 .navitem:hover .dropdownMenu { 
