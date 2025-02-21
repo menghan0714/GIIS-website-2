@@ -1,4 +1,4 @@
-import React,{useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import img from '../../../../img/cognia.png';
 
 function discoveryIntroduction({ language }) {
