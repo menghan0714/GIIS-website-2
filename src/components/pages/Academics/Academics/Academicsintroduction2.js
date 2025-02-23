@@ -167,7 +167,7 @@ function Academicsintroduction2({ language }) {
     const courseintroductionStyle = {
         position: 'relative',
         color: 'rgba(0, 0, 0, 1)',
-        width: '55%',
+        width: '48%',
         paddingLeft: '10%',
         fontFamily: 'Inter, sans-serif',
         fontWeight: 'normal',
