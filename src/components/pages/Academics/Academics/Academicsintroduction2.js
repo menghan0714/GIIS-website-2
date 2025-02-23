@@ -360,7 +360,7 @@ const handleNavigation = () => {
           <img src={img} alt="Math" style={imageStyle} />
           <div style={overlaycontainerStyle}>
             <div style={overlayStyle} onClick={handleNavigation}>
-             <span style={overlayTextStyle}>MATH</span>
+             <p style={overlayTextStyle}>MATH</p>
               <div style={arrowContainerStyle2}>
                <span style={arrowStyle2}>→</span>
               </div>
