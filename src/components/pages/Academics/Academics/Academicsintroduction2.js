@@ -190,8 +190,7 @@ function Academicsintroduction2({ language }) {
         width: '300px',  // Adjust size as needed
         height: '300px', // Adjust size as needed
         backgroundColor: 'rgba(213, 168, 54, 1)',   
-        left: '100%',
-        marginLeft: language === 'zh' ? '5%' : '5%',
+        left: '105%',
         top: language === 'zh' ? '20%' : '50%',
     };
 
