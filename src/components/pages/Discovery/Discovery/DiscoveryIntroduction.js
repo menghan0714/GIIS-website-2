@@ -10,7 +10,7 @@ function DiscoveryIntroduction({ language }) {
      if (width < 1100 && isLandscape) {
        return "55px"; // 寬度小於 1100 且為橫向模式
      }  else if (width < 1000 && !isLandscape) {
-       return "50px"; // 寬度小於 1000 且為直向模式
+       return "45px"; // 寬度小於 1000 且為直向模式
      }  else {
        return "65px"; // 其他情況預設為 65px
      }
