@@ -96,7 +96,7 @@ function DiscoveryIntroduction({ language }) {
     return (
       <>
         <div style={headlineStyle}>
-          <p style={{ marginBottom: "5px" }}>GENESIS OF IDEAS</p>
+          <p style={{ margin: 0 }}>GENESIS OF IDEAS</p>
           <p>INTERNATIONAL SCHOOL</p>
         </div>
 
