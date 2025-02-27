@@ -66,8 +66,8 @@ li {
     position: absolute;
     top: 70px;
     left: 0;
-    height: 400px;
-    width: 200px; 
+    height: 525px;
+    width: 300px; 
     background-color: #ffffff; /* 左拉選單背景顏色 */
     transform: translateX(-100％);
     opacity: 1;
@@ -76,17 +76,19 @@ li {
     border-bottom: 20px solid rgba(43, 61, 109, 1);
 }
 
-@media (max-width: 768px) {
-  .leftSlideMenu {
-    height: 500px;
-    width: 300px;  
-  }
-}
 
 @media (max-width: 736px) {
+   .customBackground {
+     background-color: rgba(43, 61, 109, 0.8);
+     height: 50px;
+    }
+
+   .leftSlideMenu {
+     top: 50px
+   }
   .leftSlideMenu {
-    height: 400px;
-    width: 200px;  
+    height: 300px;
+    width: 100%;  
   }
 }
 
