@@ -2,16 +2,31 @@ import React, { useState, useEffect } from 'react';
 import img from '../../../../img/cognia.png';
 
 function DiscoveryIntroduction({ language }) {
-    const [fontSize, setFontSize] = useState(window.innerWidth < 1100 ? "55px" : "65px");
+    const [isLandscape, setIsLandscape] = useState(window.matchMedia("(orientation: landscape)").matches);
 
-    useEffect(() => {
-    const handleResize = () => {
-      setFontSize(window.innerWidth < 1100 ? "55px" : "65px");
-    };
+    const getFontSize = () => {
+     const width = window.innerWidth;
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+     if (width < 1100 && isLandscape) {
+       return "55px"; // 寬度小於 1100 且為橫向模式
+     }  else if (width < 1000 && !isLandscape) {
+       return "50px"; // 寬度小於 1000 且為直向模式
+     }  else {
+       return "65px"; // 其他情況預設為 65px
+     }
+   };
+    
+    const [fontSize, setFontSize] = useState(getFontSize());
+
+   useEffect(() => {
+     const handleResize = () => {
+       setIsLandscape(window.matchMedia("(orientation: landscape)").matches);
+       setFontSize(getFontSize());
+     };
+
+     window.addEventListener("resize", handleResize);
+     return () => window.removeEventListener("resize", handleResize);
+    }, [isLandscape]);
 
     const headlineStyle = {
         marginTop: '115px',
