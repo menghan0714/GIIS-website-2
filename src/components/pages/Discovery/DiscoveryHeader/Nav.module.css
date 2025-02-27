@@ -167,11 +167,6 @@ li {
 }
 
 
-@media (max-width: 768px) {
-  .leftSlideItems li {
-    font-size: 30px
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems li {
@@ -182,7 +177,7 @@ li {
 .leftSlideItems p  {
     position: relative;
     top: 50%;
-    font-size: 16px;
+    font-size: 30px;
     padding: 30px;
     position: relative;
     font-family: Inter, sans-serif;
@@ -191,11 +186,7 @@ li {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .leftSlideItems p {
-    font-size: 30px
-  }
-}
+
 
 @media (max-width: 736px) {
   .leftSlideItems p {
@@ -223,12 +214,6 @@ li {
     transform: translateY(-50%);
 } 
 
-@media (max-width: 736px) {
-  .leftSlideItems li::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems li::before {
@@ -240,24 +225,17 @@ li {
     content: '>';
     position: absolute;
     top: 50%;
-    left: 160px; /* 控制箭頭距離右邊的距離 */
-    font-size: 20px;
+    left: 250px; /* 控制箭頭距離右邊的距離 */
+    font-size: 30px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.5); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
-@media (max-width: 768px) {
-  .leftSlideItems p::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems p::before {
-    font-size: 20px;
-    left: 160px;
+     display: none
   }
 }
 
