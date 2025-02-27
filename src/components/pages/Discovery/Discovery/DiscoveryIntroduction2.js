@@ -92,7 +92,7 @@ function DiscoveryIntroduction2({ language }) {
         </div>
 
         <div style={headlineStyle2}>
-          <p>Misiion</p>
+          <p>Mission</p>
         </div>
 
         <div style={container2}>
