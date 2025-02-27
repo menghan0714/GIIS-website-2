@@ -158,7 +158,7 @@ li {
     position: relative;
     padding: 30px;
     top: 50%;
-    font-size: 16px;
+    font-size: 30px;
     position: relative;
     font-family: Inter, sans-serif;
     font-weight: bold;
@@ -167,15 +167,12 @@ li {
 }
 
 
-@media (max-width: 768px) {
-  .leftSlideItems li {
-    font-size: 30px
-  }
-}
+
 
 @media (max-width: 736px) {
   .leftSlideItems li {
-    font-size: 16px
+    font-size: 16px;
+    padding: 20px;
   }
 }
 
@@ -217,23 +214,17 @@ li {
     position: absolute;
     top: 50%;
     left: 160px; /* 控制箭頭距離右邊的距離 */
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: rgba(0, 0, 0, 1); /* 箭頭顏色 */
     transform: translateY(-50%);
 } 
 
-@media (max-width: 768px) {
-  .leftSlideItems li::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
+
 
 @media (max-width: 736px) {
   .leftSlideItems li::before {
-    font-size: 20px;
-    left: 160px;
+     display: none
   }
 }
 
@@ -248,12 +239,6 @@ li {
     transform: translateY(-50%);
 } 
 
-@media (max-width: 768px) {
-  .leftSlideItems p::before {
-    font-size: 30px;
-    left: 250px;
-  }
-}
 
 @media (max-width: 736px) {
   .leftSlideItems p::before {
@@ -272,6 +257,13 @@ li {
     height: 2px; /* 底線的高度 */
     background-color: rgba(43, 61, 109, 1); /* 底線的顏色 */
     opacity: 0.6; /* 底線的透明度 */
+}
+
+@media (max-width: 736px) {
+  .leftSlideItems li::after {
+     left: 45px;
+     width: 50px;
+  }
 }
 
 .leftSlideItems p::after {
